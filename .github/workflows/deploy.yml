@@ -3,7 +3,7 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches:
-      - master  # あなたのデフォルトブランチがmasterなので変更
+      - main
 
 jobs:
   build-and-deploy:
