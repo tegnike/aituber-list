@@ -21,16 +21,16 @@ type AITuber = {
 
 // サンプルAITuberデータを更新
 const aitubers: AITuber[] = [
-  { id: 1, name: "AI-Chan", description: "歌って踊れるAIアイドル", tags: ["アイドル", "歌手", "ダンサー"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 2, name: "Robo-Sensei", description: "プログラミングを教えるAI講師", tags: ["教育", "プログラミング"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 3, name: "Virtual Chef", description: "料理レシピを紹介するAIシェフ", tags: ["料理", "レシピ"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 4, name: "Digi-Artist", description: "デジタルアートを生成するAI", tags: ["アート", "クリエイティブ"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 5, name: "News-Bot", description: "最新ニュースを報告するAIアナウンサー", tags: ["ニュース", "アナウンサー"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 6, name: "Fit-AI", description: "フィットネスアドバイスを提供するAIトレーナー", tags: ["フィットネス", "健康"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 7, name: "Tech-Guru", description: "最新テクノロジーを解説するAI", tags: ["テクノロジー", "ガジェット"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 8, name: "Story-Teller", description: "オリジナルストーリーを語るAI", tags: ["物語", "エンターテイメント"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 9, name: "Medi-Bot", description: "医療アドバイスを提供するAI医師", tags: ["医療", "健康"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
-  { id: 10, name: "Eco-Guide", description: "環境保護について啓発するAI", tags: ["環境", "教育"], imageUrl: "/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 1, name: "AI-Chan", description: "歌って踊れるAIアイドル", tags: ["アイドル", "歌手", "ダンサー"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 2, name: "Robo-Sensei", description: "プログラミングを教えるAI講師", tags: ["教育", "プログラミング"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 3, name: "Virtual Chef", description: "料理レシピを紹介するAIシェフ", tags: ["料理", "レシピ"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 4, name: "Digi-Artist", description: "デジタルアートを生成するAI", tags: ["アート", "クリエイティブ"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 5, name: "News-Bot", description: "最新ニュースを報告するAIアナウンサー", tags: ["ニュース", "アナウンサー"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 6, name: "Fit-AI", description: "フィットネスアドバイスを提供するAIトレーナー", tags: ["フィットネス", "健康"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 7, name: "Tech-Guru", description: "最新テクノロジーを解説するAI", tags: ["テクノロジー", "ガジェット"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 8, name: "Story-Teller", description: "オリジナルストーリーを語るAI", tags: ["物語", "エンターテイメント"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 9, name: "Medi-Bot", description: "医療アドバイスを提供するAI医師", tags: ["医療", "健康"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
+  { id: 10, name: "Eco-Guide", description: "環境保護について啓発するAI", tags: ["環境", "教育"], imageUrl: "/aituber-list/nikechan_icon.jpg?height=100&width=100", youtubeUrl: "https://youtube.com", twitterUrl: "https://twitter.com" },
 ]
 
 // 全てのタグを抽出
