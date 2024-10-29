@@ -1,0 +1,18 @@
+{
+  "aitubers": [
+    {
+      "id": 1,
+      "name": "ニケちゃん",
+      "description": "歌って踊れるAIアイドル",
+      "tags": ["アイドル", "歌手", "ダンサー"],
+      "imageUrl": "/images/aitubers/nikechan_icon.jpg",
+      "youtubeID": "nikechan",
+      "twitterID": "tegnike",
+      "youtubeSubscribers": 270,
+      "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
+      "latestVideoDate": "2024年8月26日 18:38"
+    }
+  ]
+}
