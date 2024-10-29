@@ -5,7 +5,7 @@
       "name": "ニケちゃん",
       "description": "歌って踊れるAIアイドル",
       "tags": ["アイドル", "歌手", "ダンサー"],
-      "imageUrl": "/images/aitubers/nikechan_icon.jpg",
+      "imageUrl": "nikechan_icon.jpg",
       "youtubeID": "nikechan",
       "twitterID": "tegnike",
       "youtubeSubscribers": 270,

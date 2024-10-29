@@ -77,7 +77,7 @@ export function AituberList() {
           <Card key={aituber.id} className="flex flex-col">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Image src={aituber.imageUrl} alt={aituber.name} width={40} height={40} className="rounded-full" />
+                <Image src={`/aituber-list/images/aitubers/${aituber.imageUrl}`} alt={aituber.name} width={40} height={40} className="rounded-full" />
                 {aituber.name}
               </CardTitle>
               <CardDescription>{aituber.description}</CardDescription>
