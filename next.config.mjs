@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/aituber-list',
   images: {
     remotePatterns: [
       {
@@ -8,6 +9,7 @@ const nextConfig = {
         pathname: '/vi/**',
       },
     ],
+    unoptimized: true,
   },
 };
 
