@@ -27,17 +27,18 @@ type AITuber = {
 const aitubers: AITuber[] = aituberData.aitubers
   .filter(aituber => aituber.youtubeChannelID !== '') // チャンネルIDが空でないものだけを表示
   .sort((a, b) => {
-    const dateA = new Date(a.latestVideoDate.replace(/年|月|日/g, '-').replace(/\s/g, 'T'));
-    const dateB = new Date(b.latestVideoDate.replace(/年|月|日/g, '-').replace(/\s/g, 'T'));
+    const dateA = new Date(a.latestVideoDate);
+    const dateB = new Date(b.latestVideoDate);
     return dateB.getTime() - dateA.getTime();  // 降順（新しい順）でソート
   });
 
 // 全てのタグを抽出
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
 
-const getCurrentDate = () => {
-  const now = new Date();
-  return `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+// 日付フォーマット用の関数を追加
+const formatDate = (isoDate: string): string => {
+  const date = new Date(isoDate);
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
 };
 
 export function AituberList() {
@@ -57,9 +58,9 @@ export function AituberList() {
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold text-center mb-2">AITuberリスト</h1>
       <p className="text-center text-sm text-muted-foreground mb-4">
-        最終更新日: {getCurrentDate()}
+        最終更新日: {formatDate(aituberData.lastUpdated)}
       </p>
-     
+
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-2">タグでフィルター</h2>
         <div className="flex flex-wrap gap-2">
@@ -135,7 +136,7 @@ export function AituberList() {
               </a>
               <div className="flex items-center justify-end w-full p-2 text-sm text-muted-foreground">
                 <Calendar className="w-4 h-4 mr-1" />
-                {aituber.latestVideoDate}
+                {aituber.latestVideoDate ? formatDate(aituber.latestVideoDate) : ''}
               </div>
             </CardFooter>
           </Card>

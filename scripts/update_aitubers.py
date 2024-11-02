@@ -1,6 +1,6 @@
 from googleapiclient.discovery import build
 import json
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import pytz
 import os
 
@@ -82,14 +82,14 @@ def update_aituber_info(aituber, youtube):
                 "url"
             ],
             "latestVideoUrl": f"https://www.youtube.com/watch?v={video_id}",
-            "latestVideoDate": published_at.strftime("%Y年%m月%d日 %H:%M"),
+            "latestVideoDate": published_at.isoformat(),
         }
     )
 
     return aituber
 
 
-def main():
+def update_aituber_data():
     # YouTube Data API の認証情報
     api_key = os.environ.get("YOUTUBE_API_KEY")
     if not api_key:
@@ -108,10 +108,17 @@ def main():
         except Exception as e:
             print(f"Error updating {aituber['name']}: {e}")
 
+    # 日本のタイムゾーンで現在時刻を取得
+    jst = timezone(timedelta(hours=9))
+    current_time = datetime.now(jst)
+
+    # データを更新
+    data = {"lastUpdated": current_time.isoformat(), "aitubers": data["aitubers"]}
+
     # 更新したデータを保存
     save_aitubers(data)
     print("Update completed!")
 
 
 if __name__ == "__main__":
-    main()
+    update_aituber_data()

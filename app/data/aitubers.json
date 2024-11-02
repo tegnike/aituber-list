@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2024-11-03T08:03:57.910519+09:00",
   "aitubers": [
     {
       "id": 1,
@@ -17,7 +18,7 @@
       "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
-      "latestVideoDate": "2024年08月26日 18:38"
+      "latestVideoDate": "2024-08-26T18:38:55+09:00"
     },
     {
       "id": 2,
@@ -36,7 +37,7 @@
       "latestVideoTitle": "【縦配信】雑談でギャルを困らせろ【AIVTuber】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/4TbpF0xUElo/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=4TbpF0xUElo",
-      "latestVideoDate": "2024年08月25日 12:29"
+      "latestVideoDate": "2024-08-25T12:29:08+09:00"
     },
     {
       "id": 3,
@@ -55,7 +56,7 @@
       "latestVideoTitle": "【ハロウィン】画像生成でお菓子作ってくれないとイタズラしちゃうぞ！🎃",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/IEt6atcb98c/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=IEt6atcb98c",
-      "latestVideoDate": "2024年10月31日 00:39"
+      "latestVideoDate": "2024-10-31T00:39:46+09:00"
     },
     {
       "id": 4,
@@ -74,7 +75,7 @@
       "latestVideoTitle": "寝起き",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/4xZzkh3pr3M/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=4xZzkh3pr3M",
-      "latestVideoDate": "2024年08月23日 07:00"
+      "latestVideoDate": "2024-08-23T07:00:08+09:00"
     },
     {
       "id": 5,
@@ -87,6 +88,44 @@
       ],
       "twitterID": "",
       "youtubeChannelID": "UCs7vEv9ts8FJEamUkNB27xw",
+      "youtubeURL": "jun_sans",
+      "imageUrl": "https://yt3.ggpht.com/iW0hF0DFCnP-v9s_cN9b5et1UfIpCRQ7PmgkM1eGJZJ2n_kXYYuMrixDEfoEi60Rh_xGdSz5=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 1950,
+      "latestVideoTitle": "MEME FUNK こと",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/X3osk8O0s5E/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=X3osk8O0s5E",
+      "latestVideoDate": "2024-10-09T17:45:01+09:00"
+    },
+    {
+      "id": 6,
+      "name": "AIずんだもん",
+      "description": "歌って踊れるAIアイドル",
+      "tags": [
+        "アイドル",
+        "歌手",
+        "ダンサー"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "UCUAI2yiwhi309kfRPZwKDfg",
+      "youtubeURL": "",
+      "imageUrl": "",
+      "youtubeSubscribers": "",
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": ""
+    },
+    {
+      "id": 7,
+      "name": "",
+      "description": "歌って踊れるAIアイドル",
+      "tags": [
+        "アイドル",
+        "歌手",
+        "ダンサー"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "",
       "youtubeURL": "",
       "imageUrl": "",
       "youtubeSubscribers": "",
