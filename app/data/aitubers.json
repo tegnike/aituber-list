@@ -117,6 +117,25 @@
     },
     {
       "id": 7,
+      "name": "しずく / Shizuku【AI Vtuber】",
+      "description": "歌って踊れるAIアイドル",
+      "tags": [
+        "アイドル",
+        "歌手",
+        "ダンサー"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "UCE2SWbhR2WRHPBi-bflr0-g",
+      "youtubeURL": "",
+      "imageUrl": "",
+      "youtubeSubscribers": "",
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": ""
+    },
+    {
+      "id": 8,
       "name": "",
       "description": "歌って踊れるAIアイドル",
       "tags": [
