@@ -35,6 +35,12 @@ def update_aituber_info(aituber, youtube):
 
     channel_info = channel_response["items"][0]
 
+    # カスタムURLの取得と設定（youtubeURLが空の場合のみ）
+    if not aituber["youtubeURL"] and "customUrl" in channel_info["snippet"]:
+        custom_url = channel_info["snippet"]["customUrl"]
+        # @を除去してyoutubeURLを設定
+        aituber["youtubeURL"] = custom_url.lstrip("@")
+
     # プロフィール画像URLの取得と設定
     if not aituber["imageUrl"] or aituber["imageUrl"].startswith("http"):
         profile_image_url = channel_info["snippet"]["thumbnails"]["high"]["url"]

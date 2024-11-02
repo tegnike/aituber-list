@@ -15,8 +15,8 @@ type AITuber = {
   name: string
   description: string
   tags: string[]
-  youtubeID: string
   twitterID: string
+  youtubeURL: string
   imageUrl: string
   latestVideoThumbnail: string
   latestVideoUrl: string
@@ -106,9 +106,9 @@ export function AituberList() {
                 ))}
               </div>
               <div className="flex gap-2">
-                {aituber.youtubeID && (
+                {aituber.youtubeURL && (
                     <Button variant="outline" size="sm" asChild>
-                      <a href={`https://www.youtube.com/@${aituber.youtubeID}`} target="_blank" rel="noopener noreferrer">
+                      <a href={`https://www.youtube.com/@${aituber.youtubeURL}`} target="_blank" rel="noopener noreferrer">
                       <Youtube className="w-4 h-4 mr-2" />
                       YouTube
                     </a>
