@@ -54,15 +54,14 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './out'  # ビルド成果物のパス
+          path: './out'
+          name: 'github-pages'
 
   deploy:
     needs: update-and-build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
