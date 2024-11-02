@@ -75,6 +75,25 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/4xZzkh3pr3M/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=4xZzkh3pr3M",
       "latestVideoDate": "2024年08月23日 07:00"
+    },
+    {
+      "id": 5,
+      "name": "ジュンさん と AI VTuber 初祈コトハ",
+      "description": "歌って踊れるAIアイドル",
+      "tags": [
+        "アイドル",
+        "歌手",
+        "ダンサー"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "UCs7vEv9ts8FJEamUkNB27xw",
+      "youtubeURL": "",
+      "imageUrl": "",
+      "youtubeSubscribers": "",
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": ""
     }
   ]
 }
