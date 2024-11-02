@@ -35,4 +35,4 @@ jobs:
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
           git add app/data/aitubers.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update AITubers data" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update AITubers data" && git push origin main)
