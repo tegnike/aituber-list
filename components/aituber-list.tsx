@@ -15,16 +15,22 @@ type AITuber = {
   name: string
   description: string
   tags: string[]
-  imageUrl: string
   youtubeID: string
   twitterID: string
+  imageUrl: string
   latestVideoThumbnail: string
   latestVideoUrl: string
-  latestVideoDate: string // 新しく追加
+  latestVideoDate: string
 }
 
-// JSONからデータを取得するように変更
+// JSONからデータを取得し、チャンネルIDが存在するもののみをフィルタリングして日付でソート
 const aitubers: AITuber[] = aituberData.aitubers
+  .filter(aituber => aituber.youtubeChannelID !== '') // チャンネルIDが空でないものだけを表示
+  .sort((a, b) => {
+    const dateA = new Date(a.latestVideoDate.replace(/年|月|日/g, '-').replace(/\s/g, 'T'));
+    const dateB = new Date(b.latestVideoDate.replace(/年|月|日/g, '-').replace(/\s/g, 'T'));
+    return dateB.getTime() - dateA.getTime();  // 降順（新しい順）でソート
+  });
 
 // 全てのタグを抽出
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
@@ -53,7 +59,7 @@ export function AituberList() {
       <p className="text-center text-sm text-muted-foreground mb-4">
         最終更新日: {getCurrentDate()}
       </p>
-      
+     
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-2">タグでフィルター</h2>
         <div className="flex flex-wrap gap-2">
@@ -77,7 +83,18 @@ export function AituberList() {
           <Card key={aituber.id} className="flex flex-col">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Image src={`/aituber-list/images/aitubers/${aituber.imageUrl}`} alt={aituber.name} width={40} height={40} className="rounded-full" />
+                <Image
+                  src={aituber.imageUrl.startsWith('http')
+                    ? aituber.imageUrl
+                    : aituber.imageUrl
+                      ? `/aituber-list/images/aitubers/${aituber.imageUrl}`
+                      : '/aituber-list/images/preparing-icon.png'
+                  }
+                  alt={aituber.name}
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
                 {aituber.name}
               </CardTitle>
               <CardDescription>{aituber.description}</CardDescription>
@@ -89,25 +106,29 @@ export function AituberList() {
                 ))}
               </div>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" asChild>
-                  <a href={`https://www.youtube.com/@${aituber.youtubeID}`} target="_blank" rel="noopener noreferrer">
-                    <Youtube className="w-4 h-4 mr-2" />
-                    YouTube
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" asChild>
-                  <a href={`https://twitter.com/${aituber.twitterID}`} target="_blank" rel="noopener noreferrer">
-                    <Twitter className="w-4 h-4 mr-2" />
-                    Twitter
-                  </a>
-                </Button>
+                {aituber.youtubeID && (
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={`https://www.youtube.com/@${aituber.youtubeID}`} target="_blank" rel="noopener noreferrer">
+                      <Youtube className="w-4 h-4 mr-2" />
+                      YouTube
+                    </a>
+                  </Button>
+                )}
+                {aituber.twitterID && (
+                  <Button variant="outline" size="sm" asChild>
+                    <a href={`https://twitter.com/${aituber.twitterID}`} target="_blank" rel="noopener noreferrer">
+                      <Twitter className="w-4 h-4 mr-2" />
+                      Twitter
+                    </a>
+                  </Button>
+                )}
               </div>
             </CardContent>
             <CardFooter className="flex flex-col p-0 rounded-b-lg overflow-hidden">
               <a href={aituber.latestVideoUrl} target="_blank" rel="noopener noreferrer" className="w-full aspect-video relative">
-                <Image 
-                  src={aituber.latestVideoThumbnail} 
-                  alt={`${aituber.name}の最新動画`} 
+                <Image
+                  src={aituber.latestVideoThumbnail || '/aituber-list/images/preparing-thumbnail.png'}
+                  alt={`${aituber.name}の最新動画`}
                   fill
                   className="object-cover object-center"
                 />

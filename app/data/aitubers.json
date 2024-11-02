@@ -5,14 +5,45 @@
       "name": "ニケちゃん",
       "description": "歌って踊れるAIアイドル",
       "tags": ["アイドル", "歌手", "ダンサー"],
-      "imageUrl": "nikechan_icon.jpg",
       "youtubeID": "nikechan",
       "twitterID": "tegnike",
+      "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
+      "imageUrl": "nikechan_icon.jpg",
       "youtubeSubscribers": 270,
       "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
       "latestVideoDate": "2024年8月26日 18:38"
+    },
+    {
+      "id": 2,
+      "name": "AI活(アイカツ)",
+      "description": "歌って踊れるAIアイドル",
+      "tags": ["アイドル", "歌手", "ダンサー"],
+      "youtubeID": "",
+      "twitterID": "",
+      "youtubeChannelID": "UCH04nYPQZmtWIt9LXC1gt8A",
+      "imageUrl": "",
+      "youtubeSubscribers": "",
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": ""
+    },
+    {
+      "id": 3,
+      "name": "シロハナ / AIヒロイン研究所",
+      "description": "歌って踊れるAIアイドル",
+      "tags": ["アイドル", "歌手", "ダンサー"],
+      "youtubeID": "",
+      "twitterID": "",
+      "youtubeChannelID": "UCjCt_qG80PHiVeReRI_QWEg",
+      "imageUrl": "",
+      "youtubeSubscribers": "",
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": ""
     }
   ]
 }

@@ -1,0 +1,38 @@
+name: Update AITubers Data
+
+on:
+  schedule:
+    - cron: '0 0,12 * * *'  # UTC時間の0時と12時（日本時間9時と21時）
+  workflow_dispatch:  # 手動実行用
+
+permissions:
+  contents: write  # git pushに必要な権限を追加
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client pytz
+          
+      - name: Update AITubers data
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python scripts/update_aitubers.py
+        
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add app/data/aitubers.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update AITubers data" && git push)
