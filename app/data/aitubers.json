@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-03T08:20:07.593791+09:00",
+  "lastUpdated": "2024-11-03T08:08:46.603430+09:00",
   "aitubers": [
     {
       "id": 1,
@@ -126,13 +126,13 @@
       ],
       "twitterID": "",
       "youtubeChannelID": "UCE2SWbhR2WRHPBi-bflr0-g",
-      "youtubeURL": "aivtuber_shizuku",
-      "imageUrl": "https://yt3.ggpht.com/Pb8KxgWigY5AkIPk9MToO6MX9GpJj55_eu1B4fhTGVALuaAgYgMNowrhV18O2PQEFNyRejUBQQ=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 4950,
-      "latestVideoTitle": "【AITuber】AIと過ごすハロウィンの夜【JP/EN】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/JSplxXvc0es/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=JSplxXvc0es",
-      "latestVideoDate": "2023-10-31T12:14:25+09:00"
+      "youtubeURL": "",
+      "imageUrl": "",
+      "youtubeSubscribers": "",
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": ""
     },
     {
       "id": 8,

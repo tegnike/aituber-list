@@ -11,7 +11,7 @@ permissions:
   id-token: write   # GitHub Pagesへのデプロイに必要
 
 jobs:
-  update-and-deploy:
+  update-and-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -39,7 +39,6 @@ jobs:
           git add app/data/aitubers.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update AITubers data" && git push origin main)
 
-      # Next.jsのビルドとデプロイ
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -52,5 +51,19 @@ jobs:
       - name: Build Next.js application
         run: npm run build
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './out'  # ビルド成果物のパス
+
+  deploy:
+    needs: update-and-build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
