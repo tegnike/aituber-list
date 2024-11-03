@@ -34,22 +34,24 @@ Please provide the following information for each item:
 Please output the JSON data in the following format (must be in array format):
 
 ```json
-[
-  {
-    "name": "[Character or project name]",
-    "description": "[Brief description]",
-    "tags": ["[Tag1]", "[Tag2]", "[Tag3]"],
-    "twitterID": "[Twitter user ID]",
-    "youtubeChannelID": "[YouTube channel ID]",
-    "youtubeURL": "[YouTube channel URL]",
-    "imageUrl": "[Image URL]",
-    "youtubeSubscribers": [Subscriber count as number],
-    "latestVideoTitle": "[Latest video title]",
-    "latestVideoThumbnail": "[Latest video thumbnail URL]",
-    "latestVideoUrl": "[Latest video URL]",
-    "latestVideoDate": "[Latest video publication datetime (ISO 8601 format)]"
-  }
-]
+{
+    "data": [
+        {
+            "name": "[Character or project name]",
+            "description": "[Brief description]",
+            "tags": ["[Tag1]", "[Tag2]", "[Tag3]"],
+            "twitterID": "[Twitter user ID]",
+            "youtubeChannelID": "[YouTube channel ID]",
+            "youtubeURL": "[YouTube channel URL]",
+            "imageUrl": "[Image URL]",
+            "youtubeSubscribers": [Subscriber count as number],
+            "latestVideoTitle": "[Latest video title]",
+            "latestVideoThumbnail": "[Latest video thumbnail URL]",
+            "latestVideoUrl": "[Latest video URL]",
+            "latestVideoDate": "[Latest video publication datetime (ISO 8601 format)]"
+        }
+    ]
+}
 ```
 
 # Examples
@@ -72,22 +74,24 @@ Please output the JSON data in the following format (must be in array format):
 **Expected Output**:
 
 ```json
-[
-  {
-    "name": "ニケちゃん",
-    "description": "歌って踊れるAIアイドル",
-    "tags": ["アイドル", "歌手", "ダンサー"],
-    "twitterID": "tegnike",
-    "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
-    "youtubeURL": "https://www.youtube.com/c/nikechan",
-    "imageUrl": "nikechan_icon.jpg",
-    "youtubeSubscribers": 272,
-    "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
-    "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
-    "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
-    "latestVideoDate": "2024-08-26T18:38:55+09:00"
-  }
-]
+{
+    "data": [
+        {
+            "name": "ニケちゃん",
+            "description": "歌って踊れるAIアイドル",
+            "tags": ["アイドル", "歌手", "ダンサー"],
+            "twitterID": "tegnike",
+            "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
+            "youtubeURL": "https://www.youtube.com/c/nikechan",
+            "imageUrl": "nikechan_icon.jpg",
+            "youtubeSubscribers": 272,
+            "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
+            "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
+            "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
+            "latestVideoDate": "2024-08-26T18:38:55+09:00"
+        }
+    ]
+}
 ```
 
 # Important Notes
@@ -154,13 +158,14 @@ class Main:
             ],
             response_format={"type": "json_object"},
         )
+        print("AI response:", response.choices[0].message.content)
 
         new_data = json.loads(response.choices[0].message.content)
-        if isinstance(new_data, dict):
-            new_data = [new_data]
-
-        added_count = self.add_new_aitubers(new_data)
-        print(f"Total new AITubers added: {added_count}")
+        if new_data["data"]:
+            added_count = self.add_new_aitubers(new_data["data"])
+            print(f"Total new AITubers added: {added_count}")
+        else:
+            print("No new AITubers added")
 
 
 if __name__ == "__main__":
