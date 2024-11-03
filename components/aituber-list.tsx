@@ -11,7 +11,6 @@ import aituberData from '../app/data/aitubers.json'
 
 // AITuberの型定義は残します
 type AITuber = {
-  id: number
   name: string
   description: string
   tags: string[]
@@ -80,8 +79,8 @@ export function AituberList() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filteredAITubers.map(aituber => (
-          <Card key={aituber.id} className="flex flex-col">
+        {filteredAITubers.map((aituber, index) => (
+          <Card key={index} className="flex flex-col">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Image
