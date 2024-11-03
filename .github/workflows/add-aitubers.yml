@@ -1,0 +1,101 @@
+name: Add AITubers from Issue
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  add-and-build:
+    if: github.event.issue.title == 'add_aitubers'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Python dependencies
+        run: |
+          pip install openai google-api-python-client pytz
+
+      - name: Get issue content
+        id: get_issue
+        run: echo "body=${{ github.event.issue.body }}" >> $GITHUB_OUTPUT
+
+      - name: Add AITubers
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python scripts/add_aitubers.py "${{ steps.get_issue.outputs.body }}"
+
+      - name: Update YouTube info
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          python scripts/update_aitubers.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add app/data/aitubers.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Add new AITubers from issue #${{ github.event.issue.number }}" && git push origin main)
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node.js dependencies
+        run: npm install
+
+      - name: Build Next.js application
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './out'
+          name: 'github-pages'
+
+      - name: Comment on issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'AITuber addition and build process completed.'
+            })
+
+      - name: Close issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.update({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed'
+            })
+
+  deploy:
+    needs: add-and-build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
