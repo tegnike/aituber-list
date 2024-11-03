@@ -46,8 +46,8 @@ def update_aituber_info(aituber, youtube):
         profile_image_url = channel_info["snippet"]["thumbnails"]["high"]["url"]
         aituber["imageUrl"] = profile_image_url
 
-    # 最新動画の情報を取得
-    videos_response = (
+    # 公開済みの動画とライブ配信を別々に取得
+    completed_videos = (
         youtube.search()
         .list(
             part="snippet",
@@ -55,15 +55,36 @@ def update_aituber_info(aituber, youtube):
             order="date",
             maxResults=1,
             type="video",
-            eventType="completed,live",  # 公開済みの動画とライブ配信中の動画のみを対象にする
+            eventType="completed",
         )
         .execute()
     )
 
-    if not videos_response["items"]:
+    live_videos = (
+        youtube.search()
+        .list(
+            part="snippet",
+            channelId=channel_id,
+            order="date",
+            maxResults=1,
+            type="video",
+            eventType="live",
+        )
+        .execute()
+    )
+
+    # 両方の結果をマージ
+    videos = []
+    if completed_videos.get("items"):
+        videos.extend(completed_videos["items"])
+    if live_videos.get("items"):
+        videos.extend(live_videos["items"])
+
+    # 日付でソートして最新のものを取得
+    if not videos:
         return aituber
 
-    latest_video = videos_response["items"][0]
+    latest_video = max(videos, key=lambda x: x["snippet"]["publishedAt"])
     video_id = latest_video["id"]["videoId"]
 
     # 日本時間に変換
