@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: 'i.ytimg.com',
         pathname: '/vi/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'yt3.ggpht.com',
+        pathname: '/**',
+      },
     ],
     unoptimized: true,
   },
