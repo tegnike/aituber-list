@@ -1,6 +1,7 @@
 from openai import OpenAI
 import json
 import os
+import argparse
 
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
@@ -163,5 +164,10 @@ class Main:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Add new AITuber information")
+    parser.add_argument("content", help="AITuber information in text format")
+
+    args = parser.parse_args()
+
     main = Main()
-    main.run("名前は[音紡いま AI VTuber]です。youtubeidは[UCSHXPmFvDM32bLm0OgHblsA]")
+    main.run(args.content)
