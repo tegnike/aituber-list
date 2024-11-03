@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-04T02:40:50.014087+09:00",
+  "lastUpdated": "2024-11-04T02:54:48.147026+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -135,6 +135,20 @@
       "youtubeChannelID": "UCSHXPmFvDM32bLm0OgHblsA",
       "youtubeURL": "https://www.youtube.com/channel/UCSHXPmFvDM32bLm0OgHblsA",
       "imageUrl": "https://yt3.ggpht.com/Ox9FyTmAV-B6scsvwY1LF_aw1aiRXxz3B8_UrmU-R1OckXiT9z3zZDUjFyXLSG2wHMV8qEV7X24=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": ""
+    },
+    {
+      "name": "ろてじん",
+      "description": "",
+      "tags": [],
+      "twitterID": "rotejin",
+      "youtubeChannelID": "UCPzsgnak21DLXNQF2eiCMmQ",
+      "youtubeURL": "ろてじん",
+      "imageUrl": "https://yt3.ggpht.com/DqoZS_miWyaWWFyW_GqemcuVuvWBu-nsMbAqzY04ZPawkdMLRC-sM66_LtBxrZotsmVD1NrdHg=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 0,
       "latestVideoTitle": "",
       "latestVideoThumbnail": "",
