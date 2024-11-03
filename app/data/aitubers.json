@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-04T04:11:13.039218+09:00",
+  "lastUpdated": "2024-11-04T04:34:47.734373+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -168,6 +168,34 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/q5d51UxkPiY/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=q5d51UxkPiY",
       "latestVideoDate": "2024-10-27T09:02:38+09:00"
+    },
+    {
+      "name": "月夜野 アルマ",
+      "description": "",
+      "tags": [],
+      "twitterID": "Aruma_aicast",
+      "youtubeChannelID": "UCjk4gSWsiTGdfHbSDCq24cg",
+      "youtubeURL": "aruma_aicast",
+      "imageUrl": "https://yt3.ggpht.com/XuIJ3Q4fh64aVrBdUVktPAqrya523tKbMSUE5LrnTQ2_ynuiV768PXaZJjLcIk8Za-LJxRDSMg=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 6570,
+      "latestVideoTitle": "お盆は連日怪談配信！【月夜野アルマ/AI CAST】😱44分間の限定配信",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/GBqEOBHfApw/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=GBqEOBHfApw",
+      "latestVideoDate": "2024-08-16T08:50:11+09:00"
+    },
+    {
+      "name": "紡ネン",
+      "description": "",
+      "tags": [],
+      "twitterID": "tsumuginen",
+      "youtubeChannelID": "UCz3MxafXlPxGCJVpFLI7fGQ",
+      "youtubeURL": "tsumuginench",
+      "imageUrl": "https://yt3.ggpht.com/Utzf5sZxgTTz2m0qzf2GZYoSCSI4HFeido1M7eCdLAa7o9eh_4RTJrAW_yzo7fO-vj86VsM5=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 83300,
+      "latestVideoTitle": "【参加型】記憶のかけらGETチャンス？みんなで協力してカボチャをやっつけたら、巨大カボチャが出現！大惨事になるぞ配信【#探査記録配信】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/xDMqKHSn0Ho/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=xDMqKHSn0Ho",
+      "latestVideoDate": "2024-11-03T21:18:37+09:00"
     }
   ]
 }
