@@ -55,6 +55,7 @@ def update_aituber_info(aituber, youtube):
             order="date",
             maxResults=1,
             type="video",
+            eventType="completed,live",  # 公開済みの動画とライブ配信中の動画のみを対象にする
         )
         .execute()
     )
