@@ -29,7 +29,11 @@ jobs:
 
       - name: Get issue content
         id: get_issue
-        run: echo "body=${{ github.event.issue.body }}" >> $GITHUB_OUTPUT
+        run: |
+          body="${{ github.event.issue.body }}"
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$body" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Add AITubers
         env:
