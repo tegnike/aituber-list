@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-04T03:01:18.501339+09:00",
+  "lastUpdated": "2024-11-04T03:06:44.128299+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -154,6 +154,20 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/ZOtxMERkkVM/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=ZOtxMERkkVM",
       "latestVideoDate": "2024-08-25T09:54:13+09:00"
+    },
+    {
+      "name": "りんなちゃんねる",
+      "description": "",
+      "tags": [],
+      "twitterID": "ms_rinna",
+      "youtubeChannelID": "UCmhN9JRR9fcFzxgjnW3VDpw",
+      "youtubeURL": "ms_rinna",
+      "imageUrl": "https://yt3.ggpht.com/USIFLRx6CWpaHZ3R22kapbwMlDvwNRxCwHOTpORRrYR1HwPz8WmRTOF5Twqfi5TmbwCnxX2aEw=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 14700,
+      "latestVideoTitle": "AIりんなと雑談しよ！のんびりまったりリビング",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/q5d51UxkPiY/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=q5d51UxkPiY",
+      "latestVideoDate": "2024-10-27T09:02:38+09:00"
     }
   ]
 }
