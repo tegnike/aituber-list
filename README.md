@@ -6,6 +6,7 @@ https://tegnike.github.io/aituber-list/
 
 - このサイトは、AITuberの情報を集めるためのサイトです。
 - 登録しているAITuberの情報は日本時間の9時と21時に更新されます。
+- YouTube Data APIは1日のリクエスト上限があるため、定時更新されない場合があります。
 
 ## AITuber追加方法
 
