@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-04T09:54:06.903752+09:00",
+  "lastUpdated": "2024-11-04T13:42:51.174852+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -196,6 +196,20 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/xDMqKHSn0Ho/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=xDMqKHSn0Ho",
       "latestVideoDate": "2024-11-03T21:18:37+09:00"
+    },
+    {
+      "name": "あざいるぅか",
+      "description": "",
+      "tags": [],
+      "twitterID": "azailuhca",
+      "youtubeChannelID": "UCGRXv4ZRRqUTPg0eASMd9hA",
+      "youtubeURL": "",
+      "imageUrl": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": ""
     }
   ]
 }
