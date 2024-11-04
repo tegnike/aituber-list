@@ -17,6 +17,7 @@ type AITuber = {
   twitterID: string
   youtubeURL: string
   imageUrl: string
+  youtubeSubscribers: number
   latestVideoThumbnail: string
   latestVideoUrl: string
   latestVideoDate: string
@@ -38,6 +39,18 @@ const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
 const formatDate = (isoDate: string): string => {
   const date = new Date(isoDate);
   return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+};
+
+// 登録者数のフォーマット用関数を追加
+const formatSubscriberCount = (count: number): string => {
+  if (count >= 10000000) {
+    return `${(count / 10000000).toFixed(2)}千万`;
+  } else if (count >= 10000) {
+    return `${(count / 10000).toFixed(2)}万`;
+  } else if (count >= 1000) {
+    return `${count.toLocaleString()}`;
+  }
+  return `${count}`;
 };
 
 export function AituberList() {
@@ -105,23 +118,28 @@ export function AituberList() {
                   <Badge key={tag} variant="secondary">{tag}</Badge>
                 ))}
               </div>
-              <div className="flex gap-2">
-                {aituber.youtubeURL && (
+              <div className="flex flex-col gap-2">
+                <div className="text-sm text-muted-foreground">
+                  登録者数: {formatSubscriberCount(aituber.youtubeSubscribers)}人
+                </div>
+                <div className="flex gap-2">
+                  {aituber.youtubeURL && (
                     <Button variant="outline" size="sm" asChild>
                       <a href={`https://www.youtube.com/@${aituber.youtubeURL}`} target="_blank" rel="noopener noreferrer">
-                      <Youtube className="w-4 h-4 mr-2" />
-                      YouTube
-                    </a>
-                  </Button>
-                )}
-                {aituber.twitterID && (
-                  <Button variant="outline" size="sm" asChild>
-                    <a href={`https://twitter.com/${aituber.twitterID}`} target="_blank" rel="noopener noreferrer">
-                      <Twitter className="w-4 h-4 mr-2" />
-                      Twitter
-                    </a>
-                  </Button>
-                )}
+                        <Youtube className="w-4 h-4 mr-2" />
+                        YouTube
+                      </a>
+                    </Button>
+                  )}
+                  {aituber.twitterID && (
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={`https://twitter.com/${aituber.twitterID}`} target="_blank" rel="noopener noreferrer">
+                        <Twitter className="w-4 h-4 mr-2" />
+                        Twitter
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </div>
             </CardContent>
             <CardFooter className="flex flex-col p-0 rounded-b-lg overflow-hidden">
