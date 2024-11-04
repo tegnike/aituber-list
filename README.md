@@ -2,6 +2,11 @@
 
 https://tegnike.github.io/aituber-list/
 
+## 概要
+
+- このサイトは、AITuberの情報を集めるためのサイトです。
+- 登録しているAITuberの情報は日本時間の9時と21時に更新されます。
+
 ## AITuber追加方法
 
 ### 1. Issueを作成
