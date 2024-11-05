@@ -68,7 +68,7 @@ def update_aituber_info(aituber, youtube):
 
     # 動画の詳細情報を取得して正確な公開日時を取得
     video_response = youtube.videos().list(
-        part="snippet",
+        part="snippet,status",
         id=video_id
     ).execute()
     
@@ -76,6 +76,10 @@ def update_aituber_info(aituber, youtube):
         return aituber
         
     video_info = video_response["items"][0]
+    
+    # 公開状態をチェック
+    if video_info["status"]["privacyStatus"] != "public":
+        return aituber  # 公開以外の動画はスキップ
     
     # 日本時間に変換
     jst = pytz.timezone("Asia/Tokyo")

@@ -35,13 +35,15 @@ const aitubers: AITuber[] = aituberData.aitubers
 // 全てのタグを抽出
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
 
-// 日付フォーマット用の関数を追加
+// 日付フォーマット用の関数を修正
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   return date.toLocaleDateString('ja-JP', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
     timeZone: 'Asia/Tokyo'
   });
 };

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-05T22:36:25.772946+09:00",
+  "lastUpdated": "2024-11-05T22:45:29.928861+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -13,9 +13,9 @@
       "imageUrl": "nikechan_icon.jpg",
       "youtubeSubscribers": 272,
       "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/LIYuXlXhllQ/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=LIYuXlXhllQ",
-      "latestVideoDate": "2024-09-01T01:27:21+09:00"
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
+      "latestVideoDate": "2024-08-26T18:38:55+09:00"
     },
     {
       "name": "AI活(アイカツ)",
@@ -208,10 +208,10 @@
       "youtubeURL": "kokuren2828",
       "imageUrl": "https://yt3.ggpht.com/J_ZV1vOm5mAg53mx-unBjHq9Cow1JSedtdnG3gPhr4P12JQ41gkMrF9pXJz9sGrkpVN6IZVR=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 61,
-      "latestVideoTitle": "Cyber Love Fyah feat.凛音エル【AI song with RVC】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/xsCSKrLy3EQ/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=xsCSKrLy3EQ",
-      "latestVideoDate": "2024-11-04T18:57:24+09:00"
+      "latestVideoTitle": "Virtual Chili Pepper feat.凛音エル【AI song with RVC】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/vp057C53RA4/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=vp057C53RA4",
+      "latestVideoDate": "2024-11-05T22:40:10+09:00"
     }
   ]
 }
