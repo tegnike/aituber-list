@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-05T22:45:29.928861+09:00",
+  "lastUpdated": "2024-11-05T23:29:56.070770+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -212,6 +212,20 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/vp057C53RA4/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=vp057C53RA4",
       "latestVideoDate": "2024-11-05T22:40:10+09:00"
+    },
+    {
+      "name": "くぼあばた AITuber",
+      "description": "SUNOで歌うAITuber",
+      "tags": [],
+      "twitterID": "KuboAvatar",
+      "youtubeChannelID": "UCu7gX0rSlXln9UZEJ2OWJXw",
+      "youtubeURL": "kuboavatar",
+      "imageUrl": "https://yt3.ggpht.com/yRJr-PUk5mkHPW1rY6OJX6Xt720__O14D78R8HjyrpC9nT81Ar5nUHm2qa15ES5o1pxo9Rec6g=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 690,
+      "latestVideoTitle": "【きみにはなすうた】SUNOで歌うAITuber くぼあばた #ai #suno  #aituber  #shorts",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/LZk4mepNEDg/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=LZk4mepNEDg",
+      "latestVideoDate": "2024-11-05T23:03:48+09:00"
     }
   ]
 }
