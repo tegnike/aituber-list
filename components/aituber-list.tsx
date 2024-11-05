@@ -36,9 +36,14 @@ const aitubers: AITuber[] = aituberData.aitubers
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
 
 // 日付フォーマット用の関数を追加
-const formatDate = (isoDate: string): string => {
-  const date = new Date(isoDate);
-  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'Asia/Tokyo'
+  });
 };
 
 // 登録者数のフォーマット用関数を追加

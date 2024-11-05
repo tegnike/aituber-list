@@ -27,7 +27,9 @@ def update_aituber_info(aituber, youtube):
 
     # チャンネル情報の取得（statisticsとsnippetの両方を取得）
     channel_response = (
-        youtube.channels().list(part="statistics,snippet", id=channel_id).execute()
+        youtube.channels()
+        .list(part="statistics,snippet,contentDetails", id=channel_id)
+        .execute()
     )
 
     if not channel_response["items"]:
@@ -46,51 +48,39 @@ def update_aituber_info(aituber, youtube):
         profile_image_url = channel_info["snippet"]["thumbnails"]["high"]["url"]
         aituber["imageUrl"] = profile_image_url
 
-    # 公開済みの動画とライブ配信を別々に取得
-    completed_videos = (
-        youtube.search()
+    # search().list()の代わりにplaylistItems().list()を使用
+    uploads_playlist_id = channel_info["contentDetails"]["relatedPlaylists"]["uploads"]
+    latest_videos = (
+        youtube.playlistItems()
         .list(
             part="snippet",
-            channelId=channel_id,
-            order="date",
-            maxResults=1,
-            type="video",
-            eventType="completed",
+            playlistId=uploads_playlist_id,
+            maxResults=1
         )
         .execute()
     )
 
-    live_videos = (
-        youtube.search()
-        .list(
-            part="snippet",
-            channelId=channel_id,
-            order="date",
-            maxResults=1,
-            type="video",
-            eventType="live",
-        )
-        .execute()
-    )
-
-    # 両方の結果をマージ
-    videos = []
-    if completed_videos.get("items"):
-        videos.extend(completed_videos["items"])
-    if live_videos.get("items"):
-        videos.extend(live_videos["items"])
-
-    # 日付でソートして最新のものを取得
-    if not videos:
+    if not latest_videos.get("items"):
         return aituber
 
-    latest_video = max(videos, key=lambda x: x["snippet"]["publishedAt"])
-    video_id = latest_video["id"]["videoId"]
+    latest_video = latest_videos["items"][0]
+    video_id = latest_video["snippet"]["resourceId"]["videoId"]
 
+    # 動画の詳細情報を取得して正確な公開日時を取得
+    video_response = youtube.videos().list(
+        part="snippet",
+        id=video_id
+    ).execute()
+    
+    if not video_response.get("items"):
+        return aituber
+        
+    video_info = video_response["items"][0]
+    
     # 日本時間に変換
     jst = pytz.timezone("Asia/Tokyo")
     published_at = (
-        datetime.strptime(latest_video["snippet"]["publishedAt"], "%Y-%m-%dT%H:%M:%SZ")
+        datetime.strptime(video_info["snippet"]["publishedAt"], "%Y-%m-%dT%H:%M:%SZ")
         .replace(tzinfo=pytz.UTC)
         .astimezone(jst)
     )
@@ -100,9 +90,7 @@ def update_aituber_info(aituber, youtube):
         {
             "youtubeSubscribers": int(channel_info["statistics"]["subscriberCount"]),
             "latestVideoTitle": latest_video["snippet"]["title"],
-            "latestVideoThumbnail": latest_video["snippet"]["thumbnails"]["high"][
-                "url"
-            ],
+            "latestVideoThumbnail": latest_video["snippet"]["thumbnails"]["high"]["url"],
             "latestVideoUrl": f"https://www.youtube.com/watch?v={video_id}",
             "latestVideoDate": published_at.isoformat(),
         }
