@@ -21,6 +21,7 @@ type AITuber = {
   latestVideoThumbnail: string
   latestVideoUrl: string
   latestVideoDate: string
+  isUpcoming: boolean
 }
 
 // JSONからデータを取得し、チャンネルIDが存在するもののみをフィルタリングして日付でソート
@@ -160,7 +161,16 @@ export function AituberList() {
               </a>
               <div className="flex items-center justify-end w-full p-2 text-sm text-muted-foreground">
                 <Calendar className="w-4 h-4 mr-1" />
-                {aituber.latestVideoDate ? formatDate(aituber.latestVideoDate) : ''}
+                {aituber.latestVideoDate ? (
+                  <span className="flex items-center gap-1">
+                    {formatDate(aituber.latestVideoDate)}
+                    {aituber.isUpcoming && (
+                      <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                        配信予定
+                      </Badge>
+                    )}
+                  </span>
+                ) : ''}
               </div>
             </CardFooter>
           </Card>
