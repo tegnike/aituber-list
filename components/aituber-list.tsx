@@ -109,18 +109,35 @@ export function AituberList() {
           <Card key={index} className="flex flex-col">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Image
-                  src={aituber.imageUrl.startsWith('http')
-                    ? aituber.imageUrl
-                    : aituber.imageUrl
-                      ? `/aituber-list/images/aitubers/${aituber.imageUrl}`
-                      : '/aituber-list/images/preparing-icon.png'
-                  }
-                  alt={aituber.name}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
+                {aituber.youtubeURL ? (
+                  <a href={`https://www.youtube.com/@${aituber.youtubeURL}`} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={aituber.imageUrl.startsWith('http')
+                        ? aituber.imageUrl
+                        : aituber.imageUrl
+                          ? `/aituber-list/images/aitubers/${aituber.imageUrl}`
+                          : '/aituber-list/images/preparing-icon.png'
+                      }
+                      alt={aituber.name}
+                      width={40}
+                      height={40}
+                      className="rounded-full hover:opacity-80 transition-opacity"
+                    />
+                  </a>
+                ) : (
+                  <Image
+                    src={aituber.imageUrl.startsWith('http')
+                      ? aituber.imageUrl
+                      : aituber.imageUrl
+                        ? `/aituber-list/images/aitubers/${aituber.imageUrl}`
+                        : '/aituber-list/images/preparing-icon.png'
+                    }
+                    alt={aituber.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                )}
                 {aituber.name}
               </CardTitle>
               <CardDescription>{aituber.description}</CardDescription>
