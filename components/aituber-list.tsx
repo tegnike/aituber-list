@@ -82,7 +82,12 @@ export function AituberList() {
       </p>
 
       <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">タグでフィルター</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          タグでフィルター
+          <span className="text-sm font-normal text-muted-foreground ml-2">
+            ({filteredAITubers.length} / {aitubers.length})
+          </span>
+        </h2>
         <div className="flex flex-wrap gap-2">
           {allTags.map(tag => (
             <div key={tag} className="flex items-center">
