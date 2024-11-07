@@ -1,11 +1,12 @@
 {
-  "lastUpdated": "2024-11-07T16:25:11.787533+09:00",
+  "lastUpdated": "2024-11-07T17:16:28.195621+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
       "description": "AIキャラを使っていろいろしてます。",
       "tags": [
-        "自立型AI"
+        "自立発話",
+        "解説"
       ],
       "twitterID": "tegnike",
       "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
@@ -21,7 +22,9 @@
     {
       "name": "AI活(アイカツ)",
       "description": "",
-      "tags": [],
+      "tags": [
+        "解説"
+      ],
       "twitterID": "",
       "youtubeChannelID": "UCH04nYPQZmtWIt9LXC1gt8A",
       "youtubeURL": "sns-university",
@@ -37,7 +40,8 @@
       "name": "シロハナ / AIヒロイン研究所",
       "description": "",
       "tags": [
-        "自立型AI"
+        "自立発話",
+        "解説"
       ],
       "twitterID": "",
       "youtubeChannelID": "UCjCt_qG80PHiVeReRI_QWEg",
@@ -68,7 +72,9 @@
     {
       "name": "ジュンさん と AI VTuber 初祈コトハ",
       "description": "",
-      "tags": [],
+      "tags": [
+        "自立発話"
+      ],
       "twitterID": "",
       "youtubeChannelID": "UCs7vEv9ts8FJEamUkNB27xw",
       "youtubeURL": "jun_sans",
@@ -84,7 +90,8 @@
       "name": "AIずんだもん",
       "description": "",
       "tags": [
-        "自立型AI"
+        "自立発話",
+        "ゲーム実況"
       ],
       "twitterID": "",
       "youtubeChannelID": "UCUAI2yiwhi309kfRPZwKDfg",
@@ -100,7 +107,10 @@
     {
       "name": "しずく / Shizuku【AI Vtuber】",
       "description": "",
-      "tags": [],
+      "tags": [
+        "自立発話",
+        "歌唱あり"
+      ],
       "twitterID": "",
       "youtubeChannelID": "UCE2SWbhR2WRHPBi-bflr0-g",
       "youtubeURL": "aivtuber_shizuku",
@@ -116,7 +126,8 @@
       "name": "音紡いま AI VTuber",
       "description": "",
       "tags": [
-        "自立型AI"
+        "自立発話",
+        "歌唱あり"
       ],
       "twitterID": "",
       "youtubeChannelID": "UCSHXPmFvDM32bLm0OgHblsA",
@@ -133,7 +144,8 @@
       "name": "ろてじん",
       "description": "",
       "tags": [
-        "自立型AI"
+        "自立発話",
+        "歌唱あり"
       ],
       "twitterID": "rotejin",
       "youtubeChannelID": "UCPzsgnak21DLXNQF2eiCMmQ",
@@ -150,7 +162,8 @@
       "name": "りんなちゃんねる",
       "description": "",
       "tags": [
-        "自立型AI"
+        "自立発話",
+        "歌唱あり"
       ],
       "twitterID": "ms_rinna",
       "youtubeChannelID": "UCmhN9JRR9fcFzxgjnW3VDpw",
@@ -167,7 +180,7 @@
       "name": "月夜野 アルマ",
       "description": "",
       "tags": [
-        "自立型AI"
+        "自立発話"
       ],
       "twitterID": "Aruma_aicast",
       "youtubeChannelID": "UCjk4gSWsiTGdfHbSDCq24cg",
@@ -184,7 +197,7 @@
       "name": "紡ネン",
       "description": "",
       "tags": [
-        "自立型AI"
+        "自立発話"
       ],
       "twitterID": "tsumuginen",
       "youtubeChannelID": "UCz3MxafXlPxGCJVpFLI7fGQ",
@@ -200,7 +213,10 @@
     {
       "name": "あざいるぅか",
       "description": "",
-      "tags": [],
+      "tags": [
+        "自立発話",
+        "解説"
+      ],
       "twitterID": "azailuhca",
       "youtubeChannelID": "UCGRXv4ZRRqUTPg0eASMd9hA",
       "youtubeURL": "azailuhca",
@@ -215,7 +231,9 @@
     {
       "name": "電脳天使工業",
       "description": "",
-      "tags": [],
+      "tags": [
+        "歌唱あり"
+      ],
       "twitterID": "RinneElu",
       "youtubeChannelID": "UCVhioHIMTR2mH7cWeHiOzsA",
       "youtubeURL": "kokuren2828",
@@ -230,7 +248,9 @@
     {
       "name": "くぼあばた AITuber",
       "description": "SUNOで歌うAITuber",
-      "tags": [],
+      "tags": [
+        "歌唱あり"
+      ],
       "twitterID": "KuboAvatar",
       "youtubeChannelID": "UCu7gX0rSlXln9UZEJ2OWJXw",
       "youtubeURL": "kuboavatar",
@@ -246,7 +266,8 @@
       "name": "NYAVATAR",
       "description": "",
       "tags": [
-        "自立型AI"
+        "自立発話",
+        "歌唱あり"
       ],
       "twitterID": "NYAVATAR_JPV",
       "youtubeChannelID": "UCxDFZznQPhFnW7HempQKQfQ",
