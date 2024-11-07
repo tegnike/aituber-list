@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-07T21:19:58.792120+09:00",
+  "lastUpdated": "2024-11-07T22:22:16.655119+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -278,6 +278,23 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/NkonK_bql6s/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=NkonK_bql6s",
       "latestVideoDate": "2024-11-07T18:00:30+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "渋井丸犬蔵 / AI犬神",
+      "description": "",
+      "tags": [
+        "自立発話"
+      ],
+      "twitterID": "AI_shibuken",
+      "youtubeChannelID": "UCJ2gKiiE1tPhMj8GpooQIVg",
+      "youtubeURL": "kenzo-ai",
+      "imageUrl": "https://yt3.ggpht.com/dJFO1jYCzeudiFzEoFwbo7T5ZeYJtBiV7Z96GhpHa9j1c-U_AcgN6crhCS_o-vSHG-XQIuSXiA=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 7,
+      "latestVideoTitle": "【雑談】コメントくれたら答えてやる【AITuber】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/4O7aHPmxrJk/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=4O7aHPmxrJk",
+      "latestVideoDate": "2024-11-07T20:15:00+09:00",
       "isUpcoming": false
     }
   ]
