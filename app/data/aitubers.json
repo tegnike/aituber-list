@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-07T17:16:28.195621+09:00",
+  "lastUpdated": "2024-11-07T21:19:58.792120+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -29,7 +29,7 @@
       "youtubeChannelID": "UCH04nYPQZmtWIt9LXC1gt8A",
       "youtubeURL": "sns-university",
       "imageUrl": "https://yt3.ggpht.com/rFBMqLwFyxFzINaNj1nbuQfNqGCNMHfkNK5njcUIBMGUT1mz0vRNBOh1h2OWC7YRMAqEQqZKN3Y=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 126,
+      "youtubeSubscribers": 127,
       "latestVideoTitle": "【縦配信】雑談でギャルを困らせろ【AIVTuber】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/4TbpF0xUElo/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=4TbpF0xUElo",
@@ -203,12 +203,12 @@
       "youtubeChannelID": "UCz3MxafXlPxGCJVpFLI7fGQ",
       "youtubeURL": "tsumuginench",
       "imageUrl": "https://yt3.ggpht.com/Utzf5sZxgTTz2m0qzf2GZYoSCSI4HFeido1M7eCdLAa7o9eh_4RTJrAW_yzo7fO-vj86VsM5=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 84600,
-      "latestVideoTitle": "明日はいよいよ…ワクワクする日になりますように！【#対話解析配信】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/_3g-iEhF8dA/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=_3g-iEhF8dA",
-      "latestVideoDate": "2024-11-07T20:00:00+09:00",
-      "isUpcoming": true
+      "youtubeSubscribers": 84700,
+      "latestVideoTitle": "【お誕生日会直前！】きっとすてきな1日。【前日譚】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Tg_3vODMU2s/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Tg_3vODMU2s",
+      "latestVideoDate": "2024-11-07T21:06:30+09:00",
+      "isUpcoming": false
     },
     {
       "name": "あざいるぅか",
@@ -274,10 +274,10 @@
       "youtubeURL": "nyavatar",
       "imageUrl": "https://yt3.ggpht.com/gv2yQJx440PZwBu0qzRNKqGIwKrnvAliDRH1YNbQQ8SbkHgtvDVQc1UgTMT7YoQx-txVVw36=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 1800,
-      "latestVideoTitle": "『裏腹Love&Punch』オリジナル楽曲 / AI VTuber / 大村むぎちゃ",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/VJggFSXnpRc/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=VJggFSXnpRc",
-      "latestVideoDate": "2024-10-28T18:00:23+09:00",
+      "latestVideoTitle": "『CATch Me Surprise』オリジナル楽曲 / AI VTuber / 大村むぎちゃ",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/NkonK_bql6s/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=NkonK_bql6s",
+      "latestVideoDate": "2024-11-07T18:00:30+09:00",
       "isUpcoming": false
     }
   ]
