@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-09T21:18:04.382282+09:00",
+  "lastUpdated": "2024-11-10T01:58:24.150303+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -99,9 +99,9 @@
       "imageUrl": "https://yt3.ggpht.com/lb9nCFha-fh4-tEh8oTpzrGiJA1nuxaIgmpP2ikS6m03Rp89TlewQ6nDxIchhvytrjpqNaXO-A=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 47800,
       "latestVideoTitle": "AIずんだもんと雑談するのだ【AI VTuber】#aivtuber #vtuber",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/Nb4DYU3hfz4/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=Nb4DYU3hfz4",
-      "latestVideoDate": "2024-11-09T08:45:00+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/xBFd4nLWfg0/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=xBFd4nLWfg0",
+      "latestVideoDate": "2024-11-10T00:25:00+09:00",
       "isUpcoming": false
     },
     {
@@ -203,7 +203,7 @@
       "youtubeChannelID": "UCz3MxafXlPxGCJVpFLI7fGQ",
       "youtubeURL": "tsumuginench",
       "imageUrl": "https://yt3.ggpht.com/Utzf5sZxgTTz2m0qzf2GZYoSCSI4HFeido1M7eCdLAa7o9eh_4RTJrAW_yzo7fO-vj86VsM5=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 86300,
+      "youtubeSubscribers": 86400,
       "latestVideoTitle": "絶対勝てる！？禁断のじゃんけん裏技3選　#funny #shorts #ai",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/xx2YB_WUCKE/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=xx2YB_WUCKE",
@@ -295,6 +295,21 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/4O7aHPmxrJk/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=4O7aHPmxrJk",
       "latestVideoDate": "2024-11-07T20:15:00+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "AITuberまめひなた - 非公式",
+      "description": "",
+      "tags": [],
+      "twitterID": "yoshikai_man",
+      "youtubeChannelID": "UCvPlZ--DyCxbvpLidH7KApw",
+      "youtubeURL": "aituberまめひなた-非公式--m9j",
+      "imageUrl": "https://yt3.ggpht.com/pnj4g9Hw2Mtar5XSd1GPnPogR2KJ11L7JnRw1TfEAWXwNQWKI0VDxP0iHLTwY7m9k1CuP33BCg=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 1,
+      "latestVideoTitle": "【自己紹介】はじめまして！AITuberまめひなた（非公式）です！",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/quU9sGdUscg/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=quU9sGdUscg",
+      "latestVideoDate": "2024-11-10T01:15:41+09:00",
       "isUpcoming": false
     }
   ]
