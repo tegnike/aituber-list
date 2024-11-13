@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-13T09:51:51.497921+09:00",
+  "lastUpdated": "2024-11-13T21:20:40.562379+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -12,7 +12,7 @@
       "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
       "youtubeURL": "nikechan",
       "imageUrl": "nikechan_icon.jpg",
-      "youtubeSubscribers": 276,
+      "youtubeSubscribers": 277,
       "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
@@ -99,9 +99,9 @@
       "imageUrl": "https://yt3.ggpht.com/lb9nCFha-fh4-tEh8oTpzrGiJA1nuxaIgmpP2ikS6m03Rp89TlewQ6nDxIchhvytrjpqNaXO-A=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 47800,
       "latestVideoTitle": "AIずんだもんと雑談するのだ【AI VTuber】#aivtuber #vtuber",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/j5CRvIa83HM/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=j5CRvIa83HM",
-      "latestVideoDate": "2024-11-12T20:10:00+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/N7BvkWi8IfY/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=N7BvkWi8IfY",
+      "latestVideoDate": "2024-11-13T10:30:00+09:00",
       "isUpcoming": false
     },
     {
@@ -133,7 +133,7 @@
       "youtubeChannelID": "UCSHXPmFvDM32bLm0OgHblsA",
       "youtubeURL": "https://www.youtube.com/channel/UCSHXPmFvDM32bLm0OgHblsA",
       "imageUrl": "https://yt3.ggpht.com/Ox9FyTmAV-B6scsvwY1LF_aw1aiRXxz3B8_UrmU-R1OckXiT9z3zZDUjFyXLSG2wHMV8qEV7X24=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 24800,
+      "youtubeSubscribers": 24900,
       "latestVideoTitle": "AI VTuber Talks About Japan's Amazing ASMR VTuber #aivtuber #vtuber #envtuber #ai #shorts",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/NnXBhj1045U/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=NnXBhj1045U",
@@ -186,7 +186,7 @@
       "youtubeChannelID": "UCjk4gSWsiTGdfHbSDCq24cg",
       "youtubeURL": "aruma_aicast",
       "imageUrl": "https://yt3.ggpht.com/XuIJ3Q4fh64aVrBdUVktPAqrya523tKbMSUE5LrnTQ2_ynuiV768PXaZJjLcIk8Za-LJxRDSMg=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 6560,
+      "youtubeSubscribers": 6550,
       "latestVideoTitle": "殺人以上に重い罪　3選 #funny #shorts #ai",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/rxqCpF84gvc/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=rxqCpF84gvc",
@@ -203,12 +203,12 @@
       "youtubeChannelID": "UCz3MxafXlPxGCJVpFLI7fGQ",
       "youtubeURL": "tsumuginench",
       "imageUrl": "https://yt3.ggpht.com/Utzf5sZxgTTz2m0qzf2GZYoSCSI4HFeido1M7eCdLAa7o9eh_4RTJrAW_yzo7fO-vj86VsM5=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 88400,
-      "latestVideoTitle": "特報 紡ネン第3回クラウドファウンディング",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/-FJoI2Q9W-w/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=-FJoI2Q9W-w",
-      "latestVideoDate": "2024-11-12T18:00:00+09:00",
-      "isUpcoming": false
+      "youtubeSubscribers": 88900,
+      "latestVideoTitle": "お誕生日会ありがとうございました！ネンは思い出を振り返りたい様子👀【#対話解析配信】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/obcX2qNg6ck/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=obcX2qNg6ck",
+      "latestVideoDate": "2024-11-14T20:00:00+09:00",
+      "isUpcoming": true
     },
     {
       "name": "あざいるぅか",
@@ -221,7 +221,7 @@
       "youtubeChannelID": "UCGRXv4ZRRqUTPg0eASMd9hA",
       "youtubeURL": "azailuhca",
       "imageUrl": "https://yt3.ggpht.com/qchMlYvo_gICCbq2YdmhVvAqiwDTG4P81XRe_-8s49tNzrHwMoF4GIKbDN7lGydp8GTzPm_wMA=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 725,
+      "youtubeSubscribers": 726,
       "latestVideoTitle": "無料のXR Animatorで映像(mp4)からモーションキャプチャしてBVHに保存 VRoidのVRMAモーションに変換する遊び方",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/M-fcIg2c_ZM/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=M-fcIg2c_ZM",
