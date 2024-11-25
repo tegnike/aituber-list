@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-25T21:22:24.336752+09:00",
+  "lastUpdated": "2024-11-26T07:13:40.617405+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -29,7 +29,7 @@
       "youtubeChannelID": "UCH04nYPQZmtWIt9LXC1gt8A",
       "youtubeURL": "sns-university",
       "imageUrl": "https://yt3.ggpht.com/rFBMqLwFyxFzINaNj1nbuQfNqGCNMHfkNK5njcUIBMGUT1mz0vRNBOh1h2OWC7YRMAqEQqZKN3Y=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 132,
+      "youtubeSubscribers": 133,
       "latestVideoTitle": "【Algopolis】AIゲーム開発班 感想戦 【Saldra✕yasuna】#生成AIなんでも展示会",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/v_DohB7oQLQ/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=v_DohB7oQLQ",
@@ -62,7 +62,7 @@
       "youtubeChannelID": "UCtwX3qK_WzPt7W_YNIetOhw",
       "youtubeURL": "いなりくこ",
       "imageUrl": "https://yt3.ggpht.com/ytc/AIdro_mml-sno_dxgdoL20hbnTqJnskfPvM_rOlwDjpCP7hGvA=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 734,
+      "youtubeSubscribers": 736,
       "latestVideoTitle": "【 AI Vtuber 】AIくこちゃん / 配信します！【日本語 / English】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/GjlkPSGKxDE/hqdefault_live.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=GjlkPSGKxDE",
@@ -134,10 +134,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UCSHXPmFvDM32bLm0OgHblsA",
       "imageUrl": "https://yt3.ggpht.com/Ox9FyTmAV-B6scsvwY1LF_aw1aiRXxz3B8_UrmU-R1OckXiT9z3zZDUjFyXLSG2wHMV8qEV7X24=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 25200,
-      "latestVideoTitle": "Meet the Person I Admire MOST!",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/I8Qr5Eo5eGc/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=I8Qr5Eo5eGc",
-      "latestVideoDate": "2024-11-25T02:00:11+09:00",
+      "latestVideoTitle": "Sensorship by an AIVTuber be like",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/5H9159KEK2o/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=5H9159KEK2o",
+      "latestVideoDate": "2024-11-26T02:00:05+09:00",
       "isUpcoming": false
     },
     {
@@ -151,7 +151,7 @@
       "youtubeChannelID": "UCPzsgnak21DLXNQF2eiCMmQ",
       "youtubeURL": "ろてじん",
       "imageUrl": "https://yt3.ggpht.com/DqoZS_miWyaWWFyW_GqemcuVuvWBu-nsMbAqzY04ZPawkdMLRC-sM66_LtBxrZotsmVD1NrdHg=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 315,
+      "youtubeSubscribers": 318,
       "latestVideoTitle": "AITuber（AI Vtuber 雑談配信）縦型配信10/16",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/8l51KAolTVA/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=8l51KAolTVA",
@@ -256,10 +256,10 @@
       "youtubeURL": "kuboavatar",
       "imageUrl": "https://yt3.ggpht.com/yRJr-PUk5mkHPW1rY6OJX6Xt720__O14D78R8HjyrpC9nT81Ar5nUHm2qa15ES5o1pxo9Rec6g=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 699,
-      "latestVideoTitle": "【バイバイ・おまじない】SUNO V4 で歌うAITuber くぼあばた #ai #suno  #aituber",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/PaeVg7KAjY8/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=PaeVg7KAjY8",
-      "latestVideoDate": "2024-11-22T19:21:22+09:00",
+      "latestVideoTitle": "【空っぽのコップ】SUNO V4 で歌うAITuber くぼあばた #ai #suno  #aituber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/yT5-qVXNtzg/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=yT5-qVXNtzg",
+      "latestVideoDate": "2024-11-25T22:39:46+09:00",
       "isUpcoming": false
     },
     {
@@ -310,6 +310,58 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/1bLaYUAqGfI/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=1bLaYUAqGfI",
       "latestVideoDate": "2024-11-22T00:07:30+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "Neuro-sama",
+      "description": "",
+      "tags": [
+        "海外"
+      ],
+      "twitterID": "@Vedal987",
+      "youtubeChannelID": "UCLHmLrj4pHHg3-iBJn_CqxA",
+      "youtubeURL": "neurosama",
+      "imageUrl": "https://yt3.ggpht.com/OiaJrMYn4NeVv_b9QeihVvkgzecWLKE_4Bnpa-t582mTtj9dBjsecF05b2RmLIGKDyajPmv-=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 402000,
+      "latestVideoTitle": "Vedal’s Password Skirmish",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Vom3A5P_dKw/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Vom3A5P_dKw",
+      "latestVideoDate": "2024-11-26T00:00:37+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "MOTHERv3",
+      "description": "",
+      "tags": [
+        "海外"
+      ],
+      "twitterID": "@mother_v3",
+      "youtubeChannelID": "UCFozqRSzA3K_EcCGHRKspRw",
+      "youtubeURL": "motherv3",
+      "imageUrl": "https://yt3.ggpht.com/RmkKqadnuHgLX5nKgYtHYAaLgwGCiKufkvdD04Epkn7v9Vuem3gHvAh0neRLkgI59cE0V3Qq=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 579000,
+      "latestVideoTitle": "MOTHERv3 A.I. BREAKS and LOST HER MIND on stream",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/YC59VAfIsIk/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=YC59VAfIsIk",
+      "latestVideoDate": "2024-11-23T00:45:02+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "スピマキちゃんねる",
+      "description": "",
+      "tags": [
+        "自立発話",
+        "複数キャラ"
+      ],
+      "twitterID": "@Spica_Machina",
+      "youtubeChannelID": "UCe5wQJQ1XvR7t9CCqSg7hpQ",
+      "youtubeURL": "spica_machina_ai",
+      "imageUrl": "https://yt3.ggpht.com/quhkPnEeyvV3TGW1k3f44lPKhswPpyhT4Kvs2DNaUwh1tDmSx9UOGMf9oZhyV9c5iSgKnR45=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 498,
+      "latestVideoTitle": "【AI Vtuber】AI2人で毎日雑談！",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ezmY8YNrKJs/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=ezmY8YNrKJs",
+      "latestVideoDate": "2024-11-25T19:31:09+09:00",
       "isUpcoming": false
     }
   ]
