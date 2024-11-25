@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-26T07:13:40.617405+09:00",
+  "lastUpdated": "2024-11-26T07:30:26.381549+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -362,6 +362,43 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/ezmY8YNrKJs/hqdefault_live.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=ezmY8YNrKJs",
       "latestVideoDate": "2024-11-25T19:31:09+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "永藍レナ / Lena AI",
+      "description": "",
+      "tags": [
+        "海外",
+        "自立発話"
+      ],
+      "twitterID": "Lena_AI_VTuber",
+      "youtubeChannelID": "UCFAkY6WcUW_8LxiF57DxQmg",
+      "youtubeURL": "lena-ai",
+      "imageUrl": "https://yt3.ggpht.com/dSlsIXrsdRcLDZcdLG6nIm5QlBy1rtud4Y44H4LSsmuMFayltAtgr6HyIyLEYWRgufRyxQNx=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 7040,
+      "latestVideoTitle": "¡La IA española está en vivo! #shorts",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/8fOpVFKCpkk/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=8fOpVFKCpkk",
+      "latestVideoDate": "2024-02-26T10:00:00+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "カズヤ弟ゲームCH",
+      "description": "",
+      "tags": [
+        "一部AITuber",
+        "ゲーム実況",
+        "AIパートナー"
+      ],
+      "twitterID": "dodo_ria",
+      "youtubeChannelID": "UCoXTRja1-6lCpgYc1SffmqA",
+      "youtubeURL": "kazuya_bros",
+      "imageUrl": "https://yt3.ggpht.com/ud1fJ2PP2jPfRKG9V52iB4Y9b9XFhy-eoxrU6yPDEo8H2k5C14T74_phy9FpJw4OjokGSg8iSw=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 576,
+      "latestVideoTitle": "【三國志8REMAKE実況】AIアシスタントとの掛け合いダイジェスト【第4話】 #khaula #ゲーム実況 #カズヤ弟 #ゲーム #三國志8リメイク #ai",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Ic1XGG9V7X4/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Ic1XGG9V7X4",
+      "latestVideoDate": "2024-11-23T23:13:40+09:00",
       "isUpcoming": false
     }
   ]
