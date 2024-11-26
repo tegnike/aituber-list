@@ -115,8 +115,8 @@ export function AituberList() {
                       src={aituber.imageUrl.startsWith('http')
                         ? aituber.imageUrl
                         : aituber.imageUrl
-                          ? `/aituber-list/images/aitubers/${aituber.imageUrl}`
-                          : '/aituber-list/images/preparing-icon.png'
+                          ? `/images/aitubers/${aituber.imageUrl}`
+                          : '/images/preparing-icon.png'
                       }
                       alt={aituber.name}
                       width={40}
@@ -129,8 +129,8 @@ export function AituberList() {
                     src={aituber.imageUrl.startsWith('http')
                       ? aituber.imageUrl
                       : aituber.imageUrl
-                        ? `/aituber-list/images/aitubers/${aituber.imageUrl}`
-                        : '/aituber-list/images/preparing-icon.png'
+                        ? `/images/aitubers/${aituber.imageUrl}`
+                        : '/images/preparing-icon.png'
                     }
                     alt={aituber.name}
                     width={40}
@@ -175,7 +175,7 @@ export function AituberList() {
             <CardFooter className="flex flex-col p-0 rounded-b-lg overflow-hidden">
               <a href={aituber.latestVideoUrl} target="_blank" rel="noopener noreferrer" className="w-full aspect-video relative">
                 <Image
-                  src={aituber.latestVideoThumbnail || '/aituber-list/images/preparing-thumbnail.png'}
+                  src={aituber.latestVideoThumbnail || '/images/preparing-thumbnail.png'}
                   alt={`${aituber.name}の最新動画`}
                   fill
                   className="object-cover object-center"
@@ -200,7 +200,7 @@ export function AituberList() {
       </div>
 
       <footer className="mt-8 text-center text-sm text-muted-foreground">
-        <a href="/aituber-list/terms" className="hover:underline">
+        <a href="/terms" className="hover:underline">
           利用規約 (Terms of Service)
         </a>
       </footer>

@@ -1,6 +1,6 @@
 # AITuber List
 
-https://tegnike.github.io/aituber-list/
+https://aituberlist.net/
 
 ## 概要
 
