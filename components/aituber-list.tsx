@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Youtube, Twitter, Calendar } from "lucide-react"
 import Image from "next/image"
 import aituberData from '../app/data/aitubers.json'
+import Link from 'next/link'
 
 // AITuberの型定義は残します
 type AITuber = {
@@ -199,10 +200,13 @@ export function AituberList() {
         ))}
       </div>
 
-      <footer className="mt-8 text-center text-sm text-muted-foreground">
-        <a href="/terms" className="hover:underline">
-          利用規約 (Terms of Service)
-        </a>
+      <footer className="mt-8 flex justify-center gap-4 text-sm text-muted-foreground">
+        <Link href="/terms" className="hover:underline">
+          利用規約
+        </Link>
+        <Link href="/privacy" className="hover:underline">
+          プライバシーポリシー
+        </Link>
       </footer>
     </div>
   )
