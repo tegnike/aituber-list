@@ -198,6 +198,12 @@ export function AituberList() {
           </Card>
         ))}
       </div>
+
+      <footer className="mt-8 text-center text-sm text-muted-foreground">
+        <a href="/aituber-list/terms" className="hover:underline">
+          利用規約 (Terms of Service)
+        </a>
+      </footer>
     </div>
   )
 }
