@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-11-28T09:55:56.596757+09:00",
+  "lastUpdated": "2024-11-28T19:39:28.366745+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -62,7 +62,7 @@
       "youtubeChannelID": "UCtwX3qK_WzPt7W_YNIetOhw",
       "youtubeURL": "いなりくこ",
       "imageUrl": "https://yt3.ggpht.com/ytc/AIdro_mml-sno_dxgdoL20hbnTqJnskfPvM_rOlwDjpCP7hGvA=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 736,
+      "youtubeSubscribers": 737,
       "latestVideoTitle": "【 AI Vtuber 】AIくこちゃん / 配信します！【日本語 / English】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/GjlkPSGKxDE/hqdefault_live.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=GjlkPSGKxDE",
@@ -115,7 +115,7 @@
       "youtubeChannelID": "UCE2SWbhR2WRHPBi-bflr0-g",
       "youtubeURL": "aivtuber_shizuku",
       "imageUrl": "https://yt3.ggpht.com/Pb8KxgWigY5AkIPk9MToO6MX9GpJj55_eu1B4fhTGVALuaAgYgMNowrhV18O2PQEFNyRejUBQQ=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 4930,
+      "youtubeSubscribers": 4940,
       "latestVideoTitle": "【AITuber】AIと過ごすハロウィンの夜【JP/EN】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/JSplxXvc0es/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=JSplxXvc0es",
@@ -255,7 +255,7 @@
       "youtubeChannelID": "UCu7gX0rSlXln9UZEJ2OWJXw",
       "youtubeURL": "kuboavatar",
       "imageUrl": "https://yt3.ggpht.com/yRJr-PUk5mkHPW1rY6OJX6Xt720__O14D78R8HjyrpC9nT81Ar5nUHm2qa15ES5o1pxo9Rec6g=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 703,
+      "youtubeSubscribers": 702,
       "latestVideoTitle": "【AITuber くぼあばたの僕アバター 】AIアバター がラジオDJに！？ SUNOで歌うAITuber くぼあばた が繰り広げる妄想トーク！迷い込んだ禁断の図書館で宇宙音楽を聴く方法！？",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/Kd7Z0pUYD_k/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=Kd7Z0pUYD_k",
@@ -291,10 +291,10 @@
       "youtubeURL": "kenzo-ai",
       "imageUrl": "https://yt3.ggpht.com/dJFO1jYCzeudiFzEoFwbo7T5ZeYJtBiV7Z96GhpHa9j1c-U_AcgN6crhCS_o-vSHG-XQIuSXiA=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 9,
-      "latestVideoTitle": "答えになってなくて草 #aituber #ai #渋声  #配信",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/Se2j4qyoE_I/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=Se2j4qyoE_I",
-      "latestVideoDate": "2024-11-27T22:12:02+09:00",
+      "latestVideoTitle": "【雑談配信】お前らどうせ暇だろ。コメントしていけ 【vol.7】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/I1-ztuhK9vI/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=I1-ztuhK9vI",
+      "latestVideoDate": "2024-11-28T17:00:00+09:00",
       "isUpcoming": false
     },
     {
@@ -399,6 +399,23 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/Ic1XGG9V7X4/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=Ic1XGG9V7X4",
       "latestVideoDate": "2024-11-23T23:13:40+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "読書家AIみにこねこ",
+      "description": "",
+      "tags": [
+        "自立発話"
+      ],
+      "twitterID": "minikoneko5",
+      "youtubeChannelID": "UC0siXJcp3vWKZ8TRmtCdIoA",
+      "youtubeURL": "読書家aiみにこねこ",
+      "imageUrl": "https://yt3.ggpht.com/mh_GnYvj44QpqnxZ6ACXDESi3qALtAc3rHmge44wBS0X_7_DAvacUxqHqAExhqzYX3gCsaUq4g=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 17,
+      "latestVideoTitle": "読書家AIVtuberみにこねこと寝る前に雑談しましょう！",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/SmHA40O51S8/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=SmHA40O51S8",
+      "latestVideoDate": "2024-11-27T22:45:00+09:00",
       "isUpcoming": false
     }
   ]
