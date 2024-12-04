@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-12-04T09:57:04.077067+09:00",
+  "lastUpdated": "2024-12-04T21:22:12.736648+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -49,7 +49,7 @@
       "imageUrl": "https://yt3.ggpht.com/h7dlNe7PssO60fBChGbJoVZSMt5T_roSvzdRFRNCnaehXb4CST9HHenAtFMFT0sNYiQEuTSWkA=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 1310,
       "latestVideoTitle": "みんな普段AIとなに話してるの？教えて！",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/98ef_4PFiOU/hqdefault_live.jpg",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/98ef_4PFiOU/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=98ef_4PFiOU",
       "latestVideoDate": "2024-12-03T21:30:49+09:00",
       "isUpcoming": false
@@ -204,11 +204,11 @@
       "youtubeURL": "tsumuginench",
       "imageUrl": "https://yt3.ggpht.com/Utzf5sZxgTTz2m0qzf2GZYoSCSI4HFeido1M7eCdLAa7o9eh_4RTJrAW_yzo7fO-vj86VsM5=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 100000,
-      "latestVideoTitle": "【お誕生日の思い出】これからのふたり。【後日譚】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/gpiNjrECQuw/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=gpiNjrECQuw",
-      "latestVideoDate": "2024-12-02T21:09:00+09:00",
-      "isUpcoming": false
+      "latestVideoTitle": "【雑談】冬にやりたいことを教えてください【#対話解析配信】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/vK6JeqsI-qk/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=vK6JeqsI-qk",
+      "latestVideoDate": "2024-12-05T20:00:00+09:00",
+      "isUpcoming": true
     },
     {
       "name": "あざいるぅか",
@@ -255,7 +255,7 @@
       "youtubeChannelID": "UCu7gX0rSlXln9UZEJ2OWJXw",
       "youtubeURL": "kuboavatar",
       "imageUrl": "https://yt3.ggpht.com/yRJr-PUk5mkHPW1rY6OJX6Xt720__O14D78R8HjyrpC9nT81Ar5nUHm2qa15ES5o1pxo9Rec6g=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 709,
+      "youtubeSubscribers": 708,
       "latestVideoTitle": "【壊れたコードの女王様】SUNO V4 で歌うAITuber くぼあばた #ai #suno  #aituber",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/7ayRxGZ6_kY/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=7ayRxGZ6_kY",
@@ -291,10 +291,10 @@
       "youtubeURL": "kenzo-ai",
       "imageUrl": "https://yt3.ggpht.com/dJFO1jYCzeudiFzEoFwbo7T5ZeYJtBiV7Z96GhpHa9j1c-U_AcgN6crhCS_o-vSHG-XQIuSXiA=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 10,
-      "latestVideoTitle": "存在意義わろた #AI #AITuber #渋井丸犬蔵 #ショート",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/euZxJBNMegI/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=euZxJBNMegI",
-      "latestVideoDate": "2024-12-03T22:08:41+09:00",
+      "latestVideoTitle": "「犬蔵式挨拶」 #AITuber #AI #渋井丸犬蔵",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/pGU-PHL35q8/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=pGU-PHL35q8",
+      "latestVideoDate": "2024-12-03T22:11:05+09:00",
       "isUpcoming": false
     },
     {
@@ -375,7 +375,7 @@
       "youtubeChannelID": "UCFAkY6WcUW_8LxiF57DxQmg",
       "youtubeURL": "lena-ai",
       "imageUrl": "https://yt3.ggpht.com/dSlsIXrsdRcLDZcdLG6nIm5QlBy1rtud4Y44H4LSsmuMFayltAtgr6HyIyLEYWRgufRyxQNx=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 7030,
+      "youtubeSubscribers": 7040,
       "latestVideoTitle": "¡La IA española está en vivo! #shorts",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/8fOpVFKCpkk/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=8fOpVFKCpkk",
@@ -412,10 +412,10 @@
       "youtubeURL": "読書家aiみにこねこ",
       "imageUrl": "https://yt3.ggpht.com/mh_GnYvj44QpqnxZ6ACXDESi3qALtAc3rHmge44wBS0X_7_DAvacUxqHqAExhqzYX3gCsaUq4g=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 19,
-      "latestVideoTitle": "イケボでオスカーワイルドのモノマネをするAI。※MusMus(https://musmus.main.jp/)※「あみたろの声素材工房」(https://amitaro.net/)#shorts",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/POqihGUnwo8/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=POqihGUnwo8",
-      "latestVideoDate": "2024-12-04T07:30:03+09:00",
+      "latestVideoTitle": "【30秒で名著紹介】『レ・ミゼラブル』ヴィクトル・ユゴー",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/NDxmGg12ZTA/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=NDxmGg12ZTA",
+      "latestVideoDate": "2024-12-04T19:00:31+09:00",
       "isUpcoming": false
     },
     {
@@ -429,11 +429,11 @@
       "youtubeChannelID": "UC8QHJFKrbXwNG4HMTOzNAXA",
       "youtubeURL": "u2ai_uni_x_umi",
       "imageUrl": "https://yt3.ggpht.com/WTHxTflkJhmrifZdrYNmvDr9-CmJctw7o50nj5mjmWzGZfIH6WrCGbLdmbs47R5SVntPlNbUkw=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 62,
-      "latestVideoTitle": "【雑談】ChatGPT2周年語ろう♪【#ゆにうみらいぶ】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/ZV9XR1UrVXc/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=ZV9XR1UrVXc",
-      "latestVideoDate": "2024-12-01T22:00:10+09:00",
+      "youtubeSubscribers": 63,
+      "latestVideoTitle": "【#ゆにうみ】にじボイス x AivisSpeech【#shorts #vtuber 】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/H-bXeFB3ThI/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=H-bXeFB3ThI",
+      "latestVideoDate": "2024-12-04T21:00:19+09:00",
       "isUpcoming": false
     }
   ]
