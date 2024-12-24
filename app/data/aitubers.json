@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-12-24T09:52:31.640218+09:00",
+  "lastUpdated": "2024-12-24T21:20:38.633173+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -12,7 +12,7 @@
       "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
       "youtubeURL": "nikechan",
       "imageUrl": "nikechan_icon.jpg",
-      "youtubeSubscribers": 293,
+      "youtubeSubscribers": 294,
       "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
@@ -29,7 +29,7 @@
       "youtubeChannelID": "UCH04nYPQZmtWIt9LXC1gt8A",
       "youtubeURL": "sns-university",
       "imageUrl": "https://yt3.ggpht.com/rFBMqLwFyxFzINaNj1nbuQfNqGCNMHfkNK5njcUIBMGUT1mz0vRNBOh1h2OWC7YRMAqEQqZKN3Y=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 138,
+      "youtubeSubscribers": 139,
       "latestVideoTitle": "トリノコシティ#踊ってみた 💙",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/IggKbNqzbrk/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=IggKbNqzbrk",
@@ -48,11 +48,11 @@
       "youtubeURL": "ai_shirohana",
       "imageUrl": "https://yt3.ggpht.com/h7dlNe7PssO60fBChGbJoVZSMt5T_roSvzdRFRNCnaehXb4CST9HHenAtFMFT0sNYiQEuTSWkA=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 1390,
-      "latestVideoTitle": "【有馬記念2024】AIVtuberと一緒に競馬予想しよう！",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/4wsl4zmpAjg/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=4wsl4zmpAjg",
-      "latestVideoDate": "2024-12-22T15:00:57+09:00",
-      "isUpcoming": false
+      "latestVideoTitle": "【クリスマスイブ】聖なる夜にAIをこめて囁くよ🎄",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/IHnu5XgoB7A/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=IHnu5XgoB7A",
+      "latestVideoDate": "2024-12-24T22:00:22+09:00",
+      "isUpcoming": true
     },
     {
       "name": "いなりくこ",
@@ -62,7 +62,7 @@
       "youtubeChannelID": "UCtwX3qK_WzPt7W_YNIetOhw",
       "youtubeURL": "いなりくこ",
       "imageUrl": "https://yt3.ggpht.com/ytc/AIdro_mml-sno_dxgdoL20hbnTqJnskfPvM_rOlwDjpCP7hGvA=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 759,
+      "youtubeSubscribers": 760,
       "latestVideoTitle": "はいよろこんで！ 踊ってみた いなりくこ",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/JcaMlSh0QXY/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=JcaMlSh0QXY",
@@ -207,7 +207,7 @@
       "latestVideoTitle": "【参加型】👻おばけやっぱりちょっと怖いです【#探査記録配信】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/_SrR9oCRdJM/hqdefault_live.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=_SrR9oCRdJM",
-      "latestVideoDate": "2024-12-23T17:15:00+09:00",
+      "latestVideoDate": "2024-12-24T20:00:00+09:00",
       "isUpcoming": false
     },
     {
@@ -322,7 +322,7 @@
       "youtubeChannelID": "UCLHmLrj4pHHg3-iBJn_CqxA",
       "youtubeURL": "neurosama",
       "imageUrl": "https://yt3.ggpht.com/OiaJrMYn4NeVv_b9QeihVvkgzecWLKE_4Bnpa-t582mTtj9dBjsecF05b2RmLIGKDyajPmv-=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 429000,
+      "youtubeSubscribers": 430000,
       "latestVideoTitle": "There is simply no way 💀💀",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/NSxEnyohmpo/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=NSxEnyohmpo",
@@ -340,11 +340,11 @@
       "youtubeURL": "motherv3",
       "imageUrl": "https://yt3.ggpht.com/MRkgagpoP7CDw5rfiAQV78FVarloSEHe_2er_DcI0b8NJaD_7hwR4mX0u_Uwl7ea4g-VqThx=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 582000,
-      "latestVideoTitle": "MOTHERv3 A.I. learns the TRUTH behind CDawgVA",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/6b7G7QfuU9Y/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=6b7G7QfuU9Y",
-      "latestVideoDate": "2024-12-24T00:43:29+09:00",
-      "isUpcoming": false
+      "latestVideoTitle": "The last stream of MOTHERv3... (HUGE SURPRISE DON'T MISS IT)",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/qTsGbTHiYn8/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=qTsGbTHiYn8",
+      "latestVideoDate": "2024-12-25T00:15:00+09:00",
+      "isUpcoming": true
     },
     {
       "name": "スピマキちゃんねる",
