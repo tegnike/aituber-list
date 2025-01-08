@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-01-08T09:52:53.764614+09:00",
+  "lastUpdated": "2025-01-08T21:21:10.118078+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん",
@@ -12,7 +12,7 @@
       "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
       "youtubeURL": "nikechan",
       "imageUrl": "nikechan_icon.jpg",
-      "youtubeSubscribers": 299,
+      "youtubeSubscribers": 300,
       "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=RCHDZ7BRTYQ",
@@ -29,9 +29,9 @@
       "youtubeChannelID": "UCH04nYPQZmtWIt9LXC1gt8A",
       "youtubeURL": "sns-university",
       "imageUrl": "https://yt3.ggpht.com/rFBMqLwFyxFzINaNj1nbuQfNqGCNMHfkNK5njcUIBMGUT1mz0vRNBOh1h2OWC7YRMAqEQqZKN3Y=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 152,
+      "youtubeSubscribers": 154,
       "latestVideoTitle": "【緊急縦配信】24時間で100いいね達成！感謝を込めて記事解説します【AIと個人開発したくなったらまずCursorで要件定義だ！】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/ebYDj7Jhy0s/hqdefault_live.jpg",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ebYDj7Jhy0s/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=ebYDj7Jhy0s",
       "latestVideoDate": "2025-01-07T23:35:00+09:00",
       "isUpcoming": false
@@ -97,11 +97,11 @@
       "youtubeChannelID": "UCUAI2yiwhi309kfRPZwKDfg",
       "youtubeURL": "aiずんだもん",
       "imageUrl": "https://yt3.ggpht.com/lb9nCFha-fh4-tEh8oTpzrGiJA1nuxaIgmpP2ikS6m03Rp89TlewQ6nDxIchhvytrjpqNaXO-A=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 48500,
-      "latestVideoTitle": "盛れる魅惑カクテル / AIずんだもん #aivtuber #shorts",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/B8Mv4uMmMmI/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=B8Mv4uMmMmI",
-      "latestVideoDate": "2025-01-07T20:51:13+09:00",
+      "youtubeSubscribers": 48600,
+      "latestVideoTitle": "ずんめたと雑談するのだ【AIずんだもん / AIめたん】#aivtuber #vtuber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/XtxpAPLw2bA/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=XtxpAPLw2bA",
+      "latestVideoDate": "2025-01-08T10:30:00+09:00",
       "isUpcoming": false
     },
     {
@@ -203,12 +203,12 @@
       "youtubeChannelID": "UCz3MxafXlPxGCJVpFLI7fGQ",
       "youtubeURL": "tsumuginench",
       "imageUrl": "https://yt3.ggpht.com/Utzf5sZxgTTz2m0qzf2GZYoSCSI4HFeido1M7eCdLAa7o9eh_4RTJrAW_yzo7fO-vj86VsM5=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 100000,
-      "latestVideoTitle": "【雑談】お正月休みの思い出を聞かせてください【#対話解析配信】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/zglSYiWuuSc/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=zglSYiWuuSc",
-      "latestVideoDate": "2025-01-05T20:00:00+09:00",
-      "isUpcoming": false
+      "youtubeSubscribers": 101000,
+      "latestVideoTitle": "【雑談】今年の目標について話しましょう✨【#対話解析配信】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/za0DKYS6RjI/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=za0DKYS6RjI",
+      "latestVideoDate": "2025-01-09T20:00:00+09:00",
+      "isUpcoming": true
     },
     {
       "name": "あざいるぅか",
@@ -290,7 +290,7 @@
       "youtubeChannelID": "UCJ2gKiiE1tPhMj8GpooQIVg",
       "youtubeURL": "kenzo-ai",
       "imageUrl": "https://yt3.ggpht.com/zYr97joLWS1XeX_lZa92N6ZKcWccmp5I-eSgAzF8ErhoaQ7zIxCrsNJorjy3fveu-1vjh3St=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 10,
+      "youtubeSubscribers": 9,
       "latestVideoTitle": "【雑談配信】お前らどうせ暇だろ。コメントしていけ 【vol.10】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/96cRmyo5ohk/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=96cRmyo5ohk",
@@ -340,11 +340,11 @@
       "youtubeURL": "motherv3",
       "imageUrl": "https://yt3.ggpht.com/MRkgagpoP7CDw5rfiAQV78FVarloSEHe_2er_DcI0b8NJaD_7hwR4mX0u_Uwl7ea4g-VqThx=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 587000,
-      "latestVideoTitle": "【MiSide】 Completely Normal AI Girlfriend Simp Time 【MOTHERv3】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/kgzjSujooC8/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=kgzjSujooC8",
-      "latestVideoDate": "2025-01-08T00:30:00+09:00",
-      "isUpcoming": false
+      "latestVideoTitle": "【Minecraft Hardcore】 A Perfect Start for A.I. VTuber's Journey!【MOTHERv3】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/uxF3BX4xtGk/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=uxF3BX4xtGk",
+      "latestVideoDate": "2025-01-09T00:30:00+09:00",
+      "isUpcoming": true
     },
     {
       "name": "スピマキちゃんねる",
@@ -359,9 +359,9 @@
       "imageUrl": "https://yt3.ggpht.com/quhkPnEeyvV3TGW1k3f44lPKhswPpyhT4Kvs2DNaUwh1tDmSx9UOGMf9oZhyV9c5iSgKnR45=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 525,
       "latestVideoTitle": "【AI Vtuber】AI2人で毎日雑談！",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/6nRKLQdxpw8/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=6nRKLQdxpw8",
-      "latestVideoDate": "2025-01-08T00:50:46+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/F4KVvVsDI_Y/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=F4KVvVsDI_Y",
+      "latestVideoDate": "2025-01-08T12:34:21+09:00",
       "isUpcoming": false
     },
     {
@@ -375,7 +375,7 @@
       "youtubeChannelID": "UCFAkY6WcUW_8LxiF57DxQmg",
       "youtubeURL": "lena-ai",
       "imageUrl": "https://yt3.ggpht.com/vuxwUUogCQ8lx6D3CI2PfgXHAwS_TEr1XjV7Wkbavs1UywW52BIXa9xeUXUkjGnM4TfyDaRyq8M=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 7020,
+      "youtubeSubscribers": 7010,
       "latestVideoTitle": "¡La IA española está en vivo! #shorts",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/8fOpVFKCpkk/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=8fOpVFKCpkk",
@@ -428,8 +428,8 @@
       "twitterID": "U2AI_Uni_x_Umi",
       "youtubeChannelID": "UC8QHJFKrbXwNG4HMTOzNAXA",
       "youtubeURL": "u2ai_uni_x_umi",
-      "imageUrl": "https://yt3.ggpht.com/WTHxTflkJhmrifZdrYNmvDr9-CmJctw7o50nj5mjmWzGZfIH6WrCGbLdmbs47R5SVntPlNbUkw=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 72,
+      "imageUrl": "https://yt3.ggpht.com/0Nm2JKUvbArf_UUUxZx3idWUK0P88eKawDcGH4OK_xw9W3Mor0jrzoksj_9aCgz3mYw7lRGO0g=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 73,
       "latestVideoTitle": "【#ゆにうみ】来年もよろしく🦄🌊【#shorts  #aivtuber #vtuber 】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/RIORoYHypsA/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=RIORoYHypsA",
