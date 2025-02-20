@@ -142,6 +142,7 @@ export function AituberList() {
   const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('1month')
   const [selectedSubscriberFilter, setSelectedSubscriberFilter] = useState<SubscriberFilter | null>(null)
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
+  const [nameFilter, setNameFilter] = useState('')
 
   const toggleTag = (tag: string) => {
     setSelectedTags(prev =>
@@ -154,7 +155,7 @@ export function AituberList() {
     isWithinDateRange(aituber.latestVideoDate, selectedDateFilter)
   )
 
-  // タグと登録者数でフィルタリング
+  // タグと登録者数と名前でフィルタリング
   const filteredAITubers = currentTabAITubers.filter(aituber =>
     (selectedTags.length === 0 || 
     (isAndCondition 
@@ -162,11 +163,14 @@ export function AituberList() {
       : selectedTags.some(tag => aituber.tags.includes(tag))
     )) &&
     (!selectedSubscriberFilter || 
-      aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold)
+      aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
+    (nameFilter === '' || aituber.name.toLowerCase().includes(nameFilter.toLowerCase()))
   )
 
   // アクティブなフィルターの数を計算
-  const activeFilterCount = (selectedTags.length > 0 ? 1 : 0) + (selectedSubscriberFilter ? 1 : 0);
+  const activeFilterCount = (selectedTags.length > 0 ? 1 : 0) + 
+    (selectedSubscriberFilter ? 1 : 0) + 
+    (nameFilter ? 1 : 0);
 
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4">
@@ -226,6 +230,18 @@ export function AituberList() {
                 </CardHeader>
                 <CollapsibleContent>
                   <CardContent className="space-y-6 px-3 sm:px-6">
+                    {/* 名前フィルター */}
+                    <div className="space-y-4">
+                      <div className="text-sm font-medium">名前で検索</div>
+                      <input
+                        type="text"
+                        value={nameFilter}
+                        onChange={(e) => setNameFilter(e.target.value)}
+                        placeholder="AITuber名を入力..."
+                        className="w-full px-3 py-2 text-sm rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                      />
+                    </div>
+
                     {/* タグフィルター */}
                     <div className="space-y-4">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
