@@ -317,7 +317,7 @@ export function AituberList() {
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       {aituber.youtubeURL ? (
-                        <a href={`https://www.youtube.com/@${aituber.youtubeURL}`} target="_blank" rel="noopener noreferrer">
+                        <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
                           <Image
                             src={aituber.imageUrl.startsWith('http')
                               ? aituber.imageUrl
@@ -375,7 +375,7 @@ export function AituberList() {
                       <div className="flex gap-2">
                         {aituber.youtubeURL && (
                           <Button variant="outline" size="sm" asChild>
-                            <a href={`https://www.youtube.com/@${aituber.youtubeURL}`} target="_blank" rel="noopener noreferrer">
+                            <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
                               <Youtube className="w-4 h-4 mr-2" />
                               YouTube
                             </a>
