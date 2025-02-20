@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Youtube, Twitter, Calendar, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import aituberData from '../app/data/aitubers.json'
