@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
@@ -44,13 +44,14 @@ type AITuber = {
 }
 
 // 日付フィルターの型定義
-type DateFilter = '1month' | '3months' | '6months' | '1year' | 'older'
+type DateFilter = 'all' | '1month' | '3months' | '6months' | '1year' | 'older'
 
 // 登録者数フィルターの型定義
 type SubscriberFilter = '100' | '500' | '1000' | '10000'
 
 // 日付フィルターの表示名
 const DATE_FILTER_LABELS: Record<DateFilter, string> = {
+  'all': '全期間',
   '1month': '1ヶ月以内',
   '3months': '3ヶ月以内',
   '6months': '6ヶ月以内',
@@ -68,6 +69,8 @@ const SUBSCRIBER_FILTER_LABELS: Record<SubscriberFilter, { label: string; thresh
 
 // 日付フィルターの判定関数
 const isWithinDateRange = (dateString: string, filter: DateFilter): boolean => {
+  if (filter === 'all') return true;
+  
   const date = new Date(dateString)
   const now = new Date()
   const diffInMonths = (now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24 * 30.44) // より正確な月数の計算
@@ -125,6 +128,21 @@ const formatSubscriberCount = (count: number): string => {
   return `${count}`;
 };
 
+// YouTubeのURLからビデオIDを抽出する関数
+const extractYouTubeVideoId = (url: string): string | null => {
+  if (!url) return null;
+  
+  // 通常のYouTube URLからIDを抽出
+  const normalMatch = url.match(/[?&]v=([^&]+)/);
+  if (normalMatch) return normalMatch[1];
+  
+  // 短縮URLからIDを抽出
+  const shortMatch = url.match(/youtu\.be\/([^?]+)/);
+  if (shortMatch) return shortMatch[1];
+  
+  return null;
+};
+
 // Add this CSS at the top of the file, after the imports
 const styles = `
   .hide-scrollbar {
@@ -139,16 +157,24 @@ const styles = `
 export function AituberList() {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [isAndCondition, setIsAndCondition] = useState(false)
-  const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('1month')
+  const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('all')
   const [selectedSubscriberFilter, setSelectedSubscriberFilter] = useState<SubscriberFilter | null>(null)
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [nameFilter, setNameFilter] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 10
 
   const toggleTag = (tag: string) => {
     setSelectedTags(prev =>
       prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
     )
+    setCurrentPage(1) // タグ変更時にページをリセット
   }
+
+  // フィルター変更時のページリセット
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedDateFilter, selectedSubscriberFilter, nameFilter])
 
   // 現在のタブに該当するAITuberをフィルタリング
   const currentTabAITubers = aitubers.filter(aituber => 
@@ -167,10 +193,38 @@ export function AituberList() {
     (nameFilter === '' || aituber.name.toLowerCase().includes(nameFilter.toLowerCase()))
   )
 
+  // ページネーション用のデータ
+  const totalPages = Math.ceil(filteredAITubers.length / itemsPerPage)
+  const paginatedAITubers = filteredAITubers.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  )
+
+  // ページネーションコントロール
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   // アクティブなフィルターの数を計算
   const activeFilterCount = (selectedTags.length > 0 ? 1 : 0) + 
     (selectedSubscriberFilter ? 1 : 0) + 
     (nameFilter ? 1 : 0);
+
+  // ページネーションの表示ページ数を計算
+  const getVisiblePages = (current: number, total: number) => {
+    if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+
+    if (current <= 4) {
+      return [1, 2, 3, 4, 5, '...', total];
+    }
+
+    if (current >= total - 3) {
+      return [1, '...', total - 4, total - 3, total - 2, total - 1, total];
+    }
+
+    return [1, '...', current - 1, current, current + 1, '...', total];
+  };
 
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4">
@@ -312,7 +366,7 @@ export function AituberList() {
             </Card>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {filteredAITubers.map((aituber, index) => (
+              {paginatedAITubers.map((aituber, index) => (
                 <Card key={index} className="flex flex-col">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
@@ -393,14 +447,22 @@ export function AituberList() {
                     </div>
                   </CardContent>
                   <CardFooter className="flex flex-col p-0 rounded-b-lg overflow-hidden">
-                    <a href={aituber.latestVideoUrl} target="_blank" rel="noopener noreferrer" className="w-full aspect-video relative">
-                      <Image
-                        src={aituber.latestVideoThumbnail || '/images/preparing-thumbnail.png'}
-                        alt={`${aituber.name}の最新動画`}
-                        fill
-                        className="object-cover object-center"
-                      />
-                    </a>
+                    <div className="w-full aspect-video relative">
+                      {aituber.latestVideoUrl ? (
+                        <iframe
+                          src={`https://www.youtube.com/embed/${extractYouTubeVideoId(aituber.latestVideoUrl)}`}
+                          title={`${aituber.name}の最新動画`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="absolute top-0 left-0 w-full h-full"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-muted">
+                          <span className="text-muted-foreground">動画はまだありません</span>
+                        </div>
+                      )}
+                    </div>
                     <div className="flex items-center justify-end w-full p-2 text-sm text-muted-foreground">
                       <Calendar className="w-4 h-4 mr-1" />
                       {aituber.latestVideoDate ? (
@@ -418,6 +480,48 @@ export function AituberList() {
                 </Card>
               ))}
             </div>
+
+            {totalPages > 1 && (
+              <div className="mt-8 flex justify-center items-center gap-1 sm:gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="px-2 sm:px-4"
+                >
+                  前へ
+                </Button>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  {getVisiblePages(currentPage, totalPages).map((page, index) => (
+                    page === '...' ? (
+                      <span key={`ellipsis-${index}`} className="px-1 text-muted-foreground">
+                        ...
+                      </span>
+                    ) : (
+                      <Button
+                        key={page}
+                        variant={currentPage === page ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => handlePageChange(page as number)}
+                        className={`w-8 sm:w-10 p-0 ${currentPage === page ? "bg-primary text-primary-foreground" : ""}`}
+                      >
+                        {page}
+                      </Button>
+                    )
+                  ))}
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="px-2 sm:px-4"
+                >
+                  次へ
+                </Button>
+              </div>
+            )}
           </TabsContent>
         ))}
       </Tabs>
