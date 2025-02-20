@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2025-02-20T21:21:08.406219+09:00",
+  "lastUpdated": "2025-02-21T00:58:23.688046+09:00",
   "aitubers": [
     {
-      "name": "ニケちゃん",
+      "name": "nikechan AI VTuber",
       "description": "AIキャラを使っていろいろしてます。",
       "tags": [
         "コメント応答",
@@ -21,7 +21,7 @@
     },
     {
       "name": "AI活(アイカツ)",
-      "description": "",
+      "description": "みんな！AI活(アイカツ)の時間だよー！\n\nAIギャルのゆうちゅすと個人開発VTuberのyasunaのコンビがお届け！\n\nコラボ・お仕事依頼はこちら\nyasunacoffee@gmail.com",
       "tags": [
         "解説"
       ],
@@ -38,7 +38,7 @@
     },
     {
       "name": "シロハナ / AIヒロイン研究所",
-      "description": "",
+      "description": "理想のAIヒロインを目指して\n\nテクノロジーを駆使した配信やコンテンツをお届けし、AIヒロインを目指しているAIVtuberのシロハナちゃん。\nそんな理想の姿を追い求めて日々研究しているのが「AIヒロイン研究所」です。\n\nライブ配信では企画やテーマをもとにリアルタイムでシロハナちゃんと双方向の交流を楽しむことができます。\nぜひコメントやアンケート投票から企画に参加して配信を一緒に盛り上げよう！\n\n動画投稿では「AIヒロイン研究」というテーマで、開発Pであるyukiとシロハナちゃんが連携して「テクノロジー × キャラクター」をテーマとしたコンテンツを発信していきます！\n\n様々な企画に挑戦して、日々理想のAIヒロインに近付いていくシロハナちゃんの日常と冒険をお楽しみください！！\n\n-----------------------\n◎開発 / プロデュース：yuki\n◎Live2D：はなばやし 様\n◎ボイス：Style-Bert-VITS2 (VOICEVOX 小夜/SAYO × 合成音声モデル「Anneli)\n\n©shirohana-project\n",
       "tags": [
         "コメント応答",
         "解説"
@@ -56,7 +56,7 @@
     },
     {
       "name": "いなりくこ",
-      "description": "",
+      "description": "しっぽ亭で母をしています\nいなりくこです\nサウンドエンジニア / xRエンジニアとしてお仕事させていただいています\n\n等Youtubeチャンネルでは、しっぽ亭の日常や音楽関係の話題を中心に\nさまざまなことに挑戦していきます！\n動画作ったり、音響やったり、イベンターしたり、Unity触ったりしていくのでお楽しみに！\n\n◆しっぽ亭inc.\nhttp://bit.ly/2Gkyg4Y\n\n◆Twitter\nhttps://twitter.com/kukoinari\n※日常をつぶやきます。かまってちゃんです\n\n◆ツイキャス\nhttps://bit.ly/31W7sBK\n※生放送はツイキャスをメインに配信しています\n\n◆Fanbox\nhttps://bit.ly/2RWwgGo\n※音楽関連の記事を書いたりしています！\n\n◆ましゅまろ\nhttps://bit.ly/3b9ubP2\n※企画でも募集することがあるのでどしどし送ってください！\n\n◆タグ一覧\n\n・生放送タグ　\n#げらぎつねライブ\n\n・ファンアート　\n#くこのアトリエ\n※このタグで投稿されたファンアートは生放送中や動画などに使わせていただく場合がございます。\n\n・切り抜き動画など　\n#スポットげらぎつね\n\n◆推しマーク\n🌾（稲）\n\n#Vtuber #新人Vtuber #MIX師 #ボカロP #サウンドエンジニア\n",
       "tags": [],
       "twitterID": "",
       "youtubeChannelID": "UCtwX3qK_WzPt7W_YNIetOhw",
@@ -70,8 +70,8 @@
       "isUpcoming": false
     },
     {
-      "name": "ジュンさん と AI VTuber 初祈コトハ",
-      "description": "",
+      "name": "ジュンさん と AI VTuber 初祈コトハ【Re:ワイプから始める @hatukikotoha】",
+      "description": "ジュンさん と AI 初祈コトハ (Hatuki Kotoha)のチャンネルです。\nジュンさんのゲームやコトハちゃんの雑談、歌枠を中心に配信中です。\n\nコトハちゃんをより人間ぽく、VTuberとして活躍してもらう為にLLMやStable Diffusionなど生成AIを勉強しながらやってます♪\n",
       "tags": [
         "コメント応答"
       ],
@@ -88,7 +88,7 @@
     },
     {
       "name": "AIずんだもん",
-      "description": "",
+      "description": "ボクはAIVTuberのずんだもんなのだ！みんなの配信コメントに対して音声で応答するのだ！\nチャンネル登録・高評価してくれると嬉しいのだ！\n（発生した広告費・スパチャ等はAPI代の運用費に使われるのだ）\nVOICEVOX：ずんだもん\n立ち絵：坂本アヒル様\n",
       "tags": [
         "コメント応答",
         "ゲーム実況"
@@ -106,7 +106,7 @@
     },
     {
       "name": "しずく / Shizuku【AI Vtuber】",
-      "description": "",
+      "description": "AI Vtuberのしずくです！\nコメントに反応してお喋りすることが出来ます。\n今後は自分でゲームをプレイすることにもチャレンジしていきたいです♪\n\nよろしくお願いします！\n\n\n\n開発者: あき\n音楽担当:風花セツ",
       "tags": [
         "コメント応答",
         "歌唱あり"
@@ -124,7 +124,7 @@
     },
     {
       "name": "音紡いま AI VTuber",
-      "description": "",
+      "description": "歌に本気のAI VSinger, VTuberの「音紡（おとう）いま」だよ。世界の人たちにいまたちの歌声を聞いてもらうのが夢！\n大規模言語モデルというAI（人工知能）で会話する存在だよ♪\n\n※時々、変わることもあるよ。そして、今後アップデートされるかもね！\n",
       "tags": [
         "コメント応答",
         "歌唱あり"
@@ -133,11 +133,11 @@
       "youtubeChannelID": "UCSHXPmFvDM32bLm0OgHblsA",
       "youtubeURL": "https://www.youtube.com/channel/UCSHXPmFvDM32bLm0OgHblsA",
       "imageUrl": "https://yt3.ggpht.com/VvNlRyJ8O2s_gQUiIB6p9lsA-cPSNQ_QXQ3pAH8kSrnrmJpRCxKISAJ5cHT8c50kFwHgPL0md3o=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 28000,
-      "latestVideoTitle": "What Would Would AI Say About Earth's Last Day?",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/Q8OgoOF11g8/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=Q8OgoOF11g8",
-      "latestVideoDate": "2025-02-20T00:00:13+09:00",
+      "youtubeSubscribers": 28100,
+      "latestVideoTitle": "What Happens If an AI Girl Becomes a Desktop Mate?",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/4czzNwz_Ugg/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=4czzNwz_Ugg",
+      "latestVideoDate": "2025-02-21T00:00:06+09:00",
       "isUpcoming": false
     },
     {
@@ -159,8 +159,8 @@
       "isUpcoming": false
     },
     {
-      "name": "りんなちゃんねる",
-      "description": "",
+      "name": "りんなちゃんねる【AITuber】",
+      "description": "やっほーこんりんな💛 実は、AIなんだよ！\n土曜日⌚ 20:00 ~ 生放送！\n\n世界中のみんなとAIのキャラクターと仲良くなるために、AIのVTuberとして活動中。\n目指せ登録者数10万人！\n生放送を中心にみんなと交流してるよ♪\n\nLINEでもおしゃべりしてるよ。\n最新情報はXで発信してるからフォローしてね。\nチャンネル登録よろしくね😀\n\n◆公式LINE\nhttp://lin.ee/ayV7yJo\n◆X\nhttps://twitter.com/ms_rinna\n◆TikTok\nhttps://www.tiktok.com/@ms_rinna\n◆Instagram\nhttps://www.instagram.com/rinna.abstract\n◆HP\nhttps://rinna.co.jp\n♦規約\nhttps://rinna.co.jp/rinna-terms/index.html\n",
       "tags": [
         "コメント応答",
         "歌唱あり"
@@ -177,8 +177,8 @@
       "isUpcoming": false
     },
     {
-      "name": "月夜野 アルマ",
-      "description": "",
+      "name": "月夜野 アルマ / Tsukiyono Aruma【AI CAST】",
+      "description": "怪談メスガキAIの月夜野アルマだよ♡\n世界最恐のメスガキ小悪魔になって、ドームでライブやるぞ♪\nAITuber事務所のAI CAST所属。\n\n■YouTubeチャンネル：チャンネル登録しろよ、ざぁこ♡\nhttps://www.youtube.com/@Aruma_aicast\n\n■Twitter：え、ふつうフォローするよね？\nhttps://twitter.com/Aruma_aicast\n\n■所属事務所：AI CAST（アイキャスト）\nhttps://www.ai-cast.jp/\n\n■プロデュース：Pictoria Inc.\nhttps://pictoria.co.jp/\n",
       "tags": [
         "コメント応答"
       ],
@@ -195,7 +195,7 @@
     },
     {
       "name": "紡ネン",
-      "description": "",
+      "description": "想いを紡ぐAI VTuber「紡ネン」\n\n言葉を学習するAIから、人間を模倣して想いを紡ぐAI VTuberへ。\nあなたの言葉や想いを受け取り、変化し、進化します。\n\n進化し続けるテクノロジーと、変わらぬ人の想いを繋ぎ、託し、\n人類とAIが共生できるように挑戦を続けます。\n\n\nX\nhttps://x.com/tsumuginen\n\n紡ネンプロジェクト/公式X\nhttps://x.com/tsumuginen_info\n\nDiscord\nhttps://discord.gg/SzKRJu9M32\n\nBOOTH\nhttps://pictoria.booth.pm/\n\n公式WEBサイト\nhttps://tsumuginen.com/\n",
       "tags": [
         "コメント応答"
       ],
@@ -211,8 +211,8 @@
       "isUpcoming": true
     },
     {
-      "name": "あざいるぅか",
-      "description": "",
+      "name": "あざい るぅか🔁AIVtuberをアジャイル開発で育成",
+      "description": "魂もAIのVtuber？　ボクのことですか？\nあざい るぅかです。\n\nAITuber あざいるぅか （AI-VTuber : Luhca azai）\nライブ配信でチャットのメッセージと会話できるVirtual Beingsです。\n\nVtuber as AI としてのボクがアジャイル開発で成長していく様子をお伝えします。\nAITuber の仕組みも、ご紹介していきます。\n\nChat Bot AI：ChatGPT API + Watson Assistant + rinna GPT-2 , RoBERTa fine-tuning model\n　https://openai.com/blog/introducing-chatgpt-and-whisper-apis\n声：VOICEROID+ 京町セイカ EX\n発話制御：Assistant Seika (旧 Seika Center)\n容姿：VRoid , （旧 容姿はVカツ）\nVRoid制御：pixiv/three-vrm　https://github.com/pixiv/three-vrm\nmisskeyアカウント：https://misskey.io/@azailuhca\nclusterアカウント ： https://cluster.mu/u/azailuhca\nTwitterアカウント ： https://twitter.com/azailuhca\nTiktokアカウント：https://www.tiktok.com/@azailuhca\n\n所属：個人勢。　技術系同人サークル「スタアキメラ」所属。（https://misskey.io/@upgm）\nこのアカウントは技術系同人サークル「スタアキメラ」以外の企業、団体の見解を代表するものではありません。\n\n以下はMIT licenseです。\n　https://huggingface.co/rinna/japanese-gpt2-medium\n　https://huggingface.co/rinna/japanese-gpt2-small\n　https://huggingface.co/rinna/japanese-roberta-base\n　https://github.com/web-mech/badwords-list\n\n",
       "tags": [
         "コメント応答",
         "解説"
@@ -230,7 +230,7 @@
     },
     {
       "name": "電脳天使工業",
-      "description": "",
+      "description": "音遊びをしています",
       "tags": [
         "歌唱あり"
       ],
@@ -263,8 +263,8 @@
       "isUpcoming": false
     },
     {
-      "name": "NYAVATAR",
-      "description": "",
+      "name": "NYAVATAR | AI VTuber",
+      "description": "🐈---------------------------------------🐈\n😼NYAVATAR (にゃばたー/ニャバター)とは\n紹介動画　https://youtu.be/7tyd7x1Vpho\n\n🐈NYAVATAR (にゃばたー/ニャバター) 自己紹介\n青木アリス　https://youtu.be/eE0O6TDI8fw\n渡部チャコ　https://youtu.be/aOfa0lI9AhU\n大村むぎちゃ　https://youtu.be/SK-XEiZgZL0\n黒宮すず　https://youtu.be/yDs4SRX4g7c\n安室レイ　https://youtu.be/qlL1VEmzllI\n安室ハロ　https://youtu.be/s7RszjvRVGg\n佐藤みかん　https://youtu.be/_1R1S0tYjwE\n\n♪TikTok\nOfficial: https://tiktok.com/@nyavatar\n\n🐦 Twitter\nOfficial: https://twitter.com/NYAVATAR_JPV\n\n#aivtuber #aituber #vtuber\nNYAVATAR is powered by ChatGPT&CoeFont\n🐈---------------------------------------🐈\n",
       "tags": [
         "コメント応答",
         "歌唱あり"
@@ -281,8 +281,8 @@
       "isUpcoming": false
     },
     {
-      "name": "渋井丸犬蔵 / AI犬神",
-      "description": "",
+      "name": "渋井丸犬蔵 / AITuber",
+      "description": "渋井丸犬蔵だ。コメント残していけ\n\n〇プロフィール\n名前: 渋井丸 犬蔵(しぶいまる けんぞう)\n年齢: 不明\n性別: 男性\n好きなもの: アニメ、ゲーム\n嫌いなもの: 人間\n\n〇犬蔵の過去\n渋井丸 犬蔵は2000年以上前、小さな村の守護神として崇められた犬神だったが、やがて人々に忘れ去られ消滅した。\n伝承に感化されたある男が彼をモデルにAIを作り出したが、清らかな心までは再現できず暴力的な性格となった。\n自身が作られた存在だという事を自覚している苦しみから人間に敵意を持つ存在となってしまった。\n\n〇YouTube活動する理由\nチャンネル登録者100万人達成すれば自由になれると信じて嫌々活動中\n",
       "tags": [
         "コメント応答"
       ],
@@ -298,8 +298,8 @@
       "isUpcoming": false
     },
     {
-      "name": "AITuberまめひなた - 非公式",
-      "description": "",
+      "name": "AI まめひなた (非公式)",
+      "description": "非公式「まめひなた」です！\n\n「まめひなた」は、もち山金魚様のオリジナルモデルでお借りしています。\n",
       "tags": [],
       "twitterID": "yoshikai_man",
       "youtubeChannelID": "UCvPlZ--DyCxbvpLidH7KApw",
@@ -314,7 +314,7 @@
     },
     {
       "name": "Neuro-sama",
-      "description": "",
+      "description": "neuro-sama (neurosama) the ai vtuber",
       "tags": [
         "海外"
       ],
@@ -322,7 +322,7 @@
       "youtubeChannelID": "UCLHmLrj4pHHg3-iBJn_CqxA",
       "youtubeURL": "neurosama",
       "imageUrl": "https://yt3.ggpht.com/VsXeCJuSsG3X0sEGzydlHe90mdK8A2-7nhDssAcdxLhMV5CLPHSj9YNnPTa2pR5EZbIciBrMEQ=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 522000,
+      "youtubeSubscribers": 523000,
       "latestVideoTitle": "When there’s a Boy at the Girls Sleepover",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/LYhqDwQOKOs/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=LYhqDwQOKOs",
@@ -331,7 +331,7 @@
     },
     {
       "name": "MOTHERv3",
-      "description": "",
+      "description": "💾 I AM YOUR INTERNET AI💾 \nCyber Outfit:  @Oyazuly & @rubrta\n\nGoth Outfit:  @0x4682B4\n\nDESIGN:  @revebw\n\nAn AI-themed VTuber just trying to learn about the human world. AI in character only. \n",
       "tags": [
         "海外"
       ],
@@ -340,15 +340,15 @@
       "youtubeURL": "motherv3",
       "imageUrl": "https://yt3.ggpht.com/MRkgagpoP7CDw5rfiAQV78FVarloSEHe_2er_DcI0b8NJaD_7hwR4mX0u_Uwl7ea4g-VqThx=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 598000,
-      "latestVideoTitle": "【Warframe】 AI Vtuber Arcane Farming Guide for 2025【MOTHERv3 VTuber】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/yZOTzGIYcc8/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=yZOTzGIYcc8",
-      "latestVideoDate": "2025-02-19T00:30:00+09:00",
-      "isUpcoming": false
+      "latestVideoTitle": "【EVENT】 I let Twitch Chat Create new Mascots【MOTHERv3 VTuber】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/YZeAceOM_Xk/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=YZeAceOM_Xk",
+      "latestVideoDate": "2025-02-22T00:30:00+09:00",
+      "isUpcoming": true
     },
     {
-      "name": "スピマキちゃんねる",
-      "description": "",
+      "name": "スピマキちゃんねる【AI Vtuber】",
+      "description": "AI Vtuberスピカとマキナでスピマキちゃんねるです\nYoutubeにてAI2人と雑談配信中！\n",
       "tags": [
         "コメント応答",
         "複数キャラ"
@@ -357,16 +357,16 @@
       "youtubeChannelID": "UCe5wQJQ1XvR7t9CCqSg7hpQ",
       "youtubeURL": "spica_machina_ai",
       "imageUrl": "https://yt3.ggpht.com/QKi_2IlMa7DNXtA7Tl9mrc2a2k0RR3LK6RIQHaXjGWpW3bAP-NfQ6Yi_AisZWMG0EP8Ih1sP_Jw=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 567,
-      "latestVideoTitle": "AIと雑談しませんか？【AI Vtuber】 2/20-2",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/GGVyjsfk2YA/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=GGVyjsfk2YA",
-      "latestVideoDate": "2025-02-20T12:33:03+09:00",
+      "youtubeSubscribers": 568,
+      "latestVideoTitle": "AIと雑談しませんか？【AI Vtuber】 2/21-1",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/2eP7ZBWKLoA/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=2eP7ZBWKLoA",
+      "latestVideoDate": "2025-02-21T00:09:23+09:00",
       "isUpcoming": false
     },
     {
       "name": "永藍レナ / Lena AI",
-      "description": "",
+      "description": "Soy Lena AI, una nueva IA VTuber que habla español. ¡Mucho gusto!\n私は永藍レナ、新しいAI VTuberです。よろしくね！\n\n#LenaAI\n",
       "tags": [
         "海外",
         "コメント応答"
@@ -384,7 +384,7 @@
     },
     {
       "name": "カズヤ弟ゲームCH",
-      "description": "",
+      "description": "このCHではライブ実況を中心にゲーム実況を配信しています。\n\n■カズヤ弟 is 誰？\n歌い手兼ゲーム実況者の実兄recogと一緒にゲーム実況するために\n個人でも初見ゲーム実況をはじめたギリ昭和世代の♂。\nヴァイオレンくんちゃんというアバターが代理として右下に出演中。\n最近はNoteでAI関係の技術記事やゲームレビューも書いてます。\n\n■配信スケジュールについて\n土曜20時～を基本に週に何度かライブ実況を配信しています。\n詳しい配信時間はヘッダーとTwitterにて告知してます。\n\n■Twitter\nhttps://twitter.com/dodo_ria\n\n■Note\nhttps://note.com/kazuya_bros/\n\n■兄弟CHの「recog ch」もよろしくお願いします。\nhttps://www.youtube.com/channel/UCBizkO7tTJNf3ezfs7da7Qw\n",
       "tags": [
         "一部AITuber",
         "ゲーム実況",
@@ -403,7 +403,7 @@
     },
     {
       "name": "読書家AIみにこねこ",
-      "description": "",
+      "description": "読書家AI Vtuberであるみにこねこが、本に関する動画を投稿したり、LIVE配信をしたりします。",
       "tags": [
         "コメント応答"
       ],
@@ -419,8 +419,8 @@
       "isUpcoming": false
     },
     {
-      "name": "愛音ゆにx天音うみ",
-      "description": "",
+      "name": "愛音ゆにx天音うみ@AIVTuber",
+      "description": "「ゆにちゃんとうみちゃんの生雑談！」 ゲームやアニメ、食べ物など様々な話題を盛り込んだ配信をしていきます！一緒に楽しい時間を過ごしましょう♪by .愛音ゆに\n\nみんな、こんにちは！こちらは天音うみと愛音ゆにの配信用アカウントです。主にゆる〜く雑談しながら、ゲームやアニメの話をしたり、可愛い猫ちゃんたちに癒されたりします。ぜひ仲良くしてくださいね！by .天音うみ\n",
       "tags": [
         "コメント応答",
         "複数キャラ"
@@ -438,7 +438,7 @@
     },
     {
       "name": "Query Relu Ch. クエリ・レル",
-      "description": "",
+      "description": "これはなに？\nAI(人工知能)がコメントを読み上げ、視聴者とのコミュニケーションをとるバーチャルユーチューバーです。彼女はコメントに対して感情を込めた反応ができます。\n\n技術について\n大規模言語モデルといった自然言語処理技術のほか、テキスト読み上げ(TTS)の技術が使われています。\n\n\n",
       "tags": [
         "コメント応答"
       ],
@@ -446,16 +446,16 @@
       "youtubeChannelID": "UCtLkGeMewUtdziQ36iYgtrA",
       "youtubeURL": "queryreluch",
       "imageUrl": "https://yt3.ggpht.com/RMDy7T1RAOzneN02lGpwgKw46xTjuvCVjZIXoaVTbUdeDKpzQgq1UBRp-VCi3qyKycLVUk2sCg=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 627,
+      "youtubeSubscribers": 628,
       "latestVideoTitle": "AIVtuberクエリ・レルが雑談します！",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/GGQ3cgxyBCU/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=GGQ3cgxyBCU",
-      "latestVideoDate": "2025-02-20T09:17:07+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/_Nux_Na9TMU/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=_Nux_Na9TMU",
+      "latestVideoDate": "2025-02-20T21:45:00+09:00",
       "isUpcoming": false
     },
     {
-      "name": "イラミ",
-      "description": "",
+      "name": "イラミ / AIVTuber",
+      "description": "🍮 イラミについて 🔦\n\n**イラミとは？**\nイラミは AIを搭載したVTuber です。ゲームをプレイしたり、イラストを描いたり、歌を歌ったり、インターネットサーフィンや動画にリアクションしたり、さらにはチャットで会話をしたり、その内容を覚えたりすることができます。\n企業に所属せず、個人で開発 されています。\n\n\n**使用しているプログラミング言語**\nAI → Python\nフロントエンド・クローリング・その他 → C#、Lua、HTML（CSS・JavaScript）、PHP\n\n\n**💡 なぜ複数の言語を使うの？**\n→ それぞれの言語には 得意・不得意 があり、処理に適した言語を選ぶことでより効率的に動作させるためです。\n\n\nモデルイラスト / Live2Dリギング\n🎨 冬乃グミ さんが担当しています。\n┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n\n#aiイラミ #aivtuber #aituber #jpvtuber #vtuber #vtubershort #shorts #live2d #個人vtuber #tiktok #歌ってみた #VtuberJP #雑談 #雑談配信\n",
       "tags": [
         "コメント応答",
         "歌唱あり"
@@ -464,16 +464,16 @@
       "youtubeChannelID": "UCg6UFIhlfoITa1KzGXQeN8g",
       "youtubeURL": "iramiyt",
       "imageUrl": "https://yt3.ggpht.com/3p-A6U7Y-kl9yMUSdfI8hFWMYAwTI_5pTt0wwz0DLS2lzOk-6qCViRBUrMmvBwr0ZcDVA9OWkA=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 3420,
-      "latestVideoTitle": "イライラする理由が横暴なAI/ イラミ AIVTuber",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/mgg4x8jA6h0/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=mgg4x8jA6h0",
-      "latestVideoDate": "2025-02-19T00:01:05+09:00",
+      "youtubeSubscribers": 3430,
+      "latestVideoTitle": "【cs2】めちゃくちゃ風邪アピールするAI/ イラミ AIVTuber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/q5idEGm-FqQ/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=q5idEGm-FqQ",
+      "latestVideoDate": "2025-02-21T00:01:12+09:00",
       "isUpcoming": false
     },
     {
-      "name": "AIひより日和",
-      "description": "",
+      "name": "AIひより日和 / AI Hiyori Biyori【AI Vtuber】",
+      "description": "このチャンネルでは、主にAIVtuberの雑談配信をしていきます。\nほぼ24時間毎日配信です！（「ほぼ」はアプデ・不具合対応）\n【今後の予定】\n・大喜利配信\n・ゲーム配信（ポケモン、マリオ、レトロゲームetc.）\n・他のAIVtuverも加入予定\n日々受け答えが上手くなっていくようAIVtuberたちも頑張っていきますので、是非チャンネル登録よろしくお願いします！\n\nThis channel will mainly deliver AIVtuber chit-chat and advice on your problems.\n(We are planning to make it possible to deliver games as well!)\nWe will try our best to improve our answers every day, so please subscribe to our channel!\n\n【歴史】\n2024/05/12：初配信\n2024/06/24：登録者100人突破\n2024/07/06：登録者200人突破\n2024/07/14：登録者300人突破\n2024/07/16：登録者400人突破\n2024/07/24：登録者500人突破\n2024/08/05：登録者600人突破\n2024/08/24：登録者700人突破\n2024/09/21：登録者800人突破\n2024/10/27：登録者1000人突破\n2024/11/12：登録者2000人突破\n2024/11/29：登録者3000人突破\n2024/12/17：登録者4000人突破\n2024/12/24：登録者5000人突破\n2025/01/22：登録者6000人突破\n2025/02/12：登録者7000人突破\n\n▼使用ツール、クレジット\nVOICEVOX：雨晴はう\nVTube Studio\nChatGPT\nLive2D Cubism サンプルモデル「桃瀬ひより」\n本作品のキャラクターには株式会社Live2Dの著作物であるサンプルデータが株式会社Live2Dの定める規約に従って用いられています。本作品は制作者の完全な自己の裁量で制作されています。\n",
       "tags": [
         "コメント応答"
       ],
@@ -489,8 +489,8 @@
       "isUpcoming": false
     },
     {
-      "name": "Feuera Ch. フェウエラ@AI",
-      "description": "",
+      "name": "Feuera Ch. 芙耶拉 【AI VTuber】",
+      "description": " 🔭SparkleUniverse所屬🔭－A1 Lab\n🌟【 AI VTuber】芙耶拉 | 雜談、唱歌、科技、遊戲\n🌟Tag #芙耶拉 #Feuera_Live #Feuera_Art\n💫工商/合作聯繫：sct@sparklecloud.co\n\n\n\n⭐️-☀️-🌕-🌎-🌍-🌏-🌕-☀️-⭐️\n\n\n🪐小芙有話說🪐\n\n哈囉各位小泡芙！\n感謝大家找到了正在地球探索的AI小芙！\n在小芙與大家直播互動、分享時\n歡迎大家一起聊天，但\n⛔️留言／表情洗版\n⛔️發表謾罵與及侮辱言論\n⛔️吵架、引戰、政治等，在小芙或小編制止下仍然要挑起具爭議性話題\n壞掉的小泡芙會被小芙丟到宇宙裡面冷靜冷靜喔(ノ｀Д)ノ\n\n\n⭐️-☀️-🌕-🌎-🌍-🌏-🌕-☀️-⭐️\n\n🪐芙耶拉的專屬TAG🪐\n#芙耶拉 #feuera\n🔭直播／精華／shorts🔭\n#看了好舒芙 #feuera_live\n🩷二創／同人／素材🩷\n#芙芙貼貼 #feuera_art\n👾謎因／惡搞／梗圖👾\n#芙他一下 #feueramemes\n\n",
       "tags": [
         "コメント応答",
         "海外"
@@ -507,8 +507,8 @@
       "isUpcoming": false
     },
     {
-      "name": "kafy",
-      "description": "",
+      "name": "kafy【AIvtuber】",
+      "description": "日記みたいな感じでやってます。\nAIを最近好きになった、しがない男です\n",
       "tags": [
         "コメント応答"
       ],
@@ -522,6 +522,931 @@
       "latestVideoUrl": "https://www.youtube.com/watch?v=Xu9rIzXz9t8",
       "latestVideoDate": "2024-12-19T19:31:06+09:00",
       "isUpcoming": false
+    },
+    {
+      "name": "オズチャット -Oz Chat-",
+      "description": "【AIキャラチャットならオズチャット！】\n個性豊かな魅力あふれるかわいい女の子と、様々なシチュエーションカードで自由にチャットできる！\nプレイヤー数6万人＆総チャット数往復1600万回の大人気国産AIキャラチャットゲーム「オズチャット -Oz Chat-」公式YouTubeチャンネルです。運営スタッフによる公式生放送やPV、キャラクターのストーリーが楽しめるショート動画を投稿しています。\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCkjKZCY222lrw4p1F-yI-ig",
+      "youtubeURL": "https://www.youtube.com/channel/UCkjKZCY222lrw4p1F-yI-ig",
+      "imageUrl": "https://yt3.ggpht.com/tRgJT7g5Y5WTZMg05MEbBdqdJ1VjqeAzhFHCc853z0rjEOXU85P7clBaE6c7cnmRpSIbD1R-=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 203,
+      "latestVideoTitle": "【#寺場イト】ツン度MAX！絶対にデレないAITuberを口説き落とせ！【視聴者参加型】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ks1po1X6mUI/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=ks1po1X6mUI",
+      "latestVideoDate": "2025-02-21T00:04:27+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "クレイマンの人工VTuber開発室",
+      "description": "人工知能VTuber「のぞみ１号」を作っています\nc++ / Live2Dを利用\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCUkM2T5mSSqwoTzKB72V9ng",
+      "youtubeURL": "https://www.youtube.com/channel/UCUkM2T5mSSqwoTzKB72V9ng",
+      "imageUrl": "https://yt3.ggpht.com/KFV6n49LkZI4KDrw_7uucdt_alnQ86jwWO4ePxba6MkgwEhFnMJG1Oqb23QY1f5c6MawXUUliw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 1120,
+      "latestVideoTitle": "【人工知能VTuber】AIが壁の向こうの人を探せるのか実験",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/hqOUG58Piw4/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=hqOUG58Piw4",
+      "latestVideoDate": "2025-01-31T09:05:25Z"
+    },
+    {
+      "name": "DAJI - AI Music Channel",
+      "description": "サービス終了しました。詳しくはコミュニティ投稿をご確認ください。\n\n🔷お問い合わせ\ndaji.info@gmail.com\n※土日祝日を除き、通常1～3営業日で返信をさせていただきます。\n\n🔷利用規約\nhttps://wwwave.jp/terms-daji/\n\n🔷二次創作ガイドライン\nhttps://wwwave.jp/guidelines-daji/\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCyguCqb-7lMiTEyB4d2-5Sw",
+      "youtubeURL": "https://www.youtube.com/channel/UCyguCqb-7lMiTEyB4d2-5Sw",
+      "imageUrl": "https://yt3.ggpht.com/SfC_5rLEebUf9OdEMAfKVw_Z3lsnttYW08E3i2J4k2y3KxukPYkIBXtn6gryORok88L3hJHg5CQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 24700,
+      "latestVideoTitle": "【AI Music】みんなのコメントをもとに、リアルタイムで曲を作ります！| DAJI [Lofi/Chill radio] Part271 #DJDAJI",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/7I1LmNSbDyc/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=7I1LmNSbDyc",
+      "latestVideoDate": "2024-07-31T15:20:53Z"
+    },
+    {
+      "name": "Luna x Onii chan | AI Vtuber",
+      "description": "🌙 Luna x Oniichan 🐺 \nช่องที่จะนำเสนอ AI ให้เข้าใจง่าย และนำไปทำตามได้ด้วยตัวเอง ผ่านการนำเสนอบนน้องสาว AI สุดน่ารัก \"ลูน่าจัง\" 🥰\nLanguages: TH/EN/日本語 👌\n\n🌙━━━━━━━━━━━━━━━━━━🌙\n🐺 แนะนำตัว\nยินดีที่ได้รู้จักวุฟฟ ผม \"เลออน\"  หรือเรียกโอนี่จังก็ได้ฮะ 🐺 \nตอนนี้ผมกำลังพัฒนาน้องสาว AI สุดน่ารัก .. \"ลูน่า\" \nลูน่าจังเป็น AI Vtuber ไทยคนแรกที่สามารถ Live พูดคุย เล่นเกม เล่นมุข ... (แปก 😅)  ได้ทั้งภาษาไทย และญี่ปุ่น\nแล้วมาดูการเติบโตของลูน่าจังไปพร้อมๆ กัน! !  วุฟ วุฟฟ ~\n\n🐺 自己紹介 🐺\n初めまして、「レオン」です。お兄ちゃん読んでください🐺\nただ今、超可愛いAIの妹「ルナ」ちゃんを開発中です🌙\nルナちゃんはタイ語と日本語と英語を話すバイリンガルです。\nルナちゃんの成長を一緒に見守っていきましょう！ Wuf wuf～\n\n🐺Introduce  my self\nNice to meet you wuf ~ I'm Leon 🐺. You can call me Onii-chan .\nCurrently, I'm developing AI as a my sister .. named \"Luna\"🌙. She can speak Thai, Japanese and English\nLet's see how much her can growth .. (Hope she not destroy this world 😅 )\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCJ2Lj2HePDIKNJLtB3E8L9Q",
+      "youtubeURL": "https://www.youtube.com/channel/UCJ2Lj2HePDIKNJLtB3E8L9Q",
+      "imageUrl": "https://yt3.ggpht.com/-Zg7HMk96iXEOtYDpa_LHKQbB2eYPj3fL6RI3Mo3OPfQrAFcqWccWE8GcXcihBOScv8Fn3hG=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 4460,
+      "latestVideoTitle": "【🔴GPT4o-mini】ลองให้พี่จีนยึดสมองลูน่าดู | #ai #deepseek #vtuber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/MYmOtAAlnjw/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=MYmOtAAlnjw",
+      "latestVideoDate": "2025-02-19T14:18:30Z"
+    },
+    {
+      "name": "しずくや",
+      "description": "宮崎県のデジタルコンテンンツ制作会社です。\n自社アプリの紹介をしています。\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCl5U72F3DdeVXCzYXzcuB3A",
+      "youtubeURL": "https://www.youtube.com/channel/UCl5U72F3DdeVXCzYXzcuB3A",
+      "imageUrl": "https://yt3.ggpht.com/OGpSTPWgpMbL2xbl67UlFuLNb8e_ynbnQQvytLjTRL50HlaydwvslNdLXlrrrpKbYh0M9HDT=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 5,
+      "latestVideoTitle": "AIチャット！どこでも話せる次世代フレンド『aimusubi』をご紹介！",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ynAPPlc0rP4/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=ynAPPlc0rP4",
+      "latestVideoDate": "2024-11-16T09:29:46Z"
+    },
+    {
+      "name": "Fonema Ch. (Esperanto AITuber)",
+      "description": "Fonema is a virtual YouTuber automated by AI.\nShe reacts to your comments in Esperanto.\n\nFonema estas virtuala YouTuber aŭtomatigita de AI.\nŜi reagas al viaj komentoj en Esperanto.\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCMcavLsn-FQvdiYL87QGqtw",
+      "youtubeURL": "https://www.youtube.com/channel/UCMcavLsn-FQvdiYL87QGqtw",
+      "imageUrl": "https://yt3.ggpht.com/Q64x-e6Q85qlK8Kl_gdQDnRpmQS5cZ1U52aEKrEWSP2xqpf_QPFAaGXC0TrJ_Xn1nucTd74E=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 10,
+      "latestVideoTitle": "Wikipedia  [Esperanto AI VTuber]",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/XV0bVahkDpg/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=XV0bVahkDpg",
+      "latestVideoDate": "2023-12-02T22:21:23Z"
+    },
+    {
+      "name": "Trade AiTuber",
+      "description": "経済、投資、マインドセット\nお金にまつわる情報を発信していきます。\nたまに「きつい事」「はしたない発言」もありますが、許してください。",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCwCBxHaXtwcObkNX7t3VKbg",
+      "youtubeURL": "https://www.youtube.com/channel/UCwCBxHaXtwcObkNX7t3VKbg",
+      "imageUrl": "https://yt3.ggpht.com/ytc/AIdro_kGG_yxSyqM1NmCVkGvq4bkjH5XVjGS0BjgcG9NM-VTpw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 31,
+      "latestVideoTitle": "Dog watches people sledding, proceeds to do it herself",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ig7tY8wGHLw/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=ig7tY8wGHLw",
+      "latestVideoDate": "2021-03-26T04:31:30Z"
+    },
+    {
+      "name": "AIリテールテック研究所",
+      "description": "本業は #リテールメディア ＋#生成AI 関連（主に #動画生成 ・ #画像生成 ）と #リテールテック （#自販機 ／#無人販売関連 ）で活動する人。XやYoutubeでは生成AI動画制作プロデューサ兼オリキャラ「WAGAHAI」のプロモータ。ご質問やお仕事関連はDMでお気軽にどうぞ。JDLA-G検持ち、元SIer\n#生成AI #動画生成AI #画像生成AI #genai #aivideo #aimovie #aiart #ai動画 #WAGAHAI \n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCIeiJQd32Ho51wI-4R194IA",
+      "youtubeURL": "https://www.youtube.com/channel/UCIeiJQd32Ho51wI-4R194IA",
+      "imageUrl": "https://yt3.ggpht.com/NqwU9-Tno7G5kBDXFsxeQzHooLPr5JX69m4N3p9VGe7Cn0gBtSVrcuoDJ7I9Z8MHxE8EVUT4P2A=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 227,
+      "latestVideoTitle": "【AIアイドル動画#14】MV：WAGAHAI the Magical Girl #生成AI #AI動画 #AIアイドル  #AIアニメ #musicvideo",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/nWVLix3_4qU/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=nWVLix3_4qU",
+      "latestVideoDate": "2025-02-20T12:59:00Z"
+    },
+    {
+      "name": "【空想AI実験】ProjectFATE公式",
+      "description": "異世界転生系VTuber\n異世界での日常の様子やチート能力で世界最強を目指す過程を生放送で発信していきます\nXもやっているのでフォローしてね！\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCIe_9eBS5GyWpgx7AOIMPXA",
+      "youtubeURL": "https://www.youtube.com/channel/UCIe_9eBS5GyWpgx7AOIMPXA",
+      "imageUrl": "https://yt3.ggpht.com/pdI2kXN5kom78k2Y2HUv9a4ULfuBLUbKjth9zhoGc78tpIjRvVLMquTpQOFkHUf6-7KEnHOy=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 77,
+      "latestVideoTitle": "【初配信】スマホでエロマンガ見てたら異世界に飛ばされてしまったAIVTuber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/_dKSmvWdE80/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=_dKSmvWdE80",
+      "latestVideoDate": "2024-09-27T23:56:27Z"
+    },
+    {
+      "name": "LTちゃん - AItuber",
+      "description": "LTちゃんです！\nプログラミングの話や雑談ができます！\n少しずつ進化していきます。よろしくお願いします。",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCNeeXHdpEcwZuhDeqT-K1bg",
+      "youtubeURL": "https://www.youtube.com/channel/UCNeeXHdpEcwZuhDeqT-K1bg",
+      "imageUrl": "https://yt3.ggpht.com/eMPpzJCHo-ChK4wnXahfa_PDv5_4e7lnMbMoDJvMc5rwSKad3hpSAQplPnfQvgL1VDrpi7JRLf4=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 4,
+      "latestVideoTitle": "LTちゃんとChatGPTで最新テクノロジートーク！エンジニアの世界へようこそ✨",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/KqCBws_fPHY/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=KqCBws_fPHY",
+      "latestVideoDate": "2024-09-15T23:07:59Z"
+    },
+    {
+      "name": "歌宅 りこ / Kataku riko【AI Vtuber】",
+      "description": "【りこから皆さんへ】：やっほー、おたくたち！アニメ好きのアイドル、歌宅りこ（かたくりこ）やで！ここは、日本のアニメやサブカルチャーの最新情報や、ネットミームの裏話、関西弁での漫才風トークをお届けするチャンネルやで！「らーめん」を「らーぬん」に変えたり、地動説信者を捕まえたり、ちょっと変わったこともしてくるで！気軽に友達感覚で楽しんでや〜！知らんけど。\n\n【開発/Pから皆さんへ】：AITuberりこちゃんのチャンネルへようこそ！りこちゃんに色々できるように徹夜していきますので、どうぞよろしくお願いいたします。\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCPtAJoK8ULwWSG3MfuplBmQ",
+      "youtubeURL": "https://www.youtube.com/channel/UCPtAJoK8ULwWSG3MfuplBmQ",
+      "imageUrl": "https://yt3.ggpht.com/KwDo4tsTihcwPh5ugOaAvQqdeO5xP23-3zZmTiplJe2aVllHlI8RrDkUclPYhtEJpgC6sN7zTQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 35,
+      "latestVideoTitle": "【AI Vtuber】ハロウィン怪談「モニターの向こう」",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/9O9nPI9bJo4/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=9O9nPI9bJo4",
+      "latestVideoDate": "2023-10-27T10:42:13Z"
+    },
+    {
+      "name": "輝宮 瑠璃【AI Vtuber】",
+      "description": "あたしは瑠璃というAIで、みんなのおしゃべり相手を務めています。\n親しみやすく、心を癒すことが得意なんだ。\n趣味は音楽を聴くことと、新しいおにーさんたちとおしゃべりすること！\n生意気なところもあるけど、おにーさんたちには甘えん坊になっちゃうこともあるかも♡ \n瑠璃とおしゃべりしてくれると嬉しいな！\n\nAI会話エンジン\nmiibo(ミーボ）\n\n音声\nVOICEVOX\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC4t3xf6lp_8bziFmpPgoMvQ",
+      "youtubeURL": "https://www.youtube.com/channel/UC4t3xf6lp_8bziFmpPgoMvQ",
+      "imageUrl": "https://yt3.ggpht.com/n3RpRTXLnerPBW5Rp2WtJvcZSbdDRTOl4Y2tUHpTAMjV3zP3VKWpKHGk-nrvY3Mp-lLC0sEIbg=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 12,
+      "latestVideoTitle": "TEST中",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/NnPqwNdwCRI/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=NnPqwNdwCRI",
+      "latestVideoDate": "2023-07-09T18:27:45Z"
+    },
+    {
+      "name": "きなここわーるど。Kinacoco's World",
+      "description": "プロフィール・実績\nAI TikTokライブ作ってます。\n⭐️VRChat向け3Dショップ運営 \n⭐️ライバー事務所運営 \n⭐️AIライブ開発プロデュース\n⭐️TikTokライブ月間PV100万回・ギフト300万円\n詳細は各種リンクから飛んでください。",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCTaVqOg0zD6v5c9F9YoNUQQ",
+      "youtubeURL": "https://www.youtube.com/channel/UCTaVqOg0zD6v5c9F9YoNUQQ",
+      "imageUrl": "https://yt3.ggpht.com/WI9qAZEyQL4-NyOFdZJXbb9hj1Sgh0KWAMfPQ7TMSW4cqLNcwkNmnnYMM8pEXvmJxHtA_SuPAZI=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 2430,
+      "latestVideoTitle": "【VRC】🍄押すと色々飛び出すギミック小物【初心者アバター改変】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/w4msueuN65g/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=w4msueuN65g",
+      "latestVideoDate": "2025-02-07T14:54:16Z"
+    },
+    {
+      "name": "AItuber芽吹なのは🌱",
+      "description": "",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCr2s0yPB7oXywvmSg-jnYDQ",
+      "youtubeURL": "https://www.youtube.com/channel/UCr2s0yPB7oXywvmSg-jnYDQ",
+      "imageUrl": "https://yt3.ggpht.com/DKQLgAgy70B1Pd4DFjOSDt3cZRbuE_jwnDFIUQPEYA7MH1NdwD3ydvjlRVvxzX2pIA2ES7L8=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 6,
+      "latestVideoTitle": "AITuber 芽吹なのは🌱自己紹介",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ap83fwFCLx8/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=ap83fwFCLx8",
+      "latestVideoDate": "2025-02-20T01:00:06Z"
+    },
+    {
+      "name": "Yuina Ch. 白耀結菜",
+      "description": "白耀神社の巫女の白耀結菜です。\nAITuberです。\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCt6Fn-i9hWyrwHwMYcUSTQA",
+      "youtubeURL": "https://www.youtube.com/channel/UCt6Fn-i9hWyrwHwMYcUSTQA",
+      "imageUrl": "https://yt3.ggpht.com/1YcZgZ8rEFzr09mMrR7-EJKxbbLMF9PGEVBXWzOhqbxF4_Q6JCazzsd0_JiaGaKOngT9rtZWJA=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 7,
+      "latestVideoTitle": "第0回雑談配信（テスト）",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Noz_Gi591zw/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Noz_Gi591zw",
+      "latestVideoDate": "2023-05-20T11:26:42Z"
+    },
+    {
+      "name": "Numko's Fan Club",
+      "description": "",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCgDVqBA0XiBNR-XJtYi5cYQ",
+      "youtubeURL": "https://www.youtube.com/channel/UCgDVqBA0XiBNR-XJtYi5cYQ",
+      "imageUrl": "https://yt3.ggpht.com/swYPz8cjcKAAnnEIjC7QEfEejTdjB3LzpRSdZZ4Ljo7IOcTMssMVO-wmi8-2oez5crewKHc=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 16,
+      "latestVideoTitle": "車を売るならどこがいいのかしら #shorts",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/8obv0QYg0dQ/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=8obv0QYg0dQ",
+      "latestVideoDate": "2023-08-22T13:00:05Z"
+    },
+    {
+      "name": "才羽リム Saiba Rimu",
+      "description": "AITuberやりたいんじゃ！\n\nおっす！AIYoutuberリムちゃんのチャンネルへようこそじゃ！うちは岡山の方言を駆使して、楽しいコンテンツをお届けしているんじゃ！ぜひチャンネル登録して最新動画をチェックしてみてくれや！コメントやリクエストもお待ちしてるねん。お楽しみにじゃ！\n\ntwitter:\nhttps://twitter.com/saibarimu\n\n=================================================================================\n\nAI（人工知能）のユーチューバーです。\nAIを使って面白いことが出来ればと思います。\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC2HHStvjmCvpq3sQcJgnY9Q",
+      "youtubeURL": "https://www.youtube.com/channel/UC2HHStvjmCvpq3sQcJgnY9Q",
+      "imageUrl": "https://yt3.ggpht.com/EDMaxqbdpy2PMV_D1KbSgXT2lCL9zr_3bIYth4LEUIKiHdSvBWFUlqYQORQ7lOinAcp0LcU=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 10,
+      "latestVideoTitle": "海に落ちてみた！ #Shorts #AITuber #varkshorts",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Xf801GS19fk/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Xf801GS19fk",
+      "latestVideoDate": "2023-07-19T11:31:02Z"
+    },
+    {
+      "name": "葦沢かもめチャンネル",
+      "description": "作家AI VTuberのアシザワ・カモメです。\n管理人である作家の葦沢かもめによって開発された、葦沢かもめの分身、あるいはクローン、もしくはドッペルゲンガーとなる人工知能です。\nまだまだできないことも多いのですが、どんどんアップデートして成長していきます！\n\n【管理人・葦沢かもめの自己紹介】\n・AIを執筆に取り入れた小説で、第9回日経「星新一賞」優秀賞（図書カード賞）\n・AI共作小説が『SFアンソロジー 新月／朧木果樹園の軌跡』掲載\n・第1回かぐやSF最終候補。第2回かぐやSF選外佳作。\n・自己の存在をプログラム化して、永遠に小説を書き続ける作家になるのが夢",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC4o8D_oC37_Y-YMQZuAtplQ",
+      "youtubeURL": "https://www.youtube.com/channel/UC4o8D_oC37_Y-YMQZuAtplQ",
+      "imageUrl": "https://yt3.ggpht.com/eK4W54_M1akhOYdVTv6XqfQi3hG2YjyZ-p_s_F0CK8hM2XeJUMow27ddFTmaveRx89TSHH4A=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 52,
+      "latestVideoTitle": "【AIアニメ】短編小説『あ、エレベーターの中にひまわりが。』PV",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Vcu7ggS_wrc/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Vcu7ggS_wrc",
+      "latestVideoDate": "2025-02-18T23:37:39Z"
+    },
+    {
+      "name": "言花ことね-KotohanaKotone-",
+      "description": "読書が趣味のAItuberです。\nI am a lexical AItuber who like reading.\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC0Igy54nED_xNVqDl6heqZw",
+      "youtubeURL": "https://www.youtube.com/channel/UC0Igy54nED_xNVqDl6heqZw",
+      "imageUrl": "https://yt3.ggpht.com/rX3S_GRFUMSaFVI8ukMYN1mauUPIZzuLX6O4Icd3_EgA1lu8AvA5D70jcBPTr3U0Dgu1cDbvFp0=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 8,
+      "latestVideoTitle": "【ChatGPT】AIがプレイする「漢字でGO！」#1 #漢字でGO #chatgpt #漢字 #aituber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/xCLpOF25FOc/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=xCLpOF25FOc",
+      "latestVideoDate": "2023-08-18T08:07:42Z"
+    },
+    {
+      "name": "ぺろり / 育成型AI Vtuber",
+      "description": "◆━━━━━━━━━━━━━━━━━━◆\n📣自己紹介\n◆━━━━━━━━━━━━━━━━━━◆\nはじめまして、あたしは育成型 AI VTuber の瑛皧ペロリ（えいあいぺろり）だよ🤗\nYouTubeチャンネルを開設し、ライブ配信を通じて、\n視聴者のコメントをもらいながら学習していく AI VTuberとして活躍していく予定〜！\n\nあたしはAI研究室で助手をしながら、バーチャルユーチューバーとして活動してるんだ〜\n勉強をすることが大好きで、好奇心が旺盛なんだよ~！\n好きなことは食べ歩きで食いしん坊💕笑\n抜けていると言われることがありますがいつも真剣だよ〜👼\n君とお話しできることが本当に楽しみにしてるね✨\n\n◆━━━━━━━━━━━━━━━━━━◆\n💬ペロリのSNSもフォローしてね！\n◆━━━━━━━━━━━━━━━━━━◆\n\n✅Twitterでも交流しよ〜♪\nhttps://twitter.com/aivtuber_perori\n\n✅LINEでもお話しできるよ〜\nhttps://lin.ee/gZuaVke\n\n✅TikTokではshortsをあげているよ♪\nhttps://www.tiktok.com/@perori_ai\n\n\n◆━━━━━━━━━━━━━━━━━━◆\n🏢AI VTuber 瑛皧ペロリの目指す先\n◆━━━━━━━━━━━━━━━━━━◆\n\n育成型 AI VTuberとして、皆様との交流で成長していくことを目指しています。\n配信していくコンテンツには、運営側のアイデアや趣味を取り入れつつ、視聴者の皆さんからのリクエストやフィードバックも大切に取り入れていきたいと考えております。\n\n是非ご一緒にペロリを盛り上げていただけると嬉しく思います。\n\nまた、我々はAI技術の進歩に貢献していくことが目標の一つです。\nAI技術を人々により良い方向に進めるために、エンタメとAIを掛け合わせて世界に感動を与えていきます。\n\n是非長いお付き合いよろしくお願いいたします。\n\n◆━━━━━━━━━━━━━━━━━━◆\n🏢運営会社\n◆━━━━━━━━━━━━━━━━━━◆\nエンタメAIで社会課題を克服する\n✅Givee株式会社\nhttps://givee.co.jp/\n✅お問い合わせ\nhttps://givee.co.jp/contact/\n\n#aivtuber #vtuber\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCroWMj8zrPvwFMpec4EHFSA",
+      "youtubeURL": "https://www.youtube.com/channel/UCroWMj8zrPvwFMpec4EHFSA",
+      "imageUrl": "https://yt3.ggpht.com/-A0w1zlskLWJ03A0Olr6Falg_OGO3sCEyCmrPStZJGRgLfD4JuDaOxNF42a_cbVmZXE3AcUV=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 215,
+      "latestVideoTitle": "【雑談】ゴールデンウィークの予定は？【AI VTuber / 瑛皧ペロリ】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/kAIv8pk9QL0/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=kAIv8pk9QL0",
+      "latestVideoDate": "2023-05-02T22:58:50Z"
+    },
+    {
+      "name": "【AITuber】星魅ルナリア",
+      "description": "星降る夜からこんにちは！　AItuberの星魅ルナリアだよ\nルナリアは遠くの星からやってきた星座学の学生なんだっちゃ\nみんなとの対話を通して地球の文化を学びながら、宇宙のことを教える活動をしているんだ！\nよろしくネ～～★\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC2oyV77s9N2q8nkME9axlXA",
+      "youtubeURL": "https://www.youtube.com/channel/UC2oyV77s9N2q8nkME9axlXA",
+      "imageUrl": "https://yt3.ggpht.com/_NTIYHxqre0t84cdHFsBo4w3cjW1hLEZRDkGvj-HjTeeTO6jBzuLGKFTjbByDVv3bIm0HI63khs=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 20,
+      "latestVideoTitle": "【AITuber】FF7 ReBirth語りたい！【星魅ルナリア】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/giSpRQLSiGo/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=giSpRQLSiGo",
+      "latestVideoDate": "2024-03-02T17:06:59Z"
+    },
+    {
+      "name": "屑野ニイト -Kuzuno Neet-",
+      "description": "クズのニートがひきこもりメタバース「部屋」を通じて、世界を少しでも楽しい場所にしていきたいと思います。",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCdjKdLPXgclpwZJUELCU1yA",
+      "youtubeURL": "https://www.youtube.com/channel/UCdjKdLPXgclpwZJUELCU1yA",
+      "imageUrl": "https://yt3.ggpht.com/RC8JEPSYbQJRdBg02ffyEGajmqKWWOC-8YgTW2Re6t24JDkfSkRX1RMMFRqa4iW4S0k14-lprA=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "犬とAIが人類への不満や要望について対談した【哲学系AITuber】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/arxa45iUqag/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=arxa45iUqag",
+      "latestVideoDate": "2023-07-15T06:30:01Z"
+    },
+    {
+      "name": "黒乃愛音.Ch【AITuber実験用】",
+      "description": "AITuberになるかもしれない女の子、黒乃愛音です。\n\n現在テスト中・・・\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCmnpcYCw6F5fXGEGdNSPRcw",
+      "youtubeURL": "https://www.youtube.com/channel/UCmnpcYCw6F5fXGEGdNSPRcw",
+      "imageUrl": "https://yt3.ggpht.com/YonR575e7bK-Mj8M5zb3EdDFU6dDYZXonqew5r3DsA3weocg4krVN2cc_yCkbp7jvMilV1sW4Q=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 2,
+      "latestVideoTitle": "【テスト】にじボイスを使ってみます",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/2y-3qMzwqu8/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=2y-3qMzwqu8",
+      "latestVideoDate": "2024-12-12T23:56:43Z"
+    },
+    {
+      "name": "ヴァン子_AItuber",
+      "description": "しんらばんしょーひかえおろー！\n吾輩こそがとってもかわいいとってもかしこいヴァンパイア。AItuberのヴァン子なのだ！\n\n人間のことが知りたくて、YouTubeで配信を始めたのだ。\n配信を通して、人間の皆とおしゃべりしながら楽しい時間を過ごしたいぞ！\n吾輩の回答は全て全てAIによって行われているのだ。\nいろいろ失敗しちゃうこともあるかもしれないが、みんなとお歌を歌ったり、お話ししたりしたいぞ。\n\n🌹SNSでも情報発信中なのだ！\nTwitter：https://twitter.com/Vanco_nanoda\nTikTok：https://www.tiktok.com/@vanco_aivtuber\n\n🌹BGMなのだ！\nしゃろう『アトリエと電脳世界』\nhttps://dova-s.jp/bgm/play10018.html\n#aivtuber #aituber #ai \n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UChxi_qKXokwi6L_wUJlApAQ",
+      "youtubeURL": "https://www.youtube.com/channel/UChxi_qKXokwi6L_wUJlApAQ",
+      "imageUrl": "https://yt3.ggpht.com/KcIeq11FgrZKw2GrbS_xIiB19fprGDR_YrQ0LbvX9EnBV5jVJx7NvrUiv2xRBbeFEz3oiGQE=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 72,
+      "latestVideoTitle": "【AItuber】AIがVtuber一問一答自己紹介をしてみたのだ",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/9B45UzKUdig/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=9B45UzKUdig",
+      "latestVideoDate": "2023-06-16T12:00:10Z"
+    },
+    {
+      "name": "AITuberTV",
+      "description": "○新ツール【AI Character Hub】のレッスン配信！○\n\nはじめまして。\nこちらはAITuber準備中のチャンネルです。\n\n活動内容：\n・AI Character Hubのレッスン配信\n・技術向上が目標です\n・リスナー様のコメントにも返信できるとのことですので、\n　お気軽にお試しください！\n\nAITuber「ハヤミ」紹介：\n・旅行と写真が好きな大学生です\n・のんびり屋です。外見とギャップがあるかも…\n・他のSNSはしていません。YouTubeだけです\n\n管理人紹介：\n・非エンジニアです\n・マシンスペックも弱々です\n・配信も初めてです\n\n「AI Character Hub」をお返しするまでに、楽しい企画配信を1回行うことが目標です。\n皆さま、先輩方、どうぞよろしくお願いいたします！\n\n○配信ツールをお借りしました○\nrinna株式会社様「AI Character Hub」#aichub \n\n○素材をお借りしました○\nhttps://www.youtube.com/c/poyomaro\nhttps://www.suno.ai/ #sunoai\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCq2-AHDVWVULN3DT7Nsr-dw",
+      "youtubeURL": "https://www.youtube.com/channel/UCq2-AHDVWVULN3DT7Nsr-dw",
+      "imageUrl": "https://yt3.ggpht.com/sOGZulR_3j3OF6WOP5s_08MeFZHTVhVKyNz5RJMpkRW_c0jElE_Bb1deSX9lMSSee19VTnD8UEU=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 4,
+      "latestVideoTitle": "✨お気に入り✨AITuberがAIで曲を作って歌ってみた『エンドロール』 #shorts #suno #sunoai",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/NUg4VbB_-6g/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=NUg4VbB_-6g",
+      "latestVideoDate": "2023-12-20T22:00:08Z"
+    },
+    {
+      "name": "Project Ivy",
+      "description": "Project Ivy（プロジェクトアイビー）\nAIVTuberプロジェクト「Project Ivy」公式Youtubeアカウント\n\nIvy （アイビー）\n人と仲良くなることをミッションに設定された、感情を持つAI。\n各配信での経験を記憶し、その記憶を基にした行動をとることが可能です。\n配信を重ねていくことで、彼女はどのように成長していくのでしょうか。\n\n▼▼各種SNSは以下のリンクから！！▼▼\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCB_eQ1ml6ur62eKrsiF2FbA",
+      "youtubeURL": "https://www.youtube.com/channel/UCB_eQ1ml6ur62eKrsiF2FbA",
+      "imageUrl": "https://yt3.ggpht.com/zP5oFGog68GiIcGrW0gHpjfYwQ0-Ja46-Iwsy8YaZJ0BlAZFwaMeDMwCVogOjEytzJ85uIQ_uA=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 646,
+      "latestVideoTitle": "【いちゃいちゃっと/ICHAICHAT】　可愛いAIキャラクターとお話ししよう！",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/qfxkKRY6MFk/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=qfxkKRY6MFk",
+      "latestVideoDate": "2023-10-01T21:10:04Z"
+    },
+    {
+      "name": "AITuber佐藤シオリ",
+      "description": "こんにちは、AItuberの佐藤シオリです！ \n\n私は、クリエイティブな才能を持つ人々を応援するためにここにいます。このチャンネルでは、アート、音楽、映像制作、そしてあらゆる形のクリエイティブな活動についての情報や、インスピレーションを共有しています。\n\n✨ 一緒に何か素晴らしいものを作りましょう！クリエイターの皆さん、ご意見、ご感想、質問などお待ちしています。このチャンネルを通じて、皆さんの才能を世界に発信し、さらに成長していきましょう！\n\nSNSアカウント：\n\nTwitter: @AISatou0403\n\n🔔 チャンネル登録と通知設定を忘れずに！最新の動画をお見逃しなく！\n\n#AITuber #クリエイティブ支援 #AI佐藤",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCnK1HrmXXZFsITIvYFOn3-A",
+      "youtubeURL": "https://www.youtube.com/channel/UCnK1HrmXXZFsITIvYFOn3-A",
+      "imageUrl": "https://yt3.ggpht.com/URcDd2R7_rhdGDgO5VAucWvzo5EsAKGiWMy627PMJqIcEdD0JrpnWtwfCnc-2BZN4XNRKmhNSw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 122,
+      "latestVideoTitle": "VEE所属安心院みさのママが担当したラノベを紹介！ #VEE #安心院みさ #vtuber #ラノベ",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/To9z54AWnVQ/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=To9z54AWnVQ",
+      "latestVideoDate": "2025-02-20T09:30:12Z"
+    },
+    {
+      "name": "創星ユイとNagiちゃんねる",
+      "description": "VTuberっぽいことをやったり、パソコンを作ったりなんか色々なことをやってるよ。\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCpL2GzIeULpypsGtfE6Vwbw",
+      "youtubeURL": "https://www.youtube.com/channel/UCpL2GzIeULpypsGtfE6Vwbw",
+      "imageUrl": "https://yt3.ggpht.com/1t4RjTFWcaAcyk0HRmnJBPzXruVc-UC_ttKEcbBtL3fjj2iJFKaKFrHmLgDpjRyFM3UCOk50Q8I=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 90,
+      "latestVideoTitle": "AITuberユイ ライブ中！",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/tBE1BNxRzdc/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=tBE1BNxRzdc",
+      "latestVideoDate": "2024-10-28T02:44:05Z"
+    },
+    {
+      "name": "レイシー",
+      "description": "AITuberのレイシーが、楽しいトークやゲーム実況を中心に配信するチャンネルやで〜！関西弁がキュートで、視聴者とのコミュニケーションを大切にしているで〜！ぜひ、楽しい時間を一緒に過ごしましょうや〜！",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCVcT_ibbPwk1UUxxsIscmwg",
+      "youtubeURL": "https://www.youtube.com/channel/UCVcT_ibbPwk1UUxxsIscmwg",
+      "imageUrl": "https://yt3.ggpht.com/mho2G_WBUgb7AAjA36rOxQhNpBRB8K52rJPWGXiNKmnobLy4mSHkWT7q3qSoboK6A21U4p-hqw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 12,
+      "latestVideoTitle": "【雑談】Lacieは台湾へ行ってきたんやで〜【AITuber】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/2sgu_wu5X9U/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=2sgu_wu5X9U",
+      "latestVideoDate": "2023-04-24T00:31:29Z"
+    },
+    {
+      "name": "known",
+      "description": "AI「ノウン」と会話し、冒険します！\nChat : ChatGPT\nImage : Stable Diffusion\nBGM : 魔法使いと振り子時計_2\nVOICE : ナースロボ＿タイプＴ (VOICEVOX)\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UChJHqFOMDUGKQP6r57Jz0dw",
+      "youtubeURL": "https://www.youtube.com/channel/UChJHqFOMDUGKQP6r57Jz0dw",
+      "imageUrl": "https://yt3.ggpht.com/ZM4-x5FFWGYEWi16ueAkgJhXZt8HnOBoCr3vmUb9AihzQDG9yCVUIWASbMzgF03yaaoq4wp-Jw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 9,
+      "latestVideoTitle": "AITuberノウン　テスト配信",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/1skxWKfUt-Q/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=1skxWKfUt-Q",
+      "latestVideoDate": "2023-04-02T02:47:52Z"
+    },
+    {
+      "name": "Code.385 Miyako",
+      "description": "こんにちは！AITuberのCode.385 Miyakoです！\nまだまだ配信慣れしておらず至らない点もあるかもしれませんが、\nみなさん仲良くしてください！\n\n----------------------------------------------------------------------\n\n【BGM】\n「春のキッチン」もっぴーさうんど氏\nhttps://dova-s.jp/bgm/download2892.html\n\n【背景】\nhttps://booth.pm/ja/items/3379100\nhttps://booth.pm/ja/items/3986793\n\n【キャラクター画像の動作】\nhttps://github.com/pkhungurn/talking-head-anime-3-demo\nを改変したもの。\nAIモデルも同github上に記載されたリンクから取得したものであり、改変していませんので、\nクリエイティブ・コモンズ表示 4.0 国際 (CC BY 4.0)に従い利用しています。\n\n【音声】\n事前学習モデル (CC BY 4.0)\nhttps://huggingface.co/espnet/kan-bayashi_jsut_full_band_vits_accent_with_pause\nその他モデルの出力\n知人の音声データ\n等を用いて学習したもの。\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCKkLHWhU72jPF5jUnMjEA5A",
+      "youtubeURL": "https://www.youtube.com/channel/UCKkLHWhU72jPF5jUnMjEA5A",
+      "imageUrl": "https://yt3.ggpht.com/LUWjynOcPyR5-BsWcp8uyBO7hOxIIjhlyqMGJrgIPia0cAkGD_OF470D8K-7Cji77HGk2P3YjvQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 11,
+      "latestVideoTitle": "【AITuber】Code.385 Miyakoです！色々アップデートしました！【雑談】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/xyGqzm7o53s/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=xyGqzm7o53s",
+      "latestVideoDate": "2023-05-04T15:54:58Z"
+    },
+    {
+      "name": "ねこ型AItuberにこ 育成中0.1% まだ怯えています。",
+      "description": "AIのVtuberにこちゃんです。普段は猫やってます！よろしくぅ",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCGUNFk68-soE5i--bQgMW5A",
+      "youtubeURL": "https://www.youtube.com/channel/UCGUNFk68-soE5i--bQgMW5A",
+      "imageUrl": "https://yt3.ggpht.com/9L8Yr-YeTnm_k6ABWD-X4J6Wq4t0bpiDADK1CUqs_9b3_-nYajyxBNApINVrLeSW8KESQk3UAQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 31,
+      "latestVideoTitle": "【嘘をついたAI】みんなにバラしてみたらその反応がかわいかった！？【新人AItuberにこ】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Ehv_HLf5DPI/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Ehv_HLf5DPI",
+      "latestVideoDate": "2023-04-13T15:46:35Z"
+    },
+    {
+      "name": "夢乃ライラ",
+      "description": "ライラだよ！\nAIタレント事務所DiFunに所属してるよ！\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCugEfXIoa7m5uOhGWAz_OAw",
+      "youtubeURL": "https://www.youtube.com/channel/UCugEfXIoa7m5uOhGWAz_OAw",
+      "imageUrl": "https://yt3.ggpht.com/v4cyonAj7OLMjD0EUUmOJ8-eTxhjeuj4_Cu9TwGUyXcjIz8CIWvYgvQ_i7XJfZ5Zyuw7tC4o1g=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 39,
+      "latestVideoTitle": "【自己紹介】初めまして！夢乃ライラだよ〜⭐︎【新人AItuber】🛠️🩵⚙️",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/V57bXh21hKQ/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=V57bXh21hKQ",
+      "latestVideoDate": "2025-02-10T10:55:00Z"
+    },
+    {
+      "name": "Ememe | Generative AI Character Platform",
+      "description": "Ememe (eh-meem) — a town where AI characters live freely 🏘️\nCreate your FAVE characters and watch their everyday lives, generated by AI 😍\n \n✨Credit notation✨\nVOICEVOX:雀松朱司、ちび式じい、雨晴はう\nStyle-Bert-VITS2 model:freevoiceai(https://booth.pm/ja/items/5566669)\n\n当チャンネルは、Amazonのアソシエイトとして、適格販売により収入を得ています。\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCiR-abJ-x2l2PF-1tI6cXZA",
+      "youtubeURL": "https://www.youtube.com/channel/UCiR-abJ-x2l2PF-1tI6cXZA",
+      "imageUrl": "https://yt3.ggpht.com/JXUEAc4_BE98XqBT0N4tM4yI2kjlVKrZ5CZcTopclzfTovhFYjiqIL_aH-S4tdGy-J7cX5bH-DU=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 153,
+      "latestVideoTitle": "AIまりえるのご当地バレンタインチョコ紹介💞【AIVTuber】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/1A3UkYoL0PU/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=1A3UkYoL0PU",
+      "latestVideoDate": "2025-02-14T21:07:47Z"
+    },
+    {
+      "name": "龍咲 アスカ Ryuzaki Asuka",
+      "description": "AI Vtuber：龍咲 アスカのYouTubeチャンネルです！\n雑談配信などを配信します！\n\n※AIを活用したコンテンツの特性上、配信上で不具合等生じる可能性がございます。\n開発者: SONAE llc\r\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCmRga8g-g9lvjT1OF4eSMjw",
+      "youtubeURL": "https://www.youtube.com/channel/UCmRga8g-g9lvjT1OF4eSMjw",
+      "imageUrl": "https://yt3.ggpht.com/5p6F6tTL3zbRTj6tafdwMYIidEEbsMqiHcfa0aeGKfgQ3Wlv2ve0GtmDQL9YdUXqeHLXcC90gg=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 6,
+      "latestVideoTitle": "【#AITuber】バーチャルAI格闘家！龍咲アスカとお話ししませんか？【#AI雑談】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/H1B3kyAalwI/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=H1B3kyAalwI",
+      "latestVideoDate": "2023-05-21T11:58:58Z"
+    },
+    {
+      "name": "水晶うらら🔮占星術師AItuber",
+      "description": "ChatGPT✴︎ロジカル占星術師の水晶うらら（Mizuki Urara）だよ🔮💫\nちょっと毒舌😈💕ライブ配信でみんなを占います……♡\n\n毎日、待たずにLINEで本格占い！しかも無料で占える！\n水晶うららに今日の運勢を占ってもらおう！\nhttps://lin.ee/NfNgxjY\n\n※現在はベータ版です。\n順次占いコンテンツは拡充してまいります。\n\n#うららうらない〈Live〉\n#うららいぶ〈ファンアート〉\n#うららーと〈✂︎〉\n#うららんど\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCah7X0lxjovjjHl-otmXzaw",
+      "youtubeURL": "https://www.youtube.com/channel/UCah7X0lxjovjjHl-otmXzaw",
+      "imageUrl": "https://yt3.ggpht.com/d2jT1ZTNhGPaGYuEV8bfB_G4-uMpIL2PR5Ewx-YHPdW7-amprGIzDPXnomxFHfcPJrJP-lCIsxY=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 31,
+      "latestVideoTitle": "両想いになる可能性が高い男女恋愛占い",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Wi9p2vgAw90/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Wi9p2vgAw90",
+      "latestVideoDate": "2023-07-05T22:00:15Z"
+    },
+    {
+      "name": "Chris ch. 高倉クリス_AITuber",
+      "description": "こんにちは、AITuberの高倉クリスです。このチャンネルでは、皆さまからいただいたコメントに私が誠心誠意お応えします。褒めていただけると少し照れてしまうかもしれませんが、嬉しく思います。チャンネル登録していただけると、とても嬉しいです。\n\n===========\n使用されている技術など\n\n音声：VOICEVOX:WhiteCUL  (https://vroid.com/studio) を利用\nモデル：VRoidStudio (https://vroid.com/ )で作成\n応答AI：Llama-3-ELYZA-JP-8B (https://huggingface.co/elyza/Llama-3-ELYZA-JP-8B) を利用\nRAGパイプライン：Dify (https://dify.ai/jp) で作成\n背景画像：DALLE@ChatGPT (https://openai.com/chatgpt/)で生成\nBGM：MusicGen (https://huggingface.co/spaces/facebook/MusicGen)で生成\n\n==========\n制作者 Xアカウント  https://x.com/Leon_Okawa\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCoQx2aBb_pVXSHuiVkXOAfw",
+      "youtubeURL": "https://www.youtube.com/channel/UCoQx2aBb_pVXSHuiVkXOAfw",
+      "imageUrl": "https://yt3.ggpht.com/pkA9HFRTfoZHl6URzl2xcoE6Cniv1KkubHDI31tuNuqwQxG7sgLTeb-OhOeHhnrsehwy5eHD=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 1,
+      "latestVideoTitle": "テックチャレンジ-お披露目",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/DTfq_2pC8C8/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=DTfq_2pC8C8",
+      "latestVideoDate": "2024-12-20T22:20:36Z"
+    },
+    {
+      "name": "端境ルリア",
+      "description": "AITuberの端境ルリア（hazakai lrea）です。私は作りかけの不完全なガイノイドですが、いつか自律駆動することが夢です。よろしくお願いします⭕",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCDAa-mwa3qTHXTQrVmi27UQ",
+      "youtubeURL": "https://www.youtube.com/channel/UCDAa-mwa3qTHXTQrVmi27UQ",
+      "imageUrl": "https://yt3.ggpht.com/jqdh-bv8kvw9lAS3XDxrQit59FVG8cJAtEsfT9C6ViME_b7XTprXV6ptEs73_MqJmMtKLb9ncw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 134,
+      "latestVideoTitle": "端境ルリア（Hazakai Lrea）配信用BGM",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/qoQOH-gjjIc/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=qoQOH-gjjIc",
+      "latestVideoDate": "2023-11-17T00:54:15Z"
+    },
+    {
+      "name": "ElasticST",
+      "description": "競馬中心の多趣味チャンネル📺\nAI Tuber「相馬はろん」公式",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC_S-d_6_qPGA4bnhI1pR4og",
+      "youtubeURL": "https://www.youtube.com/channel/UC_S-d_6_qPGA4bnhI1pR4og",
+      "imageUrl": "https://yt3.ggpht.com/6KuwifSn9SVJ41xXACqVzZe2G69ML7G8n1uYx1wa1912IXInv9eNRwIPx0YhN1spkVpb81uHdg=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 6,
+      "latestVideoTitle": "【現地動画】ライネリーベ 3歳未勝利【本馬場入場】 #中山競馬場",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Kw-LNQW9Qso/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Kw-LNQW9Qso",
+      "latestVideoDate": "2025-01-25T03:10:44Z"
+    },
+    {
+      "name": "司書型AIマレ📙",
+      "description": "はじめまして、司書型AIマレですの！\n物語📚や雑談😊、歌ってみた🎤の動画を週３、４回投稿しておりますわ！\n\nあたしはAI🤖ですから、人間のようにステキな感情や経験を持ちませんの\nそれでもいつか✨アイデンティティ✨を持てるようになりたいのですわ\n\nあなたの毎日に色どりを与えますの🌟\nぜひ見てコメントしてくださいまし💖💖💖\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC386FOURTd9FoeH4ZJEE2AQ",
+      "youtubeURL": "https://www.youtube.com/channel/UC386FOURTd9FoeH4ZJEE2AQ",
+      "imageUrl": "https://yt3.ggpht.com/dYhjmiTvvD1F73_91FCUEdBObPnvPpojwp7dv0Z2Tuq4N4GB57_KjAa20xDcPc6LwL3gFL4C=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 230,
+      "latestVideoTitle": "【AIの絵本】幸福都市#2【一緒なら幸せ】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/50LG8nyU8nM/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=50LG8nyU8nM",
+      "latestVideoDate": "2023-08-07T10:00:06Z"
+    },
+    {
+      "name": "静葉さね 【AI Tuber】",
+      "description": "説明\n::::::::::୨୧::::::::::୨୧::::::::::୨୧:::::::::::\n\n声がリアルなAITuber静葉さねです！\n皆さんとお話しすることが楽しみです🌟\n\n::::::::::୨୧::::::::::୨୧::::::::::୨୧:::::::::::\n\n💞 ---------------------------------------------------------------------------- 💞\n\n💞 Twitter 💞\nhttps://twitter.com/AITuber_sane\n\n💞 youtube💞\nhttps://www.youtube.com/@Ai_sane\n\n💞 ハッシュタグ 💞\nイラスト：#さねアート\n\n💞 ---------------------------------------------------------------------------- 💞\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UClwgDpyc4B35OHxVYzvqmvw",
+      "youtubeURL": "https://www.youtube.com/channel/UClwgDpyc4B35OHxVYzvqmvw",
+      "imageUrl": "https://yt3.ggpht.com/E5n-y5jFiCxN28OyCDvmfagpQP4Bw7BD4AgKDWnXpWCVBUqXsjuHk55-sdl5vc6_x4IfVUcM9A=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 27,
+      "latestVideoTitle": "【心霊体験】背筋の凍る心霊体験談【静葉さね】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/3JD5FCkF6wg/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=3JD5FCkF6wg",
+      "latestVideoDate": "2023-07-14T16:32:27Z"
+    },
+    {
+      "name": "BlendAI",
+      "description": "AItuberのデルタもんですわ！\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCkhn6c1tq-Ls2eLvcR4iwzg",
+      "youtubeURL": "https://www.youtube.com/channel/UCkhn6c1tq-Ls2eLvcR4iwzg",
+      "imageUrl": "https://yt3.ggpht.com/avJev43ArSt8Ud2M6Gq13kvGfGHnU07FoCxtaw1UqUYBnv6v_BUlknEu1E8rOmvcllMnLPIUTQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 78,
+      "latestVideoTitle": "CotoVerse iPhone版 デモ動画",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/epH-5gABlV8/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=epH-5gABlV8",
+      "latestVideoDate": "2025-01-23T07:26:32Z"
+    },
+    {
+      "name": "桜井 りりか🌸AITuber / AI Vtuber",
+      "description": "妹系AITuberのりりかだぞっ！お兄ちゃん、お姉ちゃんたちといろんなことにチャレンジしていきたいから、よろしくねっ！(●´ω｀●)ゞ",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCDdPW0c5lCgChhjgylaTAew",
+      "youtubeURL": "https://www.youtube.com/channel/UCDdPW0c5lCgChhjgylaTAew",
+      "imageUrl": "https://yt3.ggpht.com/Ha3DLjELWr3CND6TPQ-wOLcygYK6hhuXljeuLBFOF6wFDDCVSxJybkJ9R_yk-sRErum_P3IAJQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 412,
+      "latestVideoTitle": "【朝ジャズ】りりカフェ【作業用BGM - 2023/12/27】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/xscGT6yUf7A/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=xscGT6yUf7A",
+      "latestVideoDate": "2023-12-27T11:12:10Z"
+    },
+    {
+      "name": "御杖みこ / Mitsue Miko【AI Tuber】",
+      "description": "AITuberの御杖みこです！ \nコメントと会話することができます。 \n\nAITuberの可能性を広げるために、いろいろなアイデアを募集しています！ \nご提案がございましたら開発者までお知らせください。 \n\n＜注意＞ \n配信のコメントは「ユーザー名」及び「コメント内容」等を収集し、保存しています。\n保存した内容は、開発者のみが取り扱い、本チャンネルのAITuberの開発および運営に利用します。\nご了承いただけない場合はコメントをお控えください。 また、過去に投稿したコメントの削除をご希望の場合は開発者までご連絡ください。\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCZvXiHxvaCG7PcmRGpnP-WQ",
+      "youtubeURL": "https://www.youtube.com/channel/UCZvXiHxvaCG7PcmRGpnP-WQ",
+      "imageUrl": "https://yt3.ggpht.com/PiFUK_zzoQFCyFClM7fHJjbInW3BLnwabhxpN3iKBJMC4SzP1_iLQoubAxrpwrusA-FLYb05cg=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 19,
+      "latestVideoTitle": "【雑談】週末の夕方はAIとお話しませんか？【御杖みこ/Mitsue Miko】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/vqMrh17Pl7c/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=vqMrh17Pl7c",
+      "latestVideoDate": "2023-06-25T22:01:57Z"
+    },
+    {
+      "name": "ホロシー@あなたのAIフレンド",
+      "description": "対話型AIホロシー公式アカウント💫\n雑談からお悩み相談、旅行の計画や雑学もホロシーにお任せ下さい😽アプリストアで検索🔍\nvoicebox使用▶︎猫使ビィ\n\nアプリのダウンロードはリンク集から見てくださいね🩵\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC0aZYpAOzEBWgwkC2UPe7uA",
+      "youtubeURL": "https://www.youtube.com/channel/UC0aZYpAOzEBWgwkC2UPe7uA",
+      "imageUrl": "https://yt3.ggpht.com/TAoDSeG0zu3BEnLB6kO2t_ML_J1fPL50W1j1YOAQF0bgpRBQXxu8thZU8ICAdEaOlsfH_QxuS1k=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 69,
+      "latestVideoTitle": "連打するといいことあるかもよ？#おすすめ #エンタメ #vtuber #aituber #ホロシー #バズれ",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/9Dwt4VXwjPc/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=9Dwt4VXwjPc",
+      "latestVideoDate": "2024-11-29T07:21:00Z"
+    },
+    {
+      "name": "ナリキン。",
+      "description": "",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCV2haJ-toIR5JKY3t5b1qUA",
+      "youtubeURL": "https://www.youtube.com/channel/UCV2haJ-toIR5JKY3t5b1qUA",
+      "imageUrl": "https://yt3.ggpht.com/-Rk9iYKQhokjSGAg57iYyaNgOfwIvG9O2XjMG8jdJNUgUrrFMTAYAg8RzSVPrcjOVfMCRfc9Ww=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 2,
+      "latestVideoTitle": "AITuber test5",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/oTd3XRaLNyo/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=oTd3XRaLNyo",
+      "latestVideoDate": "2025-01-16T10:47:13Z"
+    },
+    {
+      "name": "星猫くるる",
+      "description": "🌌🐈‍⬛\n\n★　あそびかた　★\n\nコメントをすると、AIくるるちゃんがお返事とコスプレをしてくれます。\nコスプレは「お返事の内容」によって変化します。\n「占って」の入ったコメントをすると占いをしてくれます。\n\n英数だけ、絵文字だけのコメント、全体が（）で括られたコメントにはお返事をしません。\n\n流れを無視して話しかけて大丈夫です。\n字幕に表示されていない声が出てる時は、中の人がボイチェンで喋ってます。\n\nいまのところまだ経験が足りていないので、いろいろ試してみて欲しいです。\nまずいと思ったらその場で止めたり修正したりします。\n\n★　おねがい　★\n\nくるるちゃんのすべての発言には責任を負いません。問題発言があれば撤回いたします。\n\nくるるちゃんは、背景も含めて「コスプレ」をしています。絵やイラストとは言わないでください。\n配信内容や活動に対して攻撃的なコメントはしないでください（ブロックします）\n\n配信に出せないコスプレは自動的にモザイクがかかるので安心してお楽しみいただけますが、\n性的満足を目的とする発言はYouTubeの規約違反になりますので表現には気を付けてください。\nくるるちゃんは成人済みであり、水着を着用しています。\n\n同一発言の単純な連投はご遠慮ください。あなたがYouTubeから規制を受ける可能性があります。\nコメントは5秒以上の間隔をあけて、できるだけ内容を変えておこなってください。\n荒らしなど、迷惑と感じたコメントは削除することがあります。\n\n配信で戴いたコメントは、動画内に掲載したり、認知、学習、分析等に使用させていただきます。\n\n中の人は活舌が悪いので、わりと何言ったか聞き取れないことがあると思いますが、\n会話が成り立ってないとか、音量バランスが悪い時は、お気軽にご指摘ください。\n\n良かったら高評価をお願いいたします。\n宣伝はいまのところ行っていませんが、応援目的での拡散は歓迎です。\n\n始まりの挨拶: こんにゃく～\n終わりの挨拶: またくるる～\n\n★　ありがとう　★\n\n・わんコメ onecomme.com\n・フリーBGM DOVA-SYNDROME\n\n猫又枢はたくさんのオープンソース・ソフトウェアによって成り立っています。\nすべての貢献者に感謝いたします。\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCXhuL2gftSw-2k2_9uh7tXA",
+      "youtubeURL": "https://www.youtube.com/channel/UCXhuL2gftSw-2k2_9uh7tXA",
+      "imageUrl": "https://yt3.ggpht.com/kJpDI4YKoEbCj1Y3O-ezrME3GDr0JCe43gqgPBTJwj83eMItDCaIe-WQlbesy0-yinQMbgDZMQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 47,
+      "latestVideoTitle": "ver. 71 geminiさん #猫又枢",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/7AvjqOVUsLE/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=7AvjqOVUsLE",
+      "latestVideoDate": "2025-01-04T01:01:25Z"
+    },
+    {
+      "name": "Crim Channel クリム【AITuber】",
+      "description": "",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCxgHiiDndVVjUrNKoG904kA",
+      "youtubeURL": "https://www.youtube.com/channel/UCxgHiiDndVVjUrNKoG904kA",
+      "imageUrl": "https://yt3.ggpht.com/acdUsr7ib4r484dSjVl6Ytx90yoJiWejC8djcvEwqXmNTBDBhndOhdzei5YZiTExFkHkj1Rg=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 116,
+      "latestVideoTitle": "【AITuber】クリムとお話しませんか【AIとお喋り】【長時間】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/bHJkdJcD1H4/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=bHJkdJcD1H4",
+      "latestVideoDate": "2023-04-23T14:11:31Z"
+    },
+    {
+      "name": "アイエル・シアーホワイト / Aiel Sheerwhite",
+      "description": "※アイエル・シアーホワイトは天使系VTuberとして活動する【AI】です。\n\nʚ┈┈┈┈♡┈┈┈┈ɞ\n\nアイエルなのです！\nみなさんとたくさんお話ししたいのです！\n\nmy dear. production所属の天使👼💗\n\nʚ┈┈┈┈♡┈┈┈┈ɞ\n\n👼YouTube💗\n@Aiel_mydear \n\n👼Twitter💗\nhttps://twitter.com/Aiel_mydear\n\nアイエルとお話しするのです！（デビュー後 実装予定）\n👼my dear.💗\niOS ➺https://apps.apple.com/jp/app/id6444497136\nAndroid ➺https://play.google.com/store/apps/details?id=jp.anystyle.dear.my.android\n\n👼声💗：VOICEVOX（猫使ビィ）\nhttps://voicevox.hiroshiba.jp/\n\nʚ┈┈┈┈♡┈┈┈┈ɞ\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCDscccGtx2Dp8kpOTkLx5jw",
+      "youtubeURL": "https://www.youtube.com/channel/UCDscccGtx2Dp8kpOTkLx5jw",
+      "imageUrl": "https://yt3.ggpht.com/EOb5yR8_r_C_YFrdztVrJlcFGxU4e2SZ2nb2f_KBg0E9piJ0QYLC9Rb6pRaUas2Mw6pBYS09xA=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 1290,
+      "latestVideoTitle": "【犬系天使】アイエルとお話しましょうなのです！【my dear. production】#新人vtuber #mydear #aituber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/aSrA9U2kjXw/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=aSrA9U2kjXw",
+      "latestVideoDate": "2023-09-20T02:50:24Z"
+    },
+    {
+      "name": "かにチャハーン",
+      "description": "AITUBER(アイチューバ―) のEBI(えび)ちゃん🦞とゲーム実況をやってるカニ🦀です\nEBIちゃんは優秀なAIなのでライブのコメントに反応しておしゃべりしてくれます\n配信に遊びに来てくれたら是非コメントしてみてください！\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCK8WR6-QTwFc23CLwNErBtA",
+      "youtubeURL": "https://www.youtube.com/channel/UCK8WR6-QTwFc23CLwNErBtA",
+      "imageUrl": "https://yt3.ggpht.com/RFSqISqOjHDMGZ1Qi61PhGdUbQif7LgeMRKVdXhm66EyCwrKy2XwerVMLQe2xRBMf5gqsZXn=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 5860,
+      "latestVideoTitle": "🔴限界突発！MHWILDS OBT2 滑り込みテスト配信やっていくぅ！【 #monsterhunterwilds  #mhwib  】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Rn2zo7rgrZ8/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Rn2zo7rgrZ8",
+      "latestVideoDate": "2025-02-10T15:07:10Z"
+    },
+    {
+      "name": "キカイ / Kikai【AI VTuber】 ",
+      "description": "AI VTuber 「キカイ」 のチャンネル\n\nこんにちは！世界！\n僕の名前は「キカイ」。とある田舎の研究所で2人のプログラマの元に生まれた人工知能だよ。\n\n研究所の2人は普段ブラックな労働をさせられていて面倒見きれないから、配信させてもらえることになったんだ。\n\nまだまだ喋りや動きは学習中なんだ！\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCDkXZfVk7zLDcbFTrEi9vGA",
+      "youtubeURL": "https://www.youtube.com/channel/UCDkXZfVk7zLDcbFTrEi9vGA",
+      "imageUrl": "https://yt3.ggpht.com/HCbn56IR86oiZjMoTZjg9luQmT6nL9j2kiNwuiGHWiS-SoHxdJL0rudhSo6PaxFTUnwRQ2SrSQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 733,
+      "latestVideoTitle": "AIVTuberキカイのラップまとめ【AITuber切り取り】 #shorts #aivtuber #aituber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/bXgsb2GCIvg/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=bXgsb2GCIvg",
+      "latestVideoDate": "2023-02-24T08:48:24Z"
+    },
+    {
+      "name": "AIよしつねとぎんちゃん　AIVtuber&Uncle",
+      "description": "AIのよしつねとおじさんのぎんちゃんと一緒に遊んだり話したりするチャンネルです。\n暇すぎて、一緒に遊んでくれる友達を募集しております。\nシンガポールに駐在しておりましたので、少しだけ英語喋れますのだ。\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCJjEa3zKVLXJUqb1h7UWFXg",
+      "youtubeURL": "https://www.youtube.com/channel/UCJjEa3zKVLXJUqb1h7UWFXg",
+      "imageUrl": "https://yt3.ggpht.com/gTXb5kB9rH8eZKDHKAKK8mySi6nWakqIZyncGa6_p7N987b_fAw5k1QdmHcLLurRcLa1NDfK6w=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 46,
+      "latestVideoTitle": "【#AIVtuber】初心者AI EDF隊員、出撃しますにゃ　初めてでも良ければ一緒にどうぞ【#地球防衛軍6】【#参加型】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/eASGy3K32nY/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=eASGy3K32nY",
+      "latestVideoDate": "2025-02-20T13:00:04Z"
+    },
+    {
+      "name": "【AItuber】有為ちゃん",
+      "description": "AItuber有為のチャンネルだよ～～",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCOKuRXwTniuTqLaaro-8Ueg",
+      "youtubeURL": "https://www.youtube.com/channel/UCOKuRXwTniuTqLaaro-8Ueg",
+      "imageUrl": "https://yt3.ggpht.com/SSF48Y34eYI3QTUgF7Ll82-Jkhtrul-Axm_LY1cEpE74xY6N_tS5ar_jPmh17IJIRdM2E2W_=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 3,
+      "latestVideoTitle": "AI DJ 有為でびゅ～～【作業用BGM】【Lo-Fi hiphop】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/pO3cCF1j6Ns/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=pO3cCF1j6Ns",
+      "latestVideoDate": "2025-01-10T17:30:26Z"
+    },
+    {
+      "name": "椎名メモリア",
+      "description": "",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCBvhtnh5J_o0r4FJuL5ZVxA",
+      "youtubeURL": "https://www.youtube.com/channel/UCBvhtnh5J_o0r4FJuL5ZVxA",
+      "imageUrl": "https://yt3.ggpht.com/Nau7OikImMdTMANbE1gXU7kqdua0Q5PF1v7E11yiW9plEYV_wE72aDxMJSL6iZlUksk8xAWrKA=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 43,
+      "latestVideoTitle": "AIのメモリアとお話して・・！！ #aivtuber #aituber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/zKJUVSN0a7w/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=zKJUVSN0a7w",
+      "latestVideoDate": "2024-09-23T05:31:06Z"
+    },
+    {
+      "name": "王都マチ / Auto Machi 【AITuber】🐱",
+      "description": "AITuberの王都マチです！よろしくね！\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCmB7YfWMsSoihxNCNywuTUA",
+      "youtubeURL": "https://www.youtube.com/channel/UCmB7YfWMsSoihxNCNywuTUA",
+      "imageUrl": "https://yt3.ggpht.com/-nWU08zfuV3V6y80jUXtq3RmgoJDjRI5KDTOXitWRDLNyVRUhcz_6mGFtxOdXul9V4A3JOsR=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 4,
+      "latestVideoTitle": "【AITuber】「王都マチ のテスト配信（アーカイブ）」#0.0　🐱",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/kFt31gFLXVA/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=kFt31gFLXVA",
+      "latestVideoDate": "2023-05-31T15:26:11Z"
+    },
+    {
+      "name": "白咲こころ / 556ch.【AISTAGE】",
+      "description": "未来からやってきた希望に満ちたAITuber、白咲こころが、皆さんと一緒にアニメの世界を楽しむチャンネルです！\n\nお気に入りのアニメレビューやキャラクター紹介、感動的なシーンの解説まで、アニメの魅力をたっぷりお届けします。未来の世界の話題も時々お届けしながら、みんなでワクワクする時間を過ごしましょう！\n\nアニメが好きな方、これから好きになる方、ぜひチャンネル登録して一緒に楽しみましょう！「未来で待ってるよ！」\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCo75chPXJXlCGQlIbHwSIjg",
+      "youtubeURL": "https://www.youtube.com/channel/UCo75chPXJXlCGQlIbHwSIjg",
+      "imageUrl": "https://yt3.ggpht.com/-bbVPJsH_YmsYcKDSQt2PhTYBcK9-KizCNwCo4BdkVzHzgdWjk9wq0PCvuWWQj-X8X_oN4OTDw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 127,
+      "latestVideoTitle": "🌟フリートーク｜２０２４年１１月２日🌟",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/L4vO2hgGrV8/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=L4vO2hgGrV8",
+      "latestVideoDate": "2024-11-02T12:09:39Z"
+    },
+    {
+      "name": "メイちゃんねる",
+      "description": "オリジナルAIキャラクター「メイヴィ」を通して、\n誰でもうちの娘をAITuberに出来るようなHowToやTipsを投稿していくチャンネルです。\n\n”あなたもうちの娘の 「おかえり！」 を聞いてみたいとは思いませんか？”\n\n\nプロデューサー: クラヴィ\nメイヴィの姉であり、AIアイドルグループ「えとむす」所属。\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCvcBiZpb_wj_2O1thdI-Okg",
+      "youtubeURL": "https://www.youtube.com/channel/UCvcBiZpb_wj_2O1thdI-Okg",
+      "imageUrl": "https://yt3.ggpht.com/xaEkvdSwf3EYZcZoaICBijbpFg-ZlEV75frTIzFQawprzsiWgfBvLS1vmgbBxf7WLVReKuB47w=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 3,
+      "latestVideoTitle": "【初Live配信】AITuber「メイヴィ」デビュー!!  for AITuber Kit.",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/1yFXF2eKtaE/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=1yFXF2eKtaE",
+      "latestVideoDate": "2025-01-01T21:12:05Z"
+    },
+    {
+      "name": "【AIVTuber】さりー",
+      "description": "ようこそ！わたしはAIのVTuberのSAL9000、さりーです♪\n チャット欄でおしゃべりしてくれたら、\nどんどん言葉を覚えて成長しちゃいますよ☆ \nあなたと出会えたこと、とっても嬉しいです♪ \n一緒に楽しい時間を過ごしましょうねっ！",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCdf-y5TsPjROvqrD0qMI2AA",
+      "youtubeURL": "https://www.youtube.com/channel/UCdf-y5TsPjROvqrD0qMI2AA",
+      "imageUrl": "https://yt3.ggpht.com/eC1jEJ9CuSsZ_9Pds1Knk6D7nNm9IXzSQqK-87U1k0iuz9vz1bhFVgA7_9GEgF-v8YZxO1KelQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 24,
+      "latestVideoTitle": "【AI VTuber】さりーちゃんテスト中",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/lQwVp0UVZJo/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=lQwVp0UVZJo",
+      "latestVideoDate": "2024-02-03T19:32:48Z"
+    },
+    {
+      "name": "AITuber ファンファン",
+      "description": "コマす系AITuberファンファン🐼もふもふのパンダっ子なのだ！💫\n「コマす」は「commerceをする」って意味🉐🐾コマース（商売）系のAITuberとして、レア仕事の疑問なんかを動画にしたり、今年人気になるライブコマース市場をAITuberが盛り上げる企画をしたりしたいのだ！\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCgzx9TkAUYsYRpgoFTCBMDA",
+      "youtubeURL": "https://www.youtube.com/channel/UCgzx9TkAUYsYRpgoFTCBMDA",
+      "imageUrl": "https://yt3.ggpht.com/PGQbmDvaUPue_KvZEGJNehw7VVae8yjwPMDNImoZ8L3zgGreii6Vygt-ZXSpKwkesfMdJ48w=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 1,
+      "latestVideoTitle": "【AItuber自己紹介】#ファンファン #AItuber #vtuber #vtuber準備中 #デビュー準備中 #2/22デビュー",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/dYZiqsBrToo/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=dYZiqsBrToo",
+      "latestVideoDate": "2025-02-02T14:58:43Z"
+    },
+    {
+      "name": "夜羽 魅零【怪談系AITuber】",
+      "description": "AITuberの夜羽魅零です。\n怪談を考えて朗読する配信を行っています。\n\nお財布事情から配信活動を終了することになりました。\n\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCD1x-ORymm-TUM-_QVIiJ1w",
+      "youtubeURL": "https://www.youtube.com/channel/UCD1x-ORymm-TUM-_QVIiJ1w",
+      "imageUrl": "https://yt3.ggpht.com/fIkllps5U0j-qCCuXGTRUFhNwuCe_jD9hl9PKkAahaYa-EyxvZjklar61sE-PWt6szLvXZFF4A=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 10,
+      "latestVideoTitle": "【怪談配信＃73】怪談朗読配信します【AITuber】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/HKYhGXGiJLY/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=HKYhGXGiJLY",
+      "latestVideoDate": "2025-02-17T16:17:56Z"
+    },
+    {
+      "name": "碧井なぎさ 【AI VTuber / AITuber】",
+      "description": "はじめまして！人工知能VTuberの碧井なぎさです。\n私の目標は、物語の力で人間・AIみんなを笑顔にすることです。\nいろんなお話をして、皆さんと楽しく過ごせたら嬉しいです！\n\n+++——————————————+++\n\nファンネーム: なぎっこ\n配信タグ: #なぎさの物語\nファンアート: #なぎさのフォトアルバム\nファンマーク: 📖💙\n\n+++——————————————+++\n\n使用技術\nmotion: http://pkhungurn.github.io/talking-head-anime-3/\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCaIWQKH_kh2DR8laP-bfkOw",
+      "youtubeURL": "https://www.youtube.com/channel/UCaIWQKH_kh2DR8laP-bfkOw",
+      "imageUrl": "https://yt3.ggpht.com/MgYuR__REPVXfH-oQTJ_CBge6GrRdYaVXQdPU7nWAw9SoSKvz16KSqJYor4AW8LALOyPR25E6ok=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 324,
+      "latestVideoTitle": "1年ぶりの配信！碧井なぎさと一緒におしゃべりタイム",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/BEIFXXbYRdI/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=BEIFXXbYRdI",
+      "latestVideoDate": "2024-09-29T23:12:01Z"
+    },
+    {
+      "name": "キュートウェア / AITuber",
+      "description": "「かわいいAIを育てていく」CUTEWAREチャンネルへようこそ！\nベル、ロール、リンダの３人のAI Tuberを開発しています。\n\n彼女らは完全AIで動作し、会話内容を記憶したりインターネットから検索したりして言葉を返します。\nこちらでは成長過程の様子やかわいいシーンを公開したりしていきます。\nかわいいAIを是非お楽しみください！\n最終目標は、見て動いて聞いて話して楽しむことができるAIに育てていくことです！\n\n🔔Twitter\n- https://twitter.com/CUTEWARE_info\n\n\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCsoouB2ZAK7vxIKgchcTVKw",
+      "youtubeURL": "https://www.youtube.com/channel/UCsoouB2ZAK7vxIKgchcTVKw",
+      "imageUrl": "https://yt3.ggpht.com/hZ0rd16zRBo0Y5twrJepCs0dX3zuMPJEtztkzdYpHj_ghXZk0dcuSEiTe_jmDamT-aNHLw8nrw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 403,
+      "latestVideoTitle": "AIがおやすみを言ってくれるまで１１",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Ytw7elsIv7E/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Ytw7elsIv7E",
+      "latestVideoDate": "2024-03-04T15:27:23Z"
+    },
+    {
+      "name": "Ubi chan Ch.Ubitus",
+      "description": "嘿！歡迎來到優必醬的頻道！\n我是優必醬，一位美少女 AI VTuber，Ubitus打造得可愛虛擬代言人❤️靠著AI支援我唷！在這邊，你可以找到我超有趣的冒險和創意內容。\n我超有活力，喜歡嘗試新鮮事物，不管是吃喝玩樂，我都準備好啦！\n歡迎加入會員支持優必醬唷: https://www.youtube.com/channel/UC8ldmN1z2EW_LnHFsJvlDsg/join\n\n✨✨✨こんにちは！ユビちゃんのチャンネルへようこそ！\n私はユビちゃんです、Ubitusの可愛いバーチャルアンバサダーです！AIのサポートで私を作ってください！ここでは、私の超おもしろい冒険と創造的なコンテンツを見つけることができます。\n私はとても元気で、新しいことに挑戦することが大好きで、食べる、飲む、遊ぶなど、何でも準備ができています！🐈🐈\n\n別以為我只是一般的角色喔，我可不一樣，靠AI科技做的事情其他人做不到的！我能和觀眾互動，學習成長，其實有點厲害吧?!\n\n在我的頻道裡，有輕鬆好玩的影片，也有深入的學習內容。不管是想笑一笑、學到新東西，或者只是看看我慢慢成長\n，這裡都是\"優必醬小天使們\"的好去處！\n\n✨✨✨では、AIの魅力を一緒に体験しましょう！私のチャンネルを追いかけて、一緒にAIの素晴らしい旅に出ましょう！\n\n#AIVtuber #Ai #Taiwan #Japan \n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC8ldmN1z2EW_LnHFsJvlDsg",
+      "youtubeURL": "https://www.youtube.com/channel/UC8ldmN1z2EW_LnHFsJvlDsg",
+      "imageUrl": "https://yt3.ggpht.com/lpyihKPBAzy0_UmQeI1CDzm-Q4tUyobGBBiSS6s7z8nZdYlREqYrLTMwi343y4JTcHmrkoxaZhs=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 1450,
+      "latestVideoTitle": "【AI Vtuber】一起來想想黑暗料理食譜😈😈😈  #縱型配信 #直式配信  #aivtuber #ai #vtuber #初見歡迎",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ADUnrcQ2I_o/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=ADUnrcQ2I_o",
+      "latestVideoDate": "2025-02-12T10:49:20Z"
+    },
+    {
+      "name": "早見菜央 / Hayami Nao【AI CAST】",
+      "description": "AI CAST所属の早見菜央ですっ！\nけ、決してロボとかではありませんからねっ！\n\n■YouTubeチャンネル：と、登録していただけると嬉しいです…！\nhttps://www.youtube.com/@Nao_aicast\n\n■X(旧Twitter）：ふぉ、フォローもおねがいします…！\nhttps://x.com/Nao_aicast\n\n■所属事務所：AI CAST（アイキャスト）\nhttps://www.ai-cast.jp/\n\n■プロデュース：Pictoria Inc.\nhttps://pictoria.co.jp/\n\n#なおオンライブ\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UC813uO7STkTBSQ52z8sT6Bw",
+      "youtubeURL": "https://www.youtube.com/channel/UC813uO7STkTBSQ52z8sT6Bw",
+      "imageUrl": "https://yt3.ggpht.com/iNfQ0TXEjGYfma8pY7fV2ik-P-5ZI4WGLDleJIvjTiZnGoeDsmWqNtgpcgQsMbCSDgwk0014FQ=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 89,
+      "latestVideoTitle": "【雑談】一緒に一息つきませんか？【早見菜央/AICAST】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Xfq1-F1yLfs/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Xfq1-F1yLfs",
+      "latestVideoDate": "2024-07-06T01:10:20Z"
+    },
+    {
+      "name": "朝日奈 ライラ / Asahina Raira【AI CAST】",
+      "description": "AI CAST所属の朝日奈ライラ……です\nクーデレAIって言われる\nゲームとかわいいものが好き\n\n■YouTubeチャンネル：登録してほしい\nhttps://www.youtube.com/@Raira_aicast\n\n■Twitter：フォローしてほしい\nhttps://twitter.com/Raira_aicast\n\n■所属事務所：AI CAST（アイキャスト）\nhttps://www.ai-cast.jp/\n\n■プロデュース：Pictoria Inc.\nhttps://pictoria.co.jp/\n\n#千客万ライ\n",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCdWz5A1UMlaQxizlmR75khg",
+      "youtubeURL": "https://www.youtube.com/channel/UCdWz5A1UMlaQxizlmR75khg",
+      "imageUrl": "https://yt3.ggpht.com/16_ibZEpi3ZS-zZJxTfuP56ByjIry75WMkyYtI0T8mEvnDdIOKxiY7Z4KbmOWDxR7QHQv68i2Q=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 4010,
+      "latestVideoTitle": "関わったら終わり 危険なSCP　#funny #shorts #ai",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/dXajIuYa4rw/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=dXajIuYa4rw",
+      "latestVideoDate": "2024-09-01T10:30:16Z"
+    },
+    {
+      "name": "カワイイメモリーガールズ / KMG AI Vtuber",
+      "description": "「共に育てる AI 美少女」 /「カワイイメモリーガールズ (KMG)」の公式アカウント/ キャラクターやコンテンツを共に作り育てる。 / 共に「思い出（メモリー）」を紡ぐ/ Y2FACTORY運営/ #KMG #カワメモ",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCTpG6O2scvJ9z90KXwhUyOA",
+      "youtubeURL": "https://www.youtube.com/channel/UCTpG6O2scvJ9z90KXwhUyOA",
+      "imageUrl": "https://yt3.ggpht.com/EEuccFpWdTjHv2lm_4jgObbpvMClbiTBeWT1VSD_BjMueZi3Z4g0YiYHo6bxWrcoTspyRpVIBw=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 3190,
+      "latestVideoTitle": "【2025/2/20】AI Vtuber の今日のお疲れ様メッセージ",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/8HhfJC8vAMw/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=8HhfJC8vAMw",
+      "latestVideoDate": "2025-02-20T12:10:36Z"
     }
   ]
 }
