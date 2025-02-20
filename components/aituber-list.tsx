@@ -282,26 +282,6 @@ export function AituberList() {
                 />
               </div>
 
-              {/* 期間フィルター */}
-              <div className="space-y-4">
-                <div className="text-sm font-bold">期間</div>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {(Object.entries(DATE_FILTER_LABELS) as [DateFilter, string][]).map(([value, label]) => (
-                    <Badge
-                      key={value}
-                      variant={selectedDateFilter === value ? "default" : "outline"}
-                      className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
-                      onClick={() => setSelectedDateFilter(value)}
-                    >
-                      {label}
-                      <span className="ml-1 text-xs">
-                        ({aitubers.filter(a => isWithinDateRange(a.latestVideoDate, value)).length})
-                      </span>
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
               {/* タグフィルター */}
               <div className="space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -338,6 +318,26 @@ export function AituberList() {
                       onClick={() => toggleTag(tag)}
                     >
                       {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              {/* 最終更新日フィルター */}
+              <div className="space-y-4">
+                <div className="text-sm font-bold">最終更新日</div>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  {(Object.entries(DATE_FILTER_LABELS) as [DateFilter, string][]).map(([value, label]) => (
+                    <Badge
+                      key={value}
+                      variant={selectedDateFilter === value ? "default" : "outline"}
+                      className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
+                      onClick={() => setSelectedDateFilter(value)}
+                    >
+                      {label}
+                      <span className="ml-1 text-xs">
+                        ({aitubers.filter(a => isWithinDateRange(a.latestVideoDate, value)).length})
+                      </span>
                     </Badge>
                   ))}
                 </div>
