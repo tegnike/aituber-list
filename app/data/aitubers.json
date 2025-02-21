@@ -1542,6 +1542,20 @@
       "latestVideoUrl": "https://www.youtube.com/watch?v=9ybprBHwJHY",
       "latestVideoDate": "2025-02-21T04:35:51+09:00",
       "isUpcoming": false
+    },
+    {
+      "name": "めぐチャンネル",
+      "description": "",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCO83t8_iHqKLHvHTXawc81Q",
+      "youtubeURL": "https://www.youtube.com/channel/UCO83t8_iHqKLHvHTXawc81Q",
+      "imageUrl": "https://yt3.ggpht.com/ytc/AIdro_kz9lFWnTw2e02F6XoAvYztR0vsWJa1LXDjC_6WnXH0MuJBMv1mPGbaPqD8J1A3wqahhU6-=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 3,
+      "latestVideoTitle": "めぐチャンネル のライブ配信",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/7lpuCTxgwQg/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=7lpuCTxgwQg",
+      "latestVideoDate": "2024-10-20T01:23:23Z"
     }
   ]
 }
