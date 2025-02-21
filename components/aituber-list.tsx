@@ -157,7 +157,7 @@ export function AituberList() {
   const [nameFilter, setNameFilter] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const [showScrollTop, setShowScrollTop] = useState(false)
-  const itemsPerPage = 10
+  const itemsPerPage = 12
 
   // スクロール位置を監視
   useEffect(() => {
