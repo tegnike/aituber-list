@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
@@ -157,7 +157,53 @@ export function AituberList() {
   const [nameFilter, setNameFilter] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const loadMoreRef = useRef<HTMLDivElement>(null)
   const itemsPerPage = 12
+
+  // 現在のタブに該当するAITuberをフィルタリング
+  const filteredAITubers = aitubers.filter(aituber => 
+    isWithinDateRange(aituber.latestVideoDate, selectedDateFilter) &&
+    (selectedTags.length === 0 || 
+    (isAndCondition 
+      ? selectedTags.every(tag => aituber.tags.includes(tag))
+      : selectedTags.some(tag => aituber.tags.includes(tag))
+    )) &&
+    (!selectedSubscriberFilter || 
+      aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
+    (nameFilter === '' || aituber.name.toLowerCase().includes(nameFilter.toLowerCase()))
+  )
+
+  // インフィニティスクロールの実装
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const target = entries[0]
+        if (target.isIntersecting && !isLoading) {
+          // 次のページがある場合のみページを増やす
+          if (currentPage < Math.ceil(filteredAITubers.length / itemsPerPage)) {
+            setIsLoading(true)
+            // 少し遅延を入れてローディング状態を見せる
+            setTimeout(() => {
+              setCurrentPage(prev => prev + 1)
+              setIsLoading(false)
+            }, 500)
+          }
+        }
+      },
+      {
+        root: null,
+        rootMargin: '100px',
+        threshold: 0.1,
+      }
+    )
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [currentPage, filteredAITubers.length, isLoading])
 
   // スクロール位置を監視
   useEffect(() => {
@@ -186,52 +232,14 @@ export function AituberList() {
     setCurrentPage(1)
   }, [selectedDateFilter, selectedSubscriberFilter, nameFilter])
 
-  // 現在のタブに該当するAITuberをフィルタリング
-  const filteredAITubers = aitubers.filter(aituber => 
-    isWithinDateRange(aituber.latestVideoDate, selectedDateFilter) &&
-    (selectedTags.length === 0 || 
-    (isAndCondition 
-      ? selectedTags.every(tag => aituber.tags.includes(tag))
-      : selectedTags.some(tag => aituber.tags.includes(tag))
-    )) &&
-    (!selectedSubscriberFilter || 
-      aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
-    (nameFilter === '' || aituber.name.toLowerCase().includes(nameFilter.toLowerCase()))
-  )
-
-  // ページネーション用のデータ
-  const totalPages = Math.ceil(filteredAITubers.length / itemsPerPage)
-  const paginatedAITubers = filteredAITubers.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  )
-
-  // ページネーションコントロール
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  // 表示するAITuberの配列を作成
+  const displayedAITubers = filteredAITubers.slice(0, currentPage * itemsPerPage)
 
   // アクティブなフィルターの数を計算
   const activeFilterCount = (selectedTags.length > 0 ? 1 : 0) + 
     (selectedSubscriberFilter ? 1 : 0) + 
     (nameFilter ? 1 : 0) +
     (selectedDateFilter !== 'all' ? 1 : 0);
-
-  // ページネーションの表示ページ数を計算
-  const getVisiblePages = (current: number, total: number) => {
-    if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
-
-    if (current <= 4) {
-      return [1, 2, 3, 4, 5, '...', total];
-    }
-
-    if (current >= total - 3) {
-      return [1, '...', total - 4, total - 3, total - 2, total - 1, total];
-    }
-
-    return [1, '...', current - 1, current, current + 1, '...', total];
-  };
 
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4">
@@ -372,7 +380,7 @@ export function AituberList() {
       </Card>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {paginatedAITubers.map((aituber, index) => (
+        {displayedAITubers.map((aituber, index) => (
           <Card key={index} className="flex flex-col">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -487,45 +495,21 @@ export function AituberList() {
         ))}
       </div>
 
-      {totalPages > 1 && (
-        <div className="mt-8 flex justify-center items-center gap-1 sm:gap-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className="px-2 sm:px-4"
-          >
-            前へ
-          </Button>
-          <div className="flex items-center gap-1 sm:gap-2">
-            {getVisiblePages(currentPage, totalPages).map((page, index) => (
-              page === '...' ? (
-                <span key={`ellipsis-${index}`} className="px-1 text-muted-foreground">
-                  ...
-                </span>
-              ) : (
-                <Button
-                  key={page}
-                  variant={currentPage === page ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => handlePageChange(page as number)}
-                  className={`w-8 sm:w-10 p-0 ${currentPage === page ? "bg-primary text-primary-foreground" : ""}`}
-                >
-                  {page}
-                </Button>
-              )
-            ))}
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className="px-2 sm:px-4"
-          >
-            次へ
-          </Button>
+      {/* ローディングインジケーターとIntersection Observer用の要素 */}
+      {displayedAITubers.length < filteredAITubers.length && (
+        <div
+          ref={loadMoreRef}
+          className="mt-8 flex justify-center items-center py-4"
+        >
+          {isLoading ? (
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+              <div className="w-2 h-2 bg-primary rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+              <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+            </div>
+          ) : (
+            <div className="text-sm text-muted-foreground">スクロールして更に読み込む</div>
+          )}
         </div>
       )}
 
