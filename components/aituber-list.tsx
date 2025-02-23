@@ -160,6 +160,53 @@ const styles = `
   }
 `;
 
+// LazyVideo component for optimized video loading
+const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current || hasLoaded) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasLoaded) {
+          setIsIntersecting(true);
+          setHasLoaded(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => observer.disconnect();
+  }, [hasLoaded]);
+
+  return (
+    <div ref={containerRef} className="absolute top-0 left-0 w-full h-full">
+      {(isIntersecting || hasLoaded) ? (
+        <iframe
+          src={`https://www.youtube.com/embed/${extractYouTubeVideoId(videoUrl)}`}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="absolute top-0 left-0 w-full h-full"
+          loading="lazy"
+        />
+      ) : (
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-muted">
+          <span className="text-muted-foreground">読み込み中...</span>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export function AituberList() {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [isAndCondition, setIsAndCondition] = useState(false)
@@ -515,13 +562,9 @@ export function AituberList() {
             <CardFooter className="flex flex-col p-0 rounded-b-lg overflow-hidden">
               <div className="w-full aspect-video relative">
                 {aituber.latestVideoUrl ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${extractYouTubeVideoId(aituber.latestVideoUrl)}`}
+                  <LazyVideo
+                    videoUrl={aituber.latestVideoUrl}
                     title={`${aituber.name}の最新動画`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute top-0 left-0 w-full h-full"
-                    loading="lazy"
                   />
                 ) : (
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-muted">
