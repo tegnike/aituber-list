@@ -61,6 +61,18 @@ const SUBSCRIBER_FILTER_LABELS: Record<SubscriberFilter, { label: string; thresh
   '10000': { label: '1万人以上', threshold: 10000 }
 }
 
+// タグの説明
+const TAG_DESCRIPTIONS: Record<string, string> = {
+  'コメント応答': 'ライブチャット欄のコメントに対してAIが自動で応答する',
+  '解説': '解説動画がある',
+  '歌唱あり': '歌唱枠がある',
+  '海外': '日本語以外のAITuber',
+  'ゲーム実況': 'ゲームの実況配信を行う',
+  'AIパートナー': '人間配信者のパートナーとしてAIが参加する',
+  '複数キャラ': '複数のAIキャラクターが登場する',
+  '一部AITuber': 'コンテンツの一部でAIキャラクターを活用している',
+}
+
 // 日付フィルターの判定関数
 const isWithinDateRange = (dateString: string, filter: DateFilter): boolean => {
   if (filter === 'all') return true;
@@ -158,6 +170,7 @@ export function AituberList() {
   const [currentPage, setCurrentPage] = useState(1)
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [isTagDescriptionOpen, setIsTagDescriptionOpen] = useState(false)
   const loadMoreRef = useRef<HTMLDivElement>(null)
   const itemsPerPage = 12
 
@@ -319,16 +332,46 @@ export function AituberList() {
 
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {allTags.map(tag => (
-                    <Badge
-                      key={tag}
-                      variant={selectedTags.includes(tag) ? "default" : "outline"}
-                      className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
-                      onClick={() => toggleTag(tag)}
-                    >
-                      {tag}
-                    </Badge>
+                    <TooltipProvider key={tag}>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <Badge
+                            variant={selectedTags.includes(tag) ? "default" : "outline"}
+                            className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
+                            onClick={() => toggleTag(tag)}
+                          >
+                            {tag}
+                          </Badge>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          {TAG_DESCRIPTIONS[tag] || 'タグの説明がありません'}
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   ))}
                 </div>
+              </div>
+
+              {/* タグの説明 */}
+              <div className="space-y-2">
+                <Collapsible open={isTagDescriptionOpen} onOpenChange={setIsTagDescriptionOpen}>
+                  <CollapsibleTrigger className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isTagDescriptionOpen ? 'rotate-180' : ''}`} />
+                    タグの説明を表示
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2">
+                    <div className="space-y-2 text-sm text-muted-foreground border rounded-lg p-4">
+                      {Object.entries(TAG_DESCRIPTIONS).map(([tag, description]) => (
+                        <div key={tag} className="flex items-start gap-2">
+                          <Badge variant="outline" className="mt-0.5 shrink-0">
+                            {tag}
+                          </Badge>
+                          <span>{description}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
               </div>
 
               {/* 最終更新日フィルター */}
@@ -433,7 +476,16 @@ export function AituberList() {
             <CardContent className="flex-grow">
               <div className="flex flex-wrap gap-2 mb-4">
                 {aituber.tags.map(tag => (
-                  <Badge key={tag} variant="secondary">{tag}</Badge>
+                  <TooltipProvider key={tag}>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Badge variant="secondary">{tag}</Badge>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        {TAG_DESCRIPTIONS[tag] || 'タグの説明がありません'}
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 ))}
               </div>
               <div className="flex flex-col gap-2">
