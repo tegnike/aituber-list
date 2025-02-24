@@ -163,6 +163,7 @@ const styles = `
 // LazyVideo component for optimized video loading
 const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const videoId = extractYouTubeVideoId(videoUrl);
 
@@ -171,10 +172,9 @@ const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => 
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
         if (entry.isIntersecting) {
-          setIsIntersecting(true);
-        } else {
-          setIsIntersecting(false);
+          setShouldLoad(true);
         }
       },
       {
@@ -187,23 +187,22 @@ const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => 
     return () => {
       observer.disconnect();
     };
-  }, [videoUrl]); // Add videoUrl as dependency to re-initialize observer when URL changes
+  }, [videoUrl]);
 
   return (
     <div ref={containerRef} className="absolute top-0 left-0 w-full h-full">
-      {isIntersecting ? (
+      {shouldLoad && (
         <iframe
-          key={videoId} // Add key prop to force re-render when video changes
+          key={videoId}
           src={`https://www.youtube.com/embed/${videoId}`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          className="absolute top-0 left-0 w-full h-full"
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ${
+            isIntersecting ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ pointerEvents: isIntersecting ? 'auto' : 'none' }}
         />
-      ) : (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-muted">
-          <span className="text-muted-foreground">読み込み中...</span>
-        </div>
       )}
     </div>
   );
