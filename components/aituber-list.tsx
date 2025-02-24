@@ -163,18 +163,18 @@ const styles = `
 // LazyVideo component for optimized video loading
 const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoId = extractYouTubeVideoId(videoUrl);
 
   useEffect(() => {
-    if (!containerRef.current || hasLoaded) return;
+    if (!containerRef.current) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasLoaded) {
+        if (entry.isIntersecting) {
           setIsIntersecting(true);
-          setHasLoaded(true);
-          observer.disconnect();
+        } else {
+          setIsIntersecting(false);
         }
       },
       {
@@ -184,19 +184,21 @@ const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => 
 
     observer.observe(containerRef.current);
 
-    return () => observer.disconnect();
-  }, [hasLoaded]);
+    return () => {
+      observer.disconnect();
+    };
+  }, [videoUrl]); // Add videoUrl as dependency to re-initialize observer when URL changes
 
   return (
     <div ref={containerRef} className="absolute top-0 left-0 w-full h-full">
-      {(isIntersecting || hasLoaded) ? (
+      {isIntersecting ? (
         <iframe
-          src={`https://www.youtube.com/embed/${extractYouTubeVideoId(videoUrl)}`}
+          key={videoId} // Add key prop to force re-render when video changes
+          src={`https://www.youtube.com/embed/${videoId}`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="absolute top-0 left-0 w-full h-full"
-          loading="lazy"
         />
       ) : (
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-muted">
@@ -503,8 +505,37 @@ export function AituberList() {
                     className="rounded-full"
                   />
                 )}
-                {aituber.name}
+                <div className="truncate">
+                  {aituber.name}
+                </div>
               </CardTitle>
+              <div className="flex flex-wrap gap-1.5">
+                {aituber.tags.map((tag, tagIndex) => (
+                  <TooltipProvider key={tagIndex}>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Badge
+                          variant={selectedTags.includes(tag) ? "default" : "outline"}
+                          className="cursor-pointer hover:opacity-80 transition-all text-xs py-0.5 px-2"
+                          onClick={() => {
+                            setSelectedTags([tag]);
+                            setIsAndCondition(false);
+                            setCurrentPage(1);
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                        >
+                          {tag}
+                        </Badge>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        {TAG_DESCRIPTIONS[tag] || 'タグの説明がありません'}
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                ))}
+              </div>
+            </CardHeader>
+            <CardContent className="flex-grow">
               <div className="text-sm text-muted-foreground">
                 <TooltipProvider>
                   <Tooltip>
@@ -518,22 +549,6 @@ export function AituberList() {
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
-              </div>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {aituber.tags.map(tag => (
-                  <TooltipProvider key={tag}>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <Badge variant="secondary">{tag}</Badge>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        {TAG_DESCRIPTIONS[tag] || 'タグの説明がありません'}
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                ))}
               </div>
               <div className="flex flex-col gap-2">
                 <div className="text-sm text-muted-foreground">
