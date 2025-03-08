@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Youtube, Twitter, Calendar, ChevronDown } from "lucide-react"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
 import Image from "next/image"
 import aituberData from '../app/data/aitubers.json'
 import Link from 'next/link'
@@ -305,6 +306,9 @@ export function AituberList() {
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4">
       <style jsx global>{styles}</style>
+      <div className="flex justify-end mb-2">
+        <ThemeToggle />
+      </div>
       <h1 className="text-2xl sm:text-3xl font-bold text-center mb-2">
         AITuberList
         <span className="text-lg sm:text-xl font-normal text-muted-foreground ml-2">
@@ -315,7 +319,7 @@ export function AituberList() {
         最終更新日: {formatDate(aituberData.lastUpdated)}
       </p>
 
-      <Card className="mb-6">
+      <Card className="mb-6 border-2 dark:border-gray-700">
         <Collapsible open={isFiltersOpen} onOpenChange={setIsFiltersOpen}>
           <CardHeader className="py-3 px-3 sm:px-6">
             <CollapsibleTrigger className="w-full">
@@ -472,7 +476,7 @@ export function AituberList() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {displayedAITubers.map((aituber, index) => (
-          <Card key={index} className="flex flex-col">
+          <Card key={index} className="flex flex-col border-2 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 {aituber.youtubeURL ? (
