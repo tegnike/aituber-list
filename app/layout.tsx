@@ -18,6 +18,25 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "AITuberList",
   description: "AITuberの情報をまとめています",
+  openGraph: {
+    title: "AITuberList",
+    description: "AITuberの情報をまとめています",
+    images: [
+      {
+        url: "/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "AITuberList",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AITuberList",
+    description: "AITuberの情報をまとめています",
+    images: ["/ogp.png"],
+  },
 };
 
 export default function RootLayout({

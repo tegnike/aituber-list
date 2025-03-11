@@ -2,6 +2,8 @@
 
 https://aituberlist.net/
 
+![AITuberList](./public/ogp.png)
+
 ## 🌟 AITuber開発者様へ 🌟
 
 - このサイトの情報は、一部人の手で入力しているため、間違いがある可能性があります。
