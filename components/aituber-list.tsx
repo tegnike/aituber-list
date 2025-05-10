@@ -304,7 +304,7 @@ export function AituberList() {
     (selectedDateFilter !== 'all' ? 1 : 0);
 
   return (
-    <div className="container mx-auto px-2 sm:px-4 py-4">
+    <div className="container mx-auto px-2 sm:px-4 py-4 pb-16">
       <style jsx global>{styles}</style>
       <div className="flex justify-end mb-2">
         <ThemeToggle />
@@ -639,7 +639,8 @@ export function AituberList() {
         </Button>
       )}
 
-      <footer className="mt-8 flex justify-center gap-4 text-sm text-muted-foreground">
+      {/* 固定フッター */}
+      <footer className="fixed bottom-0 left-0 w-full py-3 px-4 bg-background/95 backdrop-blur-sm border-t shadow-sm z-20 flex justify-center gap-6 text-sm text-muted-foreground">
         <Link href="/terms" className="hover:underline">
           利用規約
         </Link>
