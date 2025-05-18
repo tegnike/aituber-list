@@ -255,8 +255,8 @@ class Main:
         return added_count
 
     def run(self, content: str):
-        # URLが直接入力された場合
-        if content.startswith("http"):
+        # URLが直接入力された場合、または @handle 形式の場合
+        if content.startswith("http") or content.startswith("@"):
             channel_id = self.get_channel_id(content)
             if channel_id:
                 channel_info = get_channel_info(self.youtube, channel_id)
@@ -279,14 +279,23 @@ class Main:
             ],
             response_format={"type": "json_object"},
         )
-        print("AI response:", response.choices[0].message.content)
+        ai_response_content = response.choices[0].message.content
+        print("AI response:", ai_response_content)
 
-        new_data = json.loads(response.choices[0].message.content)
-        if new_data["data"]:
-            added_count = self.add_new_aitubers(new_data["data"])
-            print(f"Total new AITubers added: {added_count}")
-        else:
-            print("No new AITubers added")
+        if ai_response_content is None:
+            print("Error: AI response content is None")
+            return
+
+        try:
+            new_data = json.loads(ai_response_content)
+            if new_data.get("data"): # .get() を使用して "data" キーが存在しない場合のエラーを回避
+                added_count = self.add_new_aitubers(new_data["data"])
+                print(f"Total new AITubers added: {added_count}")
+            else:
+                print("No new AITubers added or 'data' key missing in response")
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON from AI response: {e}")
+            print(f"Problematic JSON string: {ai_response_content}")
 
 
 if __name__ == "__main__":
