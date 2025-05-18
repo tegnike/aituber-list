@@ -325,6 +325,28 @@ export function AituberList() {
             <CollapsibleTrigger className="w-full">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
                 <CardTitle className="text-lg sm:text-xl flex items-center flex-wrap gap-2">
+                  概要
+                </CardTitle>
+              </div>
+            </CollapsibleTrigger>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside">
+              <li>このWebサイトではAITuberの情報をまとめています。</li>
+              <li>1日に2回更新されます。</li>
+              <li>タグの分類は誤っている可能性があります。</li>
+              <li>コンテンツの一つとして、AIキャラクターが登場するチャンネルも含まれています。</li>
+            </ul>
+          </CardContent>
+        </Collapsible>
+      </Card>
+
+      <Card className="mb-6 border-2 dark:border-gray-700">
+        <Collapsible open={isFiltersOpen} onOpenChange={setIsFiltersOpen}>
+          <CardHeader className="py-3 px-3 sm:px-6">
+            <CollapsibleTrigger className="w-full">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                <CardTitle className="text-lg sm:text-xl flex items-center flex-wrap gap-2">
                   フィルター
                   {activeFilterCount > 0 && (
                     <Badge variant="secondary">
