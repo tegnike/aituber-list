@@ -215,6 +215,7 @@ export function AituberList() {
   const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('all')
   const [selectedSubscriberFilter, setSelectedSubscriberFilter] = useState<SubscriberFilter | null>(null)
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
+  const [isOverviewOpen, setIsOverviewOpen] = useState(false)
   const [nameFilter, setNameFilter] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -320,7 +321,7 @@ export function AituberList() {
       </p>
 
       <Card className="mb-6 border-2 dark:border-gray-700">
-        <Collapsible open={isFiltersOpen} onOpenChange={setIsFiltersOpen}>
+        <Collapsible open={isOverviewOpen} onOpenChange={setIsOverviewOpen}>
           <CardHeader className="py-3 px-3 sm:px-6">
             <CollapsibleTrigger className="w-full">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
@@ -328,7 +329,7 @@ export function AituberList() {
                   概要
                 </CardTitle>
                 <div className="flex items-center gap-2">
-                  <ChevronDown className={`h-4 w-4 transition-transform ${isFiltersOpen ? 'transform rotate-180' : ''}`} />
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isOverviewOpen ? 'transform rotate-180' : ''}`} />
                 </div>
               </div>
             </CollapsibleTrigger>
