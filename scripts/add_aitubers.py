@@ -183,39 +183,32 @@ class Main:
         )
 
     def get_channel_id(self, url_or_name):
-        """URLまたはチャンネル名からチャンネルIDを取得"""
+        """URLまたはチャンネル名からチャンネルIDを取得（部分一致検索は廃止）"""
         if not url_or_name:
             return None
 
-        # URLからチャンネルIDを抽出を試みる
         parsed_url = urlparse(url_or_name)
         if parsed_url.netloc == "www.youtube.com" or parsed_url.netloc == "youtube.com":
-            # /channel/[ID] 形式の場合
+            # /channel/[ID] 形式
             if "/channel/" in parsed_url.path:
                 return parsed_url.path.split("/channel/")[1]
 
-            # /c/ or /@[name] 形式の場合
+            # /@handle 形式
             path = parsed_url.path.strip("/")
-            if path.startswith("@") or path.startswith("c/"):
-                handle = path.lstrip("c/")
-                return self._search_channel_id(handle)
+            if path.startswith("@"):
+                handle = path  # 例: "@ma-taku"
+                try:
+                    response = self.youtube.channels().list(
+                        part="id",
+                        forHandle=handle
+                    ).execute()
+                    if response["items"]:
+                        return response["items"][0]["id"]
+                except Exception as e:
+                    print(f"Error getting channel by handle: {e}")
+                return None
 
-        # URLでない場合は、名前として検索
-        return self._search_channel_id(url_or_name)
-
-    def _search_channel_id(self, query):
-        """チャンネル名から検索してIDを取得"""
-        try:
-            response = (
-                self.youtube.search()
-                .list(part="id", q=query, type="channel", maxResults=1)
-                .execute()
-            )
-
-            if response["items"]:
-                return response["items"][0]["id"]["channelId"]
-        except Exception as e:
-            print(f"Error searching channel: {e}")
+        # それ以外は何も返さない（部分一致検索は廃止）
         return None
 
     def is_duplicate(self, new_aituber):
