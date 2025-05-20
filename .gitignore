@@ -39,3 +39,5 @@ venv
 .venv
 .mypy_cache
 urls.txt
+
+.env

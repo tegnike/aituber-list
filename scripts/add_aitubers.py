@@ -3,7 +3,12 @@ import json
 import os
 import argparse
 from googleapiclient.discovery import build
-from urllib.parse import urlparse, parse_qs
+from googleapiclient.errors import HttpError
+from urllib.parse import urlparse
+from dotenv import load_dotenv
+
+# .envファイルから環境変数を読み込む
+load_dotenv()
 
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
@@ -115,100 +120,167 @@ def save_aitubers(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def get_channel_info(youtube, channel_id):
-    """チャンネルの詳細情報を取得"""
-    try:
-        response = (
-            youtube.channels().list(part="snippet,statistics", id=channel_id).execute()
-        )
-
-        if response["items"]:
-            channel = response["items"][0]
-            snippet = channel["snippet"]
-            stats = channel["statistics"]
-
-            # 最新動画の情報を取得
-            videos_response = (
-                youtube.search()
-                .list(
-                    part="snippet",
-                    channelId=channel_id,
-                    order="date",
-                    type="video",
-                    maxResults=1,
-                )
-                .execute()
-            )
-
-            latest_video = (
-                videos_response["items"][0] if videos_response["items"] else None
-            )
-
-            return {
-                "name": snippet["title"],
-                "description": snippet["description"],
-                "tags": [],  # チャンネルタグは別APIコールが必要
-                "twitterID": "",  # YouTube APIからは取得不可
-                "youtubeChannelID": channel_id,
-                "youtubeURL": f"https://www.youtube.com/channel/{channel_id}",
-                "imageUrl": snippet["thumbnails"]["default"]["url"],
-                "youtubeSubscribers": int(stats.get("subscriberCount", 0)),
-                "latestVideoTitle": (
-                    latest_video["snippet"]["title"] if latest_video else ""
-                ),
-                "latestVideoThumbnail": (
-                    latest_video["snippet"]["thumbnails"]["high"]["url"]
-                    if latest_video
-                    else ""
-                ),
-                "latestVideoUrl": (
-                    f"https://www.youtube.com/watch?v={latest_video['id']['videoId']}"
-                    if latest_video
-                    else ""
-                ),
-                "latestVideoDate": (
-                    latest_video["snippet"]["publishedAt"] if latest_video else ""
-                ),
-            }
-    except Exception as e:
-        print(f"Error getting channel info: {e}")
-        return None
-
-
 class Main:
     def __init__(self):
         self.existing_data = load_aitubers()
-        self.youtube = build(
-            "youtube", "v3", developerKey=os.environ.get("YOUTUBE_API_KEY")
-        )
+        self.youtube_api_key1 = os.environ.get("YOUTUBE_API_KEY")
+        self.youtube_api_key2 = os.environ.get("YOUTUBE_API_KEY2")
+        self.current_youtube_api_key_name = "YOUTUBE_API_KEY"
+
+        if not self.youtube_api_key1:
+            print("警告: YOUTUBE_API_KEY が設定されていません。")
+            # YOUTUBE_API_KEY1がない場合、YOUTUBE_API_KEY2で初期化を試みる
+            if self.youtube_api_key2:
+                print("YOUTUBE_API_KEY2 を使用して初期化します。")
+                self.youtube = build(
+                    "youtube", "v3", developerKey=self.youtube_api_key2
+                )
+                self.current_youtube_api_key_name = "YOUTUBE_API_KEY2"
+            else:
+                print("エラー: 利用可能なYouTube APIキーがありません。")
+                self.youtube = None  # APIキーがない場合はNoneを設定
+        else:
+            self.youtube = build("youtube", "v3", developerKey=self.youtube_api_key1)
+
+        if not self.youtube:  # youtubeオブジェクトが初期化できなかった場合
+            print(
+                "YouTube APIクライアントの初期化に失敗しました。YouTube関連機能は利用できません。"
+            )
+
+    def _try_youtube_api_call(self, api_function_lambda):
+        """
+        YouTube API呼び出しを試行し、403エラー時にセカンダリキーで再試行します。
+        api_function_lambda は、実行するAPI呼び出しを含む引数なしの関数です。
+        例: lambda: self.youtube.channels().list(part="id", forHandle=handle).execute()
+        """
+        if not self.youtube:
+            print(
+                "YouTube APIクライアントが初期化されていません。API呼び出しをスキップします。"
+            )
+            raise Exception("YouTube API client not initialized")
+
+        try:
+            return api_function_lambda()
+        except HttpError as e:
+            if (
+                e.resp.status == 403
+                and self.current_youtube_api_key_name == "YOUTUBE_API_KEY"
+                and self.youtube_api_key2
+            ):
+                print(
+                    f"API呼び出しが {self.current_youtube_api_key_name} で失敗 (403エラー)。YOUTUBE_API_KEY2 に切り替えます。"
+                )
+                self.youtube = build(
+                    "youtube", "v3", developerKey=self.youtube_api_key2
+                )
+                self.current_youtube_api_key_name = "YOUTUBE_API_KEY2"
+                print("YOUTUBE_API_KEY2 に切り替えました。API呼び出しを再試行します...")
+                try:
+                    return api_function_lambda()  # 新しいキーで再試行
+                except HttpError as e2:
+                    print(f"YOUTUBE_API_KEY2 でのAPI呼び出しも失敗しました: {e2}")
+                    raise  # 2回目の試行のエラーを再発生させる
+            else:
+                # 403以外のエラー、または既にYOUTUBE_API_KEY2を使用中、またはYOUTUBE_API_KEY2がない場合
+                raise  # 元のエラーを再発生させる
+        except Exception as ex:  # HttpError以外の予期せぬエラー
+            print(f"YouTube API呼び出し中に予期せぬエラーが発生しました: {ex}")
+            raise
+
+    def get_channel_info(self, channel_id):
+        """チャンネルの詳細情報を取得"""
+        if not self.youtube:
+            return None
+        try:
+            api_call_channels = (
+                lambda: self.youtube.channels()
+                .list(part="snippet,statistics", id=channel_id)
+                .execute()
+            )
+            response = self._try_youtube_api_call(api_call_channels)
+
+            if response and response["items"]:
+                channel = response["items"][0]
+                snippet = channel["snippet"]
+                stats = channel["statistics"]
+
+                # 最新動画の情報を取得
+                api_call_search = (
+                    lambda: self.youtube.search()
+                    .list(
+                        part="snippet",
+                        channelId=channel_id,
+                        order="date",
+                        type="video",
+                        maxResults=1,
+                    )
+                    .execute()
+                )
+                videos_response = self._try_youtube_api_call(api_call_search)
+
+                latest_video = (
+                    videos_response["items"][0]
+                    if videos_response and videos_response["items"]
+                    else None
+                )
+
+                return {
+                    "name": snippet["title"],
+                    "description": snippet["description"],
+                    "tags": [],
+                    "twitterID": "",
+                    "youtubeChannelID": channel_id,
+                    "youtubeURL": f"https://www.youtube.com/channel/{channel_id}",
+                    "imageUrl": snippet["thumbnails"]["default"]["url"],
+                    "youtubeSubscribers": int(stats.get("subscriberCount", 0)),
+                    "latestVideoTitle": (
+                        latest_video["snippet"]["title"] if latest_video else ""
+                    ),
+                    "latestVideoThumbnail": (
+                        latest_video["snippet"]["thumbnails"]["high"]["url"]
+                        if latest_video
+                        else ""
+                    ),
+                    "latestVideoUrl": (
+                        f"https://www.youtube.com/watch?v={latest_video['id']['videoId']}"
+                        if latest_video
+                        else ""
+                    ),
+                    "latestVideoDate": (
+                        latest_video["snippet"]["publishedAt"] if latest_video else ""
+                    ),
+                }
+        except Exception as e:
+            print(f"チャンネル情報の取得中にエラーが発生しました ({channel_id}): {e}")
+            return None
 
     def get_channel_id(self, url_or_name):
-        """URLまたはチャンネル名からチャンネルIDを取得（部分一致検索は廃止）"""
-        if not url_or_name:
+        """URLまたはチャンネル名からチャンネルIDを取得"""
+        if not self.youtube or not url_or_name:
             return None
 
         parsed_url = urlparse(url_or_name)
         if parsed_url.netloc == "www.youtube.com" or parsed_url.netloc == "youtube.com":
-            # /channel/[ID] 形式
             if "/channel/" in parsed_url.path:
                 return parsed_url.path.split("/channel/")[1]
 
-            # /@handle 形式
             path = parsed_url.path.strip("/")
             if path.startswith("@"):
-                handle = path  # 例: "@ma-taku"
+                handle = path
                 try:
-                    response = self.youtube.channels().list(
-                        part="id",
-                        forHandle=handle
-                    ).execute()
-                    if response["items"]:
+                    api_call = (
+                        lambda: self.youtube.channels()
+                        .list(part="id", forHandle=handle)
+                        .execute()
+                    )
+                    response = self._try_youtube_api_call(api_call)
+                    if response and response["items"]:
                         return response["items"][0]["id"]
                 except Exception as e:
-                    print(f"Error getting channel by handle: {e}")
+                    print(
+                        f"ハンドル名 '{handle}' からチャンネルIDの取得中にエラー: {e}"
+                    )
                 return None
-
-        # それ以外は何も返さない（部分一致検索は廃止）
         return None
 
     def is_duplicate(self, new_aituber):
@@ -225,45 +297,81 @@ class Main:
         """新しいAITuberを追加"""
         added_count = 0
         for aituber in new_aitubers:
-            # チャンネルIDが空の場合は、URLから取得を試みる
             if not aituber.get("youtubeChannelID"):
                 channel_id = self.get_channel_id(aituber.get("youtubeURL", ""))
                 if channel_id:
                     aituber["youtubeChannelID"] = channel_id
                 else:
                     print(
-                        f"Could not find YouTube channel ID for: {aituber.get('name', 'Unknown')}"
+                        f"YouTubeチャンネルIDが見つかりませんでした: {aituber.get('name', 'Unknown')}"
                     )
                     continue
 
+            # チャンネルIDが見つかった場合、または最初から存在する場合、詳細情報を取得して更新
+            if aituber.get("youtubeChannelID"):
+                # 既存の情報を保持しつつ、APIから取得できる情報で更新
+                # name, description, imageUrl, youtubeSubscribers など
+                # これは get_channel_info を呼んでマージする形が良いが、
+                # 現在のadd_new_aitubersはLLMからの入力が主なので、重複チェック後にAPI情報を引くのは冗長かもしれない
+                # ここでは、LLMが生成した情報を基本的に信頼し、IDのみをURLから補完する現在のロジックを維持
+                pass
+
             if not self.is_duplicate(aituber):
+                # 重複がない場合、APIから最新情報を取得してマージする（オプション）
+                # ここで get_channel_info を呼び、aituber 辞書を更新することを検討できる
+                # 例:
+                # if aituber.get("youtubeChannelID"):
+                #     print(f"'{aituber.get('name', 'Unknown')}' の最新情報を取得しています...")
+                #     updated_info = self.get_channel_info(aituber["youtubeChannelID"])
+                #     if updated_info:
+                #         # マージ戦略: LLMの情報を優先するか、API情報を優先するか
+                #         # ここではAPI情報で主要な項目を上書きする例
+                #         aituber.update({
+                #             "name": updated_info.get("name", aituber.get("name")),
+                #             "description": updated_info.get("description", aituber.get("description")),
+                #             "imageUrl": updated_info.get("imageUrl", aituber.get("imageUrl")),
+                #             "youtubeSubscribers": updated_info.get("youtubeSubscribers", aituber.get("youtubeSubscribers")),
+                #             "latestVideoTitle": updated_info.get("latestVideoTitle", aituber.get("latestVideoTitle")),
+                #             "latestVideoThumbnail": updated_info.get("latestVideoThumbnail", aituber.get("latestVideoThumbnail")),
+                #             "latestVideoUrl": updated_info.get("latestVideoUrl", aituber.get("latestVideoUrl")),
+                #             "latestVideoDate": updated_info.get("latestVideoDate", aituber.get("latestVideoDate")),
+                #         })
+                #     else:
+                #         print(f"'{aituber.get('name', 'Unknown')}' の最新情報の取得に失敗しました。")
+
                 self.existing_data["aitubers"].append(aituber)
                 added_count += 1
-                print(f"Added: {aituber.get('name', 'Unknown')}")
+                print(f"追加しました: {aituber.get('name', 'Unknown')}")
             else:
-                print(f"Skipped duplicate: {aituber.get('name', 'Unknown')}")
+                print(f"重複のためスキップ: {aituber.get('name', 'Unknown')}")
 
         if added_count > 0:
             save_aitubers(self.existing_data)
         return added_count
 
     def run(self, content: str):
-        # URLが直接入力された場合、または @handle 形式の場合
+        if not self.youtube and (content.startswith("http") or content.startswith("@")):
+            print(
+                "YouTube APIクライアントが利用できないため、URL/ハンドルからの直接処理はスキップします。"
+            )
+            return
+
         if content.startswith("http") or content.startswith("@"):
             channel_id = self.get_channel_id(content)
             if channel_id:
-                channel_info = get_channel_info(self.youtube, channel_id)
+                channel_info = self.get_channel_info(
+                    channel_id
+                )  # self.youtube は不要になった
                 if channel_info:
                     self.add_new_aitubers([channel_info])
                     return
                 else:
-                    print("Failed to get channel information")
+                    print("チャンネル情報の取得に失敗しました。")
                     return
             else:
-                print("Could not find YouTube channel ID")
+                print("YouTubeチャンネルIDが見つかりませんでした。")
                 return
 
-        # 通常のテキスト入力の場合は既存の処理を使用
         response = client.chat.completions.create(
             model="gpt-4o",
             messages=[
@@ -273,51 +381,65 @@ class Main:
             response_format={"type": "json_object"},
         )
         ai_response_content = response.choices[0].message.content
-        print("AI response:", ai_response_content)
+        print("AIの応答:", ai_response_content)
 
         if ai_response_content is None:
-            print("Error: AI response content is None")
+            print("エラー: AIの応答内容がNoneです。")
             return
 
         try:
             new_data = json.loads(ai_response_content)
-            if new_data.get("data"): # .get() を使用して "data" キーが存在しない場合のエラーを回避
+            if new_data.get("data"):
                 added_count = self.add_new_aitubers(new_data["data"])
-                print(f"Total new AITubers added: {added_count}")
+                print(f"新規AITuberの総追加数: {added_count}")
             else:
-                print("No new AITubers added or 'data' key missing in response")
+                print(
+                    "新規AITuberは追加されませんでした、または応答に 'data' キーがありません。"
+                )
         except json.JSONDecodeError as e:
-            print(f"Error decoding JSON from AI response: {e}")
-            print(f"Problematic JSON string: {ai_response_content}")
+            print(f"AIの応答からのJSONデコードエラー: {e}")
+            print(f"問題のあるJSON文字列: {ai_response_content}")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Add new AITuber information")
+    parser = argparse.ArgumentParser(description="新しいAITuber情報を追加します")
     parser.add_argument(
         "content",
-        help="AITuber information in text format, YouTube URL, or file path containing URLs",
+        help="テキスト形式のAITuber情報、YouTube URL、またはURLを含むファイルパス",
     )
     parser.add_argument(
         "-f",
         "--file",
         action="store_true",
-        help="Treat content as a file path containing URLs",
+        help="contentをURLを含むファイルパスとして扱います",
     )
 
     args = parser.parse_args()
     main = Main()
+
+    if (
+        main.youtube is None and not args.file
+    ):  # youtubeが使えない状況で直接URL/ハンドル以外の処理
+        is_url_or_handle = args.content.startswith("http") or args.content.startswith(
+            "@"
+        )
+        if not is_url_or_handle:
+            print(
+                "YouTube APIクライアントが利用できないため、テキストベースの処理はスキップします。"
+            )
+            exit()  # ここで終了させるか、LLM処理に進ませるか。現状はLLMには進める。
 
     if args.file:
         try:
             with open(args.content, "r", encoding="utf-8") as f:
                 for line in f:
                     url = line.strip()
-                    if url:  # Skip empty lines
-                        print(f"\nProcessing URL: {url}")
+                    if url:
+                        print(f"\nURLを処理中: {url}")
                         main.run(url)
         except FileNotFoundError:
-            print(f"Error: File '{args.content}' not found")
+            print(f"エラー: ファイル '{args.content}' が見つかりません。")
         except Exception as e:
-            print(f"Error reading file: {e}")
+            print(f"ファイル読み込みエラー: {e}")
     else:
         main.run(args.content)
