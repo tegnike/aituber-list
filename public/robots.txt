@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://aituberlist.net/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Japanese search engines
+User-agent: Y!J-BRW/1.0
+Allow: /
+
+User-agent: Y!J-BSC/1.0
+Allow: /

@@ -16,11 +16,37 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AITuberList",
-  description: "AITuberの情報をまとめています",
+  title: "AITuber リスト | AIVTuber 一覧 - AITuberの情報をまとめています",
+  description: "AITuber（AIVTuber）の情報をまとめたサイトです。コメント応答型、歌唱系、ゲーム実況など様々なタイプのAI配信者を掲載。タグによる分類で検索も可能です。毎日2回更新。",
+  keywords: "AITuber,AIVTuber,AI VTuber,AITuber リスト,AIVTuber 一覧,AITuber 検索,AITuber データベース,バーチャルYouTuber AI,AI配信者,AIストリーマー",
+  authors: [{ name: "ニケちゃん", url: "https://x.com/tegnike" }],
+  creator: "ニケちゃん",
+  publisher: "AITuberList",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://aituberlist.net"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "AITuberList",
-    description: "AITuberの情報をまとめています",
+    title: "AITuber リスト | AIVTuber 一覧",
+    description: "AITuber（AIVTuber）の情報をまとめたサイト。タグによる分類で検索可能。毎日2回更新。",
+    url: "https://aituberlist.net",
+    siteName: "AITuberList",
     images: [
       {
         url: "/ogp.png",
@@ -29,13 +55,18 @@ export const metadata: Metadata = {
         alt: "AITuberList",
       },
     ],
+    locale: "ja_JP",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "AITuberList",
-    description: "AITuberの情報をまとめています",
+    description: "AITuber（AIVTuber）の情報をまとめたサイト。タグによる分類で検索可能。",
+    creator: "@tegnike",
     images: ["/ogp.png"],
+  },
+  verification: {
+    google: "google-site-verification-code",
   },
 };
 
@@ -45,7 +76,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ja" suppressHydrationWarning>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
