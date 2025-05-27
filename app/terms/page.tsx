@@ -1,12 +1,17 @@
+'use client'
+
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function TermsPage() {
+  const { t } = useLanguage()
+  
   return (
     <div className="container mx-auto p-4 max-w-3xl">
-      <h1 className="text-3xl font-bold mb-6">利用規約</h1>
+      <h1 className="text-3xl font-bold mb-6">{t('terms.title')}</h1>
       
       <div className="prose dark:prose-invert">
-        <p className="text-sm text-gray-600 mb-8">最終更新日: 2024年11月26日</p>
+        <p className="text-sm text-gray-600 mb-8">{t('terms.lastUpdated')}</p>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">1. はじめに</h2>
@@ -70,10 +75,10 @@ export default function TermsPage() {
 
         <div className="mt-8 flex justify-center gap-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:underline">
-            トップページに戻る
+            {t('terms.backToTop')}
           </Link>
           <Link href="/privacy" className="hover:underline">
-            プライバシーポリシー
+            {t('footer.privacy')}
           </Link>
         </div>
       </div>
