@@ -2,6 +2,8 @@
 
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
+import { I18nProvider } from '@/components/i18n-provider'
+import { LayoutWrapper } from '@/components/layout-wrapper'
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
@@ -11,7 +13,10 @@ export function Providers({ children }: { children: ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <I18nProvider>
+        <LayoutWrapper />
+        {children}
+      </I18nProvider>
     </ThemeProvider>
   )
 }
