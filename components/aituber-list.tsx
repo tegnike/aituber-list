@@ -8,7 +8,7 @@ import { Youtube, Twitter, Calendar, ChevronDown } from "lucide-react"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { LanguageToggle } from "@/components/ui/language-toggle"
 import { useLanguage } from "@/contexts/LanguageContext"
-import { formatDate, formatSubscriberCount, getTagDescription } from "@/lib/i18n"
+import { formatDate, formatSubscriberCount, getTagDescription, getTagName } from "@/lib/i18n"
 import Image from "next/image"
 import aituberData from '../app/data/aitubers.json'
 import Link from 'next/link'
@@ -408,7 +408,7 @@ export function AituberList() {
                             className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
                             onClick={() => toggleTag(tag)}
                           >
-                            {tag}
+                            {getTagName(tag, locale)}
                           </Badge>
                         </TooltipTrigger>
                         <TooltipContent>
@@ -432,7 +432,7 @@ export function AituberList() {
                       {allTags.map((tag) => (
                         <div key={tag} className="flex items-start gap-2">
                           <Badge variant="outline" className="mt-0.5 shrink-0">
-                            {tag}
+                            {getTagName(tag, locale)}
                           </Badge>
                           <span>{getTagDescription(tag, locale)}</span>
                         </div>
@@ -543,7 +543,7 @@ export function AituberList() {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                           }}
                         >
-                          {tag}
+                          {getTagName(tag, locale)}
                         </Badge>
                       </TooltipTrigger>
                       <TooltipContent>

@@ -20,8 +20,6 @@ export function LanguageToggle() {
     { value: 'en' as Locale, label: 'English', flag: '🇺🇸' },
   ]
 
-  const currentLanguage = languages.find(lang => lang.value === locale)
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

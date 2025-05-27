@@ -77,6 +77,16 @@ export const translations = {
     'tag.AIパートナー': '人間配信者のパートナーとしてAIが参加する',
     'tag.複数キャラ': '複数のAIキャラクターが登場する',
     'tag.一部AITuber': 'コンテンツの一部でAIキャラクターを活用している',
+    
+    // Tag names
+    'tagName.コメント応答': 'コメント応答',
+    'tagName.複数キャラ': '複数キャラ',
+    'tagName.歌唱あり': '歌唱あり',
+    'tagName.ゲーム実況': 'ゲーム実況',
+    'tagName.海外': '海外',
+    'tagName.一部AITuber': '一部AITuber',
+    'tagName.AIパートナー': 'AIパートナー',
+    'tagName.解説': '解説',
   },
   
   en: {
@@ -155,6 +165,16 @@ export const translations = {
     'tag.AIパートナー': 'AI participates as a partner to human streamers',
     'tag.複数キャラ': 'Multiple AI characters appear',
     'tag.一部AITuber': 'Utilizes AI characters as part of content',
+    
+    // Tag names
+    'tagName.コメント応答': 'Comment Response',
+    'tagName.複数キャラ': 'Multiple Characters',
+    'tagName.歌唱あり': 'Singing',
+    'tagName.ゲーム実況': 'Game Streaming',
+    'tagName.海外': 'International',
+    'tagName.一部AITuber': 'Partial AITuber',
+    'tagName.AIパートナー': 'AI Partner',
+    'tagName.解説': 'Explanation',
   }
 } as const
 
@@ -219,4 +239,11 @@ export const formatSubscriberCount = (count: number, locale: Locale = 'ja'): str
 export const getTagDescription = (tag: string, locale: Locale = 'ja'): string => {
   const key = `tag.${tag}` as TranslationKey;
   return getTranslation(locale, key);
+};
+
+export const getTagName = (tag: string, locale: Locale = 'ja'): string => {
+  const key = `tagName.${tag}` as TranslationKey;
+  const translation = getTranslation(locale, key);
+  // If translation not found, return original tag name
+  return translation === key ? tag : translation;
 };
