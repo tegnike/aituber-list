@@ -27,19 +27,30 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const [locale, setLocaleState] = useState<Locale>('ja')
 
   useEffect(() => {
-    // ローカルストレージから言語設定を読み込み
-    const savedLocale = localStorage.getItem('locale') as Locale
-    if (savedLocale && (savedLocale === 'ja' || savedLocale === 'en')) {
-      setLocaleState(savedLocale)
+    try {
+      // ローカルストレージから言語設定を読み込み
+      const savedLocale = localStorage.getItem('locale') as Locale
+      if (savedLocale && (savedLocale === 'ja' || savedLocale === 'en')) {
+        setLocaleState(savedLocale)
+      }
+    } catch (error) {
+      console.warn('Failed to load locale from localStorage:', error)
     }
   }, [])
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale)
-    localStorage.setItem('locale', newLocale)
     
-    // HTMLのlang属性を更新
-    document.documentElement.lang = newLocale
+    try {
+      localStorage.setItem('locale', newLocale)
+    } catch (error) {
+      console.warn('Failed to save locale to localStorage:', error)
+    }
+    
+    // HTMLのlang属性を更新（useEffect内で実行することを検討）
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = newLocale
+    }
   }
 
   const t = (key: TranslationKey, params?: Record<string, string | number>) => {

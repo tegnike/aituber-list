@@ -67,6 +67,16 @@ export const translations = {
     'privacy.title': 'プライバシーポリシー',
     'privacy.lastUpdated': '最終更新日: 2024年11月26日',
     'privacy.backToTop': 'トップページに戻る',
+    
+    // Tag descriptions
+    'tag.コメント応答': 'ライブチャット欄のコメントに対してAIが自動で応答する',
+    'tag.解説': '解説動画がある',
+    'tag.歌唱あり': '歌唱枠がある',
+    'tag.海外': '日本語以外のAITuber',
+    'tag.ゲーム実況': 'ゲームの実況配信を行う',
+    'tag.AIパートナー': '人間配信者のパートナーとしてAIが参加する',
+    'tag.複数キャラ': '複数のAIキャラクターが登場する',
+    'tag.一部AITuber': 'コンテンツの一部でAIキャラクターを活用している',
   },
   
   en: {
@@ -135,13 +145,23 @@ export const translations = {
     'privacy.title': 'Privacy Policy',
     'privacy.lastUpdated': 'Last updated: November 26, 2024',
     'privacy.backToTop': 'Back to top page',
+    
+    // Tag descriptions
+    'tag.コメント応答': 'AI automatically responds to live chat comments',
+    'tag.解説': 'Has explanatory videos',
+    'tag.歌唱あり': 'Has singing streams',
+    'tag.海外': 'Non-Japanese AITuber',
+    'tag.ゲーム実況': 'Performs game streaming',
+    'tag.AIパートナー': 'AI participates as a partner to human streamers',
+    'tag.複数キャラ': 'Multiple AI characters appear',
+    'tag.一部AITuber': 'Utilizes AI characters as part of content',
   }
 } as const
 
 export type TranslationKey = keyof typeof translations.ja
 
 export const getTranslation = (locale: Locale, key: TranslationKey, params?: Record<string, string | number>): string => {
-  let text = translations[locale][key] || translations.ja[key] || key
+  let text: string = translations[locale][key] || translations.ja[key] || key
   
   if (params) {
     Object.entries(params).forEach(([param, value]) => {
@@ -156,7 +176,7 @@ export const formatDate = (dateString: string, locale: Locale = 'ja') => {
   const date = new Date(dateString);
   
   if (locale === 'en') {
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -165,7 +185,7 @@ export const formatDate = (dateString: string, locale: Locale = 'ja') => {
       timeZone: 'Asia/Tokyo'
     });
   } else {
-    return date.toLocaleDateString('ja-JP', {
+    return date.toLocaleString('ja-JP', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -194,4 +214,9 @@ export const formatSubscriberCount = (count: number, locale: Locale = 'ja'): str
     }
     return `${count}`;
   }
+};
+
+export const getTagDescription = (tag: string, locale: Locale = 'ja'): string => {
+  const key = `tag.${tag}` as TranslationKey;
+  return getTranslation(locale, key);
 };

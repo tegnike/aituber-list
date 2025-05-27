@@ -8,7 +8,7 @@ import { Youtube, Twitter, Calendar, ChevronDown } from "lucide-react"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { LanguageToggle } from "@/components/ui/language-toggle"
 import { useLanguage } from "@/contexts/LanguageContext"
-import { formatDate, formatSubscriberCount } from "@/lib/i18n"
+import { formatDate, formatSubscriberCount, getTagDescription } from "@/lib/i18n"
 import Image from "next/image"
 import aituberData from '../app/data/aitubers.json'
 import Link from 'next/link'
@@ -53,18 +53,6 @@ const SUBSCRIBER_FILTER_LABELS: Record<SubscriberFilter, { threshold: number }> 
   '500': { threshold: 500 },
   '1000': { threshold: 1000 },
   '10000': { threshold: 10000 }
-}
-
-// タグの説明
-const TAG_DESCRIPTIONS: Record<string, string> = {
-  'コメント応答': 'ライブチャット欄のコメントに対してAIが自動で応答する',
-  '解説': '解説動画がある',
-  '歌唱あり': '歌唱枠がある',
-  '海外': '日本語以外のAITuber',
-  'ゲーム実況': 'ゲームの実況配信を行う',
-  'AIパートナー': '人間配信者のパートナーとしてAIが参加する',
-  '複数キャラ': '複数のAIキャラクターが登場する',
-  '一部AITuber': 'コンテンツの一部でAIキャラクターを活用している',
 }
 
 // 日付フィルターの判定関数
@@ -424,7 +412,7 @@ export function AituberList() {
                           </Badge>
                         </TooltipTrigger>
                         <TooltipContent>
-                          {TAG_DESCRIPTIONS[tag] || t('filter.noTagDescription')}
+                          {getTagDescription(tag, locale)}
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -441,12 +429,12 @@ export function AituberList() {
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-2">
                     <div className="space-y-2 text-sm text-muted-foreground border rounded-lg p-4">
-                      {Object.entries(TAG_DESCRIPTIONS).map(([tag, description]) => (
+                      {allTags.map((tag) => (
                         <div key={tag} className="flex items-start gap-2">
                           <Badge variant="outline" className="mt-0.5 shrink-0">
                             {tag}
                           </Badge>
-                          <span>{description}</span>
+                          <span>{getTagDescription(tag, locale)}</span>
                         </div>
                       ))}
                     </div>
@@ -465,7 +453,7 @@ export function AituberList() {
                       className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
                       onClick={() => setSelectedDateFilter(value)}
                     >
-                      {t(`date.${value}` as any)}
+                      {t(`date.${value}` as `date.${DateFilter}`)}
                       <span className="ml-1 text-xs">
                         ({aitubers.filter(a => isWithinDateRange(a.latestVideoDate, value)).length})
                       </span>
@@ -492,7 +480,7 @@ export function AituberList() {
                       className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
                       onClick={() => setSelectedSubscriberFilter(value)}
                     >
-                      {t(`subscriber.${value}` as any)}
+                      {t(`subscriber.${value}` as `subscriber.${SubscriberFilter}`)}
                     </Badge>
                   ))}
                 </div>
@@ -559,7 +547,7 @@ export function AituberList() {
                         </Badge>
                       </TooltipTrigger>
                       <TooltipContent>
-                        {TAG_DESCRIPTIONS[tag] || t('filter.noTagDescription')}
+                        {getTagDescription(tag, locale)}
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
