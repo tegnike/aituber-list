@@ -1,0 +1,65 @@
+{
+  "site": {
+    "title": "AITuberList",
+    "description": "A collection of AI-powered Virtual YouTubers",
+    "lastUpdated": "Last updated: {{date}}",
+    "totalCount": "{{count}} AITubers"
+  },
+  "filter": {
+    "title": "Filters",
+    "activeFilters": "{{count}} active filters",
+    "displayCount": "Showing {{filtered}} of {{total}}",
+    "name": {
+      "title": "Search by name",
+      "placeholder": "Enter AITuber name..."
+    },
+    "tags": {
+      "title": "Tags",
+      "condition": "Search condition:",
+      "showDescription": "Show tag descriptions"
+    },
+    "date": {
+      "title": "Last updated",
+      "all": "All time",
+      "1month": "Within 1 month",
+      "3months": "Within 3 months",
+      "6months": "Within 6 months",
+      "1year": "Within 1 year",
+      "older": "Older than 1 year"
+    },
+    "subscribers": {
+      "title": "Subscribers",
+      "all": "All",
+      "100": "100+ subscribers",
+      "500": "500+ subscribers",
+      "1000": "1000+ subscribers",
+      "10000": "10000+ subscribers"
+    }
+  },
+  "aituber": {
+    "subscribers": "Subscribers: {{count}}",
+    "noVideo": "No videos yet",
+    "latestVideo": "Latest video from {{name}}",
+    "upcoming": "Upcoming"
+  },
+  "ui": {
+    "loadMore": "Scroll to load more",
+    "scrollToTop": "Back to top",
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Toggle language"
+  },
+  "footer": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  },
+  "tagDescriptions": {
+    "コメント応答": "AI automatically responds to comments in the live chat",
+    "解説": "Has explanation videos",
+    "歌唱あり": "Has singing streams",
+    "海外": "Non-Japanese AITuber",
+    "ゲーム実況": "Does game streaming",
+    "AIパートナー": "AI participates as a partner of a human streamer",
+    "複数キャラ": "Multiple AI characters appear",
+    "一部AITuber": "Utilizes AI characters in part of the content"
+  }
+}

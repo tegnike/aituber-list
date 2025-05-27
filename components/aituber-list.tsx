@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Youtube, Twitter, Calendar, ChevronDown } from "lucide-react"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { LanguageToggle } from "@/components/ui/language-toggle"
+import { useTranslation } from 'react-i18next'
 import Image from "next/image"
 import aituberData from '../app/data/aitubers.json'
 import Link from 'next/link'
@@ -111,9 +113,10 @@ const aitubers: AITuber[] = aituberData.aitubers
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
 
 // 日付フォーマット用の関数を修正
-const formatDate = (dateString: string) => {
+const formatDate = (dateString: string, locale: string) => {
   const date = new Date(dateString);
-  return date.toLocaleDateString('ja-JP', {
+  
+  return date.toLocaleDateString(locale === 'en' ? 'en-US' : 'ja-JP', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -210,6 +213,7 @@ const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => 
 };
 
 export function AituberList() {
+  const { t, i18n } = useTranslation()
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [isAndCondition, setIsAndCondition] = useState(false)
   const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('all')
@@ -306,17 +310,18 @@ export function AituberList() {
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4">
       <style jsx global>{styles}</style>
-      <div className="flex justify-end mb-2">
+      <div className="flex justify-end mb-2 gap-2">
+        <LanguageToggle />
         <ThemeToggle />
       </div>
       <h1 className="text-2xl sm:text-3xl font-bold text-center mb-2">
-        AITuberList
+        {t('site.title')}
         <span className="text-lg sm:text-xl font-normal text-muted-foreground ml-2">
-          ({aitubers.length}名)
+          {t('site.totalCount', { count: aitubers.length })}
         </span>
       </h1>
       <p className="text-center text-sm text-muted-foreground mb-4">
-        最終更新日: {formatDate(aituberData.lastUpdated)}
+        {t('site.lastUpdated', { date: formatDate(aituberData.lastUpdated, i18n.language) })}
       </p>
 
       <Card className="mb-6 border-2 dark:border-gray-700">
@@ -325,16 +330,16 @@ export function AituberList() {
             <CollapsibleTrigger className="w-full">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
                 <CardTitle className="text-lg sm:text-xl flex items-center flex-wrap gap-2">
-                  フィルター
+                  {t('filter.title')}
                   {activeFilterCount > 0 && (
                     <Badge variant="secondary">
-                      {activeFilterCount}個のフィルターが有効
+                      {t('filter.activeFilters', { count: activeFilterCount })}
                     </Badge>
                   )}
                 </CardTitle>
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-muted-foreground">
-                    {filteredAITubers.length} / {aitubers.length} 件表示
+                    {t('filter.displayCount', { filtered: filteredAITubers.length, total: aitubers.length })}
                   </span>
                   <ChevronDown className={`h-4 w-4 transition-transform ${isFiltersOpen ? 'transform rotate-180' : ''}`} />
                 </div>
@@ -345,12 +350,12 @@ export function AituberList() {
             <CardContent className="space-y-6 px-3 sm:px-6">
               {/* 名前フィルター */}
               <div className="space-y-4">
-                <div className="text-sm font-bold">名前で検索</div>
+                <div className="text-sm font-bold">{t('filter.name.title')}</div>
                 <input
                   type="text"
                   value={nameFilter}
                   onChange={(e) => setNameFilter(e.target.value)}
-                  placeholder="AITuber名を入力..."
+                  placeholder={t('filter.name.placeholder')}
                   className="w-full px-3 py-2 text-sm rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
                 />
               </div>
@@ -358,9 +363,9 @@ export function AituberList() {
               {/* タグフィルター */}
               <div className="space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <div className="text-sm font-bold">タグ</div>
+                  <div className="text-sm font-bold">{t('filter.tags.title')}</div>
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-muted-foreground whitespace-nowrap">検索条件：</span>
+                    <span className="text-sm text-muted-foreground whitespace-nowrap">{t('filter.tags.condition')}</span>
                     <div className="flex items-center rounded-lg border p-1 gap-1">
                       <Button
                         variant={!isAndCondition ? "secondary" : "ghost"}
@@ -409,7 +414,7 @@ export function AituberList() {
                 <Collapsible open={isTagDescriptionOpen} onOpenChange={setIsTagDescriptionOpen}>
                   <CollapsibleTrigger className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isTagDescriptionOpen ? 'rotate-180' : ''}`} />
-                    タグの説明を表示
+                    {t('filter.tags.showDescription')}
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-2">
                     <div className="space-y-2 text-sm text-muted-foreground border rounded-lg p-4">
@@ -418,7 +423,7 @@ export function AituberList() {
                           <Badge variant="outline" className="mt-0.5 shrink-0">
                             {tag}
                           </Badge>
-                          <span>{description}</span>
+                          <span>{t(`tagDescriptions.${tag}`, { defaultValue: description })}</span>
                         </div>
                       ))}
                     </div>
@@ -428,16 +433,16 @@ export function AituberList() {
 
               {/* 最終更新日フィルター */}
               <div className="space-y-4">
-                <div className="text-sm font-bold">最終更新日</div>
+                <div className="text-sm font-bold">{t('filter.date.title')}</div>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {(Object.entries(DATE_FILTER_LABELS) as [DateFilter, string][]).map(([value, label]) => (
+                  {(Object.entries(DATE_FILTER_LABELS) as [DateFilter, string][]).map(([value]) => (
                     <Badge
                       key={value}
                       variant={selectedDateFilter === value ? "default" : "outline"}
                       className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
                       onClick={() => setSelectedDateFilter(value)}
                     >
-                      {label}
+                      {t(`filter.date.${value}`)}
                       <span className="ml-1 text-xs">
                         ({aitubers.filter(a => isWithinDateRange(a.latestVideoDate, value)).length})
                       </span>
@@ -448,23 +453,23 @@ export function AituberList() {
 
               {/* 登録者数フィルター */}
               <div className="space-y-4">
-                <div className="text-sm font-bold">登録者数</div>
+                <div className="text-sm font-bold">{t('filter.subscribers.title')}</div>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   <Badge
                     variant={selectedSubscriberFilter === null ? "default" : "outline"}
                     className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
                     onClick={() => setSelectedSubscriberFilter(null)}
                   >
-                    すべて
+                    {t('filter.subscribers.all')}
                   </Badge>
-                  {(Object.entries(SUBSCRIBER_FILTER_LABELS) as [SubscriberFilter, { label: string }][]).map(([value, { label }]) => (
+                  {(Object.entries(SUBSCRIBER_FILTER_LABELS) as [SubscriberFilter, { label: string }][]).map(([value]) => (
                     <Badge
                       key={value}
                       variant={selectedSubscriberFilter === value ? "default" : "outline"}
                       className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
                       onClick={() => setSelectedSubscriberFilter(value)}
                     >
-                      {label}
+                      {t(`filter.subscribers.${value}`)}
                     </Badge>
                   ))}
                 </div>
@@ -582,11 +587,11 @@ export function AituberList() {
                 {aituber.latestVideoUrl ? (
                   <LazyVideo
                     videoUrl={aituber.latestVideoUrl}
-                    title={`${aituber.name}の最新動画`}
+                    title={t('aituber.latestVideo', { name: aituber.name })}
                   />
                 ) : (
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-muted">
-                    <span className="text-muted-foreground">動画はまだありません</span>
+                    <span className="text-muted-foreground">{t('aituber.noVideo')}</span>
                   </div>
                 )}
               </div>
@@ -594,10 +599,10 @@ export function AituberList() {
                 <Calendar className="w-4 h-4 mr-1" />
                 {aituber.latestVideoDate ? (
                   <span className="flex items-center gap-1">
-                    {formatDate(aituber.latestVideoDate)}
+                    {formatDate(aituber.latestVideoDate, i18n.language)}
                     {aituber.isUpcoming && (
                       <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                        配信予定
+                        {t('aituber.upcoming')}
                       </Badge>
                     )}
                   </span>
@@ -621,7 +626,7 @@ export function AituberList() {
               <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
             </div>
           ) : (
-            <div className="text-sm text-muted-foreground">スクロールして更に読み込む</div>
+            <div className="text-sm text-muted-foreground">{t('ui.loadMore')}</div>
           )}
         </div>
       )}
@@ -633,7 +638,7 @@ export function AituberList() {
           size="icon"
           className="fixed bottom-4 right-4 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
           onClick={scrollToTop}
-          aria-label="ページトップへ戻る"
+          aria-label={t('ui.scrollToTop')}
         >
           <ChevronDown className="h-6 w-6 transform rotate-180" />
         </Button>
@@ -641,10 +646,10 @@ export function AituberList() {
 
       <footer className="mt-8 flex justify-center gap-4 text-sm text-muted-foreground">
         <Link href="/terms" className="hover:underline">
-          利用規約
+          {t('footer.terms')}
         </Link>
         <Link href="/privacy" className="hover:underline">
-          プライバシーポリシー
+          {t('footer.privacy')}
         </Link>
       </footer>
     </div>

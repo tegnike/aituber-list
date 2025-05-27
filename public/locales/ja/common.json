@@ -1,0 +1,65 @@
+{
+  "site": {
+    "title": "AITuberList",
+    "description": "AITuberの情報をまとめています",
+    "lastUpdated": "最終更新日: {{date}}",
+    "totalCount": "{{count}}名"
+  },
+  "filter": {
+    "title": "フィルター",
+    "activeFilters": "{{count}}個のフィルターが有効",
+    "displayCount": "{{filtered}} / {{total}} 件表示",
+    "name": {
+      "title": "名前で検索",
+      "placeholder": "AITuber名を入力..."
+    },
+    "tags": {
+      "title": "タグ",
+      "condition": "検索条件：",
+      "showDescription": "タグの説明を表示"
+    },
+    "date": {
+      "title": "最終更新日",
+      "all": "全期間",
+      "1month": "1ヶ月以内",
+      "3months": "3ヶ月以内",
+      "6months": "6ヶ月以内",
+      "1year": "1年以内",
+      "older": "1年以上前"
+    },
+    "subscribers": {
+      "title": "登録者数",
+      "all": "すべて",
+      "100": "100人以上",
+      "500": "500人以上",
+      "1000": "1000人以上",
+      "10000": "1万人以上"
+    }
+  },
+  "aituber": {
+    "subscribers": "登録者数: {{count}}人",
+    "noVideo": "動画はまだありません",
+    "latestVideo": "{{name}}の最新動画",
+    "upcoming": "配信予定"
+  },
+  "ui": {
+    "loadMore": "スクロールして更に読み込む",
+    "scrollToTop": "ページトップへ戻る",
+    "toggleTheme": "テーマを切り替える",
+    "toggleLanguage": "言語を切り替える"
+  },
+  "footer": {
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー"
+  },
+  "tagDescriptions": {
+    "コメント応答": "ライブチャット欄のコメントに対してAIが自動で応答する",
+    "解説": "解説動画がある",
+    "歌唱あり": "歌唱枠がある",
+    "海外": "日本語以外のAITuber",
+    "ゲーム実況": "ゲームの実況配信を行う",
+    "AIパートナー": "人間配信者のパートナーとしてAIが参加する",
+    "複数キャラ": "複数のAIキャラクターが登場する",
+    "一部AITuber": "コンテンツの一部でAIキャラクターを活用している"
+  }
+}
