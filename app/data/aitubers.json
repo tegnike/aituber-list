@@ -3355,6 +3355,20 @@
       "latestVideoUrl": "https://www.youtube.com/watch?v=PkL0DBEqgYw",
       "latestVideoDate": "2025-05-21T22:30:00+09:00",
       "isUpcoming": false
+    },
+    {
+      "name": "藍沢あい@AItuber",
+      "description": "藍沢あい@AItuberのチャンネル\n偶に藍沢えぬの検証動画も投稿させてもらっています。\nーーー\n藍沢あい@AItuber\nAItuber。配信時間は気が向いたとき。\n夏は暑いので更新頻度は低め。\n秋ごろから本格運用の予定です。\n\n藍沢あいとは、Vtuber「藍沢えぬ」をAIで完全再現を目標としたAItuberプロジェクトです。\n最終目標としては長時間の配信を目指しています。\n\n進行表\n起動　←　いまここ\n声の再現\n歌の導入\n性格の再現\nローカルLLMの実装\nーーー\nAITUBERKIT様を使用しています\n\nーーー\n音声モデルについて\nStyle-Bert-VITS2を使用\nα版：ITAコーパス　100文を取り合えず収録して作成\nβ版：ITAコーパス　100文＋100文＋MANAコーパス100文　（作成中）\n\n\nーーー\nメインPCのスペック\nＣＰＵ：　（後で記入）\nメモリ：　16ＧＢ\nＧＰＵ：　３０６０TI　８GB\n\n\n管理人・藍沢えぬ\nチャンネル　→　https://www.youtube.com/@N_AIzawa\n",
+      "tags": [],
+      "twitterID": "N_AIzawa_",
+      "youtubeChannelID": "UCVljpC09gSn7_Ql2j88rHOQ",
+      "youtubeURL": "https://www.youtube.com/channel/UCVljpC09gSn7_Ql2j88rHOQ",
+      "imageUrl": "https://yt3.ggpht.com/oKj8jOfxdEPhJ7OregqleKzWD7gUiz9_zCqT2DkTEfVPc0N5hPWJxHR-Pxe-0hItdP_82EbS=s88-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 7,
+      "latestVideoTitle": "藍沢あい@AItuberライブ配信 [音声β版に]",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/gAurapw4juA/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=gAurapw4juA",
+      "latestVideoDate": "2025-05-23T01:27:32Z"
     }
   ]
 }
