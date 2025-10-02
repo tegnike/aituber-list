@@ -12,6 +12,7 @@ AITuber List (https://aituberlist.net/) - A directory website for AI VTubers bui
 # Development
 npm run dev        # Start development server on localhost:3000
 npm run build      # Build static site to /out directory
+npm run start      # Start production server
 npm run lint       # Run ESLint
 
 # Data Management (requires Python environment)
@@ -38,11 +39,27 @@ python scripts/add_aitubers.py     # Add new AITubers to the list
 - **Path Aliases**: Use `@/*` for imports from project root
 - **UI Components**: shadcn/ui components in `components/ui/`
 
-### API Keys & Environment
-- YouTube API key required for data updates (set in GitHub Actions)
+## Python Scripts
+
+### update_aitubers.py
+- Updates subscriber counts and latest video information
+- Handles YouTube premieres and upcoming streams
+- Requires `YOUTUBE_API_KEY` environment variable
+
+### add_aitubers.py
+- Adds new AITubers via OpenAI API or direct YouTube URLs
+- Supports batch processing from files
+- Falls back to `YOUTUBE_API_KEY2` if primary key exhausted
+- Requires `OPENAI_API_KEY` for AI-powered data extraction
+
+## API Keys & Environment
+- **YOUTUBE_API_KEY**: Required for data updates
+- **YOUTUBE_API_KEY2**: Fallback YouTube API key
+- **OPENAI_API_KEY**: Required for AI-powered AITuber additions
 - No frontend environment variables needed for development
 
-### Deployment
+## Deployment
 - Main deployment on Vercel
 - Cloudflare Pages compatibility via `wrangler.toml`
 - Static files output to `/out` directory
+- GitHub Actions handle automated updates and deployments
