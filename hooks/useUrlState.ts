@@ -26,7 +26,7 @@ const DEFAULT_STATE: UrlState = {
   date: 'all',
   subscriber: null,
   search: '',
-  sort: 'subscribers',
+  sort: 'latest',
   upcoming: false
 }
 
@@ -126,7 +126,7 @@ export function useUrlState(): UseUrlStateReturn {
     }
 
     if (state.sort !== undefined) {
-      if (state.sort !== 'subscribers') {
+      if (state.sort !== 'latest') {
         params.set('sort', state.sort)
       } else {
         params.delete('sort')
