@@ -110,6 +110,9 @@ export const translations = {
     // View mode
     'view.grid': 'グリッド表示',
     'view.list': 'リスト表示',
+
+    // Accessibility
+    'a11y.skipToMain': 'メインコンテンツへスキップ',
   },
   
   en: {
@@ -221,6 +224,9 @@ export const translations = {
     // View mode
     'view.grid': 'Grid view',
     'view.list': 'List view',
+
+    // Accessibility
+    'a11y.skipToMain': 'Skip to main content',
   },
 
   'zh-CN': {
@@ -332,6 +338,9 @@ export const translations = {
     // View mode
     'view.grid': '网格视图',
     'view.list': '列表视图',
+
+    // Accessibility
+    'a11y.skipToMain': '跳转到主内容',
   },
 
   'zh-TW': {
@@ -443,6 +452,9 @@ export const translations = {
     // View mode
     'view.grid': '網格檢視',
     'view.list': '列表檢視',
+
+    // Accessibility
+    'a11y.skipToMain': '跳至主內容',
   },
 
   ko: {
@@ -554,6 +566,9 @@ export const translations = {
     // View mode
     'view.grid': '그리드 보기',
     'view.list': '리스트 보기',
+
+    // Accessibility
+    'a11y.skipToMain': '메인 콘텐츠로 건너뛰기',
   }
 } as const
 

@@ -12,7 +12,8 @@ interface LazyVideoProps {
 }
 
 // サムネイルサイズ最適化関数
-const getThumbnailUrl = (videoId: string, size: 'hq' | 'mq' = 'mq') => {
+// hq (480x360) はモバイルでも見やすいサイズ
+const getThumbnailUrl = (videoId: string, size: 'hq' | 'mq' | 'sd' = 'hq') => {
   return `https://i.ytimg.com/vi/${videoId}/${size}default.jpg`
 }
 
@@ -50,7 +51,7 @@ export function LazyVideo({ videoUrl, title, priority = false }: LazyVideoProps)
           aria-label={`${title}を再生`}
         >
           <Image
-            src={getThumbnailUrl(videoId, 'mq')}
+            src={getThumbnailUrl(videoId, 'hq')}
             alt={title}
             fill
             className="object-cover"

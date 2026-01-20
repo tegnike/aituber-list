@@ -14,6 +14,7 @@ import {
 import { formatDate, formatSubscriberCount, getTagName, getTagDescription, TranslationKey, Locale } from "@/lib/i18n"
 import { AITuberImage } from './AITuberImage'
 import { LazyVideo } from './LazyVideo'
+import { HighlightText } from './HighlightText'
 import type { AITuber } from './types'
 
 interface AituberCardProps {
@@ -25,6 +26,7 @@ interface AituberCardProps {
   locale: Locale
   t: (key: TranslationKey, params?: Record<string, string | number>) => string
   priority?: boolean
+  searchTerm?: string
 }
 
 export function AituberCard({
@@ -35,7 +37,8 @@ export function AituberCard({
   onFavoriteToggle,
   locale,
   t,
-  priority = false
+  priority = false,
+  searchTerm = ''
 }: AituberCardProps) {
   return (
     <Card className="flex flex-col border-2 dark:border-gray-700 relative">
@@ -71,7 +74,7 @@ export function AituberCard({
             />
           )}
           <div className="truncate">
-            {aituber.name}
+            <HighlightText text={aituber.name} searchTerm={searchTerm} />
           </div>
         </CardTitle>
         <div className="flex flex-wrap gap-1.5">
@@ -101,7 +104,7 @@ export function AituberCard({
             <Tooltip>
               <TooltipTrigger className="w-full text-left">
                 <p className="line-clamp-3 hover:cursor-help">
-                  {aituber.description}
+                  <HighlightText text={aituber.description} searchTerm={searchTerm} />
                 </p>
               </TooltipTrigger>
               <TooltipContent className="max-w-[300px] whitespace-pre-wrap">

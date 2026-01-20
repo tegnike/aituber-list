@@ -6,6 +6,7 @@ import { Calendar, Heart } from "lucide-react"
 import { YoutubeIcon } from "@/components/icons"
 import { formatSubscriberCount, getTagName, TranslationKey, Locale } from "@/lib/i18n"
 import { AITuberImage } from './AITuberImage'
+import { HighlightText } from './HighlightText'
 import type { AITuber } from './types'
 
 interface AituberListItemProps {
@@ -17,6 +18,7 @@ interface AituberListItemProps {
   locale: Locale
   t: (key: TranslationKey) => string
   priority?: boolean
+  searchTerm?: string
 }
 
 export function AituberListItem({
@@ -27,7 +29,8 @@ export function AituberListItem({
   onFavoriteToggle,
   locale,
   t,
-  priority = false
+  priority = false,
+  searchTerm = ''
 }: AituberListItemProps) {
   return (
     <Card className="border-2 dark:border-gray-700 overflow-hidden">
@@ -57,7 +60,7 @@ export function AituberListItem({
 
         {/* 名前 */}
         <div className="flex-1 min-w-0 truncate font-medium text-sm sm:text-base">
-          {aituber.name}
+          <HighlightText text={aituber.name} searchTerm={searchTerm} />
         </div>
 
         {/* タグ */}

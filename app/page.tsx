@@ -1,4 +1,4 @@
-import { AituberList } from "@/components/aituber-list"
+import { AituberList } from "@/components/aituber-list/index"
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

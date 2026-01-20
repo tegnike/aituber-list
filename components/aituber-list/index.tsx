@@ -202,7 +202,7 @@ export function AituberList() {
   }, [resetPage])
 
   return (
-    <div className="container mx-auto px-2 sm:px-4 py-4">
+    <main id="main-content" className="container mx-auto px-2 sm:px-4 py-4">
       <style jsx global>{styles}</style>
       <div className="flex justify-end mb-2 gap-2">
         <LanguageToggle />
@@ -326,6 +326,7 @@ export function AituberList() {
               locale={locale}
               t={t}
               priority={index < 12}
+              searchTerm={nameFilter}
             />
           ))}
         </div>
@@ -342,6 +343,7 @@ export function AituberList() {
               locale={locale}
               t={t}
               priority={index < 12}
+              searchTerm={nameFilter}
             />
           ))}
         </div>
@@ -387,6 +389,6 @@ export function AituberList() {
           {t('footer.privacy')}
         </Link>
       </footer>
-    </div>
+    </main>
   )
 }
