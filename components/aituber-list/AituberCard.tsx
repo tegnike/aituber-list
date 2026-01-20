@@ -24,6 +24,7 @@ interface AituberCardProps {
   onFavoriteToggle: () => void
   locale: 'ja' | 'en'
   t: (key: TranslationKey, params?: Record<string, string | number>) => string
+  priority?: boolean
 }
 
 export function AituberCard({
@@ -33,7 +34,8 @@ export function AituberCard({
   isFavorite,
   onFavoriteToggle,
   locale,
-  t
+  t,
+  priority = false
 }: AituberCardProps) {
   return (
     <Card className="flex flex-col border-2 dark:border-gray-700 relative">
@@ -56,6 +58,7 @@ export function AituberCard({
                 alt={aituber.name}
                 size={40}
                 className="rounded-full hover:opacity-80 transition-opacity"
+                priority={priority}
               />
             </a>
           ) : (
@@ -64,6 +67,7 @@ export function AituberCard({
               alt={aituber.name}
               size={40}
               className="rounded-full"
+              priority={priority}
             />
           )}
           <div className="truncate">
@@ -136,6 +140,7 @@ export function AituberCard({
             <LazyVideo
               videoUrl={aituber.latestVideoUrl}
               title={t('card.latestVideo', { name: aituber.name })}
+              priority={priority}
             />
           ) : (
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-muted">

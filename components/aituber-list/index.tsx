@@ -325,6 +325,7 @@ export function AituberList() {
               onFavoriteToggle={() => toggleFavorite(aituber.youtubeChannelID)}
               locale={locale}
               t={t}
+              priority={index < 12}
             />
           ))}
         </div>
@@ -340,6 +341,7 @@ export function AituberList() {
               onFavoriteToggle={() => toggleFavorite(aituber.youtubeChannelID)}
               locale={locale}
               t={t}
+              priority={index < 12}
             />
           ))}
         </div>

@@ -9,13 +9,15 @@ interface AITuberImageProps {
   alt: string
   size?: number
   className?: string
+  priority?: boolean
 }
 
 export function AITuberImage({
   src,
   alt,
   size = 40,
-  className = ''
+  className = '',
+  priority = false
 }: AITuberImageProps) {
   const [imgSrc, setImgSrc] = useState(src)
   const [hasError, setHasError] = useState(false)
@@ -48,6 +50,7 @@ export function AITuberImage({
       height={size}
       className={className}
       onError={handleError}
+      priority={priority}
     />
   )
 }

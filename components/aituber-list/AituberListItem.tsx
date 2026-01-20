@@ -16,6 +16,7 @@ interface AituberListItemProps {
   onFavoriteToggle: () => void
   locale: 'ja' | 'en'
   t: (key: TranslationKey) => string
+  priority?: boolean
 }
 
 export function AituberListItem({
@@ -25,7 +26,8 @@ export function AituberListItem({
   isFavorite,
   onFavoriteToggle,
   locale,
-  t
+  t,
+  priority = false
 }: AituberListItemProps) {
   return (
     <Card className="border-2 dark:border-gray-700 overflow-hidden">
@@ -39,6 +41,7 @@ export function AituberListItem({
                 alt={aituber.name}
                 size={36}
                 className="rounded-full hover:opacity-80 transition-opacity"
+                priority={priority}
               />
             </a>
           ) : (
@@ -47,6 +50,7 @@ export function AituberListItem({
               alt={aituber.name}
               size={36}
               className="rounded-full"
+              priority={priority}
             />
           )}
         </div>
