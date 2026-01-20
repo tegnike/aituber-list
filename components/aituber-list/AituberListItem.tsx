@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Calendar, Heart } from "lucide-react"
 import { YoutubeIcon } from "@/components/icons"
-import { formatSubscriberCount, getTagName, TranslationKey } from "@/lib/i18n"
+import { formatSubscriberCount, getTagName, TranslationKey, Locale } from "@/lib/i18n"
 import { AITuberImage } from './AITuberImage'
 import type { AITuber } from './types'
 
@@ -14,7 +14,7 @@ interface AituberListItemProps {
   onTagSelect: (tag: string) => void
   isFavorite: boolean
   onFavoriteToggle: () => void
-  locale: 'ja' | 'en'
+  locale: Locale
   t: (key: TranslationKey) => string
   priority?: boolean
 }

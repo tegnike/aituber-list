@@ -16,7 +16,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { getTagName, getTagDescription, TranslationKey } from "@/lib/i18n"
+import { getTagName, getTagDescription, TranslationKey, Locale } from "@/lib/i18n"
 import type { AITuber, DateFilter, SubscriberFilter } from './types'
 import { isWithinDateRange, SUBSCRIBER_FILTER_LABELS } from './types'
 
@@ -48,7 +48,7 @@ interface FilterPanelProps {
   onReset: () => void
 
   // i18n
-  locale: 'ja' | 'en'
+  locale: Locale
   t: (key: TranslationKey, params?: Record<string, string | number>) => string
 
   // 開閉状態

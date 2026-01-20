@@ -11,7 +11,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { formatDate, formatSubscriberCount, getTagName, getTagDescription, TranslationKey } from "@/lib/i18n"
+import { formatDate, formatSubscriberCount, getTagName, getTagDescription, TranslationKey, Locale } from "@/lib/i18n"
 import { AITuberImage } from './AITuberImage'
 import { LazyVideo } from './LazyVideo'
 import type { AITuber } from './types'
@@ -22,7 +22,7 @@ interface AituberCardProps {
   onTagSelect: (tag: string) => void
   isFavorite: boolean
   onFavoriteToggle: () => void
-  locale: 'ja' | 'en'
+  locale: Locale
   t: (key: TranslationKey, params?: Record<string, string | number>) => string
   priority?: boolean
 }

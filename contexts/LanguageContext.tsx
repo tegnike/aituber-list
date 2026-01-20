@@ -30,7 +30,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     try {
       // ローカルストレージから言語設定を読み込み
       const savedLocale = localStorage.getItem('locale') as Locale
-      if (savedLocale && (savedLocale === 'ja' || savedLocale === 'en')) {
+      const validLocales: Locale[] = ['ja', 'en', 'zh-CN', 'zh-TW', 'ko']
+      if (savedLocale && validLocales.includes(savedLocale)) {
         setLocaleState(savedLocale)
       }
     } catch (error) {
