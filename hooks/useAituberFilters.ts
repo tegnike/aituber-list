@@ -1,12 +1,12 @@
 'use client'
 
 import { useMemo } from 'react'
-import type { AITuber, DateFilter, SubscriberFilter } from '@/components/aituber-list/types'
+import type { AITuber, DateFilter, SubscriberFilter, TagFilterMode } from '@/components/aituber-list/types'
 import { isWithinDateRange, SUBSCRIBER_FILTER_LABELS } from '@/components/aituber-list/types'
 
 export interface FilterOptions {
   selectedTags: string[]
-  isAndCondition: boolean
+  tagFilterMode: TagFilterMode
   selectedDateFilter: DateFilter
   selectedSubscriberFilter: SubscriberFilter | null
   nameFilter: string
@@ -26,7 +26,7 @@ export function useAituberFilters(
 ): UseAituberFiltersReturn {
   const {
     selectedTags,
-    isAndCondition,
+    tagFilterMode,
     selectedDateFilter,
     selectedSubscriberFilter,
     nameFilter,
@@ -36,13 +36,23 @@ export function useAituberFilters(
   } = options
 
   const filteredAITubers = useMemo(() => {
+    const matchesTags = (aituber: AITuber): boolean => {
+      if (selectedTags.length === 0) return true
+
+      switch (tagFilterMode) {
+        case 'and':
+          return selectedTags.every(tag => aituber.tags.includes(tag))
+        case 'not':
+          return selectedTags.every(tag => !aituber.tags.includes(tag))
+        case 'or':
+        default:
+          return selectedTags.some(tag => aituber.tags.includes(tag))
+      }
+    }
+
     return aitubers.filter(aituber =>
       isWithinDateRange(aituber.latestVideoDate, selectedDateFilter) &&
-      (selectedTags.length === 0 ||
-        (isAndCondition
-          ? selectedTags.every(tag => aituber.tags.includes(tag))
-          : selectedTags.some(tag => aituber.tags.includes(tag))
-        )) &&
+      matchesTags(aituber) &&
       (!selectedSubscriberFilter ||
         aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
       (nameFilter === '' ||
@@ -55,7 +65,7 @@ export function useAituberFilters(
     aitubers,
     selectedDateFilter,
     selectedTags,
-    isAndCondition,
+    tagFilterMode,
     selectedSubscriberFilter,
     nameFilter,
     showUpcomingOnly,

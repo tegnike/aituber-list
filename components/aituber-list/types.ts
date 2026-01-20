@@ -18,6 +18,7 @@ export type DateFilter = 'all' | '1month' | '3months' | '6months' | '1year' | 'o
 export type SubscriberFilter = '100' | '500' | '1000' | '10000'
 export type SortOrder = 'subscribers' | 'latest' | 'name' | 'random'
 export type ViewMode = 'grid' | 'list'
+export type TagFilterMode = 'or' | 'and' | 'not'
 
 export const SUBSCRIBER_FILTER_LABELS: Record<SubscriberFilter, { threshold: number }> = {
   '100': { threshold: 100 },

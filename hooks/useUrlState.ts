@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
-import type { DateFilter, SubscriberFilter, SortOrder } from '@/components/aituber-list/types'
+import type { DateFilter, SubscriberFilter, SortOrder, TagFilterMode } from '@/components/aituber-list/types'
 
 export interface UrlState {
   tags: string[]
-  tagMode: 'and' | 'or'
+  tagMode: TagFilterMode
   date: DateFilter
   subscriber: SubscriberFilter | null
   search: string
@@ -46,9 +46,9 @@ export function useUrlState(): UseUrlStateReturn {
       state.tags = tagsParam.split(',').filter(Boolean)
     }
 
-    const tagModeParam = params.get('tagMode')
-    if (tagModeParam === 'and') {
-      state.tagMode = 'and'
+    const tagModeParam = params.get('tagMode') as TagFilterMode
+    if (tagModeParam && ['and', 'or', 'not'].includes(tagModeParam)) {
+      state.tagMode = tagModeParam
     }
 
     const dateParam = params.get('date') as DateFilter
@@ -94,8 +94,8 @@ export function useUrlState(): UseUrlStateReturn {
     }
 
     if (state.tagMode !== undefined) {
-      if (state.tagMode === 'and' && state.tags && state.tags.length > 0) {
-        params.set('tagMode', 'and')
+      if (state.tagMode !== 'or' && state.tags && state.tags.length > 0) {
+        params.set('tagMode', state.tagMode)
       } else {
         params.delete('tagMode')
       }

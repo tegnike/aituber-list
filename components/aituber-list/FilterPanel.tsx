@@ -17,15 +17,15 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { getTagName, getTagDescription, TranslationKey, Locale } from "@/lib/i18n"
-import type { AITuber, DateFilter, SubscriberFilter } from './types'
+import type { AITuber, DateFilter, SubscriberFilter, TagFilterMode } from './types'
 import { isWithinDateRange, SUBSCRIBER_FILTER_LABELS } from './types'
 
 interface FilterPanelProps {
   // フィルター状態
   selectedTags: string[]
   onTagToggle: (tag: string) => void
-  isAndCondition: boolean
-  onConditionChange: (isAnd: boolean) => void
+  tagFilterMode: TagFilterMode
+  onTagFilterModeChange: (mode: TagFilterMode) => void
   selectedDateFilter: DateFilter
   onDateFilterChange: (filter: DateFilter) => void
   selectedSubscriberFilter: SubscriberFilter | null
@@ -59,8 +59,8 @@ interface FilterPanelProps {
 export function FilterPanel({
   selectedTags,
   onTagToggle,
-  isAndCondition,
-  onConditionChange,
+  tagFilterMode,
+  onTagFilterModeChange,
   selectedDateFilter,
   onDateFilterChange,
   selectedSubscriberFilter,
@@ -143,20 +143,28 @@ export function FilterPanel({
                   <span className="text-sm text-muted-foreground whitespace-nowrap">{t('filter.searchCondition')}</span>
                   <div className="flex items-center rounded-lg border p-1 gap-1">
                     <Button
-                      variant={!isAndCondition ? "secondary" : "ghost"}
+                      variant={tagFilterMode === 'or' ? "secondary" : "ghost"}
                       size="sm"
-                      onClick={() => onConditionChange(false)}
+                      onClick={() => onTagFilterModeChange('or')}
                       className="text-xs sm:text-sm h-7 px-2 sm:px-4"
                     >
                       OR
                     </Button>
                     <Button
-                      variant={isAndCondition ? "secondary" : "ghost"}
+                      variant={tagFilterMode === 'and' ? "secondary" : "ghost"}
                       size="sm"
-                      onClick={() => onConditionChange(true)}
+                      onClick={() => onTagFilterModeChange('and')}
                       className="text-xs sm:text-sm h-7 px-2 sm:px-4"
                     >
                       AND
+                    </Button>
+                    <Button
+                      variant={tagFilterMode === 'not' ? "secondary" : "ghost"}
+                      size="sm"
+                      onClick={() => onTagFilterModeChange('not')}
+                      className="text-xs sm:text-sm h-7 px-2 sm:px-4"
+                    >
+                      NOT
                     </Button>
                   </div>
                 </div>

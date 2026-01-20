@@ -17,7 +17,7 @@ import {
 import aituberData from '@/app/data/aitubers.json'
 
 // Types
-import type { AITuber, DateFilter, SubscriberFilter, SortOrder, ViewMode } from './types'
+import type { AITuber, DateFilter, SubscriberFilter, SortOrder, ViewMode, TagFilterMode } from './types'
 
 // Components
 import { FilterPanel } from './FilterPanel'
@@ -61,7 +61,7 @@ export function AituberList() {
 
   // Filter states
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [isAndCondition, setIsAndCondition] = useState(false)
+  const [tagFilterMode, setTagFilterMode] = useState<TagFilterMode>('or')
   const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('all')
   const [selectedSubscriberFilter, setSelectedSubscriberFilter] = useState<SubscriberFilter | null>(null)
   const [nameFilter, setNameFilter] = useState('')
@@ -120,7 +120,7 @@ export function AituberList() {
     if (!isInitialized) return
 
     setSelectedTags(initialState.tags)
-    setIsAndCondition(initialState.tagMode === 'and')
+    setTagFilterMode(initialState.tagMode)
     setSelectedDateFilter(initialState.date)
     setSelectedSubscriberFilter(initialState.subscriber)
     setNameFilter(initialState.search)
@@ -153,7 +153,7 @@ export function AituberList() {
 
     updateUrl({
       tags: selectedTags,
-      tagMode: isAndCondition ? 'and' : 'or',
+      tagMode: tagFilterMode,
       date: selectedDateFilter,
       subscriber: selectedSubscriberFilter,
       search: nameFilter,
@@ -163,7 +163,7 @@ export function AituberList() {
   }, [
     isInitialized,
     selectedTags,
-    isAndCondition,
+    tagFilterMode,
     selectedDateFilter,
     selectedSubscriberFilter,
     nameFilter,
@@ -175,7 +175,7 @@ export function AituberList() {
   // Filtering hook
   const { filteredAITubers, activeFilterCount } = useAituberFilters(aitubers, {
     selectedTags,
-    isAndCondition,
+    tagFilterMode,
     selectedDateFilter,
     selectedSubscriberFilter,
     nameFilter,
@@ -209,7 +209,7 @@ export function AituberList() {
 
   const handleTagSelect = useCallback((tag: string) => {
     setSelectedTags([tag])
-    setIsAndCondition(false)
+    setTagFilterMode('or')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
@@ -223,7 +223,7 @@ export function AituberList() {
 
   const resetAllFilters = useCallback(() => {
     setSelectedTags([])
-    setIsAndCondition(false)
+    setTagFilterMode('or')
     setSelectedDateFilter('all')
     setSelectedSubscriberFilter(null)
     setNameFilter('')
@@ -313,8 +313,8 @@ export function AituberList() {
       <FilterPanel
         selectedTags={selectedTags}
         onTagToggle={toggleTag}
-        isAndCondition={isAndCondition}
-        onConditionChange={setIsAndCondition}
+        tagFilterMode={tagFilterMode}
+        onTagFilterModeChange={setTagFilterMode}
         selectedDateFilter={selectedDateFilter}
         onDateFilterChange={setSelectedDateFilter}
         selectedSubscriberFilter={selectedSubscriberFilter}
