@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import Image from 'next/image'
 import { FALLBACK_IMAGE } from './types'
 
@@ -12,6 +12,14 @@ interface AITuberImageProps {
   priority?: boolean
 }
 
+// 画像URLを正規化する関数（コンポーネント外に配置してメモ化効率を上げる）
+function normalizeImageSrc(src: string): string {
+  if (src.startsWith('http')) return src
+  if (src.startsWith('/')) return src
+  if (src) return `/images/aitubers/${src}`
+  return FALLBACK_IMAGE
+}
+
 export function AITuberImage({
   src,
   alt,
@@ -19,38 +27,30 @@ export function AITuberImage({
   className = '',
   priority = false
 }: AITuberImageProps) {
-  const [imgSrc, setImgSrc] = useState(src)
   const [hasError, setHasError] = useState(false)
 
-  useEffect(() => {
-    setImgSrc(src)
-    setHasError(false)
-  }, [src])
+  const handleError = useCallback(() => {
+    setHasError(true)
+  }, [])
 
-  const handleError = () => {
-    if (!hasError) {
-      setHasError(true)
-      setImgSrc(FALLBACK_IMAGE)
-    }
-  }
-
-  const imageSrc = imgSrc.startsWith('http')
-    ? imgSrc
-    : imgSrc.startsWith('/')
-      ? imgSrc
-      : imgSrc
-        ? `/images/aitubers/${imgSrc}`
-        : FALLBACK_IMAGE
+  const imageSrc = hasError ? FALLBACK_IMAGE : normalizeImageSrc(src)
 
   return (
-    <Image
-      src={imageSrc}
-      alt={alt}
-      width={size}
-      height={size}
-      className={className}
-      onError={handleError}
-      priority={priority}
-    />
+    <div
+      className={`relative overflow-hidden bg-muted ${className}`}
+      style={{ width: size, height: size }}
+    >
+      <Image
+        src={imageSrc}
+        alt={alt}
+        width={size}
+        height={size}
+        className={`${className} transition-opacity duration-200`}
+        onError={handleError}
+        priority={priority}
+        loading={priority ? 'eager' : 'lazy'}
+        unoptimized={imageSrc.includes('yt3.ggpht.com')}
+      />
+    </div>
   )
 }

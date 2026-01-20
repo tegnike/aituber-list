@@ -1,7 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
-import { useVirtualizer } from '@tanstack/react-virtual'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChevronDown } from "lucide-react"
@@ -23,8 +22,7 @@ import type { AITuber, DateFilter, SubscriberFilter, SortOrder, ViewMode } from 
 // Components
 import { FilterPanel } from './FilterPanel'
 import { SortControls } from './SortControls'
-import { AituberCard } from './AituberCard'
-import { AituberListItem } from './AituberListItem'
+import { VirtualizedList } from './VirtualizedList'
 
 // Hooks
 import { useFavorites } from '@/hooks/useFavorites'
@@ -55,11 +53,6 @@ const aitubers: AITuber[] = aituberData.aitubers
 // 全てのタグを抽出
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
 
-// Constants for virtual scroll
-const CARD_HEIGHT = 520 // Approximate height of AituberCard
-const LIST_ITEM_HEIGHT = 60 // Approximate height of AituberListItem
-const GAP = 16
-
 export function AituberList() {
   const { locale, t } = useLanguage()
 
@@ -88,11 +81,7 @@ export function AituberList() {
   // Favorites hook
   const { favorites, toggleFavorite, isFavorite } = useFavorites()
 
-  // Virtual scroll ref
-  const parentRef = useRef<HTMLDivElement>(null)
-
-  // Accessibility: results ref and announcement state
-  const resultsRef = useRef<HTMLDivElement>(null)
+  // Accessibility: announcement state
   const prevFilteredCountRef = useRef<number>(0)
   const [announcement, setAnnouncement] = useState('')
 
@@ -198,17 +187,8 @@ export function AituberList() {
   // Sorting hook
   const { sortedAITubers } = useAituberSort(filteredAITubers, sortOrder)
 
-  // Accessibility: フィルター結果変更時にフォーカスを移動
-  // ただし、入力フォームにフォーカスがある場合はスキップ
+  // Accessibility: フィルター結果変更時のカウント追跡
   useEffect(() => {
-    const activeElement = document.activeElement
-    const isInputFocused = activeElement instanceof HTMLInputElement ||
-                           activeElement instanceof HTMLTextAreaElement ||
-                           activeElement instanceof HTMLSelectElement
-
-    if (!isInputFocused && prevFilteredCountRef.current !== 0 && prevFilteredCountRef.current !== filteredAITubers.length) {
-      resultsRef.current?.focus({ preventScroll: true })
-    }
     prevFilteredCountRef.current = filteredAITubers.length
   }, [filteredAITubers.length])
 
@@ -219,32 +199,6 @@ export function AituberList() {
     }, 500)
     return () => clearTimeout(timer)
   }, [filteredAITubers.length, t])
-
-  // Calculate row count for virtual scroll
-  const rowCount = useMemo(() => {
-    if (viewMode === 'list') {
-      return sortedAITubers.length
-    }
-    return Math.ceil(sortedAITubers.length / columns)
-  }, [sortedAITubers.length, columns, viewMode])
-
-  // Virtual scroll for grid/list
-  const rowVirtualizer = useVirtualizer({
-    count: rowCount,
-    getScrollElement: () => parentRef.current,
-    estimateSize: () => viewMode === 'list' ? LIST_ITEM_HEIGHT + GAP : CARD_HEIGHT + GAP,
-    overscan: 3,
-  })
-
-  // Get items for a specific row
-  const getRowItems = useCallback((rowIndex: number): AITuber[] => {
-    if (viewMode === 'list') {
-      return [sortedAITubers[rowIndex]]
-    }
-    const start = rowIndex * columns
-    const end = Math.min(start + columns, sortedAITubers.length)
-    return sortedAITubers.slice(start, end)
-  }, [sortedAITubers, columns, viewMode])
 
   // Handlers
   const toggleTag = useCallback((tag: string) => {
@@ -398,82 +352,20 @@ export function AituberList() {
       </div>
 
       {/* AITuber List/Grid with Virtual Scroll */}
-      <div
-        ref={parentRef}
-        className="h-[calc(100vh-200px)] overflow-auto"
-        style={{ contain: 'strict' }}
-      >
-        <div
-          ref={resultsRef}
-          tabIndex={-1}
-          aria-label={t('a11y.searchResults')}
-          className="outline-none"
-          style={{
-            height: `${rowVirtualizer.getTotalSize()}px`,
-            width: '100%',
-            position: 'relative',
-          }}
-        >
-          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
-            const rowItems = getRowItems(virtualRow.index)
-
-            return (
-              <div
-                key={virtualRow.key}
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: `${virtualRow.size}px`,
-                  transform: `translateY(${virtualRow.start}px)`,
-                }}
-              >
-                {viewMode === 'list' ? (
-                  <div className="flex flex-col gap-2 pb-4">
-                    {rowItems.map((aituber) => (
-                      <AituberListItem
-                        key={aituber.youtubeChannelID}
-                        aituber={aituber}
-                        selectedTags={selectedTags}
-                        onTagSelect={handleTagSelect}
-                        isFavorite={isFavorite(aituber.youtubeChannelID)}
-                        onFavoriteToggle={() => toggleFavorite(aituber.youtubeChannelID)}
-                        locale={locale}
-                        t={t}
-                        priority={virtualRow.index < 12}
-                        searchTerm={nameFilter}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <div
-                    className="grid gap-4 pb-4"
-                    style={{
-                      gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-                    }}
-                  >
-                    {rowItems.map((aituber) => (
-                      <AituberCard
-                        key={aituber.youtubeChannelID}
-                        aituber={aituber}
-                        selectedTags={selectedTags}
-                        onTagSelect={handleTagSelect}
-                        isFavorite={isFavorite(aituber.youtubeChannelID)}
-                        onFavoriteToggle={() => toggleFavorite(aituber.youtubeChannelID)}
-                        locale={locale}
-                        t={t}
-                        priority={virtualRow.index < 3}
-                        searchTerm={nameFilter}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-      </div>
+      <VirtualizedList
+        key={viewMode}
+        sortedAITubers={sortedAITubers}
+        viewMode={viewMode}
+        columns={columns}
+        selectedTags={selectedTags}
+        onTagSelect={handleTagSelect}
+        isFavorite={isFavorite}
+        onFavoriteToggle={toggleFavorite}
+        locale={locale}
+        t={t}
+        nameFilter={nameFilter}
+        resultsLabel={t('a11y.searchResults')}
+      />
 
       {/* Scroll to top button */}
       {showScrollTop && (
