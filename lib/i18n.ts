@@ -20,8 +20,8 @@ export const translations = {
     'filter.title': 'フィルター',
     'filter.activeCount': '{count}個のフィルターが有効',
     'filter.showCount': '{filtered} / {total} 件表示',
-    'filter.searchByName': '名前で検索',
-    'filter.searchPlaceholder': 'AITuber名を入力...',
+    'filter.searchByName': '名前・説明で検索',
+    'filter.searchPlaceholder': 'AITuber名または説明を入力...',
     'filter.tags': 'タグ',
     'filter.searchCondition': '検索条件：',
     'filter.tagDescription': 'タグの説明を表示',
@@ -29,6 +29,7 @@ export const translations = {
     'filter.lastUpdated': '最終更新日',
     'filter.subscriberCount': '登録者数',
     'filter.all': 'すべて',
+    'filter.reset': 'リセット',
     
     // Date filters
     'date.all': '全期間',
@@ -130,8 +131,8 @@ export const translations = {
     'filter.title': 'Filters',
     'filter.activeCount': '{count} filters active',
     'filter.showCount': 'Showing {filtered} / {total}',
-    'filter.searchByName': 'Search by name',
-    'filter.searchPlaceholder': 'Enter AITuber name...',
+    'filter.searchByName': 'Search by name or description',
+    'filter.searchPlaceholder': 'Enter AITuber name or description...',
     'filter.tags': 'Tags',
     'filter.searchCondition': 'Search condition:',
     'filter.tagDescription': 'Show tag descriptions',
@@ -139,7 +140,8 @@ export const translations = {
     'filter.lastUpdated': 'Last updated',
     'filter.subscriberCount': 'Subscriber count',
     'filter.all': 'All',
-    
+    'filter.reset': 'Reset',
+
     // Date filters
     'date.all': 'All time',
     'date.1month': 'Within 1 month',

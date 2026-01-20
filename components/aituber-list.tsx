@@ -4,7 +4,8 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { Youtube, Twitter, Calendar, ChevronDown, Heart, LayoutGrid, List, ArrowUpDown } from "lucide-react"
+import { Calendar, ChevronDown, Heart, LayoutGrid, List, ArrowUpDown, RotateCcw } from "lucide-react"
+import { YoutubeIcon, XIcon } from "@/components/icons"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { LanguageToggle } from "@/components/ui/language-toggle"
 import { useLanguage } from "@/contexts/LanguageContext"
@@ -158,9 +159,11 @@ const AITuberImage = ({
 
   const imageSrc = imgSrc.startsWith('http')
     ? imgSrc
-    : imgSrc
-      ? `/images/aitubers/${imgSrc}`
-      : FALLBACK_IMAGE;
+    : imgSrc.startsWith('/')
+      ? imgSrc
+      : imgSrc
+        ? `/images/aitubers/${imgSrc}`
+        : FALLBACK_IMAGE;
 
   return (
     <Image
@@ -367,6 +370,18 @@ export function AituberList() {
     })
   }
 
+  // 全フィルターリセット
+  const resetAllFilters = () => {
+    setSelectedTags([])
+    setIsAndCondition(false)
+    setSelectedDateFilter('all')
+    setSelectedSubscriberFilter(null)
+    setNameFilter('')
+    setShowUpcomingOnly(false)
+    setShowFavoritesOnly(false)
+    setCurrentPage(1)
+  }
+
   // 現在のタブに該当するAITuberをフィルタリング
   const filteredAITubers = useMemo(() => {
     return aitubers.filter(aituber =>
@@ -378,7 +393,9 @@ export function AituberList() {
       )) &&
       (!selectedSubscriberFilter ||
         aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
-      (nameFilter === '' || aituber.name.toLowerCase().includes(nameFilter.toLowerCase())) &&
+      (nameFilter === '' ||
+        aituber.name.toLowerCase().includes(nameFilter.toLowerCase()) ||
+        aituber.description.toLowerCase().includes(nameFilter.toLowerCase())) &&
       (!showUpcomingOnly || aituber.isUpcoming) &&
       (!showFavoritesOnly || favorites.includes(aituber.youtubeChannelID))
     )
@@ -554,6 +571,20 @@ export function AituberList() {
                     <Badge variant="secondary">
                       {t('filter.activeCount', { count: activeFilterCount })}
                     </Badge>
+                  )}
+                  {activeFilterCount > 0 && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        resetAllFilters()
+                      }}
+                      className="h-7 px-2 text-xs"
+                    >
+                      <RotateCcw className="w-3 h-3 mr-1" />
+                      {t('filter.reset')}
+                    </Button>
                   )}
                 </CardTitle>
                 <div className="flex items-center gap-2">
@@ -842,7 +873,7 @@ export function AituberList() {
                     className="shrink-0 p-1 sm:p-1.5 rounded-full hover:bg-muted transition-colors"
                     aria-label={t('card.latestVideo', { name: aituber.name })}
                   >
-                    <Youtube className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 hover:text-red-600" />
+                    <YoutubeIcon className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 hover:text-red-600" />
                   </a>
                 )}
 
@@ -947,7 +978,7 @@ export function AituberList() {
                   {aituber.youtubeURL && (
                     <Button variant="outline" size="sm" asChild>
                       <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
-                        <Youtube className="w-4 h-4 mr-2" />
+                        <YoutubeIcon className="w-4 h-4 mr-2" />
                         YouTube
                       </a>
                     </Button>
@@ -955,8 +986,8 @@ export function AituberList() {
                   {aituber.twitterID && (
                     <Button variant="outline" size="sm" asChild>
                       <a href={`https://twitter.com/${aituber.twitterID}`} target="_blank" rel="noopener noreferrer">
-                        <Twitter className="w-4 h-4 mr-2" />
-                        Twitter
+                        <XIcon className="w-4 h-4 mr-2" />
+                        X
                       </a>
                     </Button>
                   )}
