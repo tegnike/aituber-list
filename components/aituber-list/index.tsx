@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
+import { useVirtualizer } from '@tanstack/react-virtual'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChevronDown } from "lucide-react"
@@ -28,7 +29,6 @@ import { AituberListItem } from './AituberListItem'
 // Hooks
 import { useFavorites } from '@/hooks/useFavorites'
 import { useUrlState } from '@/hooks/useUrlState'
-import { useInfiniteScroll } from '@/hooks/useInfiniteScroll'
 import { useAituberFilters } from '@/hooks/useAituberFilters'
 import { useAituberSort } from '@/hooks/useAituberSort'
 
@@ -55,6 +55,11 @@ const aitubers: AITuber[] = aituberData.aitubers
 // 全てのタグを抽出
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
 
+// Constants for virtual scroll
+const CARD_HEIGHT = 520 // Approximate height of AituberCard
+const LIST_ITEM_HEIGHT = 60 // Approximate height of AituberListItem
+const GAP = 16
+
 export function AituberList() {
   const { locale, t } = useLanguage()
 
@@ -73,11 +78,48 @@ export function AituberList() {
   // UI states
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [isOverviewOpen, setIsOverviewOpen] = useState(false)
-  const [sortOrder, setSortOrder] = useState<SortOrder>('subscribers')
+  const [sortOrder, setSortOrder] = useState<SortOrder>('latest')
   const [viewMode, setViewMode] = useState<ViewMode>('grid')
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  // Column count for grid
+  const [columns, setColumns] = useState(4)
 
   // Favorites hook
   const { favorites, toggleFavorite, isFavorite } = useFavorites()
+
+  // Virtual scroll ref
+  const parentRef = useRef<HTMLDivElement>(null)
+
+  // Update columns based on window size
+  useEffect(() => {
+    const updateColumns = () => {
+      const width = window.innerWidth
+      if (width < 640) {
+        setColumns(1)
+      } else if (width < 1024) {
+        setColumns(2)
+      } else if (width < 1280) {
+        setColumns(3)
+      } else {
+        setColumns(4)
+      }
+    }
+
+    updateColumns()
+    window.addEventListener('resize', updateColumns)
+    return () => window.removeEventListener('resize', updateColumns)
+  }, [])
+
+  // Scroll top button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 200)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Initialize from URL state
   useEffect(() => {
@@ -151,36 +193,44 @@ export function AituberList() {
   // Sorting hook
   const { sortedAITubers } = useAituberSort(filteredAITubers, sortOrder)
 
-  // Infinite scroll hook
-  const {
-    displayedItems: displayedAITubers,
-    loadMoreRef,
-    isLoading,
-    hasMore,
-    showScrollTop,
-    scrollToTop,
-    resetPage
-  } = useInfiniteScroll(sortedAITubers)
+  // Calculate row count for virtual scroll
+  const rowCount = useMemo(() => {
+    if (viewMode === 'list') {
+      return sortedAITubers.length
+    }
+    return Math.ceil(sortedAITubers.length / columns)
+  }, [sortedAITubers.length, columns, viewMode])
 
-  // Reset page when filters change
-  useEffect(() => {
-    resetPage()
-  }, [selectedDateFilter, selectedSubscriberFilter, nameFilter, showUpcomingOnly, showFavoritesOnly, sortOrder, resetPage])
+  // Virtual scroll for grid/list
+  const rowVirtualizer = useVirtualizer({
+    count: rowCount,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => viewMode === 'list' ? LIST_ITEM_HEIGHT + GAP : CARD_HEIGHT + GAP,
+    overscan: 3,
+  })
+
+  // Get items for a specific row
+  const getRowItems = useCallback((rowIndex: number): AITuber[] => {
+    if (viewMode === 'list') {
+      return [sortedAITubers[rowIndex]]
+    }
+    const start = rowIndex * columns
+    const end = Math.min(start + columns, sortedAITubers.length)
+    return sortedAITubers.slice(start, end)
+  }, [sortedAITubers, columns, viewMode])
 
   // Handlers
   const toggleTag = useCallback((tag: string) => {
     setSelectedTags(prev =>
       prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
     )
-    resetPage()
-  }, [resetPage])
+  }, [])
 
   const handleTagSelect = useCallback((tag: string) => {
     setSelectedTags([tag])
     setIsAndCondition(false)
-    resetPage()
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [resetPage])
+  }, [])
 
   const toggleViewMode = useCallback(() => {
     setViewMode(prev => {
@@ -198,8 +248,11 @@ export function AituberList() {
     setNameFilter('')
     setShowUpcomingOnly(false)
     setShowFavoritesOnly(false)
-    resetPage()
-  }, [resetPage])
+  }, [])
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   return (
     <main id="main-content" className="container mx-auto px-2 sm:px-4 py-4">
@@ -312,60 +365,79 @@ export function AituberList() {
         t={t}
       />
 
-      {/* AITuber List/Grid */}
-      {viewMode === 'list' ? (
-        <div className="flex flex-col gap-2">
-          {displayedAITubers.map((aituber, index) => (
-            <AituberListItem
-              key={index}
-              aituber={aituber}
-              selectedTags={selectedTags}
-              onTagSelect={handleTagSelect}
-              isFavorite={isFavorite(aituber.youtubeChannelID)}
-              onFavoriteToggle={() => toggleFavorite(aituber.youtubeChannelID)}
-              locale={locale}
-              t={t}
-              priority={index < 12}
-              searchTerm={nameFilter}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {displayedAITubers.map((aituber, index) => (
-            <AituberCard
-              key={index}
-              aituber={aituber}
-              selectedTags={selectedTags}
-              onTagSelect={handleTagSelect}
-              isFavorite={isFavorite(aituber.youtubeChannelID)}
-              onFavoriteToggle={() => toggleFavorite(aituber.youtubeChannelID)}
-              locale={locale}
-              t={t}
-              priority={index < 12}
-              searchTerm={nameFilter}
-            />
-          ))}
-        </div>
-      )}
-
-      {/* Loading indicator and Intersection Observer target */}
-      {hasMore && (
+      {/* AITuber List/Grid with Virtual Scroll */}
+      <div
+        ref={parentRef}
+        className="h-[calc(100vh-200px)] overflow-auto"
+        style={{ contain: 'strict' }}
+      >
         <div
-          ref={loadMoreRef}
-          className="mt-8 flex justify-center items-center py-4"
+          style={{
+            height: `${rowVirtualizer.getTotalSize()}px`,
+            width: '100%',
+            position: 'relative',
+          }}
         >
-          {isLoading ? (
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-            </div>
-          ) : (
-            <div className="text-sm text-muted-foreground">{t('loading.scrollMore')}</div>
-          )}
+          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+            const rowItems = getRowItems(virtualRow.index)
+
+            return (
+              <div
+                key={virtualRow.key}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: `${virtualRow.size}px`,
+                  transform: `translateY(${virtualRow.start}px)`,
+                }}
+              >
+                {viewMode === 'list' ? (
+                  <div className="flex flex-col gap-2 pb-4">
+                    {rowItems.map((aituber) => (
+                      <AituberListItem
+                        key={aituber.youtubeChannelID}
+                        aituber={aituber}
+                        selectedTags={selectedTags}
+                        onTagSelect={handleTagSelect}
+                        isFavorite={isFavorite(aituber.youtubeChannelID)}
+                        onFavoriteToggle={() => toggleFavorite(aituber.youtubeChannelID)}
+                        locale={locale}
+                        t={t}
+                        priority={virtualRow.index < 12}
+                        searchTerm={nameFilter}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div
+                    className="grid gap-4 pb-4"
+                    style={{
+                      gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+                    }}
+                  >
+                    {rowItems.map((aituber) => (
+                      <AituberCard
+                        key={aituber.youtubeChannelID}
+                        aituber={aituber}
+                        selectedTags={selectedTags}
+                        onTagSelect={handleTagSelect}
+                        isFavorite={isFavorite(aituber.youtubeChannelID)}
+                        onFavoriteToggle={() => toggleFavorite(aituber.youtubeChannelID)}
+                        locale={locale}
+                        t={t}
+                        priority={virtualRow.index < 3}
+                        searchTerm={nameFilter}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
-      )}
+      </div>
 
       {/* Scroll to top button */}
       {showScrollTop && (

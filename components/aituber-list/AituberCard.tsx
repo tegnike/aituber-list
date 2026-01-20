@@ -1,5 +1,6 @@
 'use client'
 
+import { memo } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
@@ -29,7 +30,7 @@ interface AituberCardProps {
   searchTerm?: string
 }
 
-export function AituberCard({
+export const AituberCard = memo(function AituberCard({
   aituber,
   selectedTags,
   onTagSelect,
@@ -167,4 +168,4 @@ export function AituberCard({
       </CardFooter>
     </Card>
   )
-}
+})

@@ -1,5 +1,6 @@
 'use client'
 
+import { memo } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Calendar, Heart } from "lucide-react"
@@ -21,7 +22,7 @@ interface AituberListItemProps {
   searchTerm?: string
 }
 
-export function AituberListItem({
+export const AituberListItem = memo(function AituberListItem({
   aituber,
   selectedTags,
   onTagSelect,
@@ -126,4 +127,4 @@ export function AituberListItem({
       </div>
     </Card>
   )
-}
+})
