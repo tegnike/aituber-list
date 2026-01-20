@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { Youtube, Twitter, Calendar, ChevronDown } from "lucide-react"
+import { Youtube, Twitter, Calendar, ChevronDown, Heart, LayoutGrid, List, ArrowUpDown } from "lucide-react"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { LanguageToggle } from "@/components/ui/language-toggle"
 import { useLanguage } from "@/contexts/LanguageContext"
@@ -12,6 +12,7 @@ import { formatDate, formatSubscriberCount, getTagDescription, getTagName } from
 import Image from "next/image"
 import aituberData from '../app/data/aitubers.json'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
   Tooltip,
   TooltipContent,
@@ -46,6 +47,12 @@ type DateFilter = 'all' | '1month' | '3months' | '6months' | '1year' | 'older'
 
 // 登録者数フィルターの型定義
 type SubscriberFilter = '100' | '500' | '1000' | '10000'
+
+// 並び替えの型定義
+type SortOrder = 'subscribers' | 'latest' | 'name' | 'random'
+
+// 表示モードの型定義
+type ViewMode = 'grid' | 'list'
 
 // 登録者数フィルターの閾値
 const SUBSCRIBER_FILTER_LABELS: Record<SubscriberFilter, { threshold: number }> = {
@@ -118,6 +125,55 @@ const styles = `
   }
 `;
 
+// 代替画像のパス
+const FALLBACK_IMAGE = '/images/preparing-icon.png';
+
+// AITuberImage component with fallback support
+const AITuberImage = ({
+  src,
+  alt,
+  size = 40,
+  className = ''
+}: {
+  src: string;
+  alt: string;
+  size?: number;
+  className?: string;
+}) => {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [hasError, setHasError] = useState(false);
+
+  // srcが変更されたらリセット
+  useEffect(() => {
+    setImgSrc(src);
+    setHasError(false);
+  }, [src]);
+
+  const handleError = () => {
+    if (!hasError) {
+      setHasError(true);
+      setImgSrc(FALLBACK_IMAGE);
+    }
+  };
+
+  const imageSrc = imgSrc.startsWith('http')
+    ? imgSrc
+    : imgSrc
+      ? `/images/aitubers/${imgSrc}`
+      : FALLBACK_IMAGE;
+
+  return (
+    <Image
+      src={imageSrc}
+      alt={alt}
+      width={size}
+      height={size}
+      className={className}
+      onError={handleError}
+    />
+  );
+};
+
 // LazyVideo component for optimized video loading
 const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -168,6 +224,7 @@ const LazyVideo = ({ videoUrl, title }: { videoUrl: string; title: string }) => 
 
 export function AituberList() {
   const { locale, t } = useLanguage()
+  const pathname = usePathname()
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [isAndCondition, setIsAndCondition] = useState(false)
   const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('all')
@@ -179,21 +236,170 @@ export function AituberList() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [isTagDescriptionOpen, setIsTagDescriptionOpen] = useState(false)
+  const [sortOrder, setSortOrder] = useState<SortOrder>('subscribers')
+  const [showUpcomingOnly, setShowUpcomingOnly] = useState(false)
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
+  const [favorites, setFavorites] = useState<string[]>([])
+  const [viewMode, setViewMode] = useState<ViewMode>('grid')
+  const [isInitialized, setIsInitialized] = useState(false)
   const loadMoreRef = useRef<HTMLDivElement>(null)
   const itemsPerPage = 12
 
+  // URLパラメータからStateを初期化
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const params = new URLSearchParams(window.location.search)
+
+    // タグの復元
+    const tagsParam = params.get('tags')
+    if (tagsParam) {
+      setSelectedTags(tagsParam.split(',').filter(Boolean))
+    }
+
+    // タグ条件の復元
+    const tagModeParam = params.get('tagMode')
+    if (tagModeParam === 'and') {
+      setIsAndCondition(true)
+    }
+
+    // 日付フィルターの復元
+    const dateParam = params.get('date') as DateFilter
+    if (dateParam && ['all', '1month', '3months', '6months', '1year', 'older'].includes(dateParam)) {
+      setSelectedDateFilter(dateParam)
+    }
+
+    // 登録者数フィルターの復元
+    const subscriberParam = params.get('subscriber') as SubscriberFilter
+    if (subscriberParam && ['100', '500', '1000', '10000'].includes(subscriberParam)) {
+      setSelectedSubscriberFilter(subscriberParam)
+    }
+
+    // 検索キーワードの復元
+    const searchParam = params.get('search')
+    if (searchParam) {
+      setNameFilter(searchParam)
+    }
+
+    // ソート順の復元
+    const sortParam = params.get('sort') as SortOrder
+    if (sortParam && ['subscribers', 'latest', 'name', 'random'].includes(sortParam)) {
+      setSortOrder(sortParam)
+    }
+
+    // 配信予定フィルターの復元
+    const upcomingParam = params.get('upcoming')
+    if (upcomingParam === 'true') {
+      setShowUpcomingOnly(true)
+    }
+
+    // フィルターがある場合はフィルターセクションを開く
+    if (tagsParam || dateParam !== 'all' || subscriberParam || searchParam || upcomingParam === 'true') {
+      setIsFiltersOpen(true)
+    }
+
+    setIsInitialized(true)
+  }, [])
+
+  // State変更時にURLを更新
+  useEffect(() => {
+    if (!isInitialized || typeof window === 'undefined') return
+
+    const params = new URLSearchParams()
+
+    if (selectedTags.length > 0) {
+      params.set('tags', selectedTags.join(','))
+    }
+    if (isAndCondition && selectedTags.length > 0) {
+      params.set('tagMode', 'and')
+    }
+    if (selectedDateFilter !== 'all') {
+      params.set('date', selectedDateFilter)
+    }
+    if (selectedSubscriberFilter) {
+      params.set('subscriber', selectedSubscriberFilter)
+    }
+    if (nameFilter) {
+      params.set('search', nameFilter)
+    }
+    if (sortOrder !== 'subscribers') {
+      params.set('sort', sortOrder)
+    }
+    if (showUpcomingOnly) {
+      params.set('upcoming', 'true')
+    }
+
+    const newUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname
+    window.history.replaceState({}, '', newUrl)
+  }, [isInitialized, selectedTags, isAndCondition, selectedDateFilter, selectedSubscriberFilter, nameFilter, sortOrder, showUpcomingOnly, pathname])
+
+  // LocalStorageからお気に入りと表示モードを読み込む
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem('aituber-favorites')
+    if (savedFavorites) {
+      setFavorites(JSON.parse(savedFavorites))
+    }
+    const savedViewMode = localStorage.getItem('aituber-view-mode') as ViewMode
+    if (savedViewMode) {
+      setViewMode(savedViewMode)
+    }
+  }, [])
+
+  // お気に入り機能
+  const toggleFavorite = (channelId: string) => {
+    setFavorites(prev => {
+      const newFavorites = prev.includes(channelId)
+        ? prev.filter(id => id !== channelId)
+        : [...prev, channelId]
+      localStorage.setItem('aituber-favorites', JSON.stringify(newFavorites))
+      return newFavorites
+    })
+  }
+
+  const isFavorite = (channelId: string) => favorites.includes(channelId)
+
+  // 表示モード切替
+  const toggleViewMode = () => {
+    setViewMode(prev => {
+      const newMode = prev === 'grid' ? 'list' : 'grid'
+      localStorage.setItem('aituber-view-mode', newMode)
+      return newMode
+    })
+  }
+
   // 現在のタブに該当するAITuberをフィルタリング
-  const filteredAITubers = aitubers.filter(aituber => 
-    isWithinDateRange(aituber.latestVideoDate, selectedDateFilter) &&
-    (selectedTags.length === 0 || 
-    (isAndCondition 
-      ? selectedTags.every(tag => aituber.tags.includes(tag))
-      : selectedTags.some(tag => aituber.tags.includes(tag))
-    )) &&
-    (!selectedSubscriberFilter || 
-      aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
-    (nameFilter === '' || aituber.name.toLowerCase().includes(nameFilter.toLowerCase()))
-  )
+  const filteredAITubers = useMemo(() => {
+    return aitubers.filter(aituber =>
+      isWithinDateRange(aituber.latestVideoDate, selectedDateFilter) &&
+      (selectedTags.length === 0 ||
+      (isAndCondition
+        ? selectedTags.every(tag => aituber.tags.includes(tag))
+        : selectedTags.some(tag => aituber.tags.includes(tag))
+      )) &&
+      (!selectedSubscriberFilter ||
+        aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
+      (nameFilter === '' || aituber.name.toLowerCase().includes(nameFilter.toLowerCase())) &&
+      (!showUpcomingOnly || aituber.isUpcoming) &&
+      (!showFavoritesOnly || favorites.includes(aituber.youtubeChannelID))
+    )
+  }, [selectedDateFilter, selectedTags, isAndCondition, selectedSubscriberFilter, nameFilter, showUpcomingOnly, showFavoritesOnly, favorites])
+
+  // ソートされたAITuber
+  const sortedAITubers = useMemo(() => {
+    const sorted = [...filteredAITubers]
+    switch (sortOrder) {
+      case 'subscribers':
+        return sorted.sort((a, b) => b.youtubeSubscribers - a.youtubeSubscribers)
+      case 'latest':
+        return sorted.sort((a, b) => new Date(b.latestVideoDate).getTime() - new Date(a.latestVideoDate).getTime())
+      case 'name':
+        return sorted.sort((a, b) => a.name.localeCompare(b.name, 'ja'))
+      case 'random':
+        return sorted.sort(() => Math.random() - 0.5)
+      default:
+        return sorted
+    }
+  }, [filteredAITubers, sortOrder])
 
   // インフィニティスクロールの実装
   useEffect(() => {
@@ -202,7 +408,7 @@ export function AituberList() {
         const target = entries[0]
         if (target.isIntersecting && !isLoading) {
           // 次のページがある場合のみページを増やす
-          if (currentPage < Math.ceil(filteredAITubers.length / itemsPerPage)) {
+          if (currentPage < Math.ceil(sortedAITubers.length / itemsPerPage)) {
             setIsLoading(true)
             // 少し遅延を入れてローディング状態を見せる
             setTimeout(() => {
@@ -224,7 +430,7 @@ export function AituberList() {
     }
 
     return () => observer.disconnect()
-  }, [currentPage, filteredAITubers.length, isLoading])
+  }, [currentPage, sortedAITubers.length, isLoading])
 
   // スクロール位置を監視
   useEffect(() => {
@@ -251,16 +457,18 @@ export function AituberList() {
   // フィルター変更時のページリセット
   useEffect(() => {
     setCurrentPage(1)
-  }, [selectedDateFilter, selectedSubscriberFilter, nameFilter])
+  }, [selectedDateFilter, selectedSubscriberFilter, nameFilter, showUpcomingOnly, showFavoritesOnly, sortOrder])
 
   // 表示するAITuberの配列を作成
-  const displayedAITubers = filteredAITubers.slice(0, currentPage * itemsPerPage)
+  const displayedAITubers = sortedAITubers.slice(0, currentPage * itemsPerPage)
 
   // アクティブなフィルターの数を計算
-  const activeFilterCount = (selectedTags.length > 0 ? 1 : 0) + 
-    (selectedSubscriberFilter ? 1 : 0) + 
+  const activeFilterCount = (selectedTags.length > 0 ? 1 : 0) +
+    (selectedSubscriberFilter ? 1 : 0) +
     (nameFilter ? 1 : 0) +
-    (selectedDateFilter !== 'all' ? 1 : 0);
+    (selectedDateFilter !== 'all' ? 1 : 0) +
+    (showUpcomingOnly ? 1 : 0) +
+    (showFavoritesOnly ? 1 : 0);
 
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4">
@@ -485,50 +693,212 @@ export function AituberList() {
                   ))}
                 </div>
               </div>
+
+              {/* その他のフィルター */}
+              <div className="space-y-4">
+                <div className="text-sm font-bold">{t('filter.additionalFilters')}</div>
+                <div className="flex flex-wrap gap-3">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={showUpcomingOnly}
+                      onChange={(e) => setShowUpcomingOnly(e.target.checked)}
+                      className="rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <span className="text-sm">{t('filter.upcomingOnly')}</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={showFavoritesOnly}
+                      onChange={(e) => setShowFavoritesOnly(e.target.checked)}
+                      className="rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <span className="text-sm">{t('filter.favoritesOnly')}</span>
+                  </label>
+                </div>
+              </div>
             </CardContent>
           </CollapsibleContent>
         </Collapsible>
       </Card>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {displayedAITubers.map((aituber, index) => (
-          <Card key={index} className="flex flex-col border-2 dark:border-gray-700">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                {aituber.youtubeURL ? (
-                  <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
-                    <Image
-                      src={aituber.imageUrl.startsWith('http')
-                        ? aituber.imageUrl
-                        : aituber.imageUrl
-                          ? `/images/aitubers/${aituber.imageUrl}`
-                          : '/images/preparing-icon.png'
-                      }
+      {/* ソートと表示モード */}
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <div className="flex items-center gap-2">
+          <ArrowUpDown className="w-4 h-4 text-muted-foreground" />
+          <span className="text-sm font-medium">{t('sort.title')}:</span>
+          <select
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value as SortOrder)}
+            className="text-sm rounded-md border border-input bg-background px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-ring"
+          >
+            <option value="subscribers">{t('sort.subscribers')}</option>
+            <option value="latest">{t('sort.latest')}</option>
+            <option value="name">{t('sort.name')}</option>
+            <option value="random">{t('sort.random')}</option>
+          </select>
+        </div>
+        <div className="flex items-center gap-2">
+          <Button
+            variant={viewMode === 'grid' ? 'secondary' : 'ghost'}
+            size="sm"
+            onClick={() => toggleViewMode()}
+            aria-label={t('view.grid')}
+          >
+            <LayoutGrid className="w-4 h-4" />
+          </Button>
+          <Button
+            variant={viewMode === 'list' ? 'secondary' : 'ghost'}
+            size="sm"
+            onClick={() => toggleViewMode()}
+            aria-label={t('view.list')}
+          >
+            <List className="w-4 h-4" />
+          </Button>
+        </div>
+      </div>
+
+      {viewMode === 'list' ? (
+        /* リスト表示 */
+        <div className="flex flex-col gap-2">
+          {displayedAITubers.map((aituber, index) => (
+            <Card key={index} className="border-2 dark:border-gray-700 overflow-hidden">
+              <div className="flex items-center gap-2 sm:gap-4 p-2 sm:p-3">
+                {/* アイコン */}
+                <div className="shrink-0">
+                  {aituber.youtubeURL ? (
+                    <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
+                      <AITuberImage
+                        src={aituber.imageUrl}
+                        alt={aituber.name}
+                        size={36}
+                        className="rounded-full hover:opacity-80 transition-opacity"
+                      />
+                    </a>
+                  ) : (
+                    <AITuberImage
+                      src={aituber.imageUrl}
                       alt={aituber.name}
-                      width={40}
-                      height={40}
-                      className="rounded-full hover:opacity-80 transition-opacity"
+                      size={36}
+                      className="rounded-full"
                     />
-                  </a>
-                ) : (
-                  <Image
-                    src={aituber.imageUrl.startsWith('http')
-                      ? aituber.imageUrl
-                      : aituber.imageUrl
-                        ? `/images/aitubers/${aituber.imageUrl}`
-                        : '/images/preparing-icon.png'
-                    }
-                    alt={aituber.name}
-                    width={40}
-                    height={40}
-                    className="rounded-full"
-                  />
-                )}
-                <div className="truncate">
+                  )}
+                </div>
+
+                {/* 名前 */}
+                <div className="flex-1 min-w-0 truncate font-medium text-sm sm:text-base">
                   {aituber.name}
                 </div>
-              </CardTitle>
-              <div className="flex flex-wrap gap-1.5">
+
+                {/* タグ */}
+                <div className="hidden lg:flex flex-wrap gap-1 shrink-0 max-w-[200px]">
+                  {aituber.tags.slice(0, 2).map((tag, tagIndex) => (
+                    <Badge
+                      key={tagIndex}
+                      variant={selectedTags.includes(tag) ? "default" : "outline"}
+                      className="cursor-pointer hover:opacity-80 transition-all text-xs py-0.5 px-2"
+                      onClick={() => {
+                        setSelectedTags([tag]);
+                        setIsAndCondition(false);
+                        setCurrentPage(1);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                    >
+                      {getTagName(tag, locale)}
+                    </Badge>
+                  ))}
+                  {aituber.tags.length > 2 && (
+                    <span className="text-xs text-muted-foreground">+{aituber.tags.length - 2}</span>
+                  )}
+                </div>
+
+                {/* 登録者数 */}
+                <div className="hidden sm:block w-20 shrink-0 text-sm text-muted-foreground text-right">
+                  {formatSubscriberCount(aituber.youtubeSubscribers, locale)}
+                </div>
+
+                {/* 最終更新日 */}
+                <div className="hidden md:flex w-24 shrink-0 items-center gap-1 text-sm text-muted-foreground">
+                  <Calendar className="w-3 h-3" />
+                  <span className="truncate">
+                    {aituber.latestVideoDate ? new Date(aituber.latestVideoDate).toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'en-US') : '-'}
+                  </span>
+                </div>
+
+                {/* 配信予定バッジ */}
+                {aituber.isUpcoming && (
+                  <Badge variant="secondary" className="hidden sm:inline-flex bg-blue-100 text-blue-800 text-xs px-1 shrink-0">
+                    {t('card.upcomingStream')}
+                  </Badge>
+                )}
+
+                {/* 最新動画リンク */}
+                {aituber.latestVideoUrl && (
+                  <a
+                    href={aituber.latestVideoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 p-1 sm:p-1.5 rounded-full hover:bg-muted transition-colors"
+                    aria-label={t('card.latestVideo', { name: aituber.name })}
+                  >
+                    <Youtube className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 hover:text-red-600" />
+                  </a>
+                )}
+
+                {/* お気に入りボタン */}
+                <button
+                  onClick={() => toggleFavorite(aituber.youtubeChannelID)}
+                  className="shrink-0 p-1 sm:p-1.5 rounded-full hover:bg-muted transition-colors"
+                  aria-label={isFavorite(aituber.youtubeChannelID) ? t('card.removeFavorite') : t('card.addFavorite')}
+                >
+                  <Heart
+                    className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors ${isFavorite(aituber.youtubeChannelID) ? 'fill-red-500 text-red-500' : 'text-muted-foreground hover:text-red-500'}`}
+                  />
+                </button>
+              </div>
+            </Card>
+          ))}
+        </div>
+      ) : (
+        /* グリッド表示 */
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {displayedAITubers.map((aituber, index) => (
+            <Card key={index} className="flex flex-col border-2 dark:border-gray-700 relative">
+              {/* お気に入りボタン */}
+              <button
+                onClick={() => toggleFavorite(aituber.youtubeChannelID)}
+                className="absolute top-2 right-2 z-10 p-1.5 rounded-full bg-background/80 hover:bg-background transition-colors"
+                aria-label={isFavorite(aituber.youtubeChannelID) ? t('card.removeFavorite') : t('card.addFavorite')}
+              >
+                <Heart
+                  className={`w-5 h-5 transition-colors ${isFavorite(aituber.youtubeChannelID) ? 'fill-red-500 text-red-500' : 'text-muted-foreground hover:text-red-500'}`}
+                />
+              </button>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  {aituber.youtubeURL ? (
+                    <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
+                      <AITuberImage
+                        src={aituber.imageUrl}
+                        alt={aituber.name}
+                        size={40}
+                        className="rounded-full hover:opacity-80 transition-opacity"
+                      />
+                    </a>
+                  ) : (
+                    <AITuberImage
+                      src={aituber.imageUrl}
+                      alt={aituber.name}
+                      size={40}
+                      className="rounded-full"
+                    />
+                  )}
+                  <div className="truncate">
+                    {aituber.name}
+                  </div>
+                </CardTitle>
+                <div className="flex flex-wrap gap-1.5">
                 {aituber.tags.map((tag, tagIndex) => (
                   <TooltipProvider key={tagIndex}>
                     <Tooltip>
@@ -620,12 +990,13 @@ export function AituberList() {
                 ) : ''}
               </div>
             </CardFooter>
-          </Card>
-        ))}
-      </div>
+            </Card>
+          ))}
+        </div>
+      )}
 
       {/* ローディングインジケーターとIntersection Observer用の要素 */}
-      {displayedAITubers.length < filteredAITubers.length && (
+      {displayedAITubers.length < sortedAITubers.length && (
         <div
           ref={loadMoreRef}
           className="mt-8 flex justify-center items-center py-4"

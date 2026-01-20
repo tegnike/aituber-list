@@ -87,6 +87,28 @@ export const translations = {
     'tagName.一部AITuber': '一部AITuber',
     'tagName.AIパートナー': 'AIパートナー',
     'tagName.解説': '解説',
+
+    // Sort options
+    'sort.title': '並び替え',
+    'sort.subscribers': '登録者数順',
+    'sort.latest': '最新動画順',
+    'sort.name': '名前順',
+    'sort.random': 'ランダム',
+
+    // Favorites
+    'filter.favoritesOnly': 'お気に入りのみ',
+    'card.addFavorite': 'お気に入りに追加',
+    'card.removeFavorite': 'お気に入りから削除',
+
+    // Additional filters
+    'filter.additionalFilters': 'その他',
+
+    // Upcoming filter
+    'filter.upcomingOnly': '配信予定のみ',
+
+    // View mode
+    'view.grid': 'グリッド表示',
+    'view.list': 'リスト表示',
   },
   
   en: {
@@ -175,6 +197,28 @@ export const translations = {
     'tagName.一部AITuber': 'Partial AITuber',
     'tagName.AIパートナー': 'AI Partner',
     'tagName.解説': 'Explanation',
+
+    // Sort options
+    'sort.title': 'Sort by',
+    'sort.subscribers': 'Subscribers',
+    'sort.latest': 'Latest video',
+    'sort.name': 'Name',
+    'sort.random': 'Random',
+
+    // Favorites
+    'filter.favoritesOnly': 'Favorites only',
+    'card.addFavorite': 'Add to favorites',
+    'card.removeFavorite': 'Remove from favorites',
+
+    // Additional filters
+    'filter.additionalFilters': 'Others',
+
+    // Upcoming filter
+    'filter.upcomingOnly': 'Upcoming only',
+
+    // View mode
+    'view.grid': 'Grid view',
+    'view.list': 'List view',
   }
 } as const
 
