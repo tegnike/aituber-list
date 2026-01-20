@@ -71,7 +71,7 @@ Please output the JSON data in the following format (must be in array format):
 - Twitter ID: tegnike
 - YouTube チャンネルID: UCj94TVhN0op8xZX9r-sTvSA
 - YouTube チャンネルURL: https://www.youtube.com/c/nikechan
-- アイコン画像: nikechan_icon.jpg
+- アイコン画像: nikechan_icon.png
 - YouTube 登録者数：272
 - 最新の動画：アップデートしたのでちゃんと動くか試す配信【AITuberKit】
 - サムネイルURL: https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg
@@ -90,7 +90,7 @@ Please output the JSON data in the following format (must be in array format):
             "twitterID": "tegnike",
             "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
             "youtubeURL": "https://www.youtube.com/c/nikechan",
-            "imageUrl": "nikechan_icon.jpg",
+            "imageUrl": "nikechan_icon.png",
             "youtubeSubscribers": 272,
             "latestVideoTitle": "アップデートしたのでちゃんと動くか試す配信【AITuberKit】",
             "latestVideoThumbnail": "https://i.ytimg.com/vi/RCHDZ7BRTYQ/hqdefault.jpg",

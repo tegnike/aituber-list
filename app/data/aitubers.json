@@ -2,7 +2,7 @@
   "lastUpdated": "2026-01-20T09:11:46.141918+09:00",
   "aitubers": [
     {
-      "name": "nikechan AI VTuber",
+      "name": "ニケちゃん AI VTuber",
       "description": "AIキャラを使っていろいろしてます。",
       "tags": [
         "コメント応答",
@@ -11,7 +11,7 @@
       "twitterID": "tegnike",
       "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
       "youtubeURL": "nikechan",
-      "imageUrl": "nikechan_icon.jpg",
+      "imageUrl": "nikechan_icon.png",
       "youtubeSubscribers": 448,
       "latestVideoTitle": "生成動画AITuberサンプル",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/1aCqyt6aqus/hqdefault.jpg",
