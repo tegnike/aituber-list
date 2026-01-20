@@ -2,20 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aituberlist.net/</loc>
-    <lastmod>2025-01-25</lastmod>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aituberlist.net/terms</loc>
-    <lastmod>2025-01-25</lastmod>
+    <loc>https://aituberlist.net/terms/</loc>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://aituberlist.net/privacy</loc>
-    <lastmod>2025-01-25</lastmod>
+    <loc>https://aituberlist.net/privacy/</loc>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aituberlist.net/?tags=%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E5%BF%9C%E7%AD%94</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aituberlist.net/?tags=%E8%A7%A3%E8%AA%AC</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aituberlist.net/?tags=%E3%82%B2%E3%83%BC%E3%83%A0%E5%AE%9F%E6%B3%81</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aituberlist.net/?tags=%E4%B8%80%E9%83%A8AITuber</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aituberlist.net/?tags=%E8%A4%87%E6%95%B0%E3%82%AD%E3%83%A3%E3%83%A9</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aituberlist.net/?tags=%E6%AD%8C%E5%94%B1%E3%81%82%E3%82%8A</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aituberlist.net/?tags=%E6%B5%B7%E5%A4%96</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aituberlist.net/?tags=AI%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -11,6 +11,15 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
+// localeからHTML lang属性へのマッピング（HTML標準に準拠）
+const localeToHtmlLang: Record<Locale, string> = {
+  'ja': 'ja',
+  'en': 'en',
+  'zh-CN': 'zh-Hans',
+  'zh-TW': 'zh-Hant',
+  'ko': 'ko'
+}
+
 export const useLanguage = () => {
   const context = useContext(LanguageContext)
   if (context === undefined) {
@@ -39,18 +48,20 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     }
   }, [])
 
+  // locale変更時にHTMLのlang属性を更新
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = localeToHtmlLang[locale]
+    }
+  }, [locale])
+
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale)
-    
+
     try {
       localStorage.setItem('locale', newLocale)
     } catch (error) {
       console.warn('Failed to save locale to localStorage:', error)
-    }
-    
-    // HTMLのlang属性を更新（useEffect内で実行することを検討）
-    if (typeof document !== 'undefined') {
-      document.documentElement.lang = newLocale
     }
   }
 

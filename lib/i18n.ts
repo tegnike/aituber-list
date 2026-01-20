@@ -113,8 +113,10 @@ export const translations = {
 
     // Accessibility
     'a11y.skipToMain': 'メインコンテンツへスキップ',
+    'a11y.searchResults': '検索結果',
+    'a11y.resultsAnnounce': '{count}件のAITuberを表示中',
   },
-  
+
   en: {
     // Header
     'site.title': 'AITuberList',
@@ -227,6 +229,8 @@ export const translations = {
 
     // Accessibility
     'a11y.skipToMain': 'Skip to main content',
+    'a11y.searchResults': 'Search results',
+    'a11y.resultsAnnounce': 'Showing {count} AITubers',
   },
 
   'zh-CN': {
@@ -341,6 +345,8 @@ export const translations = {
 
     // Accessibility
     'a11y.skipToMain': '跳转到主内容',
+    'a11y.searchResults': '搜索结果',
+    'a11y.resultsAnnounce': '正在显示{count}位AITuber',
   },
 
   'zh-TW': {
@@ -455,6 +461,8 @@ export const translations = {
 
     // Accessibility
     'a11y.skipToMain': '跳至主內容',
+    'a11y.searchResults': '搜尋結果',
+    'a11y.resultsAnnounce': '正在顯示{count}位AITuber',
   },
 
   ko: {
@@ -569,6 +577,8 @@ export const translations = {
 
     // Accessibility
     'a11y.skipToMain': '메인 콘텐츠로 건너뛰기',
+    'a11y.searchResults': '검색 결과',
+    'a11y.resultsAnnounce': '{count}명의 AITuber를 표시 중',
   }
 } as const
 

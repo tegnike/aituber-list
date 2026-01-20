@@ -91,6 +91,11 @@ export function AituberList() {
   // Virtual scroll ref
   const parentRef = useRef<HTMLDivElement>(null)
 
+  // Accessibility: results ref and announcement state
+  const resultsRef = useRef<HTMLDivElement>(null)
+  const prevFilteredCountRef = useRef<number>(0)
+  const [announcement, setAnnouncement] = useState('')
+
   // Update columns based on window size
   useEffect(() => {
     const updateColumns = () => {
@@ -192,6 +197,28 @@ export function AituberList() {
 
   // Sorting hook
   const { sortedAITubers } = useAituberSort(filteredAITubers, sortOrder)
+
+  // Accessibility: フィルター結果変更時にフォーカスを移動
+  // ただし、入力フォームにフォーカスがある場合はスキップ
+  useEffect(() => {
+    const activeElement = document.activeElement
+    const isInputFocused = activeElement instanceof HTMLInputElement ||
+                           activeElement instanceof HTMLTextAreaElement ||
+                           activeElement instanceof HTMLSelectElement
+
+    if (!isInputFocused && prevFilteredCountRef.current !== 0 && prevFilteredCountRef.current !== filteredAITubers.length) {
+      resultsRef.current?.focus({ preventScroll: true })
+    }
+    prevFilteredCountRef.current = filteredAITubers.length
+  }, [filteredAITubers.length])
+
+  // Accessibility: aria-liveでスクリーンリーダーにアナウンス（デバウンス付き）
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnnouncement(t('a11y.resultsAnnounce', { count: filteredAITubers.length }))
+    }, 500)
+    return () => clearTimeout(timer)
+  }, [filteredAITubers.length, t])
 
   // Calculate row count for virtual scroll
   const rowCount = useMemo(() => {
@@ -365,6 +392,11 @@ export function AituberList() {
         t={t}
       />
 
+      {/* Accessibility: aria-live region for screen readers */}
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {announcement}
+      </div>
+
       {/* AITuber List/Grid with Virtual Scroll */}
       <div
         ref={parentRef}
@@ -372,6 +404,10 @@ export function AituberList() {
         style={{ contain: 'strict' }}
       >
         <div
+          ref={resultsRef}
+          tabIndex={-1}
+          aria-label={t('a11y.searchResults')}
+          className="outline-none"
           style={{
             height: `${rowVirtualizer.getTotalSize()}px`,
             width: '100%',

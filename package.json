@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run optimize:images && next build",
+    "build": "npm run generate:sitemap && npm run optimize:images && next build",
     "build:only": "next build",
     "start": "next start",
     "lint": "next lint",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.2",

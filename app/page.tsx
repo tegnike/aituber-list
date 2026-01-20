@@ -1,5 +1,30 @@
 import { AituberList } from "@/components/aituber-list/index"
 import { Metadata } from 'next'
+import aituberData from '@/app/data/aitubers.json'
+
+// 上位10件のAITuberを取得（登録者数順）
+const topAitubers = aituberData.aitubers
+  .filter(a => a.youtubeChannelID)
+  .sort((a, b) => b.youtubeSubscribers - a.youtubeSubscribers)
+  .slice(0, 10)
+
+// ItemListスキーマ
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "人気AITuberリスト",
+  "numberOfItems": aituberData.aitubers.length,
+  "itemListElement": topAitubers.map((aituber, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "Person",
+      "name": aituber.name,
+      "description": aituber.description,
+      "url": `https://www.youtube.com/channel/${aituber.youtubeChannelID}`
+    }
+  }))
+}
 
 export const metadata: Metadata = {
   title: 'AITuberList',
@@ -38,6 +63,10 @@ export default function Page() {
             }
           })
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <AituberList />
     </>
