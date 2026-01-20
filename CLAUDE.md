@@ -29,9 +29,18 @@ python scripts/add_aitubers.py     # Add new AITubers to the list
 4. Static site regeneration on data updates
 
 ### Core Components
-- **AituberList Component** (`components/aituber-list.tsx`): Main listing component with filtering, sorting, and display modes
-- **Language Context** (`contexts/LanguageContext.tsx`): Manages Japanese/English translations
-- **i18n System** (`lib/i18n.ts`): Translation strings for UI elements
+- **AituberList Component** (`components/aituber-list/index.tsx`): Main listing component with filtering, sorting, and display modes
+  - Subcomponents: `FilterPanel`, `SortControls`, `AituberCard`, `AituberListItem`, `LazyVideo`, `AITuberImage`
+  - Types defined in `components/aituber-list/types.ts`
+- **Language Context** (`contexts/LanguageContext.tsx`): Manages multi-language support
+- **i18n System** (`lib/i18n.ts`): Translation strings for 5 locales (ja, en, zh-CN, zh-TW, ko)
+
+### Custom Hooks (`hooks/`)
+- `useFavorites`: Manages favorite AITubers with localStorage persistence
+- `useUrlState`: Syncs filter state with URL query parameters
+- `useInfiniteScroll`: Handles pagination with Intersection Observer
+- `useAituberFilters`: Centralizes filtering logic
+- `useAituberSort`: Handles sorting logic with random shuffle support
 
 ### Key Configuration
 - **Static Export**: Site generates static HTML (`output: 'export'` in next.config.mjs)

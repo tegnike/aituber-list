@@ -9,7 +9,16 @@
       "Bash(npm run build:*)",
       "Bash(python3:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Skill(agent-browser)",
+      "Bash(npx agent-browser open https://aituberlist.net/)",
+      "Bash(npx agent-browser:*)",
+      "Bash(file:*)",
+      "Bash(ls:*)",
+      "Bash(git reset:*)",
+      "Bash(git stash:*)",
+      "Bash(git pull:*)",
+      "Bash(npm run build:only:*)"
     ],
     "deny": []
   },
