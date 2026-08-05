@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05T09:26:40.154135+09:00",
+  "lastUpdated": "2026-08-05T20:29:10+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん AI VTuber",
@@ -4525,6 +4525,24 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/iP0dfj59OuM/hqdefault_live.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=iP0dfj59OuM",
       "latestVideoDate": "2023-12-28T18:04:39+09:00",
+      "isUpcoming": false
+    },
+    {
+      "name": "【AItuber】愛乃メルル",
+      "description": "しゃべって、ぷよぷよして、歌う——「ゲームができるAIチューバー」を目指す、個人製作のAItuber「愛乃メルル」のチャンネルです。\n\n雑談配信、ぷよぷよeスポーツ、歌、開発の様子を配信。開発者のアルルナと肉声で会話しながら、ぷよぷよeスポーツのCPU全キャラ撃破を目指しています。\n\nnote: https://note.com/meruru_project",
+      "tags": [
+        "コメント応答",
+        "ゲーム実況"
+      ],
+      "twitterID": "ainomeruru",
+      "youtubeChannelID": "UCvey6Cx37WQSRnH-CNV1l4w",
+      "youtubeURL": "aino_meruru",
+      "imageUrl": "https://yt3.googleusercontent.com/VRjMhyhi_lxA--VYcK5yx5Eel8Tbb5baLvWn6QEMwCDhCoMvf7sL_Q9t4IFQO8zcZSwu6LK_3g=s900-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 8,
+      "latestVideoTitle": "【AItuber】愛乃メルルと開発者、デビュー直前のやりとり",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/nWqRNSYICao/maxresdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=nWqRNSYICao",
+      "latestVideoDate": "2026-08-02T14:55:26+09:00",
       "isUpcoming": false
     }
   ]
