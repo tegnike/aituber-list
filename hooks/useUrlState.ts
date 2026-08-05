@@ -11,6 +11,7 @@ export interface UrlState {
   subscriber: SubscriberFilter | null
   search: string
   sort: SortOrder
+  mainOnly: boolean
   upcoming: boolean
 }
 
@@ -27,6 +28,7 @@ const DEFAULT_STATE: UrlState = {
   subscriber: null,
   search: '',
   sort: 'latest',
+  mainOnly: false,
   upcoming: false
 }
 
@@ -69,6 +71,11 @@ export function useUrlState(): UseUrlStateReturn {
     const sortParam = params.get('sort') as SortOrder
     if (sortParam && ['subscribers', 'latest', 'name', 'random'].includes(sortParam)) {
       state.sort = sortParam
+    }
+
+    const mainOnlyParam = params.get('mainOnly')
+    if (mainOnlyParam === 'true') {
+      state.mainOnly = true
     }
 
     const upcomingParam = params.get('upcoming')
@@ -130,6 +137,14 @@ export function useUrlState(): UseUrlStateReturn {
         params.set('sort', state.sort)
       } else {
         params.delete('sort')
+      }
+    }
+
+    if (state.mainOnly !== undefined) {
+      if (state.mainOnly) {
+        params.set('mainOnly', 'true')
+      } else {
+        params.delete('mainOnly')
       }
     }
 

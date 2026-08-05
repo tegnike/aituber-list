@@ -18,6 +18,7 @@ import aituberData from '@/app/data/aitubers.json'
 
 // Types
 import type { AITuber, DateFilter, SubscriberFilter, SortOrder, ViewMode, TagFilterMode } from './types'
+import { PARTIAL_AITUBER_TAG } from './types'
 
 // Components
 import { FilterPanel } from './FilterPanel'
@@ -52,6 +53,7 @@ const aitubers: AITuber[] = aituberData.aitubers
 
 // 全てのタグを抽出
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
+  .filter(tag => tag !== PARTIAL_AITUBER_TAG)
 
 export function AituberList() {
   const { locale, t } = useLanguage()
@@ -65,6 +67,7 @@ export function AituberList() {
   const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('all')
   const [selectedSubscriberFilter, setSelectedSubscriberFilter] = useState<SubscriberFilter | null>(null)
   const [nameFilter, setNameFilter] = useState('')
+  const [showMainAITubersOnly, setShowMainAITubersOnly] = useState(false)
   const [showUpcomingOnly, setShowUpcomingOnly] = useState(false)
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
 
@@ -124,6 +127,7 @@ export function AituberList() {
     setSelectedDateFilter(initialState.date)
     setSelectedSubscriberFilter(initialState.subscriber)
     setNameFilter(initialState.search)
+    setShowMainAITubersOnly(initialState.mainOnly)
     setSortOrder(initialState.sort)
     setShowUpcomingOnly(initialState.upcoming)
 
@@ -133,6 +137,7 @@ export function AituberList() {
       initialState.date !== 'all' ||
       initialState.subscriber ||
       initialState.search ||
+      initialState.mainOnly ||
       initialState.upcoming
     ) {
       setIsFiltersOpen(true)
@@ -158,6 +163,7 @@ export function AituberList() {
       subscriber: selectedSubscriberFilter,
       search: nameFilter,
       sort: sortOrder,
+      mainOnly: showMainAITubersOnly,
       upcoming: showUpcomingOnly
     })
   }, [
@@ -167,6 +173,7 @@ export function AituberList() {
     selectedDateFilter,
     selectedSubscriberFilter,
     nameFilter,
+    showMainAITubersOnly,
     sortOrder,
     showUpcomingOnly,
     updateUrl
@@ -179,6 +186,7 @@ export function AituberList() {
     selectedDateFilter,
     selectedSubscriberFilter,
     nameFilter,
+    showMainAITubersOnly,
     showUpcomingOnly,
     showFavoritesOnly,
     favorites
@@ -227,6 +235,7 @@ export function AituberList() {
     setSelectedDateFilter('all')
     setSelectedSubscriberFilter(null)
     setNameFilter('')
+    setShowMainAITubersOnly(false)
     setShowUpcomingOnly(false)
     setShowFavoritesOnly(false)
   }, [])
@@ -280,7 +289,6 @@ export function AituberList() {
                 <li>{t('overview.description2')}</li>
                 <li>{t('overview.description3')}</li>
                 <li>{t('overview.description4')}</li>
-                <li>{t('overview.description5')}</li>
               </ul>
             </CardContent>
             <CardContent>
@@ -328,6 +336,8 @@ export function AituberList() {
         onSubscriberFilterChange={setSelectedSubscriberFilter}
         nameFilter={nameFilter}
         onNameFilterChange={setNameFilter}
+        showMainAITubersOnly={showMainAITubersOnly}
+        onMainAITubersOnlyChange={setShowMainAITubersOnly}
         showUpcomingOnly={showUpcomingOnly}
         onUpcomingChange={setShowUpcomingOnly}
         showFavoritesOnly={showFavoritesOnly}

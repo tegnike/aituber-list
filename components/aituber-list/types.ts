@@ -20,6 +20,9 @@ export type SortOrder = 'subscribers' | 'latest' | 'name' | 'random'
 export type ViewMode = 'grid' | 'list'
 export type TagFilterMode = 'or' | 'and' | 'not'
 
+// 一部AITuberは通常のタグ選択肢ではなく、AITuberメイン判定用の特殊分類として扱う
+export const PARTIAL_AITUBER_TAG = '一部AITuber'
+
 export const SUBSCRIBER_FILTER_LABELS: Record<SubscriberFilter, { threshold: number }> = {
   '100': { threshold: 100 },
   '500': { threshold: 500 },

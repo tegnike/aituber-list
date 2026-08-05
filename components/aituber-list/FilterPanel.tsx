@@ -32,6 +32,8 @@ interface FilterPanelProps {
   onSubscriberFilterChange: (filter: SubscriberFilter | null) => void
   nameFilter: string
   onNameFilterChange: (value: string) => void
+  showMainAITubersOnly: boolean
+  onMainAITubersOnlyChange: (value: boolean) => void
   showUpcomingOnly: boolean
   onUpcomingChange: (value: boolean) => void
   showFavoritesOnly: boolean
@@ -67,6 +69,8 @@ export function FilterPanel({
   onSubscriberFilterChange,
   nameFilter,
   onNameFilterChange,
+  showMainAITubersOnly,
+  onMainAITubersOnlyChange,
   showUpcomingOnly,
   onUpcomingChange,
   showFavoritesOnly,
@@ -264,6 +268,15 @@ export function FilterPanel({
             <div className="space-y-4">
               <div className="text-sm font-bold">{t('filter.additionalFilters')}</div>
               <div className="flex flex-wrap gap-3">
+                <label className="flex cursor-pointer items-center gap-2 rounded-xl border bg-muted/30 px-3 py-2.5 transition-colors hover:bg-muted/60">
+                  <input
+                    type="checkbox"
+                    checked={showMainAITubersOnly}
+                    onChange={(e) => onMainAITubersOnlyChange(e.target.checked)}
+                    className="rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <span className="text-sm">{t('filter.mainAITubersOnly')}</span>
+                </label>
                 <label className="flex cursor-pointer items-center gap-2 rounded-xl border bg-muted/30 px-3 py-2.5 transition-colors hover:bg-muted/60">
                   <input
                     type="checkbox"

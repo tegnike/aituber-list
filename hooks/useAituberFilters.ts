@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react'
 import type { AITuber, DateFilter, SubscriberFilter, TagFilterMode } from '@/components/aituber-list/types'
-import { isWithinDateRange, SUBSCRIBER_FILTER_LABELS } from '@/components/aituber-list/types'
+import { isWithinDateRange, PARTIAL_AITUBER_TAG, SUBSCRIBER_FILTER_LABELS } from '@/components/aituber-list/types'
 
 export interface FilterOptions {
   selectedTags: string[]
@@ -10,6 +10,7 @@ export interface FilterOptions {
   selectedDateFilter: DateFilter
   selectedSubscriberFilter: SubscriberFilter | null
   nameFilter: string
+  showMainAITubersOnly: boolean
   showUpcomingOnly: boolean
   showFavoritesOnly: boolean
   favorites: string[]
@@ -30,6 +31,7 @@ export function useAituberFilters(
     selectedDateFilter,
     selectedSubscriberFilter,
     nameFilter,
+    showMainAITubersOnly,
     showUpcomingOnly,
     showFavoritesOnly,
     favorites
@@ -53,6 +55,7 @@ export function useAituberFilters(
     return aitubers.filter(aituber =>
       isWithinDateRange(aituber.latestVideoDate, selectedDateFilter) &&
       matchesTags(aituber) &&
+      (!showMainAITubersOnly || !aituber.tags.includes(PARTIAL_AITUBER_TAG)) &&
       (!selectedSubscriberFilter ||
         aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
       (nameFilter === '' ||
@@ -68,6 +71,7 @@ export function useAituberFilters(
     tagFilterMode,
     selectedSubscriberFilter,
     nameFilter,
+    showMainAITubersOnly,
     showUpcomingOnly,
     showFavoritesOnly,
     favorites
@@ -79,10 +83,11 @@ export function useAituberFilters(
       (selectedSubscriberFilter ? 1 : 0) +
       (nameFilter ? 1 : 0) +
       (selectedDateFilter !== 'all' ? 1 : 0) +
+      (showMainAITubersOnly ? 1 : 0) +
       (showUpcomingOnly ? 1 : 0) +
       (showFavoritesOnly ? 1 : 0)
     )
-  }, [selectedTags, selectedSubscriberFilter, nameFilter, selectedDateFilter, showUpcomingOnly, showFavoritesOnly])
+  }, [selectedTags, selectedSubscriberFilter, nameFilter, selectedDateFilter, showMainAITubersOnly, showUpcomingOnly, showFavoritesOnly])
 
   return {
     filteredAITubers,
