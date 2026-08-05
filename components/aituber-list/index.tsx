@@ -280,6 +280,7 @@ export function AituberList() {
                 <li>{t('overview.description2')}</li>
                 <li>{t('overview.description3')}</li>
                 <li>{t('overview.description4')}</li>
+                <li>{t('overview.description5')}</li>
               </ul>
             </CardContent>
             <CardContent>

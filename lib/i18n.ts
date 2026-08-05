@@ -13,6 +13,7 @@ export const translations = {
     'overview.description2': '1日に2回更新されます。',
     'overview.description3': 'タグの分類は誤っている可能性があります。',
     'overview.description4': 'コンテンツの一つとしてAIキャラクターが登場するチャンネルも含まれています。',
+    'overview.description5': 'タグはAIを使って自動的に付与しています。',
     'overview.contactTitle': 'ご意見・ご要望・不具合報告は開発者のXまでお願いします：',
     'overview.github': 'GitHub リポジトリ',
     
@@ -129,6 +130,7 @@ export const translations = {
     'overview.description2': 'Updated twice a day.',
     'overview.description3': 'Tag classifications may be incorrect.',
     'overview.description4': 'Channels featuring AI characters as part of their content are also included.',
+    'overview.description5': 'Tags are assigned automatically using AI.',
     'overview.contactTitle': 'For feedback, requests, and bug reports, please contact the developer on X:',
     'overview.github': 'GitHub Repository',
     
@@ -245,6 +247,7 @@ export const translations = {
     'overview.description2': '每天更新两次。',
     'overview.description3': '标签分类可能存在错误。',
     'overview.description4': '包含将AI角色作为内容一部分的频道。',
+    'overview.description5': '标签由AI自动分配。',
     'overview.contactTitle': '如有意见、需求或错误报告，请联系开发者的X：',
     'overview.github': 'GitHub 仓库',
 
@@ -361,6 +364,7 @@ export const translations = {
     'overview.description2': '每天更新兩次。',
     'overview.description3': '標籤分類可能有誤。',
     'overview.description4': '包含將AI角色作為內容一部分的頻道。',
+    'overview.description5': '標籤由AI自動分配。',
     'overview.contactTitle': '如有意見、需求或錯誤回報，請聯繫開發者的X：',
     'overview.github': 'GitHub 儲存庫',
 
@@ -477,6 +481,7 @@ export const translations = {
     'overview.description2': '하루에 두 번 업데이트됩니다.',
     'overview.description3': '태그 분류가 잘못되어 있을 수 있습니다.',
     'overview.description4': 'AI 캐릭터가 콘텐츠의 일부로 등장하는 채널도 포함되어 있습니다.',
+    'overview.description5': '태그는 AI를 사용하여 자동으로 부여됩니다.',
     'overview.contactTitle': '의견, 요청, 버그 신고는 개발자 X로 연락주세요:',
     'overview.github': 'GitHub 저장소',
 
