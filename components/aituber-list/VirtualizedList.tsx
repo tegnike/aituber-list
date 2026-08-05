@@ -74,82 +74,86 @@ export function VirtualizedList({
 
   return (
     <div
-      ref={parentRef}
-      className="h-[calc(100vh-9rem)] min-h-[640px] overflow-auto rounded-[1.5rem] border border-border/70 bg-muted/25 p-2 shadow-inner sm:p-3"
-      style={{ contain: 'strict', scrollbarGutter: 'stable' }}
+      className="h-[calc(100vh-9rem)] min-h-[640px] overflow-hidden rounded-[1.5rem] border border-border/70 bg-muted/25 shadow-inner"
     >
       <div
-        ref={resultsRef}
-        tabIndex={-1}
-        aria-label={resultsLabel}
-        className="outline-none"
-        style={{
-          height: `${rowVirtualizer.getTotalSize()}px`,
-          width: '100%',
-          position: 'relative',
-        }}
+        ref={parentRef}
+        className="h-full overflow-x-hidden overflow-y-auto p-2 sm:p-3"
+        style={{ contain: 'strict' }}
       >
-        {rowVirtualizer.getVirtualItems().map((virtualRow) => {
-          const rowItems = getRowItems(virtualRow.index)
+        <div
+          ref={resultsRef}
+          tabIndex={-1}
+          aria-label={resultsLabel}
+          className="outline-none"
+          style={{
+            height: `${rowVirtualizer.getTotalSize()}px`,
+            width: '100%',
+            position: 'relative',
+          }}
+        >
+          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+            const rowItems = getRowItems(virtualRow.index)
 
-          return (
-            <div
-              key={virtualRow.key}
-              data-index={virtualRow.index}
-              ref={rowVirtualizer.measureElement}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                transform: `translateY(${virtualRow.start}px)`,
-              }}
-            >
-              {viewMode === 'list' ? (
-                <div className="pb-2">
-                  {rowItems.map((aituber) => (
-                    <AituberListItem
-                      key={aituber.youtubeChannelID}
-                      aituber={aituber}
-                      selectedTags={selectedTags}
-                      onTagSelect={onTagSelect}
-                      isFavorite={isFavorite(aituber.youtubeChannelID)}
-                      onFavoriteToggle={() => onFavoriteToggle(aituber.youtubeChannelID)}
-                      locale={locale}
-                      t={t}
-                      priority={virtualRow.index < 12}
-                      searchTerm={nameFilter}
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div
-                  className="pb-4"
-                  style={{
-                    display: 'grid',
-                    gap: '16px',
-                    gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-                  }}
-                >
-                  {rowItems.map((aituber) => (
-                    <AituberCard
-                      key={aituber.youtubeChannelID}
-                      aituber={aituber}
-                      selectedTags={selectedTags}
-                      onTagSelect={onTagSelect}
-                      isFavorite={isFavorite(aituber.youtubeChannelID)}
-                      onFavoriteToggle={() => onFavoriteToggle(aituber.youtubeChannelID)}
-                      locale={locale}
-                      t={t}
-                      priority={virtualRow.index < 3}
-                      searchTerm={nameFilter}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          )
-        })}
+            return (
+              <div
+                key={virtualRow.key}
+                data-index={virtualRow.index}
+                ref={rowVirtualizer.measureElement}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  transform: `translateY(${virtualRow.start}px)`,
+                }}
+              >
+                {viewMode === 'list' ? (
+                  <div className="pb-2">
+                    {rowItems.map((aituber) => (
+                      <AituberListItem
+                        key={aituber.youtubeChannelID}
+                        aituber={aituber}
+                        selectedTags={selectedTags}
+                        onTagSelect={onTagSelect}
+                        isFavorite={isFavorite(aituber.youtubeChannelID)}
+                        onFavoriteToggle={() => onFavoriteToggle(aituber.youtubeChannelID)}
+                        locale={locale}
+                        t={t}
+                        priority={virtualRow.index < 12}
+                        searchTerm={nameFilter}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div
+                    className="pb-4"
+                    style={{
+                      display: 'grid',
+                      gap: '16px',
+                      gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+                    }}
+                  >
+                    {rowItems.map((aituber) => (
+                      <AituberCard
+                        key={aituber.youtubeChannelID}
+                        aituber={aituber}
+                        selectedTags={selectedTags}
+                        onTagSelect={onTagSelect}
+                        isFavorite={isFavorite(aituber.youtubeChannelID)}
+                        onFavoriteToggle={() => onFavoriteToggle(aituber.youtubeChannelID)}
+                        locale={locale}
+                        t={t}
+                        priority={virtualRow.index < 3}
+                        searchTerm={nameFilter}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
