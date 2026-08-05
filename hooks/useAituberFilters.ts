@@ -38,17 +38,19 @@ export function useAituberFilters(
   } = options
 
   const filteredAITubers = useMemo(() => {
+    const selectableTags = selectedTags.filter(tag => tag !== PARTIAL_AITUBER_TAG)
+
     const matchesTags = (aituber: AITuber): boolean => {
-      if (selectedTags.length === 0) return true
+      if (selectableTags.length === 0) return true
 
       switch (tagFilterMode) {
         case 'and':
-          return selectedTags.every(tag => aituber.tags.includes(tag))
+          return selectableTags.every(tag => aituber.tags.includes(tag))
         case 'not':
-          return selectedTags.every(tag => !aituber.tags.includes(tag))
+          return selectableTags.every(tag => !aituber.tags.includes(tag))
         case 'or':
         default:
-          return selectedTags.some(tag => aituber.tags.includes(tag))
+          return selectableTags.some(tag => aituber.tags.includes(tag))
       }
     }
 
@@ -79,7 +81,7 @@ export function useAituberFilters(
 
   const activeFilterCount = useMemo(() => {
     return (
-      (selectedTags.length > 0 ? 1 : 0) +
+      (selectedTags.some(tag => tag !== PARTIAL_AITUBER_TAG) ? 1 : 0) +
       (selectedSubscriberFilter ? 1 : 0) +
       (nameFilter ? 1 : 0) +
       (selectedDateFilter !== 'all' ? 1 : 0) +

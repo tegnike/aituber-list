@@ -216,6 +216,8 @@ export function AituberList() {
   }, [])
 
   const handleTagSelect = useCallback((tag: string) => {
+    if (tag === PARTIAL_AITUBER_TAG) return
+
     setSelectedTags([tag])
     setTagFilterMode('or')
     window.scrollTo({ top: 0, behavior: 'smooth' })

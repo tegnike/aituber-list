@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 import type { DateFilter, SubscriberFilter, SortOrder, TagFilterMode } from '@/components/aituber-list/types'
+import { PARTIAL_AITUBER_TAG } from '@/components/aituber-list/types'
 
 export interface UrlState {
   tags: string[]
@@ -45,7 +46,10 @@ export function useUrlState(): UseUrlStateReturn {
 
     const tagsParam = params.get('tags')
     if (tagsParam) {
-      state.tags = tagsParam.split(',').filter(Boolean)
+      state.tags = tagsParam
+        .split(',')
+        .filter(Boolean)
+        .filter(tag => tag !== PARTIAL_AITUBER_TAG)
     }
 
     const tagModeParam = params.get('tagMode') as TagFilterMode
@@ -93,15 +97,17 @@ export function useUrlState(): UseUrlStateReturn {
     const params = new URLSearchParams(window.location.search)
 
     if (state.tags !== undefined) {
-      if (state.tags.length > 0) {
-        params.set('tags', state.tags.join(','))
+      const selectableTags = state.tags.filter(tag => tag !== PARTIAL_AITUBER_TAG)
+      if (selectableTags.length > 0) {
+        params.set('tags', selectableTags.join(','))
       } else {
         params.delete('tags')
       }
     }
 
     if (state.tagMode !== undefined) {
-      if (state.tagMode !== 'or' && state.tags && state.tags.length > 0) {
+      const selectableTags = state.tags?.filter(tag => tag !== PARTIAL_AITUBER_TAG)
+      if (state.tagMode !== 'or' && selectableTags && selectableTags.length > 0) {
         params.set('tagMode', state.tagMode)
       } else {
         params.delete('tagMode')
