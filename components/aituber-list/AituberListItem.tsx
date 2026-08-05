@@ -34,8 +34,8 @@ export const AituberListItem = memo(function AituberListItem({
   searchTerm = ''
 }: AituberListItemProps) {
   return (
-    <Card className="border-2 dark:border-gray-700 overflow-hidden">
-      <div className="flex items-center gap-2 sm:gap-4 p-2 sm:p-3">
+    <Card className="overflow-hidden border-border/70 bg-card/95 shadow-sm transition-all hover:border-violet-300/80 hover:shadow-md dark:hover:border-violet-400/35">
+      <div className="flex items-center gap-2 p-3 sm:gap-4 sm:px-4">
         {/* アイコン */}
         <div className="shrink-0">
           {aituber.youtubeURL ? (
@@ -44,7 +44,7 @@ export const AituberListItem = memo(function AituberListItem({
                 src={aituber.imageUrl}
                 alt={aituber.name}
                 size={36}
-                className="rounded-full hover:opacity-80 transition-opacity"
+                className="rounded-full ring-2 ring-violet-100 ring-offset-2 ring-offset-card transition-opacity hover:opacity-80 dark:ring-violet-400/25"
                 priority={priority}
               />
             </a>
@@ -53,14 +53,14 @@ export const AituberListItem = memo(function AituberListItem({
               src={aituber.imageUrl}
               alt={aituber.name}
               size={36}
-              className="rounded-full"
+              className="rounded-full ring-2 ring-violet-100 ring-offset-2 ring-offset-card dark:ring-violet-400/25"
               priority={priority}
             />
           )}
         </div>
 
         {/* 名前 */}
-        <div className="flex-1 min-w-0 truncate font-medium text-sm sm:text-base">
+        <div className="min-w-0 flex-1 truncate text-sm font-semibold tracking-[-0.01em] sm:text-base">
           <HighlightText text={aituber.name} searchTerm={searchTerm} />
         </div>
 
@@ -70,7 +70,7 @@ export const AituberListItem = memo(function AituberListItem({
             <Badge
               key={tagIndex}
               variant={selectedTags.includes(tag) ? "default" : "outline"}
-              className="cursor-pointer hover:opacity-80 transition-all text-xs py-0.5 px-2"
+              className="cursor-pointer rounded-full px-2 py-0.5 text-xs transition-all hover:border-violet-300 hover:bg-violet-50 dark:hover:bg-violet-400/10"
               onClick={() => onTagSelect(tag)}
             >
               {getTagName(tag, locale)}
@@ -107,7 +107,7 @@ export const AituberListItem = memo(function AituberListItem({
             href={aituber.latestVideoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 p-1 sm:p-1.5 rounded-full hover:bg-muted transition-colors"
+            className="shrink-0 rounded-full border border-transparent p-1.5 transition-colors hover:border-border hover:bg-muted"
             aria-label={t('card.latestVideo')}
           >
             <YoutubeIcon className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 hover:text-red-600" />
@@ -117,7 +117,7 @@ export const AituberListItem = memo(function AituberListItem({
         {/* お気に入りボタン */}
         <button
           onClick={onFavoriteToggle}
-          className="shrink-0 p-1 sm:p-1.5 rounded-full hover:bg-muted transition-colors"
+          className="shrink-0 rounded-full border border-transparent p-1.5 transition-colors hover:border-border hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           aria-label={isFavorite ? t('card.removeFavorite') : t('card.addFavorite')}
         >
           <Heart

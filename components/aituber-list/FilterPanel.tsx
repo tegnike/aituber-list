@@ -85,15 +85,15 @@ export function FilterPanel({
   const [isTagDescriptionOpen, setIsTagDescriptionOpen] = useState(false)
 
   return (
-    <Card className="mb-6 border-2 dark:border-gray-700">
+    <Card className="mb-6 overflow-hidden border-violet-200/80 bg-card/95 shadow-[0_16px_50px_-36px_hsl(258_84%_45%/0.55)] dark:border-violet-400/20">
       <Collapsible open={isOpen} onOpenChange={onOpenChange}>
-        <CardHeader className="py-3 px-3 sm:px-6">
+        <CardHeader className="bg-gradient-to-r from-violet-50/90 to-cyan-50/60 px-4 py-4 dark:from-violet-950/45 dark:to-cyan-950/25 sm:px-6">
           <CollapsibleTrigger className="w-full">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
-              <CardTitle className="text-lg sm:text-xl flex items-center flex-wrap gap-2">
+            <div className="flex items-center justify-between gap-2 group">
+              <CardTitle className="flex flex-wrap items-center gap-2 text-base sm:text-lg">
                 {t('filter.title')}
                 {activeFilterCount > 0 && (
-                  <Badge variant="secondary">
+                  <Badge className="border-0 bg-violet-100 text-violet-700 dark:bg-violet-400/15 dark:text-violet-200" variant="secondary">
                     {t('filter.activeCount', { count: activeFilterCount })}
                   </Badge>
                 )}
@@ -105,7 +105,7 @@ export function FilterPanel({
                       e.stopPropagation()
                       onReset()
                     }}
-                    className="h-7 px-2 text-xs"
+                    className="h-7 rounded-full px-2.5 text-xs text-muted-foreground hover:text-foreground"
                   >
                     <RotateCcw className="w-3 h-3 mr-1" />
                     {t('filter.reset')}
@@ -116,13 +116,15 @@ export function FilterPanel({
                 <span className="text-sm text-muted-foreground">
                   {t('filter.showCount', { filtered: filteredCount, total: totalCount })}
                 </span>
-                <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'transform rotate-180' : ''}`} />
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border/70 bg-background/70">
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'transform rotate-180' : ''}`} />
+                </span>
               </div>
             </div>
           </CollapsibleTrigger>
         </CardHeader>
         <CollapsibleContent>
-          <CardContent className="space-y-6 px-3 sm:px-6">
+          <CardContent className="space-y-7 border-t border-border/60 px-4 py-6 sm:px-6">
             {/* 名前フィルター */}
             <div className="space-y-4">
               <div className="text-sm font-bold">{t('filter.searchByName')}</div>
@@ -131,7 +133,7 @@ export function FilterPanel({
                 value={nameFilter}
                 onChange={(e) => onNameFilterChange(e.target.value)}
                 placeholder={t('filter.searchPlaceholder')}
-                className="w-full px-3 py-2 text-sm rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                className="h-12 w-full rounded-xl border border-input bg-background px-4 text-sm shadow-sm outline-none transition-all placeholder:text-muted-foreground/70 hover:border-violet-300 focus:border-violet-400 focus:ring-4 focus:ring-violet-500/10 dark:hover:border-violet-400/40"
               />
             </div>
 
@@ -141,12 +143,12 @@ export function FilterPanel({
                 <div className="text-sm font-bold">{t('filter.tags')}</div>
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-muted-foreground whitespace-nowrap">{t('filter.searchCondition')}</span>
-                  <div className="flex items-center rounded-lg border p-1 gap-1">
+                  <div className="flex items-center gap-1 rounded-xl border border-border/80 bg-muted/60 p-1">
                     <Button
                       variant={tagFilterMode === 'or' ? "secondary" : "ghost"}
                       size="sm"
                       onClick={() => onTagFilterModeChange('or')}
-                      className="text-xs sm:text-sm h-7 px-2 sm:px-4"
+                      className="h-8 rounded-lg px-3 text-xs sm:px-4 sm:text-sm"
                     >
                       OR
                     </Button>
@@ -154,7 +156,7 @@ export function FilterPanel({
                       variant={tagFilterMode === 'and' ? "secondary" : "ghost"}
                       size="sm"
                       onClick={() => onTagFilterModeChange('and')}
-                      className="text-xs sm:text-sm h-7 px-2 sm:px-4"
+                      className="h-8 rounded-lg px-3 text-xs sm:px-4 sm:text-sm"
                     >
                       AND
                     </Button>
@@ -162,7 +164,7 @@ export function FilterPanel({
                       variant={tagFilterMode === 'not' ? "secondary" : "ghost"}
                       size="sm"
                       onClick={() => onTagFilterModeChange('not')}
-                      className="text-xs sm:text-sm h-7 px-2 sm:px-4"
+                      className="h-8 rounded-lg px-3 text-xs sm:px-4 sm:text-sm"
                     >
                       NOT
                     </Button>
@@ -177,7 +179,7 @@ export function FilterPanel({
                       <TooltipTrigger>
                         <Badge
                           variant={selectedTags.includes(tag) ? "default" : "outline"}
-                          className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
+                            className="cursor-pointer rounded-full px-3 py-1 text-xs transition-all hover:-translate-y-0.5 hover:border-violet-300 hover:bg-violet-50 sm:text-sm dark:hover:bg-violet-400/10"
                           onClick={() => onTagToggle(tag)}
                         >
                           {getTagName(tag, locale)}
@@ -200,7 +202,7 @@ export function FilterPanel({
                   {t('filter.tagDescription')}
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-2">
-                  <div className="space-y-2 text-sm text-muted-foreground border rounded-lg p-4">
+                  <div className="space-y-2 rounded-xl border bg-muted/30 p-4 text-sm text-muted-foreground">
                     {allTags.map((tag) => (
                       <div key={tag} className="flex items-start gap-2">
                         <Badge variant="outline" className="mt-0.5 shrink-0">
@@ -222,7 +224,7 @@ export function FilterPanel({
                   <Badge
                     key={value}
                     variant={selectedDateFilter === value ? "default" : "outline"}
-                    className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
+                    className="cursor-pointer rounded-full px-3 py-1 text-xs transition-all hover:border-violet-300 hover:bg-violet-50 sm:text-sm dark:hover:bg-violet-400/10"
                     onClick={() => onDateFilterChange(value)}
                   >
                     {t(`date.${value}` as `date.${DateFilter}`)}
@@ -240,7 +242,7 @@ export function FilterPanel({
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 <Badge
                   variant={selectedSubscriberFilter === null ? "default" : "outline"}
-                  className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
+                  className="cursor-pointer rounded-full px-3 py-1 text-xs transition-all hover:border-violet-300 hover:bg-violet-50 sm:text-sm dark:hover:bg-violet-400/10"
                   onClick={() => onSubscriberFilterChange(null)}
                 >
                   {t('filter.all')}
@@ -249,7 +251,7 @@ export function FilterPanel({
                   <Badge
                     key={value}
                     variant={selectedSubscriberFilter === value ? "default" : "outline"}
-                    className="cursor-pointer hover:opacity-80 transition-all text-xs sm:text-sm py-1 px-2 sm:px-3"
+                    className="cursor-pointer rounded-full px-3 py-1 text-xs transition-all hover:border-violet-300 hover:bg-violet-50 sm:text-sm dark:hover:bg-violet-400/10"
                     onClick={() => onSubscriberFilterChange(value)}
                   >
                     {t(`subscriber.${value}` as `subscriber.${SubscriberFilter}`)}
@@ -262,7 +264,7 @@ export function FilterPanel({
             <div className="space-y-4">
               <div className="text-sm font-bold">{t('filter.additionalFilters')}</div>
               <div className="flex flex-wrap gap-3">
-                <label className="flex items-center gap-2 cursor-pointer">
+                <label className="flex cursor-pointer items-center gap-2 rounded-xl border bg-muted/30 px-3 py-2.5 transition-colors hover:bg-muted/60">
                   <input
                     type="checkbox"
                     checked={showUpcomingOnly}
@@ -271,7 +273,7 @@ export function FilterPanel({
                   />
                   <span className="text-sm">{t('filter.upcomingOnly')}</span>
                 </label>
-                <label className="flex items-center gap-2 cursor-pointer">
+                <label className="flex cursor-pointer items-center gap-2 rounded-xl border bg-muted/30 px-3 py-2.5 transition-colors hover:bg-muted/60">
                   <input
                     type="checkbox"
                     checked={showFavoritesOnly}

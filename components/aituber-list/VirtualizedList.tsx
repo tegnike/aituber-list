@@ -75,8 +75,8 @@ export function VirtualizedList({
   return (
     <div
       ref={parentRef}
-      className="h-[calc(100vh-200px)] overflow-auto"
-      style={{ contain: 'strict' }}
+      className="h-[calc(100vh-9rem)] min-h-[640px] overflow-auto rounded-[1.5rem] border border-border/70 bg-muted/25 p-2 shadow-inner sm:p-3"
+      style={{ contain: 'strict', scrollbarGutter: 'stable' }}
     >
       <div
         ref={resultsRef}

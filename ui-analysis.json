@@ -1,0 +1,105 @@
+{
+  "page": {
+    "name": "AITuber Directory",
+    "path": "app/page.tsx",
+    "route": "/"
+  },
+  "framework": {
+    "name": "Next.js App Router",
+    "version": "14.2.16",
+    "uiLibrary": "Radix UI primitives with local shadcn-style components and lucide-react",
+    "styling": "Tailwind CSS 3.4.1 with global CSS variables",
+    "stateManagement": "React local state and custom hooks; URL and localStorage persistence"
+  },
+  "layout": {
+    "type": "header-content-footer with an independently scrollable virtualized directory",
+    "description": "A centered single-page directory. Global controls and identity sit above collapsible overview and filter panels, followed by sort/view controls, a virtualized grid or list of AITuber profiles, a floating back-to-top action, and legal footer links. Responsive columns change from one to four."
+  },
+  "sections": [
+    {
+      "name": "UtilityHeader",
+      "role": "navigation",
+      "componentPath": "components/aituber-list/index.tsx",
+      "elements": [
+        { "type": "language-dropdown", "description": "Switches between Japanese, English, Simplified Chinese, Traditional Chinese, and Korean", "interactive": true },
+        { "type": "theme-button", "description": "Switches between light and dark themes", "interactive": true },
+        { "type": "heading", "description": "AITuberList title with total directory count", "content": "AITuberList (286 entries)", "interactive": false },
+        { "type": "text", "description": "Localized last-updated timestamp", "interactive": false }
+      ]
+    },
+    {
+      "name": "Overview",
+      "role": "content",
+      "componentPath": "components/aituber-list/index.tsx",
+      "elements": [
+        { "type": "collapsible", "description": "Expandable explanation of the service, data refresh policy, and contact information", "interactive": true },
+        { "type": "link", "description": "X profile for Nikechan", "content": "ニケちゃん @tegnike", "interactive": true },
+        { "type": "link", "description": "GitHub repository link", "interactive": true }
+      ]
+    },
+    {
+      "name": "Filters",
+      "role": "form",
+      "componentPath": "components/aituber-list/FilterPanel.tsx",
+      "elements": [
+        { "type": "collapsible", "description": "Expandable filter workspace showing active and filtered result counts", "interactive": true },
+        { "type": "button", "description": "Reset every active filter", "interactive": true },
+        { "type": "input", "description": "Search AITubers by name or matching text", "interactive": true },
+        { "type": "segmented-control", "description": "Tag matching mode: OR, AND, or NOT", "interactive": true },
+        { "type": "badge-group", "description": "Localized tag filters with tooltip descriptions", "interactive": true },
+        { "type": "collapsible", "description": "Expandable full tag glossary", "interactive": true },
+        { "type": "badge-group", "description": "Latest activity date filters with result counts", "interactive": true },
+        { "type": "badge-group", "description": "Subscriber count range filters", "interactive": true },
+        { "type": "checkbox", "description": "Show upcoming streams only", "interactive": true },
+        { "type": "checkbox", "description": "Show favorited AITubers only", "interactive": true }
+      ]
+    },
+    {
+      "name": "DirectoryToolbar",
+      "role": "form",
+      "componentPath": "components/aituber-list/SortControls.tsx",
+      "elements": [
+        { "type": "dropdown", "description": "Sort by subscribers, latest video, name, or random", "interactive": true },
+        { "type": "button-group", "description": "Toggle between grid and compact list views", "interactive": true },
+        { "type": "status", "description": "Screen-reader live announcement of filtered result count", "interactive": false }
+      ]
+    },
+    {
+      "name": "DirectoryResults",
+      "role": "content",
+      "componentPath": "components/aituber-list/VirtualizedList.tsx",
+      "elements": [
+        { "type": "virtualized-grid", "description": "Responsive one-to-four-column profile grid optimized for 286 entries", "interactive": true },
+        { "type": "profile-card", "description": "Profile avatar and highlighted name, clickable tag badges, description tooltip, subscriber count, YouTube and X links, favorite button, latest-video embed, video date, and upcoming-stream badge", "interactive": true },
+        { "type": "virtualized-list", "description": "Compact alternative row with avatar, name, tags, subscribers, update date, upcoming state, latest-video link, and favorite button", "interactive": true }
+      ]
+    },
+    {
+      "name": "PageActionsAndFooter",
+      "role": "footer",
+      "componentPath": "components/aituber-list/index.tsx",
+      "elements": [
+        { "type": "floating-button", "description": "Smooth-scroll back to the page top", "interactive": true },
+        { "type": "link", "description": "Terms page", "interactive": true },
+        { "type": "link", "description": "Privacy policy page", "interactive": true },
+        { "type": "skip-link", "description": "Keyboard-accessible skip navigation link to the main content", "interactive": true }
+      ]
+    }
+  ],
+  "styles": {
+    "primaryColor": "hsl(222.2 47.4% 11.2%)",
+    "secondaryColor": "hsl(210 40% 96.1%)",
+    "backgroundColor": "hsl(0 0% 100%) / dark hsl(222.2 84% 8%)",
+    "fontFamily": "Geist variable font declared, but body currently overrides it with Arial/Helvetica",
+    "borderRadius": "0.5rem"
+  },
+  "interactions": [
+    { "trigger": "filter change", "action": "Filter results and synchronize filter state to the URL", "handler": "AituberList with useAituberFilters and useUrlState" },
+    { "trigger": "sort selection", "action": "Reorder the filtered directory", "handler": "SortControls and useAituberSort" },
+    { "trigger": "view toggle", "action": "Switch grid/list mode and persist it to localStorage", "handler": "toggleViewMode in AituberList" },
+    { "trigger": "favorite button click", "action": "Toggle local favorite state", "handler": "useFavorites" },
+    { "trigger": "tag badge click", "action": "Select the tag and smoothly return to the filters at the page top", "handler": "handleTagSelect in AituberList" },
+    { "trigger": "viewport resize", "action": "Use one, two, three, or four virtualized grid columns", "handler": "updateColumns effect in AituberList" },
+    { "trigger": "language or theme control", "action": "Change localized copy or color theme without removing directory state", "handler": "LanguageContext and next-themes" }
+  ]
+}

@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Radio, Sparkles } from "lucide-react"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { LanguageToggle } from "@/components/ui/language-toggle"
 import { useLanguage } from "@/contexts/LanguageContext"
@@ -236,32 +236,64 @@ export function AituberList() {
   }, [])
 
   return (
-    <main id="main-content" className="container mx-auto px-2 sm:px-4 py-4">
+    <main id="main-content" className="min-h-screen">
       <style jsx global>{styles}</style>
-      <div className="flex justify-end mb-2 gap-2">
-        <LanguageToggle />
-        <ThemeToggle />
-      </div>
-      <h1 className="text-2xl sm:text-3xl font-bold text-center mb-2">
-        {t('site.title')}
-        <span className="text-lg sm:text-xl font-normal text-muted-foreground ml-2">
-          {t('site.count', { count: aitubers.length })}
-        </span>
-      </h1>
-      <p className="text-center text-sm text-muted-foreground mb-4">
-        {t('site.lastUpdated', { date: formatDate(aituberData.lastUpdated, locale) })}
-      </p>
+      <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 text-white shadow-lg shadow-violet-500/20">
+              <Sparkles className="h-4 w-4" aria-hidden="true" />
+            </div>
+            <div>
+              <div className="text-base font-bold tracking-[-0.025em]">AITuberList</div>
+              <div className="hidden text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:block">
+                Creator discovery
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="mr-2 hidden items-center gap-2 text-xs text-muted-foreground md:flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_3px_hsl(142_71%_45%/0.12)]" />
+              {t('site.lastUpdated', { date: formatDate(aituberData.lastUpdated, locale) })}
+            </div>
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+        </div>
+      </header>
+
+      <div className="mx-auto max-w-[1440px] px-3 py-6 sm:px-6 sm:py-8 lg:px-8">
+        <section className="aurora-panel mb-6 rounded-[1.75rem] border border-violet-200/70 bg-gradient-to-br from-white via-violet-50/75 to-cyan-50/70 px-5 py-8 shadow-[0_24px_80px_-44px_hsl(258_84%_45%/0.55)] dark:border-violet-400/15 dark:from-violet-950/60 dark:via-card dark:to-cyan-950/40 sm:px-8 sm:py-10 lg:px-12">
+          <div className="max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/75 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-violet-700 shadow-sm dark:border-violet-400/20 dark:bg-violet-950/50 dark:text-violet-200">
+              <Radio className="h-3.5 w-3.5 text-rose-500" aria-hidden="true" />
+              AI creator directory
+            </div>
+            <h1 className="text-balance text-3xl font-bold tracking-[-0.045em] text-foreground sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05]">
+              {t('site.title')}
+              <span className="ml-2 bg-gradient-to-r from-violet-600 to-cyan-600 bg-clip-text text-transparent sm:ml-3">
+                {t('site.count', { count: aitubers.length })}
+              </span>
+            </h1>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+              {t('overview.description1')} {t('overview.description2')}
+            </p>
+            <p className="mt-3 text-xs text-muted-foreground md:hidden">
+              {t('site.lastUpdated', { date: formatDate(aituberData.lastUpdated, locale) })}
+            </p>
+          </div>
+        </section>
 
       {/* Overview Card */}
-      <Card className="mb-6 border-2 dark:border-gray-700">
+      <Card className="mb-4 border-border/70 bg-card/80 shadow-sm backdrop-blur-sm">
         <Collapsible open={isOverviewOpen} onOpenChange={setIsOverviewOpen}>
-          <CardHeader className="py-3 px-3 sm:px-6">
+          <CardHeader className="px-4 py-4 sm:px-6">
             <CollapsibleTrigger className="w-full">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
-                <CardTitle className="text-lg sm:text-xl flex items-center flex-wrap gap-2">
+              <div className="flex items-center justify-between gap-2 group">
+                <CardTitle className="flex flex-wrap items-center gap-2 text-base sm:text-lg">
                   {t('overview.title')}
                 </CardTitle>
-                <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
                   <ChevronDown className={`h-4 w-4 transition-transform ${isOverviewOpen ? 'transform rotate-180' : ''}`} />
                 </div>
               </div>
@@ -381,14 +413,18 @@ export function AituberList() {
       )}
 
       {/* Footer */}
-      <footer className="mt-8 flex justify-center gap-4 text-sm text-muted-foreground">
-        <Link href="/terms" className="hover:underline">
-          {t('footer.terms')}
-        </Link>
-        <Link href="/privacy" className="hover:underline">
-          {t('footer.privacy')}
-        </Link>
+      <footer className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-border/70 py-6 text-sm text-muted-foreground">
+        <span className="font-medium text-foreground/70">AITuberList</span>
+        <div className="flex gap-4">
+          <Link href="/terms" className="hover:underline">
+            {t('footer.terms')}
+          </Link>
+          <Link href="/privacy" className="hover:underline">
+            {t('footer.privacy')}
+          </Link>
+        </div>
       </footer>
+      </div>
     </main>
   )
 }
