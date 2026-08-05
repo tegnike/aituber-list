@@ -87,7 +87,7 @@ export function FilterPanel({
   return (
     <Card className="mb-6 overflow-hidden border-violet-200/80 bg-card/95 shadow-[0_16px_50px_-36px_hsl(258_84%_45%/0.55)] dark:border-violet-400/20">
       <Collapsible open={isOpen} onOpenChange={onOpenChange}>
-        <CardHeader className="bg-gradient-to-r from-violet-50/90 to-cyan-50/60 px-4 py-4 dark:from-violet-950/45 dark:to-cyan-950/25 sm:px-6">
+        <CardHeader className="bg-muted/45 px-4 py-4 sm:px-6">
           <CollapsibleTrigger className="w-full">
             <div className="flex items-center justify-between gap-2 group">
               <CardTitle className="flex flex-wrap items-center gap-2 text-base sm:text-lg">
@@ -179,7 +179,7 @@ export function FilterPanel({
                       <TooltipTrigger>
                         <Badge
                           variant={selectedTags.includes(tag) ? "default" : "outline"}
-                            className="cursor-pointer rounded-full px-3 py-1 text-xs transition-all hover:-translate-y-0.5 hover:border-violet-300 hover:bg-violet-50 sm:text-sm dark:hover:bg-violet-400/10"
+                            className="cursor-pointer rounded-full px-3 py-1 text-xs transition-colors hover:border-violet-300 hover:bg-violet-50 sm:text-sm dark:hover:bg-violet-400/10"
                           onClick={() => onTagToggle(tag)}
                         >
                           {getTagName(tag, locale)}

@@ -74,47 +74,9 @@ body {
   }
   body {
     @apply bg-background text-foreground antialiased;
-    background-image:
-      radial-gradient(circle at 12% 4%, hsl(263 91% 70% / 0.12), transparent 28rem),
-      radial-gradient(circle at 88% 10%, hsl(187 85% 48% / 0.1), transparent 26rem);
-    background-attachment: fixed;
   }
 
   ::selection {
     background: hsl(263 91% 70% / 0.28);
-  }
-}
-
-@layer components {
-  .aurora-panel {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-  }
-
-  .aurora-panel::before,
-  .aurora-panel::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    border-radius: 9999px;
-    filter: blur(1px);
-    pointer-events: none;
-  }
-
-  .aurora-panel::before {
-    width: 22rem;
-    height: 22rem;
-    top: -13rem;
-    right: -3rem;
-    background: radial-gradient(circle, hsl(187 85% 52% / 0.25), transparent 68%);
-  }
-
-  .aurora-panel::after {
-    width: 28rem;
-    height: 28rem;
-    bottom: -21rem;
-    left: 5%;
-    background: radial-gradient(circle, hsl(267 88% 68% / 0.3), transparent 68%);
   }
 }

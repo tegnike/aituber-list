@@ -42,11 +42,11 @@ export const AituberCard = memo(function AituberCard({
   searchTerm = ''
 }: AituberCardProps) {
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden border-border/70 bg-card/95 shadow-[0_12px_32px_-24px_hsl(243_30%_15%/0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/80 hover:shadow-[0_24px_55px_-28px_hsl(258_84%_45%/0.5)] dark:hover:border-violet-400/35">
+    <Card className="group relative flex h-full flex-col overflow-hidden border-border/70 bg-card/95 shadow-sm transition-colors duration-200 hover:border-violet-300/80 hover:bg-violet-50/20 dark:hover:border-violet-400/35 dark:hover:bg-violet-400/[0.03]">
       {/* お気に入りボタン */}
       <button
         onClick={onFavoriteToggle}
-        className="absolute right-3 top-3 z-10 rounded-full border border-border/60 bg-background/90 p-2 shadow-sm backdrop-blur transition-all hover:scale-105 hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="absolute right-3 top-3 z-10 rounded-full border border-border/60 bg-background/90 p-2 shadow-sm backdrop-blur transition-colors hover:border-violet-300 hover:bg-violet-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:hover:bg-violet-400/10"
         aria-label={isFavorite ? t('card.removeFavorite') : t('card.addFavorite')}
       >
         <Heart

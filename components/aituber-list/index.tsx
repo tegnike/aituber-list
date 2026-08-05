@@ -241,7 +241,7 @@ export function AituberList() {
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 text-white shadow-lg shadow-violet-500/20">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm">
               <Sparkles className="h-4 w-4" aria-hidden="true" />
             </div>
             <div>
@@ -263,7 +263,7 @@ export function AituberList() {
       </header>
 
       <div className="mx-auto max-w-[1440px] px-3 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <section className="aurora-panel mb-6 rounded-[1.75rem] border border-violet-200/70 bg-gradient-to-br from-white via-violet-50/75 to-cyan-50/70 px-5 py-8 shadow-[0_24px_80px_-44px_hsl(258_84%_45%/0.55)] dark:border-violet-400/15 dark:from-violet-950/60 dark:via-card dark:to-cyan-950/40 sm:px-8 sm:py-10 lg:px-12">
+        <section className="mb-6 rounded-[1.75rem] border border-border bg-card px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12">
           <div className="max-w-3xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/75 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-violet-700 shadow-sm dark:border-violet-400/20 dark:bg-violet-950/50 dark:text-violet-200">
               <Radio className="h-3.5 w-3.5 text-rose-500" aria-hidden="true" />
@@ -271,7 +271,7 @@ export function AituberList() {
             </div>
             <h1 className="text-balance text-3xl font-bold tracking-[-0.045em] text-foreground sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05]">
               {t('site.title')}
-              <span className="ml-2 bg-gradient-to-r from-violet-600 to-cyan-600 bg-clip-text text-transparent sm:ml-3">
+              <span className="ml-2 text-primary sm:ml-3">
                 {t('site.count', { count: aitubers.length })}
               </span>
             </h1>
