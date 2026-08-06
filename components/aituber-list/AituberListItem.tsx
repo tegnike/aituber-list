@@ -18,7 +18,7 @@ interface AituberListItemProps {
   isFavorite: boolean
   onFavoriteToggle: () => void
   locale: Locale
-  t: (key: TranslationKey) => string
+  t: (key: TranslationKey, params?: Record<string, string | number>) => string
   priority?: boolean
   searchTerm?: string
 }
@@ -36,6 +36,8 @@ export const AituberListItem = memo(function AituberListItem({
 }: AituberListItemProps) {
   const profileUrl = getAituberProfileUrl(aituber)
   const latestContent = getLatestContent(aituber)
+  const twitchUrl = aituber.twitchContentUrl || aituber.twitchURL ||
+    (aituber.twitchLogin ? `https://www.twitch.tv/${aituber.twitchLogin}` : '')
 
   return (
     <Card className="overflow-hidden border-border/70 bg-card/95 shadow-sm transition-all hover:border-violet-300/80 hover:shadow-md dark:hover:border-violet-400/35">
@@ -85,12 +87,26 @@ export const AituberListItem = memo(function AituberListItem({
           )}
         </div>
 
-        {/* 登録者数 */}
+        {/* 登録者数・フォロワー数 */}
         {(aituber.youtubeChannelID || typeof aituber.twitchFollowers === 'number') && (
-          <div className="hidden w-20 shrink-0 text-right text-sm text-muted-foreground sm:block">
-            {formatSubscriberCount(
-              aituber.youtubeChannelID ? aituber.youtubeSubscribers : (aituber.twitchFollowers || 0),
-              locale
+          <div className="hidden w-36 shrink-0 flex-col items-end gap-0.5 text-xs text-muted-foreground sm:flex">
+            {aituber.youtubeChannelID && (
+              <div
+                className="flex items-center gap-1.5"
+                aria-label={t('card.subscriberCount', { count: formatSubscriberCount(aituber.youtubeSubscribers, locale) })}
+              >
+                <YoutubeIcon className="h-3.5 w-3.5 text-red-600" />
+                <span>YouTube {formatSubscriberCount(aituber.youtubeSubscribers, locale)}</span>
+              </div>
+            )}
+            {typeof aituber.twitchFollowers === 'number' && (
+              <div
+                className="flex items-center gap-1.5"
+                aria-label={t('card.followerCount', { count: formatSubscriberCount(aituber.twitchFollowers, locale) })}
+              >
+                <Twitch className="h-3.5 w-3.5 text-purple-600" />
+                <span>Twitch {formatSubscriberCount(aituber.twitchFollowers, locale)}</span>
+              </div>
             )}
           </div>
         )}
@@ -114,22 +130,31 @@ export const AituberListItem = memo(function AituberListItem({
           </Badge>
         ) : null}
 
-        {/* 最新動画リンク */}
-        {latestContent && (
-          <a
-            href={latestContent.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 rounded-full border border-transparent p-1.5 transition-colors hover:border-border hover:bg-muted"
-            aria-label={t('card.latestVideo')}
-          >
-            {latestContent.platform === 'twitch' ? (
-              <Twitch className="h-4 w-4 text-purple-600 hover:text-purple-700 sm:h-5 sm:w-5" />
-            ) : (
+        {/* プラットフォームリンク */}
+        <div className="flex shrink-0 items-center gap-0.5">
+          {aituber.youtubeChannelID && (
+            <a
+              href={aituber.latestVideoUrl || `https://www.youtube.com/channel/${aituber.youtubeChannelID}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-transparent p-1.5 transition-colors hover:border-border hover:bg-muted"
+              aria-label={t('card.latestVideo', { name: aituber.name })}
+            >
               <YoutubeIcon className="h-4 w-4 text-red-500 hover:text-red-600 sm:h-5 sm:w-5" />
-            )}
-          </a>
-        )}
+            </a>
+          )}
+          {twitchUrl && (
+            <a
+              href={twitchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-transparent p-1.5 transition-colors hover:border-purple-300 hover:bg-purple-50 dark:hover:bg-purple-400/10"
+              aria-label={t('card.latestStream', { name: aituber.name })}
+            >
+              <Twitch className="h-4 w-4 text-purple-600 hover:text-purple-700 sm:h-5 sm:w-5" />
+            </a>
+          )}
+        </div>
 
         {/* お気に入りボタン */}
         <button

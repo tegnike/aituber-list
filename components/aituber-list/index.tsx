@@ -18,7 +18,7 @@ import {
 import aituberData from '@/app/data/aitubers.json'
 
 // Types
-import type { AITuber, DateFilter, SubscriberFilter, SortOrder, ViewMode, TagFilterMode } from './types'
+import type { AITuber, DateFilter, PlatformFilter, SubscriberFilter, SortOrder, ViewMode, TagFilterMode } from './types'
 import { getLatestContentDate, PARTIAL_AITUBER_TAG } from './types'
 
 // Components
@@ -67,6 +67,7 @@ export function AituberList() {
   const [tagFilterMode, setTagFilterMode] = useState<TagFilterMode>('or')
   const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilter>('all')
   const [selectedSubscriberFilter, setSelectedSubscriberFilter] = useState<SubscriberFilter | null>(null)
+  const [selectedPlatformFilter, setSelectedPlatformFilter] = useState<PlatformFilter>('all')
   const [nameFilter, setNameFilter] = useState('')
   const [showMainAITubersOnly, setShowMainAITubersOnly] = useState(false)
   const [showUpcomingOnly, setShowUpcomingOnly] = useState(false)
@@ -127,6 +128,7 @@ export function AituberList() {
     setTagFilterMode(initialState.tagMode)
     setSelectedDateFilter(initialState.date)
     setSelectedSubscriberFilter(initialState.subscriber)
+    setSelectedPlatformFilter(initialState.platform)
     setNameFilter(initialState.search)
     setShowMainAITubersOnly(initialState.mainOnly)
     setSortOrder(initialState.sort)
@@ -137,6 +139,7 @@ export function AituberList() {
       initialState.tags.length > 0 ||
       initialState.date !== 'all' ||
       initialState.subscriber ||
+      initialState.platform !== 'all' ||
       initialState.search ||
       initialState.mainOnly ||
       initialState.upcoming
@@ -162,6 +165,7 @@ export function AituberList() {
       tagMode: tagFilterMode,
       date: selectedDateFilter,
       subscriber: selectedSubscriberFilter,
+      platform: selectedPlatformFilter,
       search: nameFilter,
       sort: sortOrder,
       mainOnly: showMainAITubersOnly,
@@ -173,6 +177,7 @@ export function AituberList() {
     tagFilterMode,
     selectedDateFilter,
     selectedSubscriberFilter,
+    selectedPlatformFilter,
     nameFilter,
     showMainAITubersOnly,
     sortOrder,
@@ -186,6 +191,7 @@ export function AituberList() {
     tagFilterMode,
     selectedDateFilter,
     selectedSubscriberFilter,
+    selectedPlatformFilter,
     nameFilter,
     showMainAITubersOnly,
     showUpcomingOnly,
@@ -237,6 +243,7 @@ export function AituberList() {
     setTagFilterMode('or')
     setSelectedDateFilter('all')
     setSelectedSubscriberFilter(null)
+    setSelectedPlatformFilter('all')
     setNameFilter('')
     setShowMainAITubersOnly(false)
     setShowUpcomingOnly(false)
@@ -344,6 +351,8 @@ export function AituberList() {
         onDateFilterChange={setSelectedDateFilter}
         selectedSubscriberFilter={selectedSubscriberFilter}
         onSubscriberFilterChange={setSelectedSubscriberFilter}
+        selectedPlatformFilter={selectedPlatformFilter}
+        onPlatformFilterChange={setSelectedPlatformFilter}
         nameFilter={nameFilter}
         onNameFilterChange={setNameFilter}
         showMainAITubersOnly={showMainAITubersOnly}
