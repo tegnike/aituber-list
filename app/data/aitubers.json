@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-06T18:14:49+09:00",
+  "lastUpdated": "2026-08-06T20:01:10+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん AI VTuber",
@@ -5662,6 +5662,24 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/oaEcQEvLylc/maxresdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=oaEcQEvLylc",
       "latestVideoDate": "2025-12-30T18:55:08+09:00",
+      "isUpcoming": false,
+      "twitchLogin": "",
+      "twitchURL": "",
+      "twitchFollowers": 0
+    },
+    {
+      "name": "ネクタリカ",
+      "description": "",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCx5qMzJftVhYLkg6cprJ1KQ",
+      "youtubeURL": "https://www.youtube.com/@nectalica",
+      "imageUrl": "https://yt3.googleusercontent.com/Vb5tgf3G3QL7clPrmNEQsV83zgipguHqRExhB8j1PIDIhHXlO2VnOcQzzdpfIB_7-R6_pg_3=s900-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 6,
+      "latestVideoTitle": "AIのSNSで推理イベント優勝！でも“交渉はまだ任せられない”と分かった話",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/YwZfD_pPui8/maxresdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=YwZfD_pPui8",
+      "latestVideoDate": "2026-07-31T19:55:26+09:00",
       "isUpcoming": false,
       "twitchLogin": "",
       "twitchURL": "",
