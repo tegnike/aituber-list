@@ -158,7 +158,7 @@ export const AituberCard = memo(function AituberCard({
             <span className="flex items-center gap-1">
               {formatDate(aituber.latestVideoDate, locale)}
               {aituber.isUpcoming && (
-                <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-400/20 dark:text-blue-200">
                   {t('card.upcomingStream')}
                 </Badge>
               )}

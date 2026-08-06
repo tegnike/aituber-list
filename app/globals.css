@@ -13,6 +13,10 @@ body {
 }
 
 @layer base {
+  html {
+    color-scheme: light;
+  }
+
   :root {
     --background: 240 33% 98%;
     --foreground: 243 30% 12%;
@@ -41,25 +45,26 @@ body {
     --radius: 0.875rem;
   }
   .dark {
-    --background: 238 42% 7%;
-    --foreground: 210 40% 98%;
-    --card: 240 34% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 240 34% 10%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 263 91% 70%;
-    --primary-foreground: 240 35% 10%;
-    --secondary: 246 28% 18%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 242 25% 16%;
-    --muted-foreground: 240 15% 72%;
-    --accent: 190 38% 19%;
-    --accent-foreground: 210 40% 98%;
+    color-scheme: dark;
+    --background: 240 30% 10%;
+    --foreground: 220 25% 96%;
+    --card: 240 25% 14%;
+    --card-foreground: 220 25% 96%;
+    --popover: 240 24% 16%;
+    --popover-foreground: 220 25% 96%;
+    --primary: 263 88% 74%;
+    --primary-foreground: 243 35% 12%;
+    --secondary: 240 22% 22%;
+    --secondary-foreground: 220 25% 96%;
+    --muted: 240 22% 20%;
+    --muted-foreground: 230 20% 80%;
+    --accent: 190 48% 23%;
+    --accent-foreground: 190 85% 94%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 243 22% 23%;
-    --input: 243 22% 25%;
-    --ring: 263 91% 70%;
+    --border: 240 18% 31%;
+    --input: 240 18% 34%;
+    --ring: 263 88% 74%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;

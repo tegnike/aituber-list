@@ -11,7 +11,7 @@ export default function PrivacyPage() {
       <h1 className="text-3xl font-bold mb-6">{t('privacy.title')}</h1>
       
       <div className="prose dark:prose-invert">
-        <p className="text-sm text-gray-600 mb-8">{t('privacy.lastUpdated')}</p>
+        <p className="mb-8 text-sm text-muted-foreground">{t('privacy.lastUpdated')}</p>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">1. 収集する情報</h2>
@@ -87,4 +87,4 @@ export default function PrivacyPage() {
       </div>
     </div>
   )
-} 
+}

@@ -96,7 +96,7 @@ export const AituberListItem = memo(function AituberListItem({
 
         {/* 配信予定バッジ */}
         {aituber.isUpcoming && (
-          <Badge variant="secondary" className="hidden sm:inline-flex bg-blue-100 text-blue-800 text-xs px-1 shrink-0">
+          <Badge variant="secondary" className="hidden shrink-0 bg-blue-100 px-1 text-xs text-blue-800 dark:bg-blue-400/20 dark:text-blue-200 sm:inline-flex">
             {t('card.upcomingStream')}
           </Badge>
         )}

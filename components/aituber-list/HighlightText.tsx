@@ -26,7 +26,7 @@ export function HighlightText({ text, searchTerm, className = '' }: HighlightTex
   return (
     <span className={className}>
       {beforeMatch}
-      <mark className="bg-yellow-200 dark:bg-yellow-800 dark:text-yellow-100 px-0.5 rounded">
+      <mark className="rounded bg-yellow-200 px-0.5 dark:bg-yellow-400/30 dark:text-yellow-100">
         {match}
       </mark>
       {afterMatch.toLowerCase().includes(searchTermLower) ? (
