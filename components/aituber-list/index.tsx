@@ -9,6 +9,7 @@ import { LanguageToggle } from "@/components/ui/language-toggle"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { formatDate } from "@/lib/i18n"
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Collapsible,
   CollapsibleContent,
@@ -251,9 +252,16 @@ export function AituberList() {
       <style jsx global>{styles}</style>
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8">
-          <h1 className="flex items-baseline gap-1.5 text-base font-bold tracking-[-0.025em] sm:text-lg">
-            <span>{t('site.title')}</span>
-            <span className="text-sm font-medium text-muted-foreground">
+          <h1 className="flex items-center gap-2">
+            <Image
+              src="/images/aituber-list-logo.png"
+              alt="AITuberList"
+              width={2166}
+              height={350}
+              className="h-6 w-auto shrink-0 sm:h-7"
+              priority
+            />
+            <span className="whitespace-nowrap text-sm font-medium text-muted-foreground">
               {t('site.count', { count: aitubers.length })}
             </span>
           </h1>
