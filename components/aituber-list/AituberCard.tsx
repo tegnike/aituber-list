@@ -121,20 +121,27 @@ export const AituberCard = memo(function AituberCard({
           </TooltipProvider>
         </div>
         <div className="mt-4 flex flex-col gap-3 border-t border-border/60 pt-3">
-          {aituber.youtubeChannelID ? (
-            <div className="text-sm font-semibold text-foreground/80">
-              {t('card.subscriberCount', { count: formatSubscriberCount(aituber.youtubeSubscribers, locale) })}
+          {(aituber.youtubeChannelID || typeof aituber.twitchFollowers === 'number') && (
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-semibold text-foreground/80">
+              {aituber.youtubeChannelID && (
+                <div className="flex items-center gap-1.5">
+                  <YoutubeIcon className="h-4 w-4 text-red-600" />
+                  {t('card.subscriberCount', { count: formatSubscriberCount(aituber.youtubeSubscribers, locale) })}
+                </div>
+              )}
+              {typeof aituber.twitchFollowers === 'number' && (
+                <div className="flex items-center gap-1.5">
+                  <Twitch className="h-4 w-4 text-purple-600" />
+                  {t('card.followerCount', { count: formatSubscriberCount(aituber.twitchFollowers, locale) })}
+                </div>
+              )}
             </div>
-          ) : typeof aituber.twitchFollowers === 'number' ? (
-            <div className="text-sm font-semibold text-foreground/80">
-              {t('card.followerCount', { count: formatSubscriberCount(aituber.twitchFollowers, locale) })}
-            </div>
-          ) : null}
+          )}
           <div className="flex gap-2">
             {aituber.youtubeChannelID && (
               <Button variant="outline" size="sm" className="rounded-lg border-border/80" asChild>
                 <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
-                  <YoutubeIcon className="w-4 h-4 mr-2" />
+                  <YoutubeIcon className="h-4 w-4 text-red-600" />
                   YouTube
                 </a>
               </Button>
@@ -142,7 +149,7 @@ export const AituberCard = memo(function AituberCard({
             {twitchUrl && (
               <Button variant="outline" size="sm" className="rounded-lg border-purple-300/70 hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-400/10" asChild>
                 <a href={twitchUrl} target="_blank" rel="noopener noreferrer">
-                  <Twitch className="mr-2 h-4 w-4 text-purple-600" />
+                  <Twitch className="h-4 w-4 text-purple-600" />
                   Twitch
                 </a>
               </Button>

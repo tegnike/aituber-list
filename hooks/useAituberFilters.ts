@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import type { AITuber, DateFilter, SubscriberFilter, TagFilterMode } from '@/components/aituber-list/types'
+import type { AITuber, DateFilter, PlatformFilter, SubscriberFilter, TagFilterMode } from '@/components/aituber-list/types'
 import {
   getAituberId,
   getAudienceCount,
@@ -16,6 +16,7 @@ export interface FilterOptions {
   tagFilterMode: TagFilterMode
   selectedDateFilter: DateFilter
   selectedSubscriberFilter: SubscriberFilter | null
+  selectedPlatformFilter: PlatformFilter
   nameFilter: string
   showMainAITubersOnly: boolean
   showUpcomingOnly: boolean
@@ -37,6 +38,7 @@ export function useAituberFilters(
     tagFilterMode,
     selectedDateFilter,
     selectedSubscriberFilter,
+    selectedPlatformFilter,
     nameFilter,
     showMainAITubersOnly,
     showUpcomingOnly,
@@ -64,6 +66,9 @@ export function useAituberFilters(
     return aitubers.filter(aituber =>
       isWithinDateRange(getLatestContentDate(aituber), selectedDateFilter) &&
       matchesTags(aituber) &&
+      (selectedPlatformFilter === 'all' ||
+        (selectedPlatformFilter === 'youtube' && Boolean(aituber.youtubeChannelID)) ||
+        (selectedPlatformFilter === 'twitch' && Boolean(aituber.twitchLogin))) &&
       (!showMainAITubersOnly || !aituber.tags.includes(PARTIAL_AITUBER_TAG)) &&
       (!selectedSubscriberFilter ||
         getAudienceCount(aituber) >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
@@ -79,6 +84,7 @@ export function useAituberFilters(
     selectedTags,
     tagFilterMode,
     selectedSubscriberFilter,
+    selectedPlatformFilter,
     nameFilter,
     showMainAITubersOnly,
     showUpcomingOnly,
@@ -90,13 +96,14 @@ export function useAituberFilters(
     return (
       (selectedTags.some(tag => tag !== PARTIAL_AITUBER_TAG) ? 1 : 0) +
       (selectedSubscriberFilter ? 1 : 0) +
+      (selectedPlatformFilter !== 'all' ? 1 : 0) +
       (nameFilter ? 1 : 0) +
       (selectedDateFilter !== 'all' ? 1 : 0) +
       (showMainAITubersOnly ? 1 : 0) +
       (showUpcomingOnly ? 1 : 0) +
       (showFavoritesOnly ? 1 : 0)
     )
-  }, [selectedTags, selectedSubscriberFilter, nameFilter, selectedDateFilter, showMainAITubersOnly, showUpcomingOnly, showFavoritesOnly])
+  }, [selectedTags, selectedSubscriberFilter, selectedPlatformFilter, nameFilter, selectedDateFilter, showMainAITubersOnly, showUpcomingOnly, showFavoritesOnly])
 
   return {
     filteredAITubers,

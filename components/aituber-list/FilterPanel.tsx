@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/collapsible"
 import { getTagName, getTagDescription, TranslationKey, Locale } from "@/lib/i18n"
 import { getLatestContentDate } from './types'
-import type { AITuber, DateFilter, SubscriberFilter, TagFilterMode } from './types'
+import type { AITuber, DateFilter, PlatformFilter, SubscriberFilter, TagFilterMode } from './types'
 import { isWithinDateRange, SUBSCRIBER_FILTER_LABELS } from './types'
 
 interface FilterPanelProps {
@@ -31,6 +31,8 @@ interface FilterPanelProps {
   onDateFilterChange: (filter: DateFilter) => void
   selectedSubscriberFilter: SubscriberFilter | null
   onSubscriberFilterChange: (filter: SubscriberFilter | null) => void
+  selectedPlatformFilter: PlatformFilter
+  onPlatformFilterChange: (filter: PlatformFilter) => void
   nameFilter: string
   onNameFilterChange: (value: string) => void
   showMainAITubersOnly: boolean
@@ -68,6 +70,8 @@ export function FilterPanel({
   onDateFilterChange,
   selectedSubscriberFilter,
   onSubscriberFilterChange,
+  selectedPlatformFilter,
+  onPlatformFilterChange,
   nameFilter,
   onNameFilterChange,
   showMainAITubersOnly,
@@ -140,6 +144,30 @@ export function FilterPanel({
                 placeholder={t('filter.searchPlaceholder')}
                 className="h-12 w-full rounded-xl border border-input bg-background px-4 text-sm shadow-sm outline-none transition-all placeholder:text-muted-foreground/70 hover:border-violet-300 focus:border-violet-400 focus:ring-4 focus:ring-violet-500/10 dark:hover:border-violet-400/40"
               />
+            </div>
+
+            {/* 配信プラットフォームフィルター */}
+            <div className="space-y-4">
+              <div className="text-sm font-bold">{t('filter.platform')}</div>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                {(['all', 'youtube', 'twitch'] as PlatformFilter[]).map((platform) => (
+                  <Badge
+                    key={platform}
+                    variant={selectedPlatformFilter === platform ? "default" : "outline"}
+                    className="cursor-pointer rounded-full px-3 py-1 text-xs transition-all hover:border-violet-300 hover:bg-violet-50 sm:text-sm dark:hover:bg-violet-400/10"
+                    onClick={() => onPlatformFilterChange(platform)}
+                  >
+                    {t(`platform.${platform}` as `platform.${PlatformFilter}`)}
+                    <span className="ml-1 text-xs">
+                      ({platform === 'all'
+                        ? aitubers.length
+                        : aitubers.filter(aituber => platform === 'youtube'
+                          ? Boolean(aituber.youtubeChannelID)
+                          : Boolean(aituber.twitchLogin)).length})
+                    </span>
+                  </Badge>
+                ))}
+              </div>
             </div>
 
             {/* タグフィルター */}

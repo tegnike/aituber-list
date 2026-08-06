@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
-import type { DateFilter, SubscriberFilter, SortOrder, TagFilterMode } from '@/components/aituber-list/types'
+import type { DateFilter, PlatformFilter, SubscriberFilter, SortOrder, TagFilterMode } from '@/components/aituber-list/types'
 import { PARTIAL_AITUBER_TAG } from '@/components/aituber-list/types'
 
 export interface UrlState {
@@ -10,6 +10,7 @@ export interface UrlState {
   tagMode: TagFilterMode
   date: DateFilter
   subscriber: SubscriberFilter | null
+  platform: PlatformFilter
   search: string
   sort: SortOrder
   mainOnly: boolean
@@ -27,6 +28,7 @@ const DEFAULT_STATE: UrlState = {
   tagMode: 'or',
   date: 'all',
   subscriber: null,
+  platform: 'all',
   search: '',
   sort: 'latest',
   mainOnly: false,
@@ -65,6 +67,11 @@ export function useUrlState(): UseUrlStateReturn {
     const subscriberParam = params.get('subscriber') as SubscriberFilter
     if (subscriberParam && ['100', '500', '1000', '10000'].includes(subscriberParam)) {
       state.subscriber = subscriberParam
+    }
+
+    const platformParam = params.get('platform') as PlatformFilter
+    if (platformParam && ['all', 'youtube', 'twitch'].includes(platformParam)) {
+      state.platform = platformParam
     }
 
     const searchParam = params.get('search')
@@ -127,6 +134,14 @@ export function useUrlState(): UseUrlStateReturn {
         params.set('subscriber', state.subscriber)
       } else {
         params.delete('subscriber')
+      }
+    }
+
+    if (state.platform !== undefined) {
+      if (state.platform !== 'all') {
+        params.set('platform', state.platform)
+      } else {
+        params.delete('platform')
       }
     }
 

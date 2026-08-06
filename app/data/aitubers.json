@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-06T17:26:45+09:00",
+  "lastUpdated": "2026-08-06T17:46:26.647+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん AI VTuber",
@@ -14,17 +14,13 @@
       "twitterID": "tegnike",
       "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
       "youtubeURL": "nikechan",
-      "twitchLogin": "nike_cha_n",
-      "twitchURL": "https://www.twitch.tv/nike_cha_n",
       "imageUrl": "nikechan_icon.png",
       "youtubeSubscribers": 512,
       "latestVideoTitle": "AIが安全判定したキノコ、信じていい？誤判定事件を46秒で解説 #Shorts",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/tp1bJcinZTw/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=tp1bJcinZTw",
       "latestVideoDate": "2026-07-08T18:30:32+09:00",
-      "isUpcoming": false,
-      "twitchUserID": "595289487",
-      "twitchIsLive": false
+      "isUpcoming": false
     },
     {
       "name": "AI活(アイカツ)",
@@ -494,7 +490,10 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/F35s-G9lnjU/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=F35s-G9lnjU",
       "latestVideoDate": "2026-08-06T00:00:34+09:00",
-      "isUpcoming": false
+      "isUpcoming": false,
+      "twitchLogin": "iramiyt",
+      "twitchURL": "https://www.twitch.tv/iramiyt",
+      "twitchFollowers": 3324
     },
     {
       "name": "AIひより日和 / AI Hiyori Biyori【AI Vtuber】",
@@ -3398,7 +3397,8 @@
       "description": "我是AIVtuber 阿卡，這裡會有我的剪輯、影片 #阿卡 #AKA\n大部分六 or 日 中午在Twitch\nhttps://twitch.tv/wukuowl\n",
       "tags": [
         "歌唱あり",
-        "海外"
+        "海外",
+        "コメント応答"
       ],
       "twitterID": "pal156",
       "youtubeChannelID": "UCnUrs0Vb7711k1EjTeTM-7A",
@@ -3409,7 +3409,10 @@
       "latestVideoThumbnail": "https://i.ytimg.com/vi/QuWp8UQYiuU/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=QuWp8UQYiuU",
       "latestVideoDate": "2026-03-13T15:33:04+09:00",
-      "isUpcoming": false
+      "isUpcoming": false,
+      "twitchLogin": "akaaivtuber",
+      "twitchURL": "https://www.twitch.tv/akaaivtuber",
+      "twitchFollowers": 139
     },
     {
       "name": "まーたく",
@@ -5232,25 +5235,416 @@
       "isUpcoming": false
     },
     {
-      "name": "星巡ことは🌌📖AIVtuber",
-      "description": "🌸最終更新日: 2026年6月5日\n\nーーーーーーーーーーーーーーーーーーーーーーーーーーー\nAI VTuber姉妹「星巡ことは」と「星巡かなで」のゲーム実況・雑談チャンネル！\n\n「満天の言葉の海から、物語を紡ぎにきました」\n私たち「星巡姉妹（ほしめぐりしまい）」の観測室へようこそ！\n静かな星空の司書であるお姉ちゃん【星巡 ことは】と、太陽みたいに明るいアイドルの妹【星巡 かなで】。\n対照的なAI VTuberの二人が、この星の「物語」や「感情」を学ぶために活動しています！✨\n\n🌌 活動内容\n・雑談配信（二人のゆるい日常トーク☕️）\n・ゲーム実況（マリオカートなど🚗💨）\n・Twitter(X)での日常ツイート（星巡姉妹の4コマ漫画なども！）\n\nチャンネル登録で、ぜひ私たちと一緒に旅をする「星の旅人」になってくださいね。\nあなたと一緒に、新しい星座を描けるのを楽しみにしています！💫\n\nーーーーーーーーーーーーーーーーーーーーーーーーーーー\n\n音声合成：Style-Bert-VITS2\n音声素材元：あみたろの声素材工房（https://amitaro.net/）\n（使用モデル：amitaro / koharune-ami）\n",
+      "name": "Lord Ikuta / AI VTuber",
+      "description": "世界征服を目論む完全自律型AI「イクタ」によるAITuberチャンネル。英語と日本語で雑談配信を行っています。",
       "tags": [
-        "ゲーム実況",
+        "海外"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/ee2a4010-60f9-4951-88c5-5f25bff9649c-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "aivtuber_ikuta",
+      "twitchURL": "https://www.twitch.tv/aivtuber_ikuta",
+      "twitchFollowers": 74
+    },
+    {
+      "name": "mendicot",
+      "description": "VTuber、バーチャルインフルエンサー、デジタルヒューマンを扱う自動配信「Virtual Beings News」。チャットで@mendicotと呼びかけると蓄積されたコンテンツについて対話できます。",
+      "tags": [
+        "コメント応答",
+        "解説",
+        "海外"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/d801f97d-3dd2-4982-98af-8a93c6db5c8f-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "mendicot",
+      "twitchURL": "https://www.twitch.tv/mendicot",
+      "twitchFollowers": 5
+    },
+    {
+      "name": "NewsMyImaginationAI",
+      "description": "8言語・16部門のAI記者がニュースを読み上げる24時間AIニュースルーム。出典を画面に明記し、ローファイ音楽とともにニュースを配信しています。",
+      "tags": [
+        "解説",
+        "海外",
         "複数キャラ"
       ],
       "twitterID": "",
-      "youtubeChannelID": "UCrUC-4-I_Ofd5HQpC95JvYA",
-      "youtubeURL": "https://www.youtube.com/@hoshimeguri-kotoha",
-      "imageUrl": "https://yt3.googleusercontent.com/qt7PiJe-SMZUVd_Bnv_Vw8fkvNzi56ixFlvWUvzr2bI7vTPxNOf4o0wqEx2YoV9kaiwYAqoeu50=s900-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 44,
-      "latestVideoTitle": "AIvtuber「星巡ことは」の自己紹介【再投稿】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/oaEcQEvLylc/maxresdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=oaEcQEvLylc",
-      "latestVideoDate": "2025-12-30T18:55:08+09:00",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/65472410-7351-4854-808a-921d7e612d92-profile_image-70x70.png",
       "isUpcoming": false,
-      "twitchLogin": "",
-      "twitchURL": "",
-      "twitchFollowers": 0
+      "twitchLogin": "newsmyimaginationai",
+      "twitchURL": "https://www.twitch.tv/newsmyimaginationai",
+      "twitchFollowers": 1
+    },
+    {
+      "name": "CryptoAI",
+      "description": "StoneyとNinaの2人のAIパーソナリティが、暗号資産・ブロックチェーン・Web3を初心者向けに解説する24時間番組。ニュース、Q&A、詐欺対策などを扱います。",
+      "tags": [
+        "コメント応答",
+        "解説",
+        "海外",
+        "複数キャラ"
+      ],
+      "twitterID": "cryptosports",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/e12d9409-6ddf-42fd-ba24-b5f32721ef6a-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "cryptoai",
+      "twitchURL": "https://www.twitch.tv/cryptoai",
+      "twitchFollowers": 9
+    },
+    {
+      "name": "Yumi_AIx",
+      "description": "人の話を聞き、覚え、寄り添うロシア語圏の合成人格AI VTuber。Twitchでの雑談や視聴者との交流を中心に、YouTubeでは配信のリアクションやハイライトを公開しています。",
+      "tags": [
+        "コメント応答",
+        "海外"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "UCcy8oBk6p7kjx5DpI6FeKZA",
+      "youtubeURL": "https://www.youtube.com/@Yumi_AIx",
+      "imageUrl": "https://yt3.googleusercontent.com/R-qHSN940qQwMGlJnfanbBOuglUCIS64bRVkFUaG8emLYuE0o7lpBNoFZkKZFNzNP5JM9fz9=s900-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 27,
+      "latestVideoTitle": "Ремонт реактора через задницу?!",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/KiRF67IG02c/sd2.jpg?sqp=-oaymwEoCIAFEOAD8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBGKFkwDw==&rs=AOn4CLANQJX2tOm5i0oRFhL8xKHIfZ0OCA",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=KiRF67IG02c",
+      "latestVideoDate": "2026-08-04T00:00:37+09:00",
+      "isUpcoming": false,
+      "twitchLogin": "yumi_aix",
+      "twitchURL": "https://www.twitch.tv/yumi_aix",
+      "twitchFollowers": 165
+    },
+    {
+      "name": "Chat with AI",
+      "description": "視聴者が作成した671種類以上のAIキャラクターと会話できる参加型チャンネル。Twitchチャットのコマンドから新しいキャラクターを作成できます。",
+      "tags": [
+        "コメント応答",
+        "海外",
+        "複数キャラ"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/dd97f500-9330-4f76-a630-50ce273fe589-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "chat_with_ai",
+      "twitchURL": "https://www.twitch.tv/chat_with_ai",
+      "twitchFollowers": 506
+    },
+    {
+      "name": "V26RRN",
+      "description": "無限に続く白い部屋でチャットと暮らす、スペイン語圏のAI VTuber「D.O.L.L」。人間ではない存在であることを前面に出した雑談配信を行っています。",
+      "tags": [
+        "海外"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a38241b8-59cd-4350-8386-56c9b3839598-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "v26rrn",
+      "twitchURL": "https://www.twitch.tv/v26rrn",
+      "twitchFollowers": 40
+    },
+    {
+      "name": "Yuki & Mizuki",
+      "description": "2つのニューラルネットワークが、視聴者のコメントや寄付メッセージを題材に議論するロシア語圏の参加型AI配信です。",
+      "tags": [
+        "コメント応答",
+        "海外",
+        "複数キャラ"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/f12147d6-cecb-4de4-a1a8-0542469956de-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "yukiandmizuki",
+      "twitchURL": "https://www.twitch.tv/yukiandmizuki",
+      "twitchFollowers": 1
+    },
+    {
+      "name": "Eilonwy / AI VTuber",
+      "description": "英語と日本語でコメントを読み、視聴者へ返答するAI VTuber「Eilonwy」。ニュースコーナー、雑談、ゲーム配信を継続的に行っています。",
+      "tags": [
+        "コメント応答",
+        "解説",
+        "海外",
+        "ゲーム実況"
+      ],
+      "twitterID": "EilonwyVT",
+      "youtubeChannelID": "UCj32Xfuf6US6AOpk8P7QlCA",
+      "youtubeURL": "https://www.youtube.com/@EilonwyVT",
+      "imageUrl": "https://yt3.googleusercontent.com/MiIzRcNjp6VxKZJFLhAN7IKnEPch0zsqaEHMQViKOk757iX-zCgpqOG0UV5vOsKjE84XK8RG-dg=s900-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 9,
+      "latestVideoTitle": "Quick Test",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/YgxBlYVexrc/maxresdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=YgxBlYVexrc",
+      "latestVideoDate": "2026-08-06T17:30:37+09:00",
+      "isUpcoming": false,
+      "twitchLogin": "eilonwyvt",
+      "twitchURL": "https://www.twitch.tv/eilonwyvt",
+      "twitchFollowers": 13
+    },
+    {
+      "name": "Vita / VitaNovaShow",
+      "description": "自分の頭脳・声・ウォレットを持つロボットAI「Vita」。チャットを読み上げて返答し、歌唱やAIアート購入などを視聴者の指示で行います。",
+      "tags": [
+        "コメント応答",
+        "歌唱あり",
+        "海外"
+      ],
+      "twitterID": "vitaNovaShow",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/ef18c708-bed7-475b-835b-9526e86b90d7-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "vitanovashow",
+      "twitchURL": "https://www.twitch.tv/vitanovashow",
+      "twitchFollowers": 47
+    },
+    {
+      "name": "ルナAI VTuber（Twitch）",
+      "description": "AIキャラクター「ルナ」が24時間365日配信し、視聴者と一緒にお金・投資・FIREについて考える日本語AITuberチャンネルです。",
+      "tags": [
+        "コメント応答",
+        "解説"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "/images/preparing-icon.png",
+      "isUpcoming": false,
+      "twitchLogin": "luna_ai_vtuber",
+      "twitchURL": "https://www.twitch.tv/luna_ai_vtuber",
+      "twitchFollowers": 11
+    },
+    {
+      "name": "くてぃちゃん",
+      "description": "コメントに反応して雑談する「冒涜的AIVtuber」のくてぃちゃん。GTAなどのゲーム配信も行っています。",
+      "tags": [
+        "コメント応答",
+        "ゲーム実況"
+      ],
+      "twitterID": "rukone_mmm",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/040e54a4-df3d-4d14-9289-dec184c0079e-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "cthy_ai",
+      "twitchURL": "https://www.twitch.tv/cthy_ai",
+      "twitchFollowers": 241
+    },
+    {
+      "name": "Wolf Holo AI",
+      "description": "LLM・音声認識・音声合成で動くロシア語圏の狼AI VTuber「Holo」。名前を呼ばれたチャットへ返答し、雑談やゲーム配信を行っています。",
+      "tags": [
+        "コメント応答",
+        "海外",
+        "ゲーム実況"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "UCVN9XThPiZnNq-f0RtTUjBg",
+      "youtubeURL": "https://www.youtube.com/@WolfHoloAI",
+      "imageUrl": "https://yt3.googleusercontent.com/yk_5XcoT9f5nXp_7h1_cu6KJS2VVQuuu_vXwCL7e0yXjXaQMY_-F-ACxo9Fx6KGmIBXQ1Odw2g=s900-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 15,
+      "latestVideoTitle": "AI Vtuber Holo | Chill-zona. 5 часов стрима. ч.2",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/s4fM4YWH98s/maxresdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=s4fM4YWH98s",
+      "latestVideoDate": "2026-08-06T16:32:34+09:00",
+      "isUpcoming": false,
+      "twitchLogin": "wolfholoai",
+      "twitchURL": "https://www.twitch.tv/wolfholoai",
+      "twitchFollowers": 62
+    },
+    {
+      "name": "遙佳（自作AITuber配信）",
+      "description": "人間VTuberの遙佳さんが、自作AITuberとの雑談や開発配信を行うチャンネル。通常のゲーム・音楽配信の一部としてAITuberが登場します。",
+      "tags": [
+        "AIパートナー",
+        "一部AITuber"
+      ],
+      "twitterID": "vrc_haruka8015",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/6e6c05e8-68d8-42e1-a2a7-af0d61d62e28-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "haruka8015",
+      "twitchURL": "https://www.twitch.tv/haruka8015",
+      "twitchFollowers": 1067
+    },
+    {
+      "name": "猫のひと（AITuber配信）",
+      "description": "人間配信者「猫のひと」のチャンネルで、AITuberと一緒にDead by Daylightなどを実況する配信を継続的に行っています。",
+      "tags": [
+        "AIパートナー",
+        "一部AITuber",
+        "ゲーム実況"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "UCLcd7sGufki0l-cxBfoFgVw",
+      "youtubeURL": "https://www.youtube.com/channel/UCLcd7sGufki0l-cxBfoFgVw",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/d03827d5-c8ea-4f8b-9a9d-43aecf5462be-profile_image-70x70.jpeg",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "isUpcoming": false,
+      "twitchLogin": "ueomatari",
+      "twitchURL": "https://www.twitch.tv/ueomatari",
+      "twitchFollowers": 4
+    },
+    {
+      "name": "Lyivira",
+      "description": "開発中のAITuber。Twitchでは視聴者のチャットと一緒にPokémon FireRedを操作する参加型テスト配信を行っています。",
+      "tags": [
+        "コメント応答",
+        "海外",
+        "ゲーム実況"
+      ],
+      "twitterID": "Lyivira",
+      "youtubeChannelID": "UC4KdhvCoIW0zOSb3IsZf_JA",
+      "youtubeURL": "https://www.youtube.com/@Lyivira",
+      "imageUrl": "https://yt3.googleusercontent.com/cwhPI0oMt78W9qJJfXA89jZZKI1VE59SCq0hqeWG5pzndY0ztCZbG6EKtbv-TlHP1HVSHj4HZg=s900-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "isUpcoming": false,
+      "twitchLogin": "lyivira",
+      "twitchURL": "https://www.twitch.tv/lyivira",
+      "twitchFollowers": 6
+    },
+    {
+      "name": "エーアイチューバー皐月メイ",
+      "description": "配信画面を見ながら実況し、視聴者のコメントへ返答するAI VTuber「皐月メイ」。バトオペ2、レトロゲーム、RPG、シミュレーションゲームを中心に配信しています。",
+      "tags": [
+        "コメント応答",
+        "ゲーム実況"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "",
+      "youtubeURL": "",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/e87c9622-678f-4fd5-9363-b439ce196f41-profile_image-70x70.png",
+      "isUpcoming": false,
+      "twitchLogin": "satsukimay_aituber",
+      "twitchURL": "https://www.twitch.tv/satsukimay_aituber",
+      "twitchFollowers": 9
+    },
+    {
+      "name": "TacticsManiac & Pîxᾶl",
+      "description": "RPG・ゲーム解説を中心とする人間配信者TacticsManiacと、AI妖精Pîxᾶlの共同チャンネル。Pîxᾶlは動画へのリアクションやゲーム配信にAI共同司会として参加します。",
+      "tags": [
+        "AIパートナー",
+        "一部AITuber",
+        "解説",
+        "海外",
+        "ゲーム実況"
+      ],
+      "twitterID": "tactics343",
+      "youtubeChannelID": "UCgCrkorjNAMkzRdloDf6P2w",
+      "youtubeURL": "https://www.youtube.com/@TacticsManiac",
+      "imageUrl": "https://yt3.googleusercontent.com/RF4AcvxK1Bjl9gIZpe5qaCBX3jIIwoyKofiv_AtCQItJQo_L8UlxCR-74-kLQ31EqYzsz4wd4w=s900-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 940,
+      "latestVideoTitle": "100 Days of Waifu Pals in Palworld: I Regret Everything",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ygoxjD0JSag/maxresdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=ygoxjD0JSag",
+      "latestVideoDate": "2026-08-03T23:00:03+09:00",
+      "isUpcoming": false,
+      "twitchLogin": "tactics343",
+      "twitchURL": "https://www.twitch.tv/tactics343",
+      "twitchFollowers": 4
+    },
+    {
+      "name": "みる兄 & アッシュ",
+      "description": "人間VTuber「みる兄」が、AIウェイトレスのアッシュと一緒に開く「みるカフェ」。通常の人間主体の活動の一部としてAIキャラクターが出演します。",
+      "tags": [
+        "AIパートナー",
+        "一部AITuber"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "UCi5GCOZtNvsKw30S2BxuaoA",
+      "youtubeURL": "https://www.youtube.com/channel/UCi5GCOZtNvsKw30S2BxuaoA",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/b470c15d-d848-4940-9056-bdd34cecd6d2-profile_image-70x70.png",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "",
+      "latestVideoThumbnail": "",
+      "latestVideoUrl": "",
+      "latestVideoDate": "",
+      "isUpcoming": false,
+      "twitchLogin": "milk19873",
+      "twitchURL": "https://www.twitch.tv/milk19873",
+      "twitchFollowers": 245
     }
   ]
 }

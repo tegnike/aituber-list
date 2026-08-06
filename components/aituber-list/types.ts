@@ -39,6 +39,7 @@ export type SubscriberFilter = '100' | '500' | '1000' | '10000'
 export type SortOrder = 'subscribers' | 'latest' | 'name' | 'random'
 export type ViewMode = 'grid' | 'list'
 export type TagFilterMode = 'or' | 'and' | 'not'
+export type PlatformFilter = 'all' | 'youtube' | 'twitch'
 
 // 一部AITuberは通常のタグ選択肢ではなく、AITuberメイン判定用の特殊分類として扱う
 export const PARTIAL_AITUBER_TAG = '一部AITuber'
