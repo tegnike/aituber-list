@@ -16,7 +16,7 @@ npm run start      # Start production server
 npm run lint       # Run ESLint
 
 # Data Management (requires Python environment)
-python scripts/update_aitubers.py  # Update AITuber data from YouTube API
+python scripts/update_aitubers.py  # Update AITuber data from YouTube and Twitch APIs
 python scripts/add_aitubers.py     # Add new AITubers to the list
 ```
 
@@ -25,7 +25,7 @@ python scripts/add_aitubers.py     # Add new AITubers to the list
 ### Data Flow
 1. AITuber data stored in `app/data/aitubers.json`
 2. Data updates twice daily (9 AM and 21:00 JST) via GitHub Actions
-3. Python scripts fetch data from YouTube Data API and TikTok
+3. Python scripts fetch data from YouTube Data API, Twitch API, and TikTok
 4. Static site regeneration on data updates
 
 ### Core Components
@@ -51,9 +51,10 @@ python scripts/add_aitubers.py     # Add new AITubers to the list
 ## Python Scripts
 
 ### update_aitubers.py
-- Updates subscriber counts and latest video information
-- Handles YouTube premieres and upcoming streams
+- Updates YouTube subscriber/video data and Twitch stream/VOD data
+- Handles YouTube premieres, upcoming streams, and Twitch live status
 - Requires `YOUTUBE_API_KEY` environment variable
+- Uses `TWITCH_CLIENT_ID` and `TWITCH_CLIENT_SECRET` when Twitch channels are present
 
 ### add_aitubers.py
 - Adds new AITubers via OpenAI API or direct YouTube URLs
@@ -64,6 +65,8 @@ python scripts/add_aitubers.py     # Add new AITubers to the list
 ## API Keys & Environment
 - **YOUTUBE_API_KEY**: Required for data updates
 - **YOUTUBE_API_KEY2**: Fallback YouTube API key
+- **TWITCH_CLIENT_ID**: Twitch Developer application client ID
+- **TWITCH_CLIENT_SECRET**: Twitch Developer application client secret
 - **OPENAI_API_KEY**: Required for AI-powered AITuber additions
 - No frontend environment variables needed for development
 

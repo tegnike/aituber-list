@@ -6,6 +6,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from urllib.parse import urlparse
 from dotenv import load_dotenv
+from update_aitubers import get_twitch_app_access_token, update_twitch_info
 
 # .envファイルから環境変数を読み込む
 load_dotenv()
@@ -31,6 +32,8 @@ Please provide the following information for each item:
 - latestVideoThumbnail: Latest video thumbnail URL
 - latestVideoUrl: Latest video URL
 - latestVideoDate: Latest video publication date (ISO 8601 format)
+- twitchLogin: Twitch channel login name
+- twitchURL: Twitch channel URL
 
 # Notes
 
@@ -55,7 +58,9 @@ Please output the JSON data in the following format (must be in array format):
             "latestVideoTitle": "[Latest video title]",
             "latestVideoThumbnail": "[Latest video thumbnail URL]",
             "latestVideoUrl": "[Latest video URL]",
-            "latestVideoDate": "[Latest video publication datetime (ISO 8601 format)]"
+            "latestVideoDate": "[Latest video publication datetime (ISO 8601 format)]",
+            "twitchLogin": "[Twitch login name]",
+            "twitchURL": "[Twitch channel URL]"
         }
     ]
 }
@@ -126,6 +131,17 @@ class Main:
         self.youtube_api_key1 = os.environ.get("YOUTUBE_API_KEY")
         self.youtube_api_key2 = os.environ.get("YOUTUBE_API_KEY2")
         self.current_youtube_api_key_name = "YOUTUBE_API_KEY"
+        self.twitch_client_id = os.environ.get("TWITCH_CLIENT_ID")
+        self.twitch_client_secret = os.environ.get("TWITCH_CLIENT_SECRET")
+        self.twitch_access_token = None
+
+        if self.twitch_client_id and self.twitch_client_secret:
+            try:
+                self.twitch_access_token = get_twitch_app_access_token(
+                    self.twitch_client_id, self.twitch_client_secret
+                )
+            except Exception as error:
+                print(f"Twitch APIの認証に失敗しました: {type(error).__name__}")
 
         if not self.youtube_api_key1:
             print("警告: YOUTUBE_API_KEY が設定されていません。")
@@ -283,6 +299,41 @@ class Main:
                 return None
         return None
 
+    def get_twitch_login(self, url_or_name):
+        """Twitch URLまたはログイン名からログイン名を取得"""
+        if not url_or_name:
+            return None
+        parsed_url = urlparse(url_or_name)
+        if parsed_url.netloc in ("www.twitch.tv", "twitch.tv"):
+            path = parsed_url.path.strip("/").split("/")[0]
+            return path.lower() if path else None
+        if not parsed_url.netloc and not url_or_name.startswith("@"):
+            return url_or_name.strip().lower()
+        return None
+
+    def get_twitch_channel_info(self, login):
+        if not self.twitch_access_token:
+            return None
+        base = {
+            "name": "",
+            "description": "",
+            "tags": [],
+            "twitterID": "",
+            "youtubeChannelID": "",
+            "youtubeURL": "",
+            "imageUrl": "",
+            "youtubeSubscribers": 0,
+            "latestVideoTitle": "",
+            "latestVideoThumbnail": "",
+            "latestVideoUrl": "",
+            "latestVideoDate": "",
+            "twitchLogin": login,
+            "twitchURL": f"https://www.twitch.tv/{login}",
+        }
+        return update_twitch_info(
+            base, self.twitch_client_id, self.twitch_access_token
+        )
+
     def is_duplicate(self, new_aituber):
         """既存のAITuberと重複しているかチェック"""
         for existing in self.existing_data["aitubers"]:
@@ -291,21 +342,30 @@ class Main:
                 and existing["youtubeChannelID"] == new_aituber["youtubeChannelID"]
             ):
                 return True
+            if (
+                existing.get("twitchLogin")
+                and existing.get("twitchLogin") == new_aituber.get("twitchLogin")
+            ):
+                return True
         return False
 
     def add_new_aitubers(self, new_aitubers):
         """新しいAITuberを追加"""
         added_count = 0
         for aituber in new_aitubers:
-            if not aituber.get("youtubeChannelID"):
+            if not aituber.get("youtubeChannelID") and not aituber.get("twitchLogin"):
                 channel_id = self.get_channel_id(aituber.get("youtubeURL", ""))
                 if channel_id:
                     aituber["youtubeChannelID"] = channel_id
                 else:
-                    print(
-                        f"YouTubeチャンネルIDが見つかりませんでした: {aituber.get('name', 'Unknown')}"
-                    )
-                    continue
+                    twitch_login = self.get_twitch_login(aituber.get("twitchURL", ""))
+                    if twitch_login:
+                        aituber["twitchLogin"] = twitch_login
+                    else:
+                        print(
+                            f"YouTube/Twitchチャンネルが見つかりませんでした: {aituber.get('name', 'Unknown')}"
+                        )
+                        continue
 
             # チャンネルIDが見つかった場合、または最初から存在する場合、詳細情報を取得して更新
             if aituber.get("youtubeChannelID"):
@@ -350,6 +410,15 @@ class Main:
         return added_count
 
     def run(self, content: str):
+        twitch_login = self.get_twitch_login(content) if "twitch.tv" in content else None
+        if twitch_login:
+            channel_info = self.get_twitch_channel_info(twitch_login)
+            if channel_info:
+                self.add_new_aitubers([channel_info])
+            else:
+                print("Twitchチャンネル情報の取得に失敗しました。")
+            return
+
         if not self.youtube and (content.startswith("http") or content.startswith("@")):
             print(
                 "YouTube APIクライアントが利用できないため、URL/ハンドルからの直接処理はスキップします。"

@@ -3,6 +3,9 @@ import json
 from datetime import datetime, timezone, timedelta
 import pytz
 import os
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
 
 def load_aitubers():
@@ -15,6 +18,106 @@ def save_aitubers(data):
     """aitubers.jsonを保存する"""
     with open("app/data/aitubers.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def request_json(url, *, method="GET", headers=None, data=None):
+    """JSON APIを呼び出す。認証情報をログへ出さない。"""
+    encoded_data = urlencode(data).encode("utf-8") if data else None
+    request = Request(url, data=encoded_data, headers=headers or {}, method=method)
+    with urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def get_twitch_app_access_token(client_id, client_secret):
+    """Client Credentials FlowでTwitch App Access Tokenを取得する。"""
+    response = request_json(
+        "https://id.twitch.tv/oauth2/token",
+        method="POST",
+        data={
+            "client_id": client_id,
+            "client_secret": client_secret,
+            "grant_type": "client_credentials",
+        },
+    )
+    return response["access_token"]
+
+
+def twitch_api_get(path, params, client_id, access_token):
+    query = urlencode(params)
+    return request_json(
+        f"https://api.twitch.tv/helix/{path}?{query}",
+        headers={
+            "Authorization": f"Bearer {access_token}",
+            "Client-Id": client_id,
+        },
+    )
+
+
+def normalize_twitch_thumbnail(url):
+    return url.replace("{width}", "640").replace("{height}", "360") if url else ""
+
+
+def update_twitch_info(aituber, client_id, access_token):
+    """Twitchプロフィール、配信中状態、最新VODを更新する。"""
+    login = aituber.get("twitchLogin", "").strip().lower()
+    if not login:
+        return aituber
+
+    users = twitch_api_get("users", {"login": login}, client_id, access_token).get("data", [])
+    if not users:
+        print(f"Twitchユーザーが見つかりませんでした: {login}")
+        return aituber
+
+    user = users[0]
+    user_id = user["id"]
+    aituber.update(
+        {
+            "twitchLogin": user["login"],
+            "twitchUserID": user_id,
+            "twitchURL": f"https://www.twitch.tv/{user['login']}",
+        }
+    )
+
+    if not aituber.get("imageUrl"):
+        aituber["imageUrl"] = user.get("profile_image_url", "")
+    if not aituber.get("name"):
+        aituber["name"] = user.get("display_name", login)
+    if not aituber.get("description"):
+        aituber["description"] = user.get("description", "")
+
+    streams = twitch_api_get("streams", {"user_id": user_id}, client_id, access_token).get("data", [])
+    if streams:
+        stream = streams[0]
+        aituber.update(
+            {
+                "twitchIsLive": True,
+                "twitchTitle": stream.get("title", ""),
+                "twitchThumbnail": normalize_twitch_thumbnail(stream.get("thumbnail_url", "")),
+                "twitchContentUrl": aituber["twitchURL"],
+                "twitchContentDate": stream.get("started_at", ""),
+            }
+        )
+        return aituber
+
+    aituber["twitchIsLive"] = False
+    videos = twitch_api_get(
+        "videos",
+        {"user_id": user_id, "first": 1, "type": "archive"},
+        client_id,
+        access_token,
+    ).get("data", [])
+    if videos:
+        video = videos[0]
+        aituber.update(
+            {
+                "twitchTitle": video.get("title", ""),
+                "twitchThumbnail": normalize_twitch_thumbnail(video.get("thumbnail_url", "")),
+                "twitchContentUrl": video.get("url", aituber["twitchURL"]),
+                "twitchContentDate": video.get("created_at", ""),
+            }
+        )
+
+    return aituber
 
 
 def update_aituber_info(aituber, youtube):
@@ -155,10 +258,23 @@ def update_aituber_info(aituber, youtube):
 def update_aituber_data():
     # YouTube Data API の認証情報
     api_key = os.environ.get("YOUTUBE_API_KEY")
-    if not api_key:
-        raise ValueError("YouTube API Key is not set")
+    youtube = build("youtube", "v3", developerKey=api_key) if api_key else None
 
-    youtube = build("youtube", "v3", developerKey=api_key)
+    twitch_client_id = os.environ.get("TWITCH_CLIENT_ID")
+    twitch_client_secret = os.environ.get("TWITCH_CLIENT_SECRET")
+    twitch_access_token = None
+    if twitch_client_id and twitch_client_secret:
+        try:
+            twitch_access_token = get_twitch_app_access_token(
+                twitch_client_id, twitch_client_secret
+            )
+        except (HTTPError, URLError, KeyError, ValueError) as error:
+            print(f"Twitch APIの認証に失敗しました: {type(error).__name__}")
+    else:
+        print("警告: Twitch API認証情報がないためTwitch更新をスキップします。")
+
+    if not youtube:
+        print("警告: YOUTUBE_API_KEYがないためYouTube更新をスキップします。")
 
     # AITuberデータの読み込み
     data = load_aitubers()
@@ -166,8 +282,13 @@ def update_aituber_data():
     # 各AITuberの情報を更新
     for i, aituber in enumerate(data["aitubers"]):
         try:
-            data["aitubers"][i] = update_aituber_info(aituber, youtube)
-            print(f"Updated: {aituber['name']}")
+            updated = update_aituber_info(aituber, youtube) if youtube else aituber
+            if twitch_access_token and updated.get("twitchLogin"):
+                updated = update_twitch_info(
+                    updated, twitch_client_id, twitch_access_token
+                )
+            data["aitubers"][i] = updated
+            print(f"Updated: {updated['name']}")
         except Exception as e:
             print(f"Error updating {aituber['name']}: {e}")
 

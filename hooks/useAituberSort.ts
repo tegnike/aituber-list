@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
+import { getAudienceCount, getLatestContentDate } from '@/components/aituber-list/types'
 import type { AITuber, SortOrder } from '@/components/aituber-list/types'
 
 export interface UseAituberSortReturn {
@@ -15,9 +16,9 @@ export function useAituberSort(
     const sorted = [...aitubers]
     switch (sortOrder) {
       case 'subscribers':
-        return sorted.sort((a, b) => b.youtubeSubscribers - a.youtubeSubscribers)
+        return sorted.sort((a, b) => getAudienceCount(b) - getAudienceCount(a))
       case 'latest':
-        return sorted.sort((a, b) => new Date(b.latestVideoDate).getTime() - new Date(a.latestVideoDate).getTime())
+        return sorted.sort((a, b) => new Date(getLatestContentDate(b)).getTime() - new Date(getLatestContentDate(a)).getTime())
       case 'name':
         return sorted.sort((a, b) => a.name.localeCompare(b.name, 'ja'))
       case 'random':

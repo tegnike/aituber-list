@@ -2,7 +2,14 @@
 
 import { useMemo } from 'react'
 import type { AITuber, DateFilter, SubscriberFilter, TagFilterMode } from '@/components/aituber-list/types'
-import { isWithinDateRange, PARTIAL_AITUBER_TAG, SUBSCRIBER_FILTER_LABELS } from '@/components/aituber-list/types'
+import {
+  getAituberId,
+  getAudienceCount,
+  getLatestContentDate,
+  isWithinDateRange,
+  PARTIAL_AITUBER_TAG,
+  SUBSCRIBER_FILTER_LABELS
+} from '@/components/aituber-list/types'
 
 export interface FilterOptions {
   selectedTags: string[]
@@ -55,16 +62,16 @@ export function useAituberFilters(
     }
 
     return aitubers.filter(aituber =>
-      isWithinDateRange(aituber.latestVideoDate, selectedDateFilter) &&
+      isWithinDateRange(getLatestContentDate(aituber), selectedDateFilter) &&
       matchesTags(aituber) &&
       (!showMainAITubersOnly || !aituber.tags.includes(PARTIAL_AITUBER_TAG)) &&
       (!selectedSubscriberFilter ||
-        aituber.youtubeSubscribers >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
+        getAudienceCount(aituber) >= SUBSCRIBER_FILTER_LABELS[selectedSubscriberFilter].threshold) &&
       (nameFilter === '' ||
         aituber.name.toLowerCase().includes(nameFilter.toLowerCase()) ||
         aituber.description.toLowerCase().includes(nameFilter.toLowerCase())) &&
-      (!showUpcomingOnly || aituber.isUpcoming) &&
-      (!showFavoritesOnly || favorites.includes(aituber.youtubeChannelID))
+      (!showUpcomingOnly || aituber.isUpcoming || aituber.twitchIsLive) &&
+      (!showFavoritesOnly || favorites.includes(getAituberId(aituber)))
     )
   }, [
     aitubers,

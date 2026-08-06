@@ -17,6 +17,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { getTagName, getTagDescription, TranslationKey, Locale } from "@/lib/i18n"
+import { getLatestContentDate } from './types'
 import type { AITuber, DateFilter, SubscriberFilter, TagFilterMode } from './types'
 import { isWithinDateRange, SUBSCRIBER_FILTER_LABELS } from './types'
 
@@ -233,7 +234,7 @@ export function FilterPanel({
                   >
                     {t(`date.${value}` as `date.${DateFilter}`)}
                     <span className="ml-1 text-xs">
-                      ({aitubers.filter(a => isWithinDateRange(a.latestVideoDate, value)).length})
+                      ({aitubers.filter(a => isWithinDateRange(getLatestContentDate(a), value)).length})
                     </span>
                   </Badge>
                 ))}

@@ -29,6 +29,17 @@ const pwaConfig = withPWA({
       },
     },
     {
+      urlPattern: /^https:\/\/static-cdn\.jtvnw\.net\/.*/i,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'twitch-images',
+        expiration: {
+          maxEntries: 200,
+          maxAgeSeconds: 60 * 60 * 24 * 7,
+        },
+      },
+    },
+    {
       urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|avif)$/i,
       handler: 'CacheFirst',
       options: {
@@ -76,6 +87,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'yt3.ggpht.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static-cdn.jtvnw.net',
         pathname: '/**',
       },
     ],

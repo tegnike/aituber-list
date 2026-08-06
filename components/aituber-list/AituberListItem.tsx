@@ -3,11 +3,12 @@
 import { memo } from 'react'
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
-import { Calendar, Heart } from "lucide-react"
+import { Calendar, Heart, Twitch } from "lucide-react"
 import { YoutubeIcon } from "@/components/icons"
 import { formatSubscriberCount, getTagName, TranslationKey, Locale } from "@/lib/i18n"
 import { AITuberImage } from './AITuberImage'
 import { HighlightText } from './HighlightText'
+import { getAituberProfileUrl, getLatestContent } from './types'
 import type { AITuber } from './types'
 
 interface AituberListItemProps {
@@ -33,13 +34,16 @@ export const AituberListItem = memo(function AituberListItem({
   priority = false,
   searchTerm = ''
 }: AituberListItemProps) {
+  const profileUrl = getAituberProfileUrl(aituber)
+  const latestContent = getLatestContent(aituber)
+
   return (
     <Card className="overflow-hidden border-border/70 bg-card/95 shadow-sm transition-all hover:border-violet-300/80 hover:shadow-md dark:hover:border-violet-400/35">
       <div className="flex items-center gap-2 p-3 sm:gap-4 sm:px-4">
         {/* アイコン */}
         <div className="shrink-0">
-          {aituber.youtubeURL ? (
-            <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
+          {profileUrl ? (
+            <a href={profileUrl} target="_blank" rel="noopener noreferrer">
               <AITuberImage
                 src={aituber.imageUrl}
                 alt={aituber.name}
@@ -82,35 +86,48 @@ export const AituberListItem = memo(function AituberListItem({
         </div>
 
         {/* 登録者数 */}
-        <div className="hidden sm:block w-20 shrink-0 text-sm text-muted-foreground text-right">
-          {formatSubscriberCount(aituber.youtubeSubscribers, locale)}
-        </div>
+        {(aituber.youtubeChannelID || typeof aituber.twitchFollowers === 'number') && (
+          <div className="hidden w-20 shrink-0 text-right text-sm text-muted-foreground sm:block">
+            {formatSubscriberCount(
+              aituber.youtubeChannelID ? aituber.youtubeSubscribers : (aituber.twitchFollowers || 0),
+              locale
+            )}
+          </div>
+        )}
 
         {/* 最終更新日 */}
         <div className="hidden md:flex w-24 shrink-0 items-center gap-1 text-sm text-muted-foreground">
           <Calendar className="w-3 h-3" />
           <span className="truncate">
-            {aituber.latestVideoDate ? new Date(aituber.latestVideoDate).toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'en-US') : '-'}
+            {latestContent?.date ? new Date(latestContent.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'en-US') : '-'}
           </span>
         </div>
 
         {/* 配信予定バッジ */}
-        {aituber.isUpcoming && (
+        {latestContent?.isLive ? (
+          <Badge className="hidden shrink-0 bg-red-600 px-1 text-xs text-white hover:bg-red-600 sm:inline-flex">
+            {t('card.liveNow')}
+          </Badge>
+        ) : aituber.isUpcoming ? (
           <Badge variant="secondary" className="hidden shrink-0 bg-blue-100 px-1 text-xs text-blue-800 dark:bg-blue-400/20 dark:text-blue-200 sm:inline-flex">
             {t('card.upcomingStream')}
           </Badge>
-        )}
+        ) : null}
 
         {/* 最新動画リンク */}
-        {aituber.latestVideoUrl && (
+        {latestContent && (
           <a
-            href={aituber.latestVideoUrl}
+            href={latestContent.url}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 rounded-full border border-transparent p-1.5 transition-colors hover:border-border hover:bg-muted"
             aria-label={t('card.latestVideo')}
           >
-            <YoutubeIcon className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 hover:text-red-600" />
+            {latestContent.platform === 'twitch' ? (
+              <Twitch className="h-4 w-4 text-purple-600 hover:text-purple-700 sm:h-5 sm:w-5" />
+            ) : (
+              <YoutubeIcon className="h-4 w-4 text-red-500 hover:text-red-600 sm:h-5 sm:w-5" />
+            )}
           </a>
         )}
 

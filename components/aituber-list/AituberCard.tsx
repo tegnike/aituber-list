@@ -1,10 +1,11 @@
 'use client'
 
 import { memo } from 'react'
+import Image from 'next/image'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { Calendar, Heart } from "lucide-react"
+import { Calendar, Heart, Twitch } from "lucide-react"
 import { YoutubeIcon, XIcon } from "@/components/icons"
 import {
   Tooltip,
@@ -16,6 +17,7 @@ import { formatDate, formatSubscriberCount, getTagName, getTagDescription, Trans
 import { AITuberImage } from './AITuberImage'
 import { LazyVideo } from './LazyVideo'
 import { HighlightText } from './HighlightText'
+import { getAituberProfileUrl, getLatestContent } from './types'
 import type { AITuber } from './types'
 
 interface AituberCardProps {
@@ -41,6 +43,10 @@ export const AituberCard = memo(function AituberCard({
   priority = false,
   searchTerm = ''
 }: AituberCardProps) {
+  const profileUrl = getAituberProfileUrl(aituber)
+  const twitchUrl = aituber.twitchURL || (aituber.twitchLogin ? `https://www.twitch.tv/${aituber.twitchLogin}` : '')
+  const latestContent = getLatestContent(aituber)
+
   return (
     <Card className="group relative flex h-full flex-col overflow-hidden border-border/70 bg-card/95 shadow-sm transition-colors duration-200 hover:border-violet-300/80 hover:bg-violet-50/20 dark:hover:border-violet-400/35 dark:hover:bg-violet-400/[0.03]">
       {/* お気に入りボタン */}
@@ -55,8 +61,8 @@ export const AituberCard = memo(function AituberCard({
       </button>
       <CardHeader className="space-y-3 p-4 pb-3 sm:p-5 sm:pb-3">
         <CardTitle className="flex items-center gap-3 pr-10 text-base">
-          {aituber.youtubeURL ? (
-            <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
+          {profileUrl ? (
+            <a href={profileUrl} target="_blank" rel="noopener noreferrer">
               <AITuberImage
                 src={aituber.imageUrl}
                 alt={aituber.name}
@@ -115,15 +121,29 @@ export const AituberCard = memo(function AituberCard({
           </TooltipProvider>
         </div>
         <div className="mt-4 flex flex-col gap-3 border-t border-border/60 pt-3">
-          <div className="text-sm font-semibold text-foreground/80">
-            {t('card.subscriberCount', { count: formatSubscriberCount(aituber.youtubeSubscribers, locale) })}
-          </div>
+          {aituber.youtubeChannelID ? (
+            <div className="text-sm font-semibold text-foreground/80">
+              {t('card.subscriberCount', { count: formatSubscriberCount(aituber.youtubeSubscribers, locale) })}
+            </div>
+          ) : typeof aituber.twitchFollowers === 'number' ? (
+            <div className="text-sm font-semibold text-foreground/80">
+              {t('card.followerCount', { count: formatSubscriberCount(aituber.twitchFollowers, locale) })}
+            </div>
+          ) : null}
           <div className="flex gap-2">
-            {aituber.youtubeURL && (
+            {aituber.youtubeChannelID && (
               <Button variant="outline" size="sm" className="rounded-lg border-border/80" asChild>
                 <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">
                   <YoutubeIcon className="w-4 h-4 mr-2" />
                   YouTube
+                </a>
+              </Button>
+            )}
+            {twitchUrl && (
+              <Button variant="outline" size="sm" className="rounded-lg border-purple-300/70 hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-400/10" asChild>
+                <a href={twitchUrl} target="_blank" rel="noopener noreferrer">
+                  <Twitch className="mr-2 h-4 w-4 text-purple-600" />
+                  Twitch
                 </a>
               </Button>
             )}
@@ -140,12 +160,35 @@ export const AituberCard = memo(function AituberCard({
       </CardContent>
       <CardFooter className="flex flex-col overflow-hidden rounded-b-xl border-t border-border/60 p-0">
         <div className="relative aspect-video w-full overflow-hidden bg-muted">
-          {aituber.latestVideoUrl ? (
+          {latestContent?.platform === 'youtube' ? (
             <LazyVideo
-              videoUrl={aituber.latestVideoUrl}
+              videoUrl={latestContent.url}
               title={t('card.latestVideo', { name: aituber.name })}
               priority={priority}
             />
+          ) : latestContent ? (
+            <a
+              href={latestContent.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/twitch absolute inset-0 block bg-purple-950"
+              aria-label={t('card.latestStream', { name: aituber.name })}
+            >
+              {latestContent.thumbnail ? (
+                <Image
+                  src={latestContent.thumbnail}
+                  alt={latestContent.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="h-full w-full object-cover transition-opacity group-hover/twitch:opacity-85"
+                  priority={priority}
+                  unoptimized
+                />
+              ) : null}
+              <span className="absolute bottom-3 left-3 right-3 line-clamp-2 rounded-md bg-black/70 px-3 py-2 text-sm font-medium text-white">
+                {latestContent.title}
+              </span>
+            </a>
           ) : (
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-muted">
               <span className="text-muted-foreground">{t('card.noVideo')}</span>
@@ -154,14 +197,18 @@ export const AituberCard = memo(function AituberCard({
         </div>
         <div className="flex w-full items-center justify-end bg-muted/35 px-3 py-2 text-xs text-muted-foreground">
           <Calendar className="w-4 h-4 mr-1" />
-          {aituber.latestVideoDate ? (
+          {latestContent?.date ? (
             <span className="flex items-center gap-1">
-              {formatDate(aituber.latestVideoDate, locale)}
-              {aituber.isUpcoming && (
+              {formatDate(latestContent.date, locale)}
+              {latestContent.isLive ? (
+                <Badge className="bg-red-600 text-white hover:bg-red-600">
+                  {t('card.liveNow')}
+                </Badge>
+              ) : aituber.isUpcoming ? (
                 <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-400/20 dark:text-blue-200">
                   {t('card.upcomingStream')}
                 </Badge>
-              )}
+              ) : null}
             </span>
           ) : ''}
         </div>

@@ -12,6 +12,26 @@ export type AITuber = {
   latestVideoUrl: string
   latestVideoDate: string
   isUpcoming?: boolean
+  twitchLogin?: string
+  twitchUserID?: string
+  twitchURL?: string
+  twitchFollowers?: number
+  twitchIsLive?: boolean
+  twitchTitle?: string
+  twitchThumbnail?: string
+  twitchContentUrl?: string
+  twitchContentDate?: string
+}
+
+export type ContentPlatform = 'youtube' | 'twitch'
+
+export type LatestContent = {
+  platform: ContentPlatform
+  title: string
+  thumbnail: string
+  url: string
+  date: string
+  isLive: boolean
 }
 
 export type DateFilter = 'all' | '1month' | '3months' | '6months' | '1year' | 'older'
@@ -33,6 +53,50 @@ export const SUBSCRIBER_FILTER_LABELS: Record<SubscriberFilter, { threshold: num
 export const ITEMS_PER_PAGE = 12
 
 export const FALLBACK_IMAGE = '/images/preparing-icon.png'
+
+export const getAituberId = (aituber: AITuber): string =>
+  aituber.youtubeChannelID || `twitch:${aituber.twitchUserID || aituber.twitchLogin || aituber.name}`
+
+export const getAituberProfileUrl = (aituber: AITuber): string => {
+  if (aituber.youtubeChannelID) {
+    return `https://www.youtube.com/channel/${aituber.youtubeChannelID}`
+  }
+  return aituber.twitchURL || (aituber.twitchLogin ? `https://www.twitch.tv/${aituber.twitchLogin}` : '')
+}
+
+export const getAudienceCount = (aituber: AITuber): number =>
+  aituber.youtubeChannelID ? aituber.youtubeSubscribers : (aituber.twitchFollowers || 0)
+
+export const getLatestContent = (aituber: AITuber): LatestContent | null => {
+  const youtubeContent = aituber.latestVideoUrl ? {
+    platform: 'youtube' as const,
+    title: aituber.latestVideoTitle,
+    thumbnail: aituber.latestVideoThumbnail,
+    url: aituber.latestVideoUrl,
+    date: aituber.latestVideoDate,
+    isLive: false,
+  } : null
+
+  const twitchContent = aituber.twitchContentUrl ? {
+    platform: 'twitch' as const,
+    title: aituber.twitchTitle || aituber.name,
+    thumbnail: aituber.twitchThumbnail || '',
+    url: aituber.twitchContentUrl,
+    date: aituber.twitchContentDate || '',
+    isLive: Boolean(aituber.twitchIsLive),
+  } : null
+
+  if (twitchContent?.isLive) return twitchContent
+  if (!youtubeContent) return twitchContent
+  if (!twitchContent) return youtubeContent
+
+  return new Date(twitchContent.date).getTime() > new Date(youtubeContent.date).getTime()
+    ? twitchContent
+    : youtubeContent
+}
+
+export const getLatestContentDate = (aituber: AITuber): string =>
+  getLatestContent(aituber)?.date || ''
 
 // 日付フィルターの判定関数
 export const isWithinDateRange = (dateString: string, filter: DateFilter): boolean => {

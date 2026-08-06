@@ -27,7 +27,7 @@ export const translations = {
     'filter.tagDescription': 'タグの説明を表示',
     'filter.noTagDescription': 'タグの説明がありません',
     'filter.lastUpdated': '最終更新日',
-    'filter.subscriberCount': '登録者数',
+    'filter.subscriberCount': '登録者・フォロワー数',
     'filter.all': 'すべて',
     'filter.reset': 'リセット',
     
@@ -47,9 +47,12 @@ export const translations = {
     
     // Card content
     'card.subscriberCount': '登録者数: {count}人',
+    'card.followerCount': 'フォロワー数: {count}人',
     'card.latestVideo': '{name}の最新動画',
+    'card.latestStream': '{name}のTwitch配信',
     'card.noVideo': '動画はまだありません',
     'card.upcomingStream': '配信予定',
+    'card.liveNow': '配信中',
     
     // Loading
     'loading.scrollMore': 'スクロールして更に読み込む',
@@ -91,7 +94,7 @@ export const translations = {
 
     // Sort options
     'sort.title': '並び替え',
-    'sort.subscribers': '登録者数順',
+    'sort.subscribers': '登録者・フォロワー数順',
     'sort.latest': '最新動画順',
     'sort.name': '名前順',
     'sort.random': 'ランダム',
@@ -106,7 +109,7 @@ export const translations = {
     'filter.mainAITubersOnly': '一部AITuberを除外（AITuberメインのみ）',
 
     // Upcoming filter
-    'filter.upcomingOnly': '配信予定のみ',
+    'filter.upcomingOnly': '配信中・配信予定のみ',
 
     // View mode
     'view.grid': 'グリッド表示',
@@ -144,7 +147,7 @@ export const translations = {
     'filter.tagDescription': 'Show tag descriptions',
     'filter.noTagDescription': 'No description available',
     'filter.lastUpdated': 'Last updated',
-    'filter.subscriberCount': 'Subscriber count',
+    'filter.subscriberCount': 'Subscribers / followers',
     'filter.all': 'All',
     'filter.reset': 'Reset',
 
@@ -164,9 +167,12 @@ export const translations = {
     
     // Card content
     'card.subscriberCount': 'Subscribers: {count}',
+    'card.followerCount': 'Followers: {count}',
     'card.latestVideo': 'Latest video by {name}',
+    'card.latestStream': 'Twitch stream by {name}',
     'card.noVideo': 'No videos yet',
     'card.upcomingStream': 'Upcoming',
+    'card.liveNow': 'Live now',
     
     // Loading
     'loading.scrollMore': 'Scroll to load more',
@@ -208,7 +214,7 @@ export const translations = {
 
     // Sort options
     'sort.title': 'Sort by',
-    'sort.subscribers': 'Subscribers',
+    'sort.subscribers': 'Subscribers / followers',
     'sort.latest': 'Latest video',
     'sort.name': 'Name',
     'sort.random': 'Random',
@@ -223,7 +229,7 @@ export const translations = {
     'filter.mainAITubersOnly': 'Exclude partial AITubers (AITuber-main only)',
 
     // Upcoming filter
-    'filter.upcomingOnly': 'Upcoming only',
+    'filter.upcomingOnly': 'Live or upcoming only',
 
     // View mode
     'view.grid': 'Grid view',
@@ -261,7 +267,7 @@ export const translations = {
     'filter.tagDescription': '显示标签说明',
     'filter.noTagDescription': '暂无标签说明',
     'filter.lastUpdated': '最后更新',
-    'filter.subscriberCount': '订阅数',
+    'filter.subscriberCount': '订阅数／关注者',
     'filter.all': '全部',
     'filter.reset': '重置',
 
@@ -281,9 +287,12 @@ export const translations = {
 
     // Card content
     'card.subscriberCount': '订阅数：{count}',
+    'card.followerCount': '关注者：{count}',
     'card.latestVideo': '{name}的最新视频',
+    'card.latestStream': '{name}的Twitch直播',
     'card.noVideo': '暂无视频',
     'card.upcomingStream': '即将直播',
+    'card.liveNow': '直播中',
 
     // Loading
     'loading.scrollMore': '滚动加载更多',
@@ -325,7 +334,7 @@ export const translations = {
 
     // Sort options
     'sort.title': '排序',
-    'sort.subscribers': '订阅数',
+    'sort.subscribers': '订阅数／关注者',
     'sort.latest': '最新视频',
     'sort.name': '名称',
     'sort.random': '随机',
@@ -340,7 +349,7 @@ export const translations = {
     'filter.mainAITubersOnly': '排除部分AITuber（仅AITuber为主要内容）',
 
     // Upcoming filter
-    'filter.upcomingOnly': '仅即将直播',
+    'filter.upcomingOnly': '仅直播中或即将直播',
 
     // View mode
     'view.grid': '网格视图',
@@ -378,7 +387,7 @@ export const translations = {
     'filter.tagDescription': '顯示標籤說明',
     'filter.noTagDescription': '暫無標籤說明',
     'filter.lastUpdated': '最後更新',
-    'filter.subscriberCount': '訂閱數',
+    'filter.subscriberCount': '訂閱數／追蹤者',
     'filter.all': '全部',
     'filter.reset': '重設',
 
@@ -398,9 +407,12 @@ export const translations = {
 
     // Card content
     'card.subscriberCount': '訂閱數：{count}',
+    'card.followerCount': '追蹤者：{count}',
     'card.latestVideo': '{name}的最新影片',
+    'card.latestStream': '{name}的Twitch直播',
     'card.noVideo': '暫無影片',
     'card.upcomingStream': '即將直播',
+    'card.liveNow': '直播中',
 
     // Loading
     'loading.scrollMore': '滾動載入更多',
@@ -442,7 +454,7 @@ export const translations = {
 
     // Sort options
     'sort.title': '排序',
-    'sort.subscribers': '訂閱數',
+    'sort.subscribers': '訂閱數／追蹤者',
     'sort.latest': '最新影片',
     'sort.name': '名稱',
     'sort.random': '隨機',
@@ -457,7 +469,7 @@ export const translations = {
     'filter.mainAITubersOnly': '排除部分AITuber（僅AITuber為主要內容）',
 
     // Upcoming filter
-    'filter.upcomingOnly': '僅即將直播',
+    'filter.upcomingOnly': '僅直播中或即將直播',
 
     // View mode
     'view.grid': '網格檢視',
@@ -495,7 +507,7 @@ export const translations = {
     'filter.tagDescription': '태그 설명 표시',
     'filter.noTagDescription': '태그 설명이 없습니다',
     'filter.lastUpdated': '마지막 업데이트',
-    'filter.subscriberCount': '구독자 수',
+    'filter.subscriberCount': '구독자 / 팔로워 수',
     'filter.all': '전체',
     'filter.reset': '초기화',
 
@@ -515,9 +527,12 @@ export const translations = {
 
     // Card content
     'card.subscriberCount': '구독자: {count}명',
+    'card.followerCount': '팔로워: {count}명',
     'card.latestVideo': '{name}의 최신 영상',
+    'card.latestStream': '{name}의 Twitch 방송',
     'card.noVideo': '영상이 없습니다',
     'card.upcomingStream': '예정된 방송',
+    'card.liveNow': '방송 중',
 
     // Loading
     'loading.scrollMore': '스크롤하여 더 불러오기',
@@ -559,7 +574,7 @@ export const translations = {
 
     // Sort options
     'sort.title': '정렬',
-    'sort.subscribers': '구독자순',
+    'sort.subscribers': '구독자 / 팔로워 순',
     'sort.latest': '최신 영상순',
     'sort.name': '이름순',
     'sort.random': '랜덤',
@@ -574,7 +589,7 @@ export const translations = {
     'filter.mainAITubersOnly': '일부 AITuber 제외 (AITuber 중심만)',
 
     // Upcoming filter
-    'filter.upcomingOnly': '예정된 방송만',
+    'filter.upcomingOnly': '방송 중 또는 예정만',
 
     // View mode
     'view.grid': '그리드 보기',

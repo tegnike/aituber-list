@@ -19,6 +19,7 @@ https://aituberlist.net/
 - このサイトは、AITuberの情報を集めるためのサイトです。
 - 登録しているAITuberの情報は日本時間の9時と21時に更新されます。
 - YouTube Data APIは1日のリクエスト上限があるため、定時更新されない場合があります。
+- Twitchチャンネルは、プロフィール・配信中状態・最新VODをTwitch APIから更新します。
 
 ## 技術スタック
 
@@ -26,15 +27,16 @@ https://aituberlist.net/
 - スタイリング: Tailwind CSS
 - データストア: JSONファイル
 - ホスティング: Vercel
-- API: YouTube Data API
+- API: YouTube Data API / Twitch API
 
 ## 機能
 
 - AITuberのチャンネル情報の表示
   - チャンネル名
   - 登録者数
-  - 総再生回数
-  - 投稿動画数
+  - YouTube・Twitchリンク
+  - Twitch配信中表示
+  - 最新動画・最新VOD
 - 定期的なデータ更新（1日2回）
 - AITuber情報の検索機能
 - カテゴリー別フィルタリング

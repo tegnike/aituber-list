@@ -1,11 +1,12 @@
 import { AituberList } from "@/components/aituber-list/index"
 import { Metadata } from 'next'
 import aituberData from '@/app/data/aitubers.json'
+import { getAituberProfileUrl, getAudienceCount } from '@/components/aituber-list/types'
 
 // 上位10件のAITuberを取得（登録者数順）
 const topAitubers = aituberData.aitubers
-  .filter(a => a.youtubeChannelID)
-  .sort((a, b) => b.youtubeSubscribers - a.youtubeSubscribers)
+  .filter(a => a.youtubeChannelID || a.twitchLogin)
+  .sort((a, b) => getAudienceCount(b) - getAudienceCount(a))
   .slice(0, 10)
 
 // ItemListスキーマ
@@ -21,7 +22,7 @@ const itemListSchema = {
       "@type": "Person",
       "name": aituber.name,
       "description": aituber.description,
-      "url": `https://www.youtube.com/channel/${aituber.youtubeChannelID}`
+      "url": getAituberProfileUrl(aituber)
     }
   }))
 }

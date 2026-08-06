@@ -19,7 +19,7 @@ import aituberData from '@/app/data/aitubers.json'
 
 // Types
 import type { AITuber, DateFilter, SubscriberFilter, SortOrder, ViewMode, TagFilterMode } from './types'
-import { PARTIAL_AITUBER_TAG } from './types'
+import { getLatestContentDate, PARTIAL_AITUBER_TAG } from './types'
 
 // Components
 import { FilterPanel } from './FilterPanel'
@@ -43,12 +43,12 @@ const styles = `
   }
 `
 
-// JSONからデータを取得し、チャンネルIDが存在するもののみをフィルタリングして日付でソート
+// JSONからデータを取得し、YouTubeまたはTwitchが存在するものを日付でソート
 const aitubers: AITuber[] = aituberData.aitubers
-  .filter(aituber => aituber.youtubeChannelID !== '')
+  .filter(aituber => aituber.youtubeChannelID !== '' || Boolean(aituber.twitchLogin))
   .sort((a, b) => {
-    const dateA = new Date(a.latestVideoDate)
-    const dateB = new Date(b.latestVideoDate)
+    const dateA = new Date(getLatestContentDate(a))
+    const dateB = new Date(getLatestContentDate(b))
     return dateB.getTime() - dateA.getTime()
   })
 

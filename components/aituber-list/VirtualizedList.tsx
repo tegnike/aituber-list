@@ -4,6 +4,7 @@ import { useCallback, useRef, useMemo } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { AituberCard } from './AituberCard'
 import { AituberListItem } from './AituberListItem'
+import { getAituberId } from './types'
 import type { AITuber, ViewMode } from './types'
 import type { Locale, TranslationKey } from '@/lib/i18n'
 
@@ -112,12 +113,12 @@ export function VirtualizedList({
                   <div className="pb-2">
                     {rowItems.map((aituber) => (
                       <AituberListItem
-                        key={aituber.youtubeChannelID}
+                        key={getAituberId(aituber)}
                         aituber={aituber}
                         selectedTags={selectedTags}
                         onTagSelect={onTagSelect}
-                        isFavorite={isFavorite(aituber.youtubeChannelID)}
-                        onFavoriteToggle={() => onFavoriteToggle(aituber.youtubeChannelID)}
+                        isFavorite={isFavorite(getAituberId(aituber))}
+                        onFavoriteToggle={() => onFavoriteToggle(getAituberId(aituber))}
                         locale={locale}
                         t={t}
                         priority={virtualRow.index < 12}
@@ -136,12 +137,12 @@ export function VirtualizedList({
                   >
                     {rowItems.map((aituber) => (
                       <AituberCard
-                        key={aituber.youtubeChannelID}
+                        key={getAituberId(aituber)}
                         aituber={aituber}
                         selectedTags={selectedTags}
                         onTagSelect={onTagSelect}
-                        isFavorite={isFavorite(aituber.youtubeChannelID)}
-                        onFavoriteToggle={() => onFavoriteToggle(aituber.youtubeChannelID)}
+                        isFavorite={isFavorite(getAituberId(aituber))}
+                        onFavoriteToggle={() => onFavoriteToggle(getAituberId(aituber))}
                         locale={locale}
                         t={t}
                         priority={virtualRow.index < 3}
