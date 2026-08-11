@@ -163,11 +163,31 @@ export const isWithinDateRange = (dateString: string, filter: DateFilter): boole
 export const extractYouTubeVideoId = (url: string): string | null => {
   if (!url) return null
 
-  const normalMatch = url.match(/[?&]v=([^&]+)/)
-  if (normalMatch) return normalMatch[1]
+  const normalizeVideoId = (candidate: string | null | undefined): string | null =>
+    candidate && /^[A-Za-z0-9_-]{11}$/.test(candidate) ? candidate : null
 
-  const shortMatch = url.match(/youtu\.be\/([^?]+)/)
-  if (shortMatch) return shortMatch[1]
+  try {
+    const parsedUrl = new URL(url, 'https://www.youtube.com')
+    const hostname = parsedUrl.hostname.replace(/^www\./, '')
+
+    if (hostname === 'youtu.be') {
+      return normalizeVideoId(parsedUrl.pathname.split('/').filter(Boolean)[0])
+    }
+
+    const isYouTubeHost = hostname === 'youtube.com' || hostname.endsWith('.youtube.com')
+    if (!isYouTubeHost) return null
+
+    if (parsedUrl.pathname === '/watch') {
+      return normalizeVideoId(parsedUrl.searchParams.get('v'))
+    }
+
+    const pathParts = parsedUrl.pathname.split('/').filter(Boolean)
+    if (['shorts', 'embed', 'live'].includes(pathParts[0])) {
+      return normalizeVideoId(pathParts[1])
+    }
+  } catch {
+    return null
+  }
 
   return null
 }
