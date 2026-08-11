@@ -297,7 +297,7 @@ export default function AituberProfilePage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className={`grid gap-px border-y bg-border sm:grid-cols-2 ${hasYouTube && hasTwitch ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
+          <div className={`grid gap-px border-y bg-border sm:grid-cols-2 ${hasYouTube && hasTwitch ? 'lg:grid-cols-3' : ''}`}>
             {hasYouTube && (
               <div className="min-w-0 bg-card p-5">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -316,13 +316,6 @@ export default function AituberProfilePage({ params }: PageProps) {
                 <p className="mt-2 break-words text-2xl font-bold">{formatAudience(aituber.twitchFollowers || 0)}人</p>
               </div>
             )}
-            <div className="bg-card p-5">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                {platformName === 'YouTube' ? <YoutubeIcon className="h-4 w-4 text-red-600" /> : <Twitch className="h-4 w-4 text-purple-600" />}
-                主な掲載先
-              </div>
-              <p className="mt-2 text-2xl font-bold">{platformName}</p>
-            </div>
             <div className="bg-card p-5">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4" />
