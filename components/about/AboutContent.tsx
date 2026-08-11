@@ -1,9 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
-import { LanguageToggle } from '@/components/ui/language-toggle'
-import { ThemeToggle } from '@/components/ui/theme-toggle'
+import { SiteHeader } from '@/components/layout/SiteHeader'
 import { useLanguage } from '@/contexts/LanguageContext'
 import type { Locale } from '@/lib/i18n'
 
@@ -138,18 +136,7 @@ export function AboutContent({ totalCount, mainCount, updatedAt }: { totalCount:
 
   return (
     <main id="main-content" className="min-h-screen">
-      <header className="border-b border-border/70 bg-background/90">
-        <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-4 sm:px-6">
-          <Link href="/" aria-label="AITuberList">
-            <Image src="/images/aituber-list-logo.png" alt="AITuberList" width={2166} height={350} className="h-7 w-auto" priority />
-          </Link>
-          <div className="flex items-center gap-2">
-            <Link href="/" className="hidden text-sm font-semibold text-primary hover:underline sm:inline">{text.backToList}</Link>
-            <LanguageToggle />
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
+      <SiteHeader count={totalCount} lastUpdated={updatedAt} />
 
       <article className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
         <p className="text-sm font-semibold text-primary">{text.guide}</p>
