@@ -92,6 +92,7 @@ export const translations = {
     'tag.AIパートナー': '人間配信者のパートナーとしてAIが参加する',
     'tag.複数キャラ': '複数のAIキャラクターが登場する',
     'tag.一部AITuber': 'コンテンツの一部でAIキャラクターを活用している',
+    'tag.ASMR': 'ASMR、耳かき、音フェチなどの音声コンテンツを継続的に配信している',
     
     // Tag names
     'tagName.コメント応答': 'コメント応答',
@@ -102,6 +103,7 @@ export const translations = {
     'tagName.一部AITuber': '一部AITuber',
     'tagName.AIパートナー': 'AIパートナー',
     'tagName.解説': '解説',
+    'tagName.ASMR': 'ASMR',
 
     // Sort options
     'sort.title': '並び替え',
@@ -223,6 +225,7 @@ export const translations = {
     'tag.AIパートナー': 'AI participates as a partner to human streamers',
     'tag.複数キャラ': 'Multiple AI characters appear',
     'tag.一部AITuber': 'Utilizes AI characters as part of content',
+    'tag.ASMR': 'Regularly publishes audio content such as ASMR and ear cleaning',
     
     // Tag names
     'tagName.コメント応答': 'Comment Response',
@@ -233,6 +236,7 @@ export const translations = {
     'tagName.一部AITuber': 'Partial AITuber',
     'tagName.AIパートナー': 'AI Partner',
     'tagName.解説': 'Explanation',
+    'tagName.ASMR': 'ASMR',
 
     // Sort options
     'sort.title': 'Sort by',
@@ -354,6 +358,7 @@ export const translations = {
     'tag.AIパートナー': 'AI作为人类主播的搭档参与',
     'tag.複数キャラ': '多个AI角色出场',
     'tag.一部AITuber': '部分内容使用AI角色',
+    'tag.ASMR': '持续发布ASMR、掏耳等声音内容',
 
     // Tag names
     'tagName.コメント応答': '评论回复',
@@ -364,6 +369,7 @@ export const translations = {
     'tagName.一部AITuber': '部分AITuber',
     'tagName.AIパートナー': 'AI搭档',
     'tagName.解説': '解说',
+    'tagName.ASMR': 'ASMR',
 
     // Sort options
     'sort.title': '排序',
@@ -485,6 +491,7 @@ export const translations = {
     'tag.AIパートナー': 'AI作為人類實況主的搭檔參與',
     'tag.複数キャラ': '多個AI角色登場',
     'tag.一部AITuber': '部分內容使用AI角色',
+    'tag.ASMR': '持續發布ASMR、掏耳等聲音內容',
 
     // Tag names
     'tagName.コメント応答': '留言回覆',
@@ -495,6 +502,7 @@ export const translations = {
     'tagName.一部AITuber': '部分AITuber',
     'tagName.AIパートナー': 'AI搭檔',
     'tagName.解説': '解說',
+    'tagName.ASMR': 'ASMR',
 
     // Sort options
     'sort.title': '排序',
@@ -616,6 +624,7 @@ export const translations = {
     'tag.AIパートナー': 'AI가 인간 스트리머의 파트너로 참여',
     'tag.複数キャラ': '여러 AI 캐릭터 등장',
     'tag.一部AITuber': '콘텐츠 일부에 AI 캐릭터 활용',
+    'tag.ASMR': 'ASMR, 귀 청소 등 오디오 콘텐츠를 지속적으로 방송',
 
     // Tag names
     'tagName.コメント応答': '댓글 응답',
@@ -626,6 +635,7 @@ export const translations = {
     'tagName.一部AITuber': '부분 AITuber',
     'tagName.AIパートナー': 'AI 파트너',
     'tagName.解説': '해설',
+    'tagName.ASMR': 'ASMR',
 
     // Sort options
     'sort.title': '정렬',

@@ -10,7 +10,7 @@ import {
   getAituberProfileUrl,
   getAituberSlug,
   getAudienceCount,
-  getLatestContent,
+  getRecentContents,
 } from '@/components/aituber-list/types'
 import { aitubers, aituberLastUpdated, findAituberBySlug } from '@/lib/aitubers'
 import { absoluteUrl, serializeJsonLd, SITE_URL, truncateText } from '@/lib/seo'
@@ -119,7 +119,8 @@ export default function AituberProfilePage({ params }: PageProps) {
 
   const detailPath = getAituberDetailPath(aituber)
   const officialProfileUrl = getAituberProfileUrl(aituber)
-  const latestContent = getLatestContent(aituber)
+  const recentContents = getRecentContents(aituber)
+  const latestContent = recentContents[0]
   const hasYouTube = Boolean(aituber.youtubeChannelID)
   const hasTwitch = Boolean(aituber.twitchLogin || aituber.twitchUserID)
   const platformName = hasYouTube && hasTwitch ? 'YouTube・Twitch' : hasYouTube ? 'YouTube' : 'Twitch'
@@ -351,35 +352,40 @@ export default function AituberProfilePage({ params }: PageProps) {
                 </p>
               </section>
 
-              {latestContent && (
+              {recentContents.length > 0 && (
                 <section className="mt-10 border-t pt-8">
                   <h2 className="text-2xl font-bold">最新コンテンツ</h2>
-                  <a
-                    href={latestContent.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 block overflow-hidden rounded-2xl border transition-colors hover:border-violet-300 hover:bg-violet-50/30 dark:hover:bg-violet-400/5"
-                  >
-                    {latestContent.thumbnail && (
-                      <div className="relative aspect-video bg-muted">
-                        <Image
-                          src={latestContent.thumbnail}
-                          alt={latestContent.title}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 640px"
-                          className="object-cover"
-                          unoptimized
-                        />
-                      </div>
-                    )}
-                    <div className="p-5">
-                      <p className="font-bold leading-7">{latestContent.title}</p>
-                      <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                        {latestContent.platform === 'youtube' ? 'YouTubeで見る' : 'Twitchで見る'}
-                        <ExternalLink className="h-3.5 w-3.5" />
-                      </p>
-                    </div>
-                  </a>
+                  <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                    {recentContents.map((content) => (
+                      <a
+                        key={`${content.platform}-${content.url}`}
+                        href={content.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block overflow-hidden rounded-2xl border transition-colors hover:border-violet-300 hover:bg-violet-50/30 dark:hover:bg-violet-400/5"
+                      >
+                        {content.thumbnail && (
+                          <div className="relative aspect-video bg-muted">
+                            <Image
+                              src={content.thumbnail}
+                              alt={content.title}
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
+                              className="object-cover"
+                              unoptimized
+                            />
+                          </div>
+                        )}
+                        <div className="p-4">
+                          <p className="line-clamp-2 font-bold leading-7">{content.title}</p>
+                          <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                            {content.platform === 'youtube' ? 'YouTubeで見る' : 'Twitchで見る'}
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
                 </section>
               )}
             </div>

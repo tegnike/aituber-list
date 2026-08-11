@@ -11,6 +11,7 @@ export type AITuber = {
   latestVideoThumbnail: string
   latestVideoUrl: string
   latestVideoDate: string
+  recentYoutubeVideos?: RecentYoutubeVideo[]
   isUpcoming?: boolean
   twitchLogin?: string
   twitchUserID?: string
@@ -21,6 +22,13 @@ export type AITuber = {
   twitchThumbnail?: string
   twitchContentUrl?: string
   twitchContentDate?: string
+}
+
+export type RecentYoutubeVideo = {
+  title: string
+  thumbnail: string
+  url: string
+  date: string
 }
 
 export type ContentPlatform = 'youtube' | 'twitch'
@@ -83,16 +91,22 @@ export const getAituberProfileUrl = (aituber: AITuber): string => {
 export const getAudienceCount = (aituber: AITuber): number =>
   aituber.youtubeChannelID ? aituber.youtubeSubscribers : (aituber.twitchFollowers || 0)
 
-export const getLatestContent = (aituber: AITuber): LatestContent | null => {
-  const youtubeContent = aituber.latestVideoUrl ? {
+export const getRecentContents = (aituber: AITuber, limit = 3): LatestContent[] => {
+  const youtubeContents = (aituber.recentYoutubeVideos?.length
+    ? aituber.recentYoutubeVideos
+    : aituber.latestVideoUrl
+      ? [{
+          title: aituber.latestVideoTitle,
+          thumbnail: aituber.latestVideoThumbnail,
+          url: aituber.latestVideoUrl,
+          date: aituber.latestVideoDate,
+        }]
+      : []
+  ).map((content) => ({
     platform: 'youtube' as const,
-    title: aituber.latestVideoTitle,
-    thumbnail: aituber.latestVideoThumbnail,
-    url: aituber.latestVideoUrl,
-    date: aituber.latestVideoDate,
+    ...content,
     isLive: false,
-  } : null
-
+  }))
   const twitchContent = aituber.twitchContentUrl ? {
     platform: 'twitch' as const,
     title: aituber.twitchTitle || aituber.name,
@@ -102,14 +116,21 @@ export const getLatestContent = (aituber: AITuber): LatestContent | null => {
     isLive: Boolean(aituber.twitchIsLive),
   } : null
 
-  if (twitchContent?.isLive) return twitchContent
-  if (!youtubeContent) return twitchContent
-  if (!twitchContent) return youtubeContent
+  const contents = twitchContent ? [twitchContent, ...youtubeContents] : youtubeContents
+  const uniqueContents = Array.from(new Map(contents.map((content) => [content.url, content])).values())
 
-  return new Date(twitchContent.date).getTime() > new Date(youtubeContent.date).getTime()
-    ? twitchContent
-    : youtubeContent
+  return uniqueContents
+    .sort((a, b) => {
+      if (a.isLive !== b.isLive) return a.isLive ? -1 : 1
+      const aTime = new Date(a.date).getTime() || 0
+      const bTime = new Date(b.date).getTime() || 0
+      return bTime - aTime
+    })
+    .slice(0, limit)
 }
+
+export const getLatestContent = (aituber: AITuber): LatestContent | null =>
+  getRecentContents(aituber, 1)[0] || null
 
 export const getLatestContentDate = (aituber: AITuber): string =>
   getLatestContent(aituber)?.date || ''

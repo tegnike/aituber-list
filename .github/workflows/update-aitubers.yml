@@ -34,6 +34,9 @@ jobs:
           TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
         run: python scripts/update_aitubers.py
 
+      - name: Refresh recent YouTube content from public RSS
+        run: python scripts/refresh_youtube_rss.py
+
       - name: Commit and push if changed
         run: |
           git config --global user.name 'GitHub Actions Bot'
