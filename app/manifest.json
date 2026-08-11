@@ -1,7 +1,7 @@
 {
   "name": "AITuber リスト",
   "short_name": "AITuberList",
-  "description": "AITuber（AIVTuber）の情報をまとめたサイト。タグによる分類で検索可能。毎日2回更新。",
+  "description": "日本・海外のAITuber（AIVTuber）をタグや活動内容から検索できる専門リスト。チャンネル情報を定期更新。",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

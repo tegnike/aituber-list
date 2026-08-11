@@ -58,6 +58,21 @@ export const FALLBACK_IMAGE = '/images/preparing-icon.png'
 export const getAituberId = (aituber: AITuber): string =>
   aituber.youtubeChannelID || `twitch:${aituber.twitchUserID || aituber.twitchLogin || aituber.name}`
 
+export const getAituberSlug = (aituber: AITuber): string => {
+  if (aituber.youtubeChannelID) {
+    return `youtube-${aituber.youtubeChannelID}`
+  }
+
+  if (aituber.twitchLogin) {
+    return `twitch-${aituber.twitchLogin.toLowerCase()}`
+  }
+
+  return `twitch-id-${aituber.twitchUserID}`
+}
+
+export const getAituberDetailPath = (aituber: AITuber): string =>
+  `/aitubers/${getAituberSlug(aituber)}/`
+
 export const getAituberProfileUrl = (aituber: AITuber): string => {
   if (aituber.youtubeChannelID) {
     return `https://www.youtube.com/channel/${aituber.youtubeChannelID}`

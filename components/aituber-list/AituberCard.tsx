@@ -2,6 +2,7 @@
 
 import { memo } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
@@ -17,7 +18,7 @@ import { formatDate, formatSubscriberCount, getTagName, getTagDescription, Trans
 import { AITuberImage } from './AITuberImage'
 import { LazyVideo } from './LazyVideo'
 import { HighlightText } from './HighlightText'
-import { getAituberProfileUrl, getLatestContent } from './types'
+import { getAituberDetailPath, getLatestContent } from './types'
 import type { AITuber } from './types'
 
 interface AituberCardProps {
@@ -43,7 +44,7 @@ export const AituberCard = memo(function AituberCard({
   priority = false,
   searchTerm = ''
 }: AituberCardProps) {
-  const profileUrl = getAituberProfileUrl(aituber)
+  const detailPath = getAituberDetailPath(aituber)
   const twitchUrl = aituber.twitchURL || (aituber.twitchLogin ? `https://www.twitch.tv/${aituber.twitchLogin}` : '')
   const latestContent = getLatestContent(aituber)
 
@@ -61,28 +62,18 @@ export const AituberCard = memo(function AituberCard({
       </button>
       <CardHeader className="space-y-3 p-4 pb-3 sm:p-5 sm:pb-3">
         <CardTitle className="flex items-center gap-3 pr-10 text-base">
-          {profileUrl ? (
-            <a href={profileUrl} target="_blank" rel="noopener noreferrer">
-              <AITuberImage
-                src={aituber.imageUrl}
-                alt={aituber.name}
-                size={44}
-                className="rounded-full ring-2 ring-violet-100 ring-offset-2 ring-offset-card transition-opacity hover:opacity-80 dark:ring-violet-400/25"
-                priority={priority}
-              />
-            </a>
-          ) : (
+          <Link href={detailPath} aria-label={`${aituber.name}の詳細を見る`}>
             <AITuberImage
               src={aituber.imageUrl}
               alt={aituber.name}
               size={44}
-              className="rounded-full ring-2 ring-violet-100 ring-offset-2 ring-offset-card dark:ring-violet-400/25"
+              className="rounded-full ring-2 ring-violet-100 ring-offset-2 ring-offset-card transition-opacity hover:opacity-80 dark:ring-violet-400/25"
               priority={priority}
             />
-          )}
-          <div className="truncate tracking-[-0.02em]">
+          </Link>
+          <Link href={detailPath} className="truncate tracking-[-0.02em] hover:text-primary hover:underline">
             <HighlightText text={aituber.name} searchTerm={searchTerm} />
-          </div>
+          </Link>
         </CardTitle>
         <div className="flex flex-wrap gap-1.5">
           {aituber.tags.map((tag, tagIndex) => (
@@ -138,6 +129,9 @@ export const AituberCard = memo(function AituberCard({
             </div>
           )}
           <div className="flex gap-2">
+            <Button size="sm" className="rounded-lg" asChild>
+              <Link href={detailPath}>{t('card.details')}</Link>
+            </Button>
             {aituber.youtubeChannelID && (
               <Button variant="outline" size="sm" className="rounded-lg border-border/80" asChild>
                 <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">

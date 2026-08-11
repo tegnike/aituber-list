@@ -16,9 +16,13 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AITuber リスト | AIVTuber 一覧 - AITuberの情報をまとめています",
-  description: "AITuber（AIVTuber）の情報をまとめたサイトです。コメント応答型、歌唱系、ゲーム実況など様々なタイプのAI配信者を掲載。タグによる分類で検索も可能です。毎日2回更新。",
-  keywords: "AITuber,AIVTuber,AI VTuber,AITuber リスト,AIVTuber 一覧,AITuber 検索,AITuber データベース,バーチャルYouTuber AI,AI配信者,AIストリーマー",
+  title: {
+    default: "AITuber一覧・検索 | 日本と海外のAI VTuberを探す",
+    template: "%s | AITuberList",
+  },
+  description: "日本・海外のAITuber（AI VTuber／AIVTuber）を、活動内容・登録者数・最新配信・タグから探せる専門リストです。チャンネル情報を定期更新しています。",
+  keywords: ["AITuber", "AIVTuber", "AI VTuber", "AITuber 一覧", "AI配信者"],
+  applicationName: "AITuberList",
   authors: [{ name: "ニケちゃん", url: "https://x.com/tegnike" }],
   creator: "ニケちゃん",
   publisher: "AITuberList",
@@ -43,8 +47,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AITuber リスト | AIVTuber 一覧",
-    description: "AITuber（AIVTuber）の情報をまとめたサイト。タグによる分類で検索可能。毎日2回更新。",
+    title: "AITuber一覧・検索 | AITuberList",
+    description: "日本・海外のAITuberを、活動内容・登録者数・最新配信・タグから探せる専門リスト。チャンネル情報を定期更新。",
     url: "https://aituberlist.net",
     siteName: "AITuberList",
     images: [
@@ -52,7 +56,7 @@ export const metadata: Metadata = {
         url: "/ogp.png",
         width: 1200,
         height: 630,
-        alt: "AITuberList",
+        alt: "日本と海外のAITuberを探せるAITuberList",
       },
     ],
     locale: "ja_JP",
@@ -60,13 +64,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AITuberList",
-    description: "AITuber（AIVTuber）の情報をまとめたサイト。タグによる分類で検索可能。",
+    title: "AITuber一覧・検索 | AITuberList",
+    description: "日本・海外のAITuberを活動内容・登録者数・最新配信・タグから探せます。",
     creator: "@tegnike",
     images: ["/ogp.png"],
-  },
-  verification: {
-    google: "google-site-verification-code",
   },
 };
 

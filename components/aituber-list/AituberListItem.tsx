@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import Link from 'next/link'
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Calendar, Heart, Twitch } from "lucide-react"
@@ -8,7 +9,7 @@ import { YoutubeIcon } from "@/components/icons"
 import { formatSubscriberCount, getTagName, TranslationKey, Locale } from "@/lib/i18n"
 import { AITuberImage } from './AITuberImage'
 import { HighlightText } from './HighlightText'
-import { getAituberProfileUrl, getLatestContent } from './types'
+import { getAituberDetailPath, getLatestContent } from './types'
 import type { AITuber } from './types'
 
 interface AituberListItemProps {
@@ -34,7 +35,7 @@ export const AituberListItem = memo(function AituberListItem({
   priority = false,
   searchTerm = ''
 }: AituberListItemProps) {
-  const profileUrl = getAituberProfileUrl(aituber)
+  const detailPath = getAituberDetailPath(aituber)
   const latestContent = getLatestContent(aituber)
   const twitchUrl = aituber.twitchContentUrl || aituber.twitchURL ||
     (aituber.twitchLogin ? `https://www.twitch.tv/${aituber.twitchLogin}` : '')
@@ -44,31 +45,21 @@ export const AituberListItem = memo(function AituberListItem({
       <div className="flex items-center gap-2 p-3 sm:gap-4 sm:px-4">
         {/* アイコン */}
         <div className="shrink-0">
-          {profileUrl ? (
-            <a href={profileUrl} target="_blank" rel="noopener noreferrer">
-              <AITuberImage
-                src={aituber.imageUrl}
-                alt={aituber.name}
-                size={36}
-                className="rounded-full ring-2 ring-violet-100 ring-offset-2 ring-offset-card transition-opacity hover:opacity-80 dark:ring-violet-400/25"
-                priority={priority}
-              />
-            </a>
-          ) : (
+          <Link href={detailPath} aria-label={`${aituber.name}の詳細を見る`}>
             <AITuberImage
               src={aituber.imageUrl}
               alt={aituber.name}
               size={36}
-              className="rounded-full ring-2 ring-violet-100 ring-offset-2 ring-offset-card dark:ring-violet-400/25"
+              className="rounded-full ring-2 ring-violet-100 ring-offset-2 ring-offset-card transition-opacity hover:opacity-80 dark:ring-violet-400/25"
               priority={priority}
             />
-          )}
+          </Link>
         </div>
 
         {/* 名前 */}
-        <div className="min-w-0 flex-1 truncate text-sm font-semibold tracking-[-0.01em] sm:text-base">
+        <Link href={detailPath} className="min-w-0 flex-1 truncate text-sm font-semibold tracking-[-0.01em] hover:text-primary hover:underline sm:text-base">
           <HighlightText text={aituber.name} searchTerm={searchTerm} />
-        </div>
+        </Link>
 
         {/* タグ */}
         <div className="hidden lg:flex flex-wrap gap-1 shrink-0 max-w-[200px]">

@@ -1,37 +1,83 @@
 import { AituberList } from "@/components/aituber-list/index"
 import { Metadata } from 'next'
-import aituberData from '@/app/data/aitubers.json'
-import { getAituberProfileUrl, getAudienceCount } from '@/components/aituber-list/types'
+import { aitubers, aituberLastUpdated } from '@/lib/aitubers'
+import { getAituberDetailPath, getAituberProfileUrl, getAudienceCount } from '@/components/aituber-list/types'
+import { absoluteUrl, serializeJsonLd, SITE_URL } from '@/lib/seo'
 
-// 上位10件のAITuberを取得（登録者数順）
-const topAitubers = aituberData.aitubers
-  .filter(a => a.youtubeChannelID || a.twitchLogin)
+// 上位20件のAITuberを取得（登録者・フォロワー数順）
+const topAitubers = aitubers
+  .filter(a => (a.youtubeChannelID || a.twitchLogin) && !a.tags.includes('一部AITuber'))
   .sort((a, b) => getAudienceCount(b) - getAudienceCount(a))
-  .slice(0, 10)
+  .slice(0, 20)
 
-// ItemListスキーマ
-const itemListSchema = {
+const pageDescription = `日本・海外のAITuber（AI VTuber／AIVTuber）${aitubers.length}名を、活動内容・登録者数・最新配信・タグから探せる専門リストです。チャンネル情報は定期更新しています。`
+
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "人気AITuberリスト",
-  "numberOfItems": aituberData.aitubers.length,
-  "itemListElement": topAitubers.map((aituber, i) => ({
-    "@type": "ListItem",
-    "position": i + 1,
-    "item": {
-      "@type": "Person",
-      "name": aituber.name,
-      "description": aituber.description,
-      "url": getAituberProfileUrl(aituber)
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      "name": "AITuberList",
+      "alternateName": ["AITuber リスト", "AIVTuber 一覧"],
+      "url": SITE_URL,
+      "description": pageDescription,
+      "inLanguage": "ja",
+      "publisher": { "@id": `${SITE_URL}/#organization` }
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      "name": "AITuberList",
+      "url": SITE_URL,
+      "logo": absoluteUrl('/images/aituber-list-logo.png'),
+      "sameAs": [
+        "https://github.com/tegnike/aituber-list",
+        "https://x.com/tegnike"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "ニケちゃん",
+        "url": "https://x.com/tegnike"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": `${SITE_URL}/#webpage`,
+      "url": SITE_URL,
+      "name": `AITuber一覧・検索（${aitubers.length}名）`,
+      "description": pageDescription,
+      "dateModified": aituberLastUpdated,
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+      "about": { "@type": "Thing", "name": "AITuber" },
+      "mainEntity": { "@id": `${SITE_URL}/#aituber-list` }
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${SITE_URL}/#aituber-list`,
+      "name": "人気AITuber一覧",
+      "numberOfItems": aitubers.length,
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "itemListElement": topAitubers.map((aituber, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "url": absoluteUrl(getAituberDetailPath(aituber)),
+        "item": {
+          "@type": "Person",
+          "name": aituber.name,
+          "url": absoluteUrl(getAituberDetailPath(aituber)),
+          "sameAs": getAituberProfileUrl(aituber)
+        }
+      }))
     }
-  }))
+  ]
 }
 
 export const metadata: Metadata = {
-  title: 'AITuberList',
-  description: 'AITuber（AIVTuber）の情報をまとめたサイトです。コメント応答型、歌唱系、ゲーム実況などのタグで分類し、検索できます。',
+  title: `AITuber一覧・検索（${aitubers.length}名） | AITuberList`,
+  description: pageDescription,
   alternates: {
-    canonical: 'https://aituberlist.net',
+    canonical: '/',
   },
 }
 
@@ -40,34 +86,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "AITuberList",
-            "alternateName": ["AIVTuber 一覧", "AITuber リスト"],
-            "url": "https://aituberlist.net",
-            "description": "AITuber（AIVTuber）の情報をまとめたサイト。タグによる分類で検索可能。毎日2回更新。",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://aituberlist.net?search={search_term_string}"
-              },
-              "query-input": "required name=search_term_string"
-            },
-            "inLanguage": "ja",
-            "publisher": {
-              "@type": "Person",
-              "name": "ニケちゃん",
-              "url": "https://x.com/tegnike"
-            }
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(structuredData) }}
       />
       <AituberList />
     </>

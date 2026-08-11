@@ -16,7 +16,7 @@ export default function TermsPage() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">1. はじめに</h2>
           <p>
-            本利用規約（以下「本規約」）は、[サービス名]（以下「本サービス」）の利用条件を定めるものです。ユーザーの皆様は、本規約に同意の上、本サービスをご利用ください。
+            本利用規約（以下「本規約」）は、AITuberList（以下「本サービス」）の利用条件を定めるものです。ユーザーの皆様は、本規約に同意の上、本サービスをご利用ください。
           </p>
         </section>
 
