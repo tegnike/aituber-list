@@ -57,7 +57,7 @@ export const AituberListItem = memo(function AituberListItem({
         </div>
 
         {/* 名前 */}
-        <Link href={detailPath} className="min-w-0 flex-1 truncate text-sm font-semibold tracking-[-0.01em] sm:text-base">
+        <Link href={detailPath} className="min-w-0 flex-1 truncate text-sm font-semibold tracking-[-0.01em] hover:text-primary hover:underline sm:text-base">
           <HighlightText text={aituber.name} searchTerm={searchTerm} />
         </Link>
 

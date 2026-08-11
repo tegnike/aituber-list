@@ -71,7 +71,7 @@ export const AituberCard = memo(function AituberCard({
               priority={priority}
             />
           </Link>
-          <Link href={detailPath} className="truncate tracking-[-0.02em]">
+          <Link href={detailPath} className="truncate tracking-[-0.02em] hover:text-primary hover:underline">
             <HighlightText text={aituber.name} searchTerm={searchTerm} />
           </Link>
         </CardTitle>
@@ -129,6 +129,9 @@ export const AituberCard = memo(function AituberCard({
             </div>
           )}
           <div className="flex gap-2">
+            <Button size="sm" className="rounded-lg" asChild>
+              <Link href={detailPath}>{t('card.details')}</Link>
+            </Button>
             {aituber.youtubeChannelID && (
               <Button variant="outline" size="sm" className="rounded-lg border-border/80" asChild>
                 <a href={`https://www.youtube.com/channel/${aituber.youtubeChannelID}`} target="_blank" rel="noopener noreferrer">

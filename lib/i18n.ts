@@ -6,6 +6,11 @@ export const translations = {
     'site.title': 'AITuberList',
     'site.count': '({count}名)',
     'site.lastUpdated': '最終更新日: {date}',
+    'home.heading': 'AITuber（AI VTuber）一覧・検索',
+    'home.intro': '日本・海外のAITuber {count}名を、名前、活動内容、登録者数、最新配信、タグから探せます。チャンネル情報は定期更新しています。',
+    'home.guideLink': 'AITuberとは？仕組みやVTuberとの違いを見る',
+    'home.popularHeading': '人気のAITuber',
+    'home.popularDescription': '登録者・フォロワー数の多いAITuberからプロフィールを確認できます。',
     
     // Overview section
     'overview.title': '概要',
@@ -57,6 +62,7 @@ export const translations = {
     'card.noVideo': '動画はまだありません',
     'card.upcomingStream': '配信予定',
     'card.liveNow': '配信中',
+    'card.details': '詳細を見る',
     
     // Loading
     'loading.scrollMore': 'スクロールして更に読み込む',
@@ -65,6 +71,7 @@ export const translations = {
     // Footer
     'footer.terms': '利用規約',
     'footer.privacy': 'プライバシーポリシー',
+    'footer.about': 'AITuberとは',
     
     // Terms page
     'terms.title': '利用規約',
@@ -130,6 +137,11 @@ export const translations = {
     'site.title': 'AITuberList',
     'site.count': '({count} members)',
     'site.lastUpdated': 'Last updated: {date}',
+    'home.heading': 'AITuber (AI VTuber) directory',
+    'home.intro': 'Explore {count} AITubers from Japan and around the world by name, activity, audience size, latest stream, and tags. Channel information is refreshed regularly.',
+    'home.guideLink': 'What is an AITuber? Read the guide',
+    'home.popularHeading': 'Popular AITubers',
+    'home.popularDescription': 'Browse profiles of AITubers with larger subscriber and follower audiences.',
     
     // Overview section
     'overview.title': 'Overview',
@@ -181,6 +193,7 @@ export const translations = {
     'card.noVideo': 'No videos yet',
     'card.upcomingStream': 'Upcoming',
     'card.liveNow': 'Live now',
+    'card.details': 'View details',
     
     // Loading
     'loading.scrollMore': 'Scroll to load more',
@@ -189,6 +202,7 @@ export const translations = {
     // Footer
     'footer.terms': 'Terms of Service',
     'footer.privacy': 'Privacy Policy',
+    'footer.about': 'About AITubers',
     
     // Terms page
     'terms.title': 'Terms of Service',
@@ -254,6 +268,11 @@ export const translations = {
     'site.title': 'AITuberList',
     'site.count': '（{count}位）',
     'site.lastUpdated': '最后更新：{date}',
+    'home.heading': 'AITuber（AI VTuber）列表与搜索',
+    'home.intro': '可按名称、活动内容、关注人数、最新直播和标签查找来自日本及海外的 {count} 位 AITuber。频道信息会定期更新。',
+    'home.guideLink': '什么是AITuber？了解运作方式与区别',
+    'home.popularHeading': '热门AITuber',
+    'home.popularDescription': '浏览订阅数和关注人数较多的AITuber资料。',
 
     // Overview section
     'overview.title': '概述',
@@ -305,6 +324,7 @@ export const translations = {
     'card.noVideo': '暂无视频',
     'card.upcomingStream': '即将直播',
     'card.liveNow': '直播中',
+    'card.details': '查看详情',
 
     // Loading
     'loading.scrollMore': '滚动加载更多',
@@ -313,6 +333,7 @@ export const translations = {
     // Footer
     'footer.terms': '使用条款',
     'footer.privacy': '隐私政策',
+    'footer.about': '什么是AITuber',
 
     // Terms page
     'terms.title': '使用条款',
@@ -378,6 +399,11 @@ export const translations = {
     'site.title': 'AITuberList',
     'site.count': '（{count}位）',
     'site.lastUpdated': '最後更新：{date}',
+    'home.heading': 'AITuber（AI VTuber）列表與搜尋',
+    'home.intro': '可依名稱、活動內容、追蹤人數、最新直播和標籤查找來自日本及海外的 {count} 位 AITuber。頻道資訊會定期更新。',
+    'home.guideLink': '什麼是AITuber？瞭解運作方式與差異',
+    'home.popularHeading': '熱門AITuber',
+    'home.popularDescription': '瀏覽訂閱數和追蹤人數較多的AITuber資料。',
 
     // Overview section
     'overview.title': '概述',
@@ -429,6 +455,7 @@ export const translations = {
     'card.noVideo': '暫無影片',
     'card.upcomingStream': '即將直播',
     'card.liveNow': '直播中',
+    'card.details': '查看詳情',
 
     // Loading
     'loading.scrollMore': '滾動載入更多',
@@ -437,6 +464,7 @@ export const translations = {
     // Footer
     'footer.terms': '使用條款',
     'footer.privacy': '隱私權政策',
+    'footer.about': '什麼是AITuber',
 
     // Terms page
     'terms.title': '使用條款',
@@ -502,6 +530,11 @@ export const translations = {
     'site.title': 'AITuberList',
     'site.count': '({count}명)',
     'site.lastUpdated': '마지막 업데이트: {date}',
+    'home.heading': 'AITuber(AI VTuber) 목록 및 검색',
+    'home.intro': '일본과 해외의 AITuber {count}명을 이름, 활동, 구독자 수, 최신 방송, 태그로 찾아볼 수 있습니다. 채널 정보는 정기적으로 갱신됩니다.',
+    'home.guideLink': 'AITuber란? 작동 방식과 VTuber와의 차이',
+    'home.popularHeading': '인기 AITuber',
+    'home.popularDescription': '구독자와 팔로워가 많은 AITuber의 프로필을 확인할 수 있습니다.',
 
     // Overview section
     'overview.title': '개요',
@@ -553,6 +586,7 @@ export const translations = {
     'card.noVideo': '영상이 없습니다',
     'card.upcomingStream': '예정된 방송',
     'card.liveNow': '방송 중',
+    'card.details': '자세히 보기',
 
     // Loading
     'loading.scrollMore': '스크롤하여 더 불러오기',
@@ -561,6 +595,7 @@ export const translations = {
     // Footer
     'footer.terms': '이용약관',
     'footer.privacy': '개인정보처리방침',
+    'footer.about': 'AITuber란',
 
     // Terms page
     'terms.title': '이용약관',

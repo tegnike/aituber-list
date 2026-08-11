@@ -19,7 +19,7 @@ import aituberData from '@/app/data/aitubers.json'
 
 // Types
 import type { AITuber, DateFilter, PlatformFilter, SubscriberFilter, SortOrder, ViewMode, TagFilterMode } from './types'
-import { getLatestContentDate, PARTIAL_AITUBER_TAG } from './types'
+import { getAituberDetailPath, getAudienceCount, getLatestContentDate, PARTIAL_AITUBER_TAG } from './types'
 
 // Components
 import { FilterPanel } from './FilterPanel'
@@ -55,6 +55,11 @@ const aitubers: AITuber[] = aituberData.aitubers
 // 全てのタグを抽出
 const allTags = Array.from(new Set(aitubers.flatMap(aituber => aituber.tags)))
   .filter(tag => tag !== PARTIAL_AITUBER_TAG)
+
+const popularAitubers = [...aitubers]
+  .filter(aituber => !aituber.tags.includes(PARTIAL_AITUBER_TAG))
+  .sort((a, b) => getAudienceCount(b) - getAudienceCount(a))
+  .slice(0, 12)
 
 export function AituberList() {
   const { locale, t } = useLanguage()
@@ -259,22 +264,19 @@ export function AituberList() {
       <style jsx global>{styles}</style>
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8">
-          <h1 className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2" aria-label="AITuberList トップ">
-              <Image
-                src="/images/aituber-list-logo.png"
-                alt=""
-                width={2166}
-                height={350}
-                className="h-6 w-auto shrink-0 sm:h-7"
-                priority
-              />
-              <span className="sr-only">AITuber（AI VTuber）一覧・検索</span>
-              <span className="whitespace-nowrap text-sm font-medium text-muted-foreground">
-                {t('site.count', { count: aitubers.length })}
-              </span>
-            </Link>
-          </h1>
+          <Link href="/" className="flex items-center gap-2" aria-label="AITuberList トップ">
+            <Image
+              src="/images/aituber-list-logo.png"
+              alt=""
+              width={2166}
+              height={350}
+              className="h-6 w-auto shrink-0 sm:h-7"
+              priority
+            />
+            <span className="whitespace-nowrap text-sm font-medium text-muted-foreground">
+              {t('site.count', { count: aitubers.length })}
+            </span>
+          </Link>
           <div className="flex items-center gap-2">
             <div className="mr-2 hidden items-center gap-2 text-xs text-muted-foreground md:flex">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_3px_hsl(142_71%_45%/0.12)]" />
@@ -287,6 +289,21 @@ export function AituberList() {
       </header>
 
       <div className="mx-auto max-w-[1440px] px-3 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section className="mb-5 rounded-[1.5rem] border border-violet-200/70 bg-gradient-to-br from-violet-100/70 via-card to-cyan-100/60 px-5 py-6 shadow-sm dark:border-violet-400/20 dark:from-violet-400/10 dark:via-card dark:to-cyan-400/10 sm:px-7 sm:py-7">
+        <h1 className="text-balance text-2xl font-bold tracking-[-0.03em] sm:text-3xl">
+          {t('home.heading')}
+        </h1>
+        <p className="mt-3 max-w-4xl text-sm leading-7 text-muted-foreground sm:text-base">
+          {t('home.intro', { count: aitubers.length })}
+        </p>
+        <Link
+          href="/about/"
+          className="mt-3 inline-flex text-sm font-semibold text-primary underline-offset-4 hover:underline"
+        >
+          {t('home.guideLink')} →
+        </Link>
+      </section>
+
       {/* Overview Card */}
       <Card className="mb-4 border-border/70 bg-card/80 shadow-sm backdrop-blur-sm">
         <Collapsible open={isOverviewOpen} onOpenChange={setIsOverviewOpen}>
@@ -406,6 +423,30 @@ export function AituberList() {
         resultsLabel={t('a11y.searchResults')}
       />
 
+      <section className="mt-8 rounded-[1.5rem] border border-border/70 bg-card/80 p-5 shadow-sm sm:p-7">
+        <h2 className="text-xl font-bold tracking-[-0.02em] sm:text-2xl">{t('home.popularHeading')}</h2>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">{t('home.popularDescription')}</p>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {popularAitubers.map((aituber) => (
+            <Link
+              key={getAituberDetailPath(aituber)}
+              href={getAituberDetailPath(aituber)}
+              className="flex min-w-0 items-center gap-3 rounded-xl border bg-background/70 p-3 transition-colors hover:border-violet-300 hover:bg-violet-50/50 dark:hover:bg-violet-400/5"
+            >
+              <Image
+                src={aituber.imageUrl || '/images/preparing-icon.png'}
+                alt=""
+                width={44}
+                height={44}
+                className="h-11 w-11 rounded-xl object-cover"
+                unoptimized
+              />
+              <span className="line-clamp-2 min-w-0 text-sm font-semibold">{aituber.name}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Scroll to top button */}
       {showScrollTop && (
         <Button
@@ -423,6 +464,9 @@ export function AituberList() {
       <footer className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-border/70 py-6 text-sm text-muted-foreground">
         <span className="font-medium text-foreground/70">AITuberList</span>
         <div className="flex gap-4">
+          <Link href="/about/" className="hover:underline">
+            {t('footer.about')}
+          </Link>
           <Link href="/terms" className="hover:underline">
             {t('footer.terms')}
           </Link>
