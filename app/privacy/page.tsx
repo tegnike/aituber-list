@@ -2,12 +2,14 @@
 
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 export default function PrivacyPage() {
   const { t } = useLanguage()
   
   return (
     <div className="container mx-auto p-4 max-w-3xl">
+      <div className="mb-4 flex justify-end"><ThemeToggle /></div>
       <h1 className="text-3xl font-bold mb-6">{t('privacy.title')}</h1>
       
       <div className="prose dark:prose-invert">

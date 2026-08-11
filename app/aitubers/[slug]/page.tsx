@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Calendar, ExternalLink, Twitch } from 'lucide-react'
 import { YoutubeIcon, XIcon } from '@/components/icons'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 import {
   getAituberDetailPath,
   getAituberProfileUrl,
@@ -214,9 +215,12 @@ export default function AituberProfilePage({ params }: PageProps) {
               priority
             />
           </Link>
-          <Link href="/about/" className="text-sm font-semibold text-primary hover:underline">
-            AITuberとは？
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link href="/about/" className="hidden text-sm font-semibold text-primary hover:underline sm:inline">
+              AITuberとは？
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 

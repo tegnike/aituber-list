@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { WifiOff, RefreshCw } from "lucide-react"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
 
 export default function OfflinePage() {
   const handleRetry = () => {
@@ -11,6 +12,7 @@ export default function OfflinePage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center p-4 bg-background">
+      <div className="absolute right-4 top-4"><ThemeToggle /></div>
       <Card className="max-w-md w-full border-2">
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-muted flex items-center justify-center">
