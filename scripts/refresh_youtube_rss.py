@@ -9,6 +9,7 @@ import re
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 from urllib.request import Request, urlopen
 
 
@@ -54,6 +55,34 @@ def should_add_asmr(aituber: dict, contents: list[dict[str, str]]) -> tuple[bool
     return qualifies, title_hits
 
 
+def extract_video_id(url: str) -> str:
+    parsed = urlparse(url)
+    if parsed.path == "/watch":
+        return parse_qs(parsed.query).get("v", [""])[0]
+    path_parts = [part for part in parsed.path.split("/") if part]
+    if path_parts and path_parts[0] in {"shorts", "live"} and len(path_parts) > 1:
+        return path_parts[1]
+    return ""
+
+
+def apply_canonical_latest(aituber: dict, contents: list[dict[str, str]]) -> None:
+    """Keep API-derived live timing when RSS points to the same latest content."""
+    latest_url = aituber.get("latestVideoUrl", "")
+    latest_video_id = extract_video_id(latest_url)
+    for content in contents:
+        if latest_video_id and extract_video_id(content["url"]) == latest_video_id:
+            content.update(
+                {
+                    "title": aituber.get("latestVideoTitle", content["title"]),
+                    "thumbnail": aituber.get(
+                        "latestVideoThumbnail", content["thumbnail"]
+                    ),
+                    "date": aituber.get("latestVideoDate", content["date"]),
+                }
+            )
+            return
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--apply-asmr", action="store_true", help="Add ASMR tags when evidence is strong")
@@ -85,6 +114,7 @@ def main() -> int:
             if aituber.get("recentYoutubeVideos") == []:
                 aituber.pop("recentYoutubeVideos")
             continue
+        apply_canonical_latest(aituber, contents)
         aituber["recentYoutubeVideos"] = contents[:3]
         refreshed += 1
         if args.apply_asmr and "ASMR" not in aituber.get("tags", []):

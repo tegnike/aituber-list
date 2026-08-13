@@ -1,4 +1,3 @@
-from googleapiclient.discovery import build
 import json
 from datetime import datetime, timezone, timedelta
 import pytz
@@ -55,6 +54,21 @@ def twitch_api_get(path, params, client_id, access_token):
 
 def normalize_twitch_thumbnail(url):
     return url.replace("{width}", "640").replace("{height}", "360") if url else ""
+
+
+def get_youtube_content_time(video_info, jst):
+    """Return the actual live start, upcoming schedule, or ordinary publish time."""
+    live_details = video_info.get("liveStreamingDetails", {})
+    timestamp = (
+        live_details.get("actualStartTime")
+        or live_details.get("scheduledStartTime")
+        or video_info["snippet"]["publishedAt"]
+    )
+    return (
+        datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+        .replace(tzinfo=pytz.UTC)
+        .astimezone(jst)
+    )
 
 
 def update_twitch_info(aituber, client_id, access_token):
@@ -187,32 +201,10 @@ def update_aituber_info(aituber, youtube):
         if video_info["status"]["privacyStatus"] != "public":
             continue
 
-        # プレミア公開かどうかをチェック
-        is_premiere = (
-            "liveStreamingDetails" in video_info
-            and "scheduledStartTime" in video_info["liveStreamingDetails"]
-        )
-
-        # 公開日時を日本時間に変換
-        if is_premiere:
-            # プレミア公開の場合は予定時刻を使用
-            published_at = (
-                datetime.strptime(
-                    video_info["liveStreamingDetails"]["scheduledStartTime"],
-                    "%Y-%m-%dT%H:%M:%SZ",
-                )
-                .replace(tzinfo=pytz.UTC)
-                .astimezone(jst)
-            )
-        else:
-            # 通常の動画の場合は公開時刻を使用
-            published_at = (
-                datetime.strptime(
-                    video_info["snippet"]["publishedAt"], "%Y-%m-%dT%H:%M:%SZ"
-                )
-                .replace(tzinfo=pytz.UTC)
-                .astimezone(jst)
-            )
+        # 完了済み・配信中は実開始時刻、予定枠は予定時刻、通常動画は公開時刻を使う。
+        # 延期した配信枠で古い予定日時を「最新動画日」として残さないため、
+        # actualStartTime を scheduledStartTime より優先する。
+        published_at = get_youtube_content_time(video_info, jst)
 
         # 1日以上先の動画はスキップ
         if published_at > future_limit:
@@ -258,7 +250,12 @@ def update_aituber_info(aituber, youtube):
 def update_aituber_data():
     # YouTube Data API の認証情報
     api_key = os.environ.get("YOUTUBE_API_KEY")
-    youtube = build("youtube", "v3", developerKey=api_key) if api_key else None
+    if api_key:
+        from googleapiclient.discovery import build
+
+        youtube = build("youtube", "v3", developerKey=api_key)
+    else:
+        youtube = None
 
     twitch_client_id = os.environ.get("TWITCH_CLIENT_ID")
     twitch_client_secret = os.environ.get("TWITCH_CLIENT_SECRET")

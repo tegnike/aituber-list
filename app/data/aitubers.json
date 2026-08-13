@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-13T09:18:36.273186+09:00",
+  "lastUpdated": "2026-08-13T18:13:22+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん AI VTuber",
@@ -15,17 +15,17 @@
       "youtubeURL": "nikechan",
       "imageUrl": "nikechan_icon.png",
       "youtubeSubscribers": 516,
-      "latestVideoTitle": "AIニケちゃんとテスト配信",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/y1rIkC6_uTQ/hqdefault_live.jpg",
+      "latestVideoTitle": "AIニケちゃんのAIキャラクターニュース紹介",
+      "latestVideoThumbnail": "https://i2.ytimg.com/vi/y1rIkC6_uTQ/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=y1rIkC6_uTQ",
-      "latestVideoDate": "2026-08-04T23:43:46+09:00",
+      "latestVideoDate": "2026-08-12T23:49:20+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
-          "title": "AIニケちゃんとテスト配信",
+          "title": "AIニケちゃんのAIキャラクターニュース紹介",
           "url": "https://www.youtube.com/watch?v=y1rIkC6_uTQ",
           "thumbnail": "https://i2.ytimg.com/vi/y1rIkC6_uTQ/hqdefault.jpg",
-          "date": "2026-08-04T14:43:46+00:00"
+          "date": "2026-08-12T23:49:20+09:00"
         },
         {
           "title": "AIが安全判定したキノコ、信じていい？誤判定事件を46秒で解説 #Shorts",
