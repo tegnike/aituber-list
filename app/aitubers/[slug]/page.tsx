@@ -1,3 +1,5 @@
+import { MembershipInfo } from '@/components/aituber-list/MembershipInfo'
+import { MembershipBadge } from '@/components/aituber-list/MembershipBadge'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -250,6 +252,7 @@ export default function AituberProfilePage({ params }: PageProps) {
                   {aituber.name}
                 </h1>
                 <div className="mt-4 flex flex-wrap gap-2">
+                  <MembershipBadge aituber={aituber} label="メンバーシップあり" />
                   {aituber.tags.map((tag) => (
                     <Link
                       key={tag}
@@ -393,6 +396,7 @@ export default function AituberProfilePage({ params }: PageProps) {
             <aside>
               <div className="rounded-2xl border bg-muted/35 p-5">
                 <h2 className="font-bold">掲載情報について</h2>
+                <div className="mt-3"><MembershipInfo locale="ja" /></div>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   登録者・フォロワー数、最新コンテンツは公開情報をもとに原則1日2回更新します。タグにはAI判定が含まれ、正確性を保証するものではありません。
                 </p>

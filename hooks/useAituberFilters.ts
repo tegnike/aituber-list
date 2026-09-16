@@ -19,6 +19,7 @@ export interface FilterOptions {
   selectedPlatformFilter: PlatformFilter
   nameFilter: string
   showMainAITubersOnly: boolean
+  showMembershipOnly: boolean
   showUpcomingOnly: boolean
   showFavoritesOnly: boolean
   favorites: string[]
@@ -41,6 +42,7 @@ export function useAituberFilters(
     selectedPlatformFilter,
     nameFilter,
     showMainAITubersOnly,
+    showMembershipOnly,
     showUpcomingOnly,
     showFavoritesOnly,
     favorites
@@ -75,6 +77,7 @@ export function useAituberFilters(
       (nameFilter === '' ||
         aituber.name.toLowerCase().includes(nameFilter.toLowerCase()) ||
         aituber.description.toLowerCase().includes(nameFilter.toLowerCase())) &&
+      (!showMembershipOnly || Boolean(aituber.youtubeChannelID && aituber.youtubeMembership?.confirmedAt)) &&
       (!showUpcomingOnly || aituber.isUpcoming || aituber.twitchIsLive) &&
       (!showFavoritesOnly || favorites.includes(getAituberId(aituber)))
     )
@@ -87,6 +90,7 @@ export function useAituberFilters(
     selectedPlatformFilter,
     nameFilter,
     showMainAITubersOnly,
+    showMembershipOnly,
     showUpcomingOnly,
     showFavoritesOnly,
     favorites
@@ -100,10 +104,11 @@ export function useAituberFilters(
       (nameFilter ? 1 : 0) +
       (selectedDateFilter !== 'all' ? 1 : 0) +
       (showMainAITubersOnly ? 1 : 0) +
+      (showMembershipOnly ? 1 : 0) +
       (showUpcomingOnly ? 1 : 0) +
       (showFavoritesOnly ? 1 : 0)
     )
-  }, [selectedTags, selectedSubscriberFilter, selectedPlatformFilter, nameFilter, selectedDateFilter, showMainAITubersOnly, showUpcomingOnly, showFavoritesOnly])
+  }, [selectedTags, selectedSubscriberFilter, selectedPlatformFilter, nameFilter, selectedDateFilter, showMainAITubersOnly, showMembershipOnly, showUpcomingOnly, showFavoritesOnly])
 
   return {
     filteredAITubers,

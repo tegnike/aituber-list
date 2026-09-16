@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import { MembershipBadge } from './MembershipBadge'
 import Link from 'next/link'
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
@@ -60,6 +61,8 @@ export const AituberListItem = memo(function AituberListItem({
         <Link href={detailPath} className="min-w-0 flex-1 truncate text-sm font-semibold tracking-[-0.01em] hover:text-primary hover:underline sm:text-base">
           <HighlightText text={aituber.name} searchTerm={searchTerm} />
         </Link>
+
+        <MembershipBadge compact aituber={aituber} label={t('card.membership')} />
 
         {/* タグ */}
         <div className="hidden lg:flex flex-wrap gap-1 shrink-0 max-w-[200px]">

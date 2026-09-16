@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { MembershipInfo } from './MembershipInfo'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronDown, RotateCcw } from "lucide-react"
+import { ChevronDown, RotateCcw, Crown } from "lucide-react"
 import {
   Tooltip,
   TooltipContent,
@@ -37,6 +38,8 @@ interface FilterPanelProps {
   onNameFilterChange: (value: string) => void
   showMainAITubersOnly: boolean
   onMainAITubersOnlyChange: (value: boolean) => void
+  showMembershipOnly: boolean
+  onMembershipChange: (value: boolean) => void
   showUpcomingOnly: boolean
   onUpcomingChange: (value: boolean) => void
   showFavoritesOnly: boolean
@@ -76,6 +79,8 @@ export function FilterPanel({
   onNameFilterChange,
   showMainAITubersOnly,
   onMainAITubersOnlyChange,
+  showMembershipOnly,
+  onMembershipChange,
   showUpcomingOnly,
   onUpcomingChange,
   showFavoritesOnly,
@@ -324,7 +329,18 @@ export function FilterPanel({
                   />
                   <span className="text-sm">{t('filter.favoritesOnly')}</span>
                 </label>
+                <label className="flex cursor-pointer items-center gap-2 rounded-xl border bg-muted/30 px-3 py-2.5 transition-colors hover:bg-muted/60">
+                  <input
+                    type="checkbox"
+                    checked={showMembershipOnly}
+                    onChange={(e) => onMembershipChange(e.target.checked)}
+                    className="rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <Crown className="h-4 w-4 text-amber-600 dark:text-amber-300" aria-hidden="true" />
+                  <span className="text-sm">{t('filter.membershipOnly')}</span>
+                </label>
               </div>
+              <MembershipInfo locale={locale} />
             </div>
           </CardContent>
         </CollapsibleContent>

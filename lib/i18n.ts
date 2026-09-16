@@ -63,6 +63,8 @@ export const translations = {
     'card.upcomingStream': '配信予定',
     'card.liveNow': '配信中',
     'card.details': '詳細を見る',
+    'card.membership': 'メンバーシップあり',
+    'filter.membershipOnly': 'メンバーシップありのみ',
     
     // Loading
     'loading.scrollMore': 'スクロールして更に読み込む',
@@ -196,6 +198,8 @@ export const translations = {
     'card.upcomingStream': 'Upcoming',
     'card.liveNow': 'Live now',
     'card.details': 'View details',
+    'card.membership': 'Membership available',
+    'filter.membershipOnly': 'Memberships available only',
     
     // Loading
     'loading.scrollMore': 'Scroll to load more',
@@ -329,6 +333,8 @@ export const translations = {
     'card.upcomingStream': '即将直播',
     'card.liveNow': '直播中',
     'card.details': '查看详情',
+    'card.membership': '已开通会员',
+    'filter.membershipOnly': '仅显示已开通会员',
 
     // Loading
     'loading.scrollMore': '滚动加载更多',
@@ -462,6 +468,8 @@ export const translations = {
     'card.upcomingStream': '即將直播',
     'card.liveNow': '直播中',
     'card.details': '查看詳情',
+    'card.membership': '已開通會員',
+    'filter.membershipOnly': '僅顯示已開通會員',
 
     // Loading
     'loading.scrollMore': '滾動載入更多',
@@ -595,6 +603,8 @@ export const translations = {
     'card.upcomingStream': '예정된 방송',
     'card.liveNow': '방송 중',
     'card.details': '자세히 보기',
+    'card.membership': '멤버십 가입 가능',
+    'filter.membershipOnly': '멤버십 가입 가능 채널만',
 
     // Loading
     'loading.scrollMore': '스크롤하여 더 불러오기',

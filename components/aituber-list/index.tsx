@@ -73,6 +73,7 @@ export function AituberList() {
   const [selectedPlatformFilter, setSelectedPlatformFilter] = useState<PlatformFilter>('all')
   const [nameFilter, setNameFilter] = useState('')
   const [showMainAITubersOnly, setShowMainAITubersOnly] = useState(false)
+  const [showMembershipOnly, setShowMembershipOnly] = useState(false)
   const [showUpcomingOnly, setShowUpcomingOnly] = useState(false)
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
 
@@ -135,6 +136,7 @@ export function AituberList() {
     setNameFilter(initialState.search)
     setShowMainAITubersOnly(initialState.mainOnly)
     setSortOrder(initialState.sort)
+    setShowMembershipOnly(initialState.membership)
     setShowUpcomingOnly(initialState.upcoming)
 
     // フィルターがある場合はフィルターセクションを開く
@@ -145,6 +147,7 @@ export function AituberList() {
       initialState.platform !== 'all' ||
       initialState.search ||
       initialState.mainOnly ||
+      initialState.membership ||
       initialState.upcoming
     ) {
       setIsFiltersOpen(true)
@@ -172,6 +175,7 @@ export function AituberList() {
       search: nameFilter,
       sort: sortOrder,
       mainOnly: showMainAITubersOnly,
+      membership: showMembershipOnly,
       upcoming: showUpcomingOnly
     })
   }, [
@@ -184,6 +188,7 @@ export function AituberList() {
     nameFilter,
     showMainAITubersOnly,
     sortOrder,
+    showMembershipOnly,
     showUpcomingOnly,
     updateUrl
   ])
@@ -197,6 +202,7 @@ export function AituberList() {
     selectedPlatformFilter,
     nameFilter,
     showMainAITubersOnly,
+    showMembershipOnly,
     showUpcomingOnly,
     showFavoritesOnly,
     favorites
@@ -249,6 +255,7 @@ export function AituberList() {
     setSelectedPlatformFilter('all')
     setNameFilter('')
     setShowMainAITubersOnly(false)
+    setShowMembershipOnly(false)
     setShowUpcomingOnly(false)
     setShowFavoritesOnly(false)
   }, [])
@@ -351,6 +358,8 @@ export function AituberList() {
         onNameFilterChange={setNameFilter}
         showMainAITubersOnly={showMainAITubersOnly}
         onMainAITubersOnlyChange={setShowMainAITubersOnly}
+        showMembershipOnly={showMembershipOnly}
+        onMembershipChange={setShowMembershipOnly}
         showUpcomingOnly={showUpcomingOnly}
         onUpcomingChange={setShowUpcomingOnly}
         showFavoritesOnly={showFavoritesOnly}

@@ -14,6 +14,7 @@ export interface UrlState {
   search: string
   sort: SortOrder
   mainOnly: boolean
+  membership: boolean
   upcoming: boolean
 }
 
@@ -32,6 +33,7 @@ const DEFAULT_STATE: UrlState = {
   search: '',
   sort: 'latest',
   mainOnly: false,
+  membership: false,
   upcoming: false
 }
 
@@ -88,6 +90,8 @@ export function useUrlState(): UseUrlStateReturn {
     if (mainOnlyParam === 'true') {
       state.mainOnly = true
     }
+
+    state.membership = params.get('membership') === 'true'
 
     const upcomingParam = params.get('upcoming')
     if (upcomingParam === 'true') {
@@ -167,6 +171,11 @@ export function useUrlState(): UseUrlStateReturn {
       } else {
         params.delete('mainOnly')
       }
+    }
+
+    if (state.membership !== undefined) {
+      if (state.membership) params.set('membership', 'true')
+      else params.delete('membership')
     }
 
     if (state.upcoming !== undefined) {

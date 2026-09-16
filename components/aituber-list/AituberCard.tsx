@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import { MembershipBadge } from './MembershipBadge'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from "@/components/ui/badge"
@@ -76,6 +77,7 @@ export const AituberCard = memo(function AituberCard({
           </Link>
         </CardTitle>
         <div className="flex flex-wrap gap-1.5">
+          <MembershipBadge aituber={aituber} label={t('card.membership')} />
           {aituber.tags.map((tag, tagIndex) => (
             <TooltipProvider key={tagIndex}>
               <Tooltip>

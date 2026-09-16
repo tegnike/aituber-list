@@ -6,6 +6,7 @@ export type AITuber = {
   youtubeChannelID: string
   youtubeURL: string
   imageUrl: string
+  youtubeMembership?: { confirmedAt: string }
   youtubeSubscribers: number
   latestVideoTitle: string
   latestVideoThumbnail: string

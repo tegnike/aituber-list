@@ -37,6 +37,9 @@ jobs:
       - name: Refresh recent YouTube content from public RSS
         run: python scripts/refresh_youtube_rss.py
 
+      - name: Refresh public YouTube membership buttons
+        run: python scripts/refresh_memberships.py
+
       - name: Commit and push if changed
         run: |
           git config --global user.name 'GitHub Actions Bot'
