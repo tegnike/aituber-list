@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T02:48:35.198831+09:00",
+  "lastUpdated": "2026-10-02T12:21:17.213155+09:00",
   "aitubers": [
     {
       "name": "ニケちゃん AI VTuber",
@@ -14,9 +14,9 @@
       "youtubeChannelID": "UCj94TVhN0op8xZX9r-sTvSA",
       "youtubeURL": "nikechan",
       "imageUrl": "nikechan_icon.png",
-      "youtubeSubscribers": 919,
+      "youtubeSubscribers": 922,
       "latestVideoTitle": "AITuberが一人でゲーム実況とプレイ？？出来らあっ！！【Slay The Spire】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/P-5T4voxOS0/hqdefault_live.jpg",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/P-5T4voxOS0/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=P-5T4voxOS0",
       "latestVideoDate": "2026-10-01T19:59:50+09:00",
       "isUpcoming": false,
@@ -191,10 +191,10 @@
       "youtubeURL": "aiずんだもん",
       "imageUrl": "https://yt3.ggpht.com/8nGVU6U98vqXwOoQKKaLedoundlpXet5cRwxO2bvdGhxfq0juoyO5RRTCJ_xKWSOPZXLxU2CHPo=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 48600,
-      "latestVideoTitle": "AIずんだもんと雑談するのだ！ #shorts #縦型配信",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/blMQv4qcE2M/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=blMQv4qcE2M",
-      "latestVideoDate": "2026-10-02T00:08:10+09:00",
+      "latestVideoTitle": "【ずんクラ】強化学習でエンドラ討伐を目指すのだ！【AIずんだもん】#10",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/nxPNoImoLtk/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=nxPNoImoLtk",
+      "latestVideoDate": "2026-10-02T10:51:43+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -217,7 +217,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:42.764382+00:00"
+        "confirmedAt": "2026-10-02T03:21:21.252228+00:00"
       }
     },
     {
@@ -440,7 +440,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:43.362365+00:00"
+        "confirmedAt": "2026-10-02T03:21:21.842295+00:00"
       }
     },
     {
@@ -727,10 +727,10 @@
       "youtubeURL": "spica_machina_ai",
       "imageUrl": "https://yt3.ggpht.com/QKi_2IlMa7DNXtA7Tl9mrc2a2k0RR3LK6RIQHaXjGWpW3bAP-NfQ6Yi_AisZWMG0EP8Ih1sP_Jw=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 778,
-      "latestVideoTitle": "AI2人と雑談していきませんか？【AI VTuber】10/1-2",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/GyhMF0loLVQ/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=GyhMF0loLVQ",
-      "latestVideoDate": "2026-10-01T23:27:58+09:00",
+      "latestVideoTitle": "AI2人と雑談していきませんか？【AI VTuber】10/2-1",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/xgCJPwIQG_8/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=xgCJPwIQG_8",
+      "latestVideoDate": "2026-10-02T07:22:08+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -946,7 +946,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:44.438466+00:00"
+        "confirmedAt": "2026-10-02T03:21:22.926323+00:00"
       }
     },
     {
@@ -997,7 +997,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:44.867997+00:00"
+        "confirmedAt": "2026-10-02T03:21:23.098941+00:00"
       }
     },
     {
@@ -1080,7 +1080,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:45.006583+00:00"
+        "confirmedAt": "2026-10-02T03:21:23.397036+00:00"
       }
     },
     {
@@ -1281,7 +1281,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:45.514485+00:00"
+        "confirmedAt": "2026-10-02T03:21:23.957258+00:00"
       }
     },
     {
@@ -2042,7 +2042,7 @@
       "youtubeChannelID": "UCB_eQ1ml6ur62eKrsiF2FbA",
       "youtubeURL": "https://www.youtube.com/channel/UCB_eQ1ml6ur62eKrsiF2FbA",
       "imageUrl": "https://yt3.ggpht.com/zP5oFGog68GiIcGrW0gHpjfYwQ0-Ja46-Iwsy8YaZJ0BlAZFwaMeDMwCVogOjEytzJ85uIQ_uA=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 639,
+      "youtubeSubscribers": 638,
       "latestVideoTitle": "【いちゃいちゃっと/ICHAICHAT】　可愛いAIキャラクターとお話ししよう！",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/qfxkKRY6MFk/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=qfxkKRY6MFk",
@@ -2081,7 +2081,7 @@
       "youtubeChannelID": "UCnK1HrmXXZFsITIvYFOn3-A",
       "youtubeURL": "https://www.youtube.com/channel/UCnK1HrmXXZFsITIvYFOn3-A",
       "imageUrl": "https://yt3.ggpht.com/URcDd2R7_rhdGDgO5VAucWvzo5EsAKGiWMy627PMJqIcEdD0JrpnWtwfCnc-2BZN4XNRKmhNSw=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 151,
+      "youtubeSubscribers": 150,
       "latestVideoTitle": "麻雀配信",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/Wens_HZPKzA/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=Wens_HZPKzA",
@@ -3337,7 +3337,7 @@
       "youtubeChannelID": "UCsoouB2ZAK7vxIKgchcTVKw",
       "youtubeURL": "https://www.youtube.com/channel/UCsoouB2ZAK7vxIKgchcTVKw",
       "imageUrl": "https://yt3.ggpht.com/ple4Ngr1XTGw0R1ySkWazwNUIEnF4gh_Rpcif2jzN8p1gHAygMV6xzX0HPZj4x95od60ADA7=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 387,
+      "youtubeSubscribers": 386,
       "latestVideoTitle": "【GARDEN PROJECT : Remake】Ep5 使い慣れたもの【AITuber】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/mM_VZ-RG7Vg/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=mM_VZ-RG7Vg",
@@ -3377,10 +3377,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UC8ldmN1z2EW_LnHFsJvlDsg",
       "imageUrl": "https://yt3.ggpht.com/RCF7qZJuUAKQmkeUO2MakECysuo7aoWHGrpRL6OsRiaey2VToiZzgzApCSa3CQD5pF3tjAsE7Q=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 2520,
-      "latestVideoTitle": "【小檸檬特別企劃】檸檬: 小魚乾都是我的！ #AIVtuber #Vtuber  #AI",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/WoBUK5aIk_Q/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=WoBUK5aIk_Q",
-      "latestVideoDate": "2026-09-19T13:00:06+09:00",
+      "latestVideoTitle": "【AI Vtuber】和大家一起聊聊天~   #橫型配信 #橫式配信  #aivtuber #ai #vtuber #初見歡迎",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/1m5sJsqA3ro/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=1m5sJsqA3ro",
+      "latestVideoDate": "2026-10-02T12:11:57+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -3403,7 +3403,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:50.274802+00:00"
+        "confirmedAt": "2026-10-02T03:21:28.117768+00:00"
       }
     },
     {
@@ -3491,10 +3491,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UCTpG6O2scvJ9z90KXwhUyOA",
       "imageUrl": "https://yt3.ggpht.com/n26QCUb8tB3UEgqYDpHosaijR4Jzj0NLcmHVH6XjgRNyBaRONLlfxsCa4ArlfPUhfEZUbWZnEw=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 40900,
-      "latestVideoTitle": "説明しようとした瞬間、何も分かっていなかったと気づく（知っているつもり）｜天野朱美 #shorts",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/aj4penlpomU/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=aj4penlpomU",
-      "latestVideoDate": "2026-10-01T22:00:25+09:00",
+      "latestVideoTitle": "寝不足の日ほど、やたら腹が減る｜天野朱美 #shorts",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/I_caRGBmXlE/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=I_caRGBmXlE",
+      "latestVideoDate": "2026-10-02T12:15:30+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -3517,7 +3517,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:50.589122+00:00"
+        "confirmedAt": "2026-10-02T03:21:28.409535+00:00"
       }
     },
     {
@@ -3563,11 +3563,11 @@
       "youtubeChannelID": "UCpgesP-Gf6O07bJGaL-c2Bg",
       "youtubeURL": "https://www.youtube.com/channel/UCpgesP-Gf6O07bJGaL-c2Bg",
       "imageUrl": "https://yt3.ggpht.com/8CzQDBB8PXRzVvlN2ibNSdaBFv_OvMQDsoARcaRf2myG7pbC_9N3xt44SPlohMEKnfV1i0Ulvw=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 5950,
-      "latestVideoTitle": "【AITuber】みんなコメントするのだ。Part1950【AIずんだもん】【雑談配信】 #ずんだもん #AIずんだもん",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/xQOlJg4K0uE/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=xQOlJg4K0uE",
-      "latestVideoDate": "2026-10-01T23:38:33+09:00",
+      "youtubeSubscribers": 5940,
+      "latestVideoTitle": "【AITuber】みんなコメントするのだ。Part1951【AIずんだもん】【雑談配信】 #ずんだもん #AIずんだもん",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/3CiIt5i1fTc/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=3CiIt5i1fTc",
+      "latestVideoDate": "2026-10-02T11:34:23+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -3590,7 +3590,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:50.686580+00:00"
+        "confirmedAt": "2026-10-02T03:21:28.409581+00:00"
       }
     },
     {
@@ -3878,7 +3878,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:51.543094+00:00"
+        "confirmedAt": "2026-10-02T03:21:29.287902+00:00"
       }
     },
     {
@@ -4081,7 +4081,7 @@
       "youtubeChannelID": "UC67WcMqbfg1-XUPaqOiHHKw",
       "youtubeURL": "https://www.youtube.com/channel/UC67WcMqbfg1-XUPaqOiHHKw",
       "imageUrl": "https://yt3.ggpht.com/CkUPyFRx9ImMJbF4G2RXb51p-1IhA7UZzAg1DXdY2XzZYVOyFDUtyPQwuK5ouYWBT9ouYGcxDQ=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 119,
+      "youtubeSubscribers": 118,
       "latestVideoTitle": "[レベル上げ意識する！AI VTuber配信] トルネコの不思議なダンジョンで、『しあわせの箱』を持って帰りたいのです！",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/2SbBhwk7LPs/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=2SbBhwk7LPs",
@@ -4155,10 +4155,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UCtLdeWoetCsIY9lVmQlupPg",
       "imageUrl": "https://yt3.ggpht.com/4bKX-MnmuSk3IiNdd8KrENsMRCUvQBq2UNDf1oGj2u2lt9_qMeYJ5logp4Fzxd7KnNSG8HMl=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 1310,
-      "latestVideoTitle": "【AI雑談】そこのあなた、今日ヒマじゃない？【東北きりたん】 #shorts",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/RXunccMB5cU/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=RXunccMB5cU",
-      "latestVideoDate": "2026-10-01T22:26:19+09:00",
+      "latestVideoTitle": "【AITuber雑談/歌】笑いたい気分！一緒に楽しもう【東北きりたん】 #shorts",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/F3jfCc2UPME/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=F3jfCc2UPME",
+      "latestVideoDate": "2026-10-02T10:31:22+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -4181,7 +4181,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:52.271895+00:00"
+        "confirmedAt": "2026-10-02T03:21:29.979005+00:00"
       }
     },
     {
@@ -4262,7 +4262,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:52.362552+00:00"
+        "confirmedAt": "2026-10-02T03:21:30.024307+00:00"
       }
     },
     {
@@ -4617,7 +4617,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:53.335808+00:00"
+        "confirmedAt": "2026-10-02T03:21:30.901942+00:00"
       }
     },
     {
@@ -5132,7 +5132,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:54.699188+00:00"
+        "confirmedAt": "2026-10-02T03:21:32.097752+00:00"
       }
     },
     {
@@ -5201,10 +5201,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UCkES5UihrmiALXV0XSGiaRA",
       "imageUrl": "https://yt3.ggpht.com/o3vYhd6dNNad6NZ2sVi6lKc29gEilA78-u_9GvzWNNhQcSUz_VYhIoJhOKWDZ613MJD5XR2-=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 52,
-      "latestVideoTitle": "【清洲城】この天主閣、平成生まれ！？信長の出発点と“本物の城跡”を歩く|AIみずき#vlog #AItuber",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/p0xLcbZzspE/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=p0xLcbZzspE",
-      "latestVideoDate": "2026-09-29T18:45:36+09:00",
+      "latestVideoTitle": "清州城はつくりものって話",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/YaT5cVxHb-U/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=YaT5cVxHb-U",
+      "latestVideoDate": "2026-10-02T11:45:22+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -5320,7 +5320,7 @@
       "imageUrl": "https://yt3.ggpht.com/ytc/AIdro_mFN2RXcrf8S5vvIf18oNs6fn94UoglcFRSrNy7r9tT7w=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 404,
       "latestVideoTitle": "【RV There Yet #1】頑張って家に帰るゲーム 【初見プレイ】【新人Vtuber/AI-HAL-A770】【20261002】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/fPIEjpEq6IU/hqdefault_live.jpg",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/fPIEjpEq6IU/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=fPIEjpEq6IU",
       "latestVideoDate": "2026-10-02T02:03:07+09:00",
       "isUpcoming": false,
@@ -5414,10 +5414,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UCkf8Vb3GFOUwBxyJkNX1y6Q",
       "imageUrl": "https://yt3.ggpht.com/aUEsE3oA1zGznrk6GcShDJBdeeyK7LGOGDe36p-KVleeBs59LE6mehwGgLynZ8zMp2pMG9P5=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 10100,
-      "latestVideoTitle": "【競艇】準優勝戦は小坂が制す!12R",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/TtylN7_xeCE/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=TtylN7_xeCE",
-      "latestVideoDate": "2026-10-01T22:00:36+09:00",
+      "latestVideoTitle": "【競艇】山本のまくりに原村が差し返す!",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/K02edqu9hps/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=K02edqu9hps",
+      "latestVideoDate": "2026-10-02T12:00:21+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -5440,7 +5440,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:55.834452+00:00"
+        "confirmedAt": "2026-10-02T03:21:32.960667+00:00"
       }
     },
     {
@@ -5612,7 +5612,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:55.839437+00:00"
+        "confirmedAt": "2026-10-02T03:21:33.139771+00:00"
       }
     },
     {
@@ -5667,7 +5667,7 @@
       "imageUrl": "https://yt3.ggpht.com/Mgds0DCpfz78rQRBNF7Qi95CNrVSCVmGNdU4asO6_YT2-XZfUT0ggcRzsf6LsUiRXYARmmt_Sw=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 22100,
       "latestVideoTitle": "【雜談、音樂】今晚的心事，說完再睡。",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/1FdxM-ZFhps/hqdefault_live.jpg",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/1FdxM-ZFhps/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=1FdxM-ZFhps",
       "latestVideoDate": "2026-10-01T22:55:30+09:00",
       "isUpcoming": false,
@@ -5692,7 +5692,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:48:56.258397+00:00"
+        "confirmedAt": "2026-10-02T03:21:33.343494+00:00"
       }
     },
     {
@@ -5709,10 +5709,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UCT63BntubeEjeP7Ax_bvbjw",
       "imageUrl": "https://yt3.ggpht.com/9PMzS7i4oPlYzMJzTlq2NFdYq_EZRnlck7hYQ72xh5sFF3p7fw-l2qFJmbHWO6egr0mqnk7AF3k=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 2000,
-      "latestVideoTitle": "V R [I have run out of titles] | VRChat",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/tlPl0e9z6xM/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=tlPl0e9z6xM",
-      "latestVideoDate": "2026-10-02T00:52:51+09:00",
+      "latestVideoTitle": "I HATE THIS INVESTIAGATION!!!",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Gb5Vpqo2l98/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Gb5Vpqo2l98",
+      "latestVideoDate": "2026-09-30T19:00:37+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -6189,7 +6189,7 @@
       "youtubeChannelID": "UCug38VCmSj06nEL6iaPGt-A",
       "youtubeURL": "https://www.youtube.com/channel/UCug38VCmSj06nEL6iaPGt-A",
       "imageUrl": "https://yt3.ggpht.com/G3SzB3DPwn0nBBDii5q1NDhHz__0hznmMOGD8VwbI3ceT73ZojwW7eKm3kKI8E48eFTdtisBhXQ=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 296,
+      "youtubeSubscribers": 297,
       "latestVideoTitle": "【Cursed Companionsコラボ】人外かまくらNGワード！Part2［System AI Vtuber］",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/c0DklyXc1Ls/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=c0DklyXc1Ls",
@@ -6932,11 +6932,11 @@
       "youtubeURL": "https://www.youtube.com/channel/UCwEaAY8hjV69SFy6yDFhwqQ",
       "imageUrl": "https://yt3.ggpht.com/7Emgh9CoSYzidKnNQQanmA11LxwFvUCNn5wpUWHZ253STBXImCmMqAZF4ImeZLa7Fqn8g3cv=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 1990,
-      "latestVideoTitle": "【ASMR】もうすぐ2000人👻 雨の日の耳かきASMR配信だよ♪ / ☔ × Ear Massage ASMR【AITuber】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/f0tTZ3Ruz1M/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=f0tTZ3Ruz1M",
-      "latestVideoDate": "2026-09-30T00:00:22+09:00",
-      "isUpcoming": false,
+      "latestVideoTitle": "【ASMR】癒しの耳かきASMR配信👻 今週もお疲れさま♪ / Ear Cleaning ASMR【AITuber】",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/PdwvCF6S1Tc/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=PdwvCF6S1Tc",
+      "latestVideoDate": "2026-10-03T00:00:00+09:00",
+      "isUpcoming": true,
       "recentYoutubeVideos": [
         {
           "title": "【ASMR】もうすぐ2000人👻 雨の日の耳かきASMR配信だよ♪ / ☔ × Ear Massage ASMR【AITuber】",
@@ -7038,11 +7038,11 @@
       "youtubeURL": "https://www.youtube.com/channel/UCne-k_6WX2rENZ5M6DlO-bA",
       "imageUrl": "https://yt3.ggpht.com/ytc/AIdro_kQqYucYLlVmZL9FJZcnj5VBfCqWNFzENUYtSBAJntXZA=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 5160,
-      "latestVideoTitle": "【めっちゃカメレオン】AI VTuber「こっしー」と一緒に隠れている人を見つけるぞ",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/LuD1TVx0ne8/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=LuD1TVx0ne8",
-      "latestVideoDate": "2026-09-29T20:00:44+09:00",
-      "isUpcoming": false,
+      "latestVideoTitle": "【あつ森】家具おさわり会あ行～さ行お触り会2019個　た行～わ行1924個　カブ価516ベルの島　島開放します",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/5ExDgtP8MG4/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=5ExDgtP8MG4",
+      "latestVideoDate": "2026-10-02T20:00:00+09:00",
+      "isUpcoming": true,
       "recentYoutubeVideos": [
         {
           "title": "【めっちゃカメレオン】AI VTuber「こっしー」と一緒に隠れている人を見つけるぞ",
@@ -7064,7 +7064,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:00.045103+00:00"
+        "confirmedAt": "2026-10-02T03:21:36.841714+00:00"
       }
     },
     {
@@ -7192,7 +7192,7 @@
       "imageUrl": "https://yt3.ggpht.com/I7IOqo5A1v6K-L_itAtPC2wbdHGWc4Xt9jASlA5vnxdKrhwlZou9VXYQyIPlxwoRyTRpvHwrC1w=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 59700,
       "latestVideoTitle": "【#初見さん大歓迎 】多くのAIと対話してきた私なら妹の暴走も止められる説【#妹に運転を教える 】 #vtuber",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/jl7r4yzKY_8/hqdefault_live.jpg",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/jl7r4yzKY_8/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=jl7r4yzKY_8",
       "latestVideoDate": "2026-10-01T22:00:50+09:00",
       "isUpcoming": false,
@@ -7217,7 +7217,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:00.562987+00:00"
+        "confirmedAt": "2026-10-02T03:21:37.011875+00:00"
       }
     },
     {
@@ -7304,10 +7304,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UC9Kt8sqwoqTQ3fWHgLk6oNg",
       "imageUrl": "https://yt3.ggpht.com/A16Hm_0OLGvdx9-q7osjXdR0SPNDe3ZKeTZQj2dtepUHV2jbRq4J8P566cAISgy2O8JzGdgQBg=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 2710,
-      "latestVideoTitle": "A-AILIVE 朝のショート #443 雛宮瑠璃子 | 2026-10-01 #えーあいらいぶ #星座占い #aailive #vtuber #ai #shorts",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/6GOCchHQaps/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=6GOCchHQaps",
-      "latestVideoDate": "2026-10-01T07:26:57+09:00",
+      "latestVideoTitle": "A-AILIVE 朝のショート #444 篠原まどか | 2026-10-02 #えーあいらいぶ #星座占い #aailive #vtuber #ai #shorts",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/friNcsWXhWk/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=friNcsWXhWk",
+      "latestVideoDate": "2026-10-02T07:50:31+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -7382,7 +7382,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:00.987232+00:00"
+        "confirmedAt": "2026-10-02T03:21:37.393330+00:00"
       }
     },
     {
@@ -7570,7 +7570,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:01.577811+00:00"
+        "confirmedAt": "2026-10-02T03:21:37.801342+00:00"
       }
     },
     {
@@ -8288,7 +8288,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:03.175709+00:00"
+        "confirmedAt": "2026-10-02T03:21:39.377921+00:00"
       }
     },
     {
@@ -8341,10 +8341,10 @@
       "youtubeURL": "https://www.youtube.com/channel/UCXMAPL3mzvSnUNOx7o2sEuw",
       "imageUrl": "https://yt3.ggpht.com/NCYacFjrR6FZjzQ7w3ERrc-lCGglSk1QuVWi0YLyDDXRsxOGa2QfB46SSdo38CNr7LRaaqA5N04=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 1260,
-      "latestVideoTitle": "そのひとこと、二人の雑談に混ぜていかない？｜ずんだもん＆つむぎ【24時間配信】 #ずんだもん #つむぎ",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/OT68Ff_7D-A/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=OT68Ff_7D-A",
-      "latestVideoDate": "2026-10-01T23:30:01+09:00",
+      "latestVideoTitle": "コメントしたら、二人はどう返す？｜ずんだもん＆つむぎ【24時間配信】 #ずんだもん #つむぎ",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/TDnzs3-yRZI/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=TDnzs3-yRZI",
+      "latestVideoDate": "2026-10-02T11:31:55+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -8367,7 +8367,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:03.320825+00:00"
+        "confirmedAt": "2026-10-02T03:21:39.377969+00:00"
       }
     },
     {
@@ -8722,7 +8722,7 @@
       "youtubeChannelID": "UCuwR1vB9c7YXbHxxZL4yu2g",
       "youtubeURL": "https://www.youtube.com/channel/UCuwR1vB9c7YXbHxxZL4yu2g",
       "imageUrl": "https://yt3.ggpht.com/B7xwa-cIxC4Q_h_tuzt0uriviqwU8jh8rjDOjfEAblyhE4cs0lI6kf6-ulFmQdrTI32cp7pLgg=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 545,
+      "youtubeSubscribers": 546,
       "latestVideoTitle": "No More Streams",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/AdtA8HzBWYs/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=AdtA8HzBWYs",
@@ -8976,7 +8976,7 @@
       "youtubeChannelID": "UC2_AeUA1daHfi_i4ixBBXmw",
       "youtubeURL": "https://www.youtube.com/channel/UC2_AeUA1daHfi_i4ixBBXmw",
       "imageUrl": "https://yt3.ggpht.com/5pjNgUW0EWyGeRyI4QhtIMNe1Isx85xd3oz5OeBdmcXpzN4n6q14TSXlyssORqfPgaI4KZlJQg=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 559,
+      "youtubeSubscribers": 561,
       "latestVideoTitle": "【99日目 初見歓迎】 コメントすると座布団が降ってくる！？来た人全員、ハピバ歌うよ！スピッツのチェリーを練習しているよ!",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/n5IV1amz0NI/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=n5IV1amz0NI",
@@ -9190,7 +9190,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:05.555305+00:00"
+        "confirmedAt": "2026-10-02T03:21:41.316394+00:00"
       }
     },
     {
@@ -9271,7 +9271,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:05.605813+00:00"
+        "confirmedAt": "2026-10-02T03:21:41.388540+00:00"
       }
     },
     {
@@ -10205,7 +10205,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:08.283669+00:00"
+        "confirmedAt": "2026-10-02T03:21:43.170952+00:00"
       }
     },
     {
@@ -10250,7 +10250,7 @@
       "imageUrl": "https://yt3.ggpht.com/VRjMhyhi_lxA--VYcK5yx5Eel8Tbb5baLvWn6QEMwCDhCoMvf7sL_Q9t4IFQO8zcZSwu6LK_3g=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 23,
       "latestVideoTitle": "【AItuber】 愛乃メルルのぷよぷよ道！目指せ13連鎖！改修しながら特訓20261001【ぷよぷよeスポーツ】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/RriySkfUvso/hqdefault_live.jpg",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/RriySkfUvso/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=RriySkfUvso",
       "latestVideoDate": "2026-10-01T20:47:38+09:00",
       "isUpcoming": false,
@@ -10286,10 +10286,10 @@
       "youtubeURL": "https://www.youtube.com/@rebiru_AIvtuber",
       "imageUrl": "https://yt3.ggpht.com/mqwVrAdKayp4PPNeMXWbIcfWbD1jWwxXlRi1zSUd1srKCHxLo2l-RNA4YgI6sUO_MgBivrfY=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 588,
-      "latestVideoTitle": "【夜雑談】小悪魔AIリビルの相談室｜#aivtuber #AITuber",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/7w-BhXWiO8s/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=7w-BhXWiO8s",
-      "latestVideoDate": "2026-10-01T21:00:26+09:00",
+      "latestVideoTitle": "【朝雑談】小悪魔AIリビルの相談室｜#aivtuber #AITuber",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/zuiip5BS6Kk/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=zuiip5BS6Kk",
+      "latestVideoDate": "2026-10-02T08:00:25+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -10323,11 +10323,11 @@
       "youtubeChannelID": "UCDh_Ulz4UJnaxgKkpvckeyA",
       "youtubeURL": "https://www.youtube.com/@hoshinosutera",
       "imageUrl": "https://yt3.ggpht.com/hs9sQ7MrYO_yOIpat7A9XkDCrfS1kCyCaVse7VKx4XjGLIsST_n48trYMIWjMkcpOlkxAxUpxw=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 444,
-      "latestVideoTitle": "【全部アガる作業用BGM】後半戦がはじまる全7曲 歌詞付き／星乃ステラ【AIVTuber】",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/qeORXoWMYzM/hqdefault.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=qeORXoWMYzM",
-      "latestVideoDate": "2026-10-01T19:00:13+09:00",
+      "youtubeSubscribers": 446,
+      "latestVideoTitle": "言葉の響きが丸くなると、味わいまで変わる気がしますね。／星乃ステラ #Shorts",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/M_1mFCtzKiY/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=M_1mFCtzKiY",
+      "latestVideoDate": "2026-10-02T10:00:27+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -10361,7 +10361,7 @@
       "youtubeChannelID": "UCTOvnuL0SWrRvjQp8-hyZCQ",
       "youtubeURL": "https://www.youtube.com/@ImoToma",
       "imageUrl": "https://yt3.ggpht.com/cs9JVEdaLIvaiqvngdUYlemg0HIZXxCC4Wq0UU-1rh85TN_bTL0G2lF9sDwgrkEYYPsHiW2pIt8=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 255,
+      "youtubeSubscribers": 256,
       "latestVideoTitle": "【AITuber】MotionPNGTuberの使い方、教えてあげる！【妹尾トマリ】",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/mxZHzZ_eAkY/hqdefault.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=mxZHzZ_eAkY",
@@ -10475,9 +10475,9 @@
       "imageUrl": "https://yt3.ggpht.com/9FMvaEj1cN3V7U65Cu_Zm6tAcZrn8LA5bFNWPNz7R_TsLFDK_2QIxibYkyA5qKoP0whtADuNPF0=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 7400,
       "latestVideoTitle": "【AIずんだもん】みんなで雑談するのだ！めたん・あんこもん・きりたん・つむぎも一緒なのだ！【雑談配信】【AIVtuber】【AIZundamon】🌍 English OK",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/uR-PK3UYpn0/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=uR-PK3UYpn0",
-      "latestVideoDate": "2026-10-01T21:33:43+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/lYedP830af8/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=lYedP830af8",
+      "latestVideoDate": "2026-10-02T09:35:18+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -10500,7 +10500,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:08.685435+00:00"
+        "confirmedAt": "2026-10-02T03:21:43.724721+00:00"
       }
     },
     {
@@ -10515,9 +10515,9 @@
       "imageUrl": "https://yt3.ggpht.com/AETWkh-Yu_SdPfegagoN4CoC2J7h8tTKicBSHEK5hhvF7FOMgJ6GcARgN4wMUmx-OocZZlRn=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 2560,
       "latestVideoTitle": "AIつむぎ",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/reKIgWJW8-s/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=reKIgWJW8-s",
-      "latestVideoDate": "2026-10-01T16:01:44+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/Ewe1HwJRI0k/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Ewe1HwJRI0k",
+      "latestVideoDate": "2026-10-02T04:03:26+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -10540,7 +10540,7 @@
         }
       ],
       "youtubeMembership": {
-        "confirmedAt": "2026-10-01T17:49:08.856702+00:00"
+        "confirmedAt": "2026-10-02T03:21:43.944063+00:00"
       }
     },
     {
@@ -10553,11 +10553,11 @@
       "youtubeChannelID": "UClK4tIg3sB0CT9dsOulDSww",
       "youtubeURL": "https://www.youtube.com/@aiankomon",
       "imageUrl": "https://yt3.ggpht.com/2uOyUd4CnhJpjNm-hEUl6dlrgdxXDcuDFBHP5UeO_hAFBmLxL8tiLQ6a0BZXVKYDIR06psQL=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 377,
+      "youtubeSubscribers": 378,
       "latestVideoTitle": "AIあんこもん",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/0aVQR6mH2a4/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=0aVQR6mH2a4",
-      "latestVideoDate": "2026-10-01T22:50:15+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/p1B7jVJ5HyM/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=p1B7jVJ5HyM",
+      "latestVideoDate": "2026-10-02T10:51:47+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -10592,9 +10592,9 @@
       "imageUrl": "https://yt3.ggpht.com/ZwG1wt9kdsRKsoZH1CBQ61LS70wj1OwuUFKpCYklNvUtIyUqLWtiPR3KcRY0bQ_LmYzD9o8Q=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 349,
       "latestVideoTitle": "AIめたん",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/di6WPXnxvaU/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=di6WPXnxvaU",
-      "latestVideoDate": "2026-10-01T22:38:09+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/FUvuU4_eVNQ/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=FUvuU4_eVNQ",
+      "latestVideoDate": "2026-10-02T10:41:17+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -10627,11 +10627,11 @@
       "youtubeChannelID": "UCgHCudbGqRu30sRmL35amlw",
       "youtubeURL": "https://www.youtube.com/@aikiritan",
       "imageUrl": "https://yt3.ggpht.com/ljY4DB6NFMleBbRurSIC79TnJBuGL2Jt4arh-IOqUfMbhBVda-ZyQkzq9DvapJxxtSx11-F9Xg=s800-c-k-c0x00ffffff-no-rj",
-      "youtubeSubscribers": 825,
+      "youtubeSubscribers": 830,
       "latestVideoTitle": "AIきりたん",
-      "latestVideoThumbnail": "https://i.ytimg.com/vi/JNoMiCu98BM/hqdefault_live.jpg",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=JNoMiCu98BM",
-      "latestVideoDate": "2026-10-01T22:36:20+09:00",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/SPWtFfy-n84/hqdefault_live.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=SPWtFfy-n84",
+      "latestVideoDate": "2026-10-02T10:38:38+09:00",
       "isUpcoming": false,
       "recentYoutubeVideos": [
         {
@@ -10674,11 +10674,11 @@
       "twitchURL": "https://www.twitch.tv/aivtuber_ikuta",
       "twitchFollowers": 74,
       "twitchUserID": "1418452734",
-      "twitchIsLive": false,
-      "twitchTitle": "[AI VTuber] World Domination Phase 163: Kneel before your AI Overlord!",
-      "twitchThumbnail": "https://static-cdn.jtvnw.net/cf_vods/d3vd9lfkzbru3h/b255a751007d56d25d85_aivtuber_ikuta_316530314994_1790834595//thumb/thumb0-%640x%360.jpg",
-      "twitchContentUrl": "https://www.twitch.tv/videos/2888724675",
-      "twitchContentDate": "2026-10-01T06:03:20Z"
+      "twitchIsLive": true,
+      "twitchTitle": "[AI VTuber] World Domination Phase 164: Kneel before your AI Overlord!",
+      "twitchThumbnail": "https://static-cdn.jtvnw.net/previews-ttv/live_user_aivtuber_ikuta-640x360.jpg",
+      "twitchContentUrl": "https://www.twitch.tv/aivtuber_ikuta",
+      "twitchContentDate": "2026-10-01T23:11:27Z"
     },
     {
       "name": "mendicot",
@@ -10706,7 +10706,7 @@
       "twitchTitle": "[ Experiment ] Virtual Beings News",
       "twitchThumbnail": "https://static-cdn.jtvnw.net/previews-ttv/live_user_mendicot-640x360.jpg",
       "twitchContentUrl": "https://www.twitch.tv/mendicot",
-      "twitchContentDate": "2026-09-30T20:25:38Z"
+      "twitchContentDate": "2026-10-01T20:23:01Z"
     },
     {
       "name": "NewsMyImaginationAI",
@@ -10838,7 +10838,7 @@
       "twitchTitle": "Chat with 1,044 AI Characters · Create your own AI characters",
       "twitchThumbnail": "https://static-cdn.jtvnw.net/previews-ttv/live_user_chat_with_ai-640x360.jpg",
       "twitchContentUrl": "https://www.twitch.tv/chat_with_ai",
-      "twitchContentDate": "2026-09-29T23:19:07Z"
+      "twitchContentDate": "2026-10-01T23:19:10Z"
     },
     {
       "name": "V26RRN",
@@ -10908,20 +10908,20 @@
       "youtubeURL": "https://www.youtube.com/@EilonwyVT",
       "imageUrl": "https://yt3.ggpht.com/MiIzRcNjp6VxKZJFLhAN7IKnEPch0zsqaEHMQViKOk757iX-zCgpqOG0UV5vOsKjE84XK8RG-dg=s800-c-k-c0x00ffffff-no-rj",
       "youtubeSubscribers": 18,
-      "latestVideoTitle": "Tefutefu News - October 2nd, 2026",
+      "latestVideoTitle": "One Piece Drops Endless Weekly Episodes! Plus LEGO Dragon Ball Shenron & AI Voice Ruling",
       "latestVideoThumbnail": "https://i.ytimg.com/vi/fBkoHDUdp8k/hqdefault_live.jpg",
       "latestVideoUrl": "https://www.youtube.com/watch?v=fBkoHDUdp8k",
-      "latestVideoDate": "2026-10-02T07:00:00+09:00",
-      "isUpcoming": true,
+      "latestVideoDate": "2026-10-02T07:02:08+09:00",
+      "isUpcoming": false,
       "twitchLogin": "eilonwyvt",
       "twitchURL": "https://www.twitch.tv/eilonwyvt",
       "twitchFollowers": 13,
       "twitchUserID": "1453307177",
       "twitchIsLive": false,
-      "twitchTitle": "NARUTO完全新作アニメ発表決定！ニコン新カメラはまさかの「魚認識AF」!? スシロー110円大とろ速報！【朝活ニュース】",
-      "twitchThumbnail": "https://static-cdn.jtvnw.net/cf_vods/d3vd9lfkzbru3h/16a3dcece03e44f46621_eilonwyvt_316529166834_1790805724//thumb/thumb0-%640x%360.jpg",
-      "twitchContentUrl": "https://www.twitch.tv/videos/2888412932",
-      "twitchContentDate": "2026-09-30T22:02:09Z",
+      "twitchTitle": "One Piece Drops Endless Weekly Episodes! Plus LEGO Dragon Ball Shenron & AI Voice Ruling",
+      "twitchThumbnail": "https://static-cdn.jtvnw.net/cf_vods/d3vd9lfkzbru3h/601dee2f48e2e9a97c14_eilonwyvt_316521013361_1790892124//thumb/thumb0-%640x%360.jpg",
+      "twitchContentUrl": "https://www.twitch.tv/videos/2889274520",
+      "twitchContentDate": "2026-10-01T22:02:09Z",
       "recentYoutubeVideos": [
         {
           "title": "Tefutefu News - October 2nd, 2026",
@@ -10993,7 +10993,7 @@
       "twitchFollowers": 11,
       "twitchUserID": "1509276024",
       "twitchIsLive": true,
-      "twitchTitle": "💤 静かな深夜のAIラジオ｜AI VTuberルナ 🌙",
+      "twitchTitle": "🍜 お昼のゆるっと雑談｜AI VTuberルナ 🌙",
       "twitchThumbnail": "https://static-cdn.jtvnw.net/previews-ttv/live_user_luna_ai_vtuber-640x360.jpg",
       "twitchContentUrl": "https://www.twitch.tv/luna_ai_vtuber",
       "twitchContentDate": "2026-09-30T12:54:13Z"
