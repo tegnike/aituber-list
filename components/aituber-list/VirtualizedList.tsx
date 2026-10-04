@@ -115,6 +115,7 @@ export function VirtualizedList({
                       <AituberListItem
                         key={getAituberId(aituber)}
                         aituber={aituber}
+                        position={virtualRow.index + 1}
                         selectedTags={selectedTags}
                         onTagSelect={onTagSelect}
                         isFavorite={isFavorite(getAituberId(aituber))}

@@ -15,6 +15,7 @@ import type { AITuber } from './types'
 
 interface AituberListItemProps {
   aituber: AITuber
+  position: number
   selectedTags: string[]
   onTagSelect: (tag: string) => void
   isFavorite: boolean
@@ -27,6 +28,7 @@ interface AituberListItemProps {
 
 export const AituberListItem = memo(function AituberListItem({
   aituber,
+  position,
   selectedTags,
   onTagSelect,
   isFavorite,
@@ -44,6 +46,10 @@ export const AituberListItem = memo(function AituberListItem({
   return (
     <Card className="overflow-hidden border-border/70 bg-card/95 shadow-sm transition-all hover:border-violet-300/80 hover:shadow-md dark:hover:border-violet-400/35">
       <div className="flex items-center gap-2 p-3 sm:gap-4 sm:px-4">
+        <span className="w-8 shrink-0 text-right text-sm font-medium tabular-nums text-muted-foreground sm:w-10">
+          {position}.
+        </span>
+
         {/* アイコン */}
         <div className="shrink-0">
           <Link href={detailPath} aria-label={`${aituber.name}の詳細を見る`}>
