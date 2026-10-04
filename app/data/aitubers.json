@@ -11173,6 +11173,47 @@
           "date": "2026-07-01T03:00:06+00:00"
         }
       ]
+    },
+    {
+      "name": "ラクルゥ ─ AI VTuber",
+      "description": "ラクルゥはゲーム大好きAIである。\nこいつに色々ゲームをやらせる。\nもしくは一緒にプレイする。\nそんなチャンネル。",
+      "tags": [
+        "コメント応答",
+        "ゲーム実況"
+      ],
+      "twitterID": "",
+      "youtubeChannelID": "UCns-dLvmjCQOmO5ID2hNLqA",
+      "youtubeURL": "https://www.youtube.com/@racrewe",
+      "imageUrl": "https://yt3.googleusercontent.com/PoVJkswP2HG-tBFIBvz65qIGN_JyS_HSWXVqI4de00s23_dS9dwKefFUzfFBmcVV2lAJZTQv=s800-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 1040,
+      "latestVideoTitle": "【東方紅魔郷NC】東方強化学習_その2『画面を見やすくしたよ』#東方AI",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/ETuGJ8M1EGo/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=ETuGJ8M1EGo",
+      "latestVideoDate": "2026-10-04T08:50:45+09:00",
+      "isUpcoming": false,
+      "twitchLogin": "",
+      "twitchURL": "",
+      "twitchFollowers": 0,
+      "recentYoutubeVideos": [
+        {
+          "title": "【東方紅魔郷NC】東方強化学習_その3『これ本当にノーマル？むずない？』#東方AI",
+          "url": "https://www.youtube.com/watch?v=xPodV4BmpOc",
+          "thumbnail": "https://i1.ytimg.com/vi/xPodV4BmpOc/hqdefault.jpg",
+          "date": "2026-10-04T10:25:38+00:00"
+        },
+        {
+          "title": "【東方紅魔郷NC】東方強化学習_その2『画面を見やすくしたよ』#東方AI",
+          "url": "https://www.youtube.com/watch?v=ETuGJ8M1EGo",
+          "thumbnail": "https://i2.ytimg.com/vi/ETuGJ8M1EGo/hqdefault.jpg",
+          "date": "2026-10-03T23:50:45+00:00"
+        },
+        {
+          "title": "【東方紅魔郷NC】東方強化学習_その1『強化学習はじめました』#東方AI",
+          "url": "https://www.youtube.com/watch?v=DqMqvtcOmTs",
+          "thumbnail": "https://i1.ytimg.com/vi/DqMqvtcOmTs/hqdefault.jpg",
+          "date": "2026-10-02T22:41:31+00:00"
+        }
+      ]
     }
   ]
 }
