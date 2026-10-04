@@ -1,0 +1,7 @@
+interface:
+  display_name: "AITuber Channel Curator"
+  short_description: "YouTubeチャンネルを調査してAITuberタグを安全に付与"
+  default_prompt: "Use $aituber-channel-curator to inspect these YouTube channels, classify them, and update the existing AITuber data safely."
+
+policy:
+  allow_implicit_invocation: true

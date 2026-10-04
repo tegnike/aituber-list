@@ -1,10 +1,15 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI coding agents when working with code in this repository.
 
 ## Project Overview
 
 AITuber List (https://aituberlist.net/) - A directory website for AI VTubers built with Next.js 14, TypeScript, and Tailwind CSS. The site uses static site generation and is deployed on Vercel/Cloudflare Pages.
+
+## Repository Skills
+
+- `aituber-channel-curator` provides channel collection, AITuber classification, tag checks, and safe updates to the directory data.
+- Its canonical files are in `.agents/skills/aituber-channel-curator/`. Claude Code accesses the same files through `.claude/skills/aituber-channel-curator`; edit the canonical files under `.agents/skills/`.
 
 ## Common Development Commands
 
