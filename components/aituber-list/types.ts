@@ -148,11 +148,11 @@ export const isWithinDateRange = (dateString: string, filter: DateFilter): boole
     case '1month':
       return diffInMonths <= 1
     case '3months':
-      return diffInMonths > 1 && diffInMonths <= 3
+      return diffInMonths <= 3
     case '6months':
-      return diffInMonths > 3 && diffInMonths <= 6
+      return diffInMonths <= 6
     case '1year':
-      return diffInMonths > 6 && diffInMonths <= 12
+      return diffInMonths <= 12
     case 'older':
       return diffInMonths > 12
     default:
