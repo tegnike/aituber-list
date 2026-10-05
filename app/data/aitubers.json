@@ -11258,6 +11258,21 @@
       "youtubeMembership": {
         "confirmedAt": "2026-10-05T03:16:02.318903+00:00"
       }
+    },
+    {
+      "name": "nexus_ai",
+      "description": "",
+      "tags": [],
+      "twitterID": "",
+      "youtubeChannelID": "UCcWnZN4V0iROOB2v2jBOJ8Q",
+      "youtubeURL": "https://www.youtube.com/@nexus_ai_2045",
+      "imageUrl": "https://yt3.googleusercontent.com/UhzRoiy7ELTe32CBLe0m-ycIn5aeN8D7qqqXos6OP87P5xixWd9L8tiRcEQn6NQuSUQivievsQg=s900-c-k-c0x00ffffff-no-rj",
+      "youtubeSubscribers": 0,
+      "latestVideoTitle": "Codex(ChatGPT)で音声対話のテスト",
+      "latestVideoThumbnail": "https://i.ytimg.com/vi/K3HgtiTpd0w/hqdefault.jpg",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=K3HgtiTpd0w",
+      "latestVideoDate": "2026-07-25T12:52:00+09:00",
+      "isUpcoming": false
     }
   ]
 }
